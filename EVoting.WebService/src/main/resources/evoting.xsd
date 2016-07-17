@@ -1,0 +1,67 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+
+<!-- The web service domain is defined in an XML schema file (XSD) that Spring-WS will export automatically as a WSDL. -->
+
+    <!-- Start of Login R&R-->
+    <xs:element name="loginRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="username" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="loginResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="success" type="tns:login"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- End of Login -->
+
+
+
+
+    <!-- Start of SendVote R&R-->
+    <xs:element name="sendVoteRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="votingNode" type="xs:string"/>
+                <xs:element name="partyNode" type="xs:string"/>
+                <xs:element name="voteType" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="sendVoteResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="success" type="tns:sendVote"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- End of SendVote -->
+
+
+    <!-- Class Definitions -->
+    <xs:complexType name="login">
+        <xs:sequence>
+            <xs:element name="username" type="xs:string"/>
+            <xs:element name="password" type="xs:string"/>
+            <xs:element name="success" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="sendVote">
+        <xs:sequence>
+            <xs:element name="VotingNode" type="xs:string"/>
+            <xs:element name="PartyNode" type="xs:string"/>
+            <xs:element name="VoteType" type="xs:string"/>
+            <xs:element name="success" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- End of Class Definitions -->
+</xs:schema>
