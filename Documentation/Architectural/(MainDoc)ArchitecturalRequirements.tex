@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+\addtolength{\oddsidemargin}{-1.cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-2cm}
+\addtolength{\textheight}{3.5cm}
+
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=magenta,
+	urlcolor=cyan,
+}
+
+% define the title
+\author{Team CodeX}
+\title{Architecture Requirements Specification}
+
+\begin{document}
+	\setlength{\parskip}{6pt}
+	
+	% generates the title
+	\input{CoverPage.tex}
+	
+	\renewcommand{\thesection}{\arabic{section}}
+	\newpage
+	
+	\tableofcontents
+	
+	\textsc{}\\[1cm]
+	
+	\newpage
+
+	\section{Architectural Requirements}
+	
+	\subsection{Architectural Scope}
+		\input{ArchitecturalScope.tex}
+	
+	\subsection{Quality Requirements}
+		\input{QualityRequirements.tex}
+	
+	\subsection{Integration and Access Channel Requirements}
+		\input{IntegrationAndAccessChannelRequirements.tex}
+	
+	\subsection{Architectural Constraints}
+		\input{ArchitecturalConstraints.tex}
+	
+	\subsection{Architectural Patterns and Styles}
+		\input{ArchitecturalPatternsAndStyles.tex}
+	
+	\subsection{Architectural Tactics and Strategies}
+		\input{ArchitecturalPatternsAndStyles.tex}
+	
+	\subsection{Reference Architectures and Frameworks}
+		\input{ReferenceArchitecturesAndFrameworks.tex}
+	
+	\subsection{Technologies}
+		\input{Technologies.tex}
+	
+\end{document}

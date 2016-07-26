@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\addtolength{\oddsidemargin}{-1.cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-2cm}
+\addtolength{\textheight}{3.5cm}
+
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=magenta,
+	urlcolor=cyan,
+}
+
+% define the title
+\author{Team CodeX}
+\title{Functional Requirements Specification}
+
+\begin{document}
+	\setlength{\parskip}{6pt}
+	
+	% generates the title
+	\input{CoverPage.tex}
+	
+	\renewcommand{\thesection}{\arabic{section}}
+	\newpage
+	
+	\tableofcontents
+	
+	\textsc{}\\[1cm]
+	
+	\newpage
+	
+	\section{Introduction}
+		\input{Introduction.tex}
+	
+	\section{Vision}
+		\input{Vision.tex}
+	
+	\section{Background}
+		\input{Background.tex}
+		
+	\section{Functional Requirements}
+	
+	\subsection{Use Case Prioritization}
+		\input{UseCasePrioritization.tex}
+	
+	\subsection{Service Contracts}
+	\input{ServiceContracts.tex}
+	
+	\subsection{Required Functionality}
+	\input{RequiredFunctionality.tex}
+	
+	\subsection{Process Specifications}
+	\input{ProcessSpecifications.tex}
+	
+	\subsection{Domain Model}
+	\input{DomainModel.tex}
+	
+	\section{Open Issues}
+		\input{OpenIssues.tex}
+	
+\end{document}

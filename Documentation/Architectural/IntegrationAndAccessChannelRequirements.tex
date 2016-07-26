@@ -1,0 +1,22 @@
+\begin{itemize}
+		\item The aim of the Electronic Voting system is to allow users to participate in elections remotely, i.e. that they do not have to go into a voting station to cast their vote. The easiest way to achieve this is by providing both a web interface as well as an Android interface (seeing as Android is currently the most widely used operating system for mobiles in South Africa). 
+		
+		\item The ultimate goal is that users will be able to easily download and use the Android application from the Google Play Store. The web interface will obviously be accessed from the users prefered browser – so we will, whilst developing the system test it currently with multiple web browsers too to ensure that users are never disadvanatged according to their preferred browser. 
+		
+		\item Both web interface and the android interfaces will be implemented using a MVC architectural. 
+		
+		\item The Electronic Voting system requires the use of Blockchain to maintain elections, votes, voters and candidates – as well a generic version of the system which allows participants to partake in surveys. 
+		
+		Blockchain Explained: 
+		\begin{enumerate}
+			\item[] The block chain is a shared transperent ledger on which the entire Bitcoin network relies. All confirmed transactions are included in the block chain. 
+			
+			Once a transactibon is entered in the blockchain, it can never be erased or modified. Blockchain also allows us to ensure that voters cannot vote more times than allowed. So once a vote has been cast, a voter is sure that their vote was counted for the right candidate. 
+		\end{enumerate}
+		
+		\item The backbone of our server will be the Linux based MultiChain implementation which will allow us to create and manage nodes of the which we will use to implement our own local Blockchain. All of this will be managed from a centralized server which the interfaces can access as in the MVC architectural pattern. 
+		
+		\item The backend of the system will be implemented using Java since it intergrates easily with the Spring Framework. The RESTful API will be used with HTTP as a high level protocol as HTTP is widely supported and the RESTful API is supported greatly by the Java and Android libraries.  			
+		
+		\item PostgreSQL will be used for the database as it provides several external authentication tools and it provides support for the use of JSON(this is also how MultiChain communicates with browsers in the MultiChain Explorer that provides a visual representation of the local blockchain), which will assist with the integration of the server-side communication. 
+\end{itemize}
