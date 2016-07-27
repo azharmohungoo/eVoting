@@ -1,0 +1,21 @@
+<ion-view style="" class=" " id="page5" title="eVoting Login">
+    <ion-content class="has-header" padding="true">
+        <form class="list " id="eVotingLogin-form1">
+            <ion-list class=" " id="eVotingLogin-list1">
+                <label name="IDNumber" id="eVotingLogin-input1" class="item item-input ">
+                    <input placeholder="Enter ID Number" type="text" ng-model="data.username">
+                </label>
+                <label name="password" id="eVotingLogin-input2" class="item item-input ">
+                    <input placeholder="Enter Password" type="password" ng-model="data.password">
+                </label>
+
+
+
+             <!-- ui-sref="tabsController.electionInformation" -->
+            </ion-list>
+            <div style="height: 40px;" class="spacer"></div>
+            <a class=" button button-stable  button-block " id="eVotingLogin-button1"   ng-click="login()">Log in</a>
+            <a class=" button button-positive  button-block button-clear " id="eVotingLogin-button2" ui-sref="register">Or Register</a>
+        </form>
+    </ion-content>
+</ion-view>
