@@ -1,15 +1,15 @@
-\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
-\contentsline {section}{\numberline {2}Vision}{2}{section.2}
-\contentsline {section}{\numberline {3}Background}{2}{section.3}
-\contentsline {section}{\numberline {4}Functional Requirements}{4}{section.4}
-\contentsline {subsection}{\numberline {4.1}Web Service}{4}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Multichain}{5}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Database}{6}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Security}{10}{subsection.4.4}
-\contentsline {subsection}{\numberline {4.5}Admin}{11}{subsection.4.5}
-\contentsline {subsection}{\numberline {4.6}Voter}{12}{subsection.4.6}
-\contentsline {subsection}{\numberline {4.7}Activator}{13}{subsection.4.7}
-\contentsline {subsection}{\numberline {4.8}Party}{14}{subsection.4.8}
-\contentsline {subsection}{\numberline {4.9}Domain Model}{15}{subsection.4.9}
-\contentsline {section}{\numberline {5}Open Issues}{16}{section.5}
-\contentsline {subsection}{\numberline {5.1}GitHub Repository}{16}{subsection.5.1}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
+\contentsline {section}{\numberline {2}Vision}{3}{section.2}
+\contentsline {section}{\numberline {3}Background}{3}{section.3}
+\contentsline {section}{\numberline {4}Functional Requirements}{5}{section.4}
+\contentsline {subsection}{\numberline {4.1}Web Service}{5}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Multichain}{6}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Database}{7}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Security}{11}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Admin}{12}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Voter}{13}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}Activator}{14}{subsection.4.7}
+\contentsline {subsection}{\numberline {4.8}Party}{15}{subsection.4.8}
+\contentsline {subsection}{\numberline {4.9}Domain Model}{16}{subsection.4.9}
+\contentsline {section}{\numberline {5}Open Issues}{17}{section.5}
+\contentsline {subsection}{\numberline {5.1}GitHub Repository}{17}{subsection.5.1}
