@@ -17,6 +17,36 @@
       <profile default="true" name="Default" enabled="false">
         <processorPath useClasspath="true" />
       </profile>
+<<<<<<< HEAD
     </annotationProcessing>
+=======
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="activator" />
+        <module name="admin" />
+        <module name="database" />
+        <module name="multichain" />
+        <module name="party" />
+        <module name="security" />
+        <module name="voter" />
+        <module name="webservice" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="activator" target="1.5" />
+      <module name="admin" target="1.5" />
+      <module name="database" target="1.5" />
+      <module name="evoting" target="1.5" />
+      <module name="multichain" target="1.5" />
+      <module name="party" target="1.5" />
+      <module name="security" target="1.5" />
+      <module name="voter" target="1.5" />
+      <module name="VoterModule" target="1.5" />
+      <module name="webservice" target="1.5" />
+    </bytecodeTargetLevel>
+>>>>>>> ab2bb0bad3bbede04c50fda59926e3b121ebf0e2
   </component>
 </project>
