@@ -13,7 +13,7 @@ angular.module('app.controllers', [])
 })
 
 
-.controller('eVotingLoginCtrl', function($scope, LoginService, $ionicPopup, $state) {
+.controller('eVotingLoginCtrl', function($scope, LoginService, $ionicPopup, $state, userService) {
   $scope.data = {};
 
   $scope.login = function() {
@@ -25,9 +25,20 @@ angular.module('app.controllers', [])
         template: 'Please check your credentials!'
       });
     });
-  }
-})
 
+
+    }
+
+  $scope.GetUsers = function(){
+    alert('something');
+    userService.GetUsers().then(function(result){
+      //$scope.users = users;
+      console.log(result);
+
+    });
+  }
+
+})
 
 
 
@@ -43,3 +54,10 @@ angular.module('app.controllers', [])
 .controller('accountInformationCtrl', function($scope) {
 
 })
+
+  .controller('MainCtrl', function($scope, userService) {
+
+
+
+
+  })

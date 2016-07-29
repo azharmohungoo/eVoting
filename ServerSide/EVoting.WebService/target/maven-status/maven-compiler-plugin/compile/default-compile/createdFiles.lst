@@ -1,0 +1,12 @@
+io\spring\guides\gs_producing_web_service\ObjectFactory.class
+io\spring\guides\gs_producing_web_service\SendVote.class
+io\spring\guides\gs_producing_web_service\LoginResponse.class
+wsFunctions\Application.class
+wsFunctions\EVotingEndpoint.class
+io\spring\guides\gs_producing_web_service\package-info.class
+io\spring\guides\gs_producing_web_service\Login.class
+io\spring\guides\gs_producing_web_service\SendVoteResponse.class
+wsFunctions\WebServiceConfig.class
+io\spring\guides\gs_producing_web_service\SendVoteRequest.class
+wsFunctions\EVotingRepository.class
+io\spring\guides\gs_producing_web_service\LoginRequest.class

@@ -14,6 +14,15 @@
              <!-- ui-sref="tabsController.electionInformation" -->
             </ion-list>
             <div style="height: 40px;" class="spacer"></div>
+
+          <div ng-repeat="user in users">
+            {{user.firstName}}
+            {{user.lastName}}
+          </div>
+
+        <!--  <a class="button button-stable  button-block"    ng-click="GetUsers()"> Test </a> -->
+
+
             <a class=" button button-stable  button-block " id="eVotingLogin-button1"   ng-click="login()">Log in</a>
             <a class=" button button-positive  button-block button-clear " id="eVotingLogin-button2" ui-sref="register">Or Register</a>
         </form>
