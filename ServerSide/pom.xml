@@ -13,10 +13,15 @@
 
     <modules>
         <!-- <module>  </module> -->
+        <module>EVoting.Admin</module>
+        <module>EVoting.Voter</module>
+        <module>EVoting.Party</module>
+        <module>EVoting.Activator</module>
         <module>EVoting.MultiChain</module>
-        <module>EVoting.Security</module>
         <module>EVoting.Database</module>
+        <module>EVoting.Security</module>
         <module>EVoting.WebService</module>
+
     </modules>
 
 
