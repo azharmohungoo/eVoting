@@ -2,11 +2,28 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/EVoting.Database/database.iml" filepath="$PROJECT_DIR$/EVoting.Database/database.iml" />
       <module fileurl="file://$PROJECT_DIR$/evoting.iml" filepath="$PROJECT_DIR$/evoting.iml" />
       <module fileurl="file://$PROJECT_DIR$/EVoting.MultiChain/multichain.iml" filepath="$PROJECT_DIR$/EVoting.MultiChain/multichain.iml" />
       <module fileurl="file://$PROJECT_DIR$/EVoting.Security/security.iml" filepath="$PROJECT_DIR$/EVoting.Security/security.iml" />
       <module fileurl="file://$PROJECT_DIR$/EVoting.WebService/webservice.iml" filepath="$PROJECT_DIR$/EVoting.WebService/webservice.iml" />
+=======
+<<<<<<< HEAD
+      <module fileurl="file://$PROJECT_DIR$/.idea/ServerSide.iml" filepath="$PROJECT_DIR$/.idea/ServerSide.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/VoterModule.iml" filepath="$PROJECT_DIR$/VoterModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EVoting.Activator/activator.iml" filepath="$PROJECT_DIR$/EVoting.Activator/activator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EVoting.Admin/admin.iml" filepath="$PROJECT_DIR$/EVoting.Admin/admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EVoting.Database/database.iml" filepath="$PROJECT_DIR$/EVoting.Database/database.iml" />
+      <module fileurl="file://$PROJECT_DIR$/evoting.iml" filepath="$PROJECT_DIR$/evoting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EVoting.MultiChain/multichain.iml" filepath="$PROJECT_DIR$/EVoting.MultiChain/multichain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EVoting.Party/party.iml" filepath="$PROJECT_DIR$/EVoting.Party/party.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EVoting.Security/security.iml" filepath="$PROJECT_DIR$/EVoting.Security/security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EVoting.Voter/voter.iml" filepath="$PROJECT_DIR$/EVoting.Voter/voter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EVoting.WebService/webservice.iml" filepath="$PROJECT_DIR$/EVoting.WebService/webservice.iml" />
+>>>>>>> ab2bb0bad3bbede04c50fda59926e3b121ebf0e2
+>>>>>>> 1f0d0cddfdb9f36f8100e5dc456100746d646cb3
     </modules>
   </component>
 </project>

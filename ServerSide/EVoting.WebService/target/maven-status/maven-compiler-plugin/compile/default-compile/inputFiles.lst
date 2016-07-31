@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /Users/Azhar/eVoting/ServerSide/EVoting.WebService/src/main/java/io/spring/guides/gs_producing_web_service/ObjectFactory.java
 /Users/Azhar/eVoting/ServerSide/EVoting.WebService/src/main/java/wsFunctions/WebServiceConfig.java
 /Users/Azhar/eVoting/ServerSide/EVoting.WebService/src/main/java/io/spring/guides/gs_producing_web_service/SendVote.java
@@ -10,3 +11,17 @@
 /Users/Azhar/eVoting/ServerSide/EVoting.WebService/src/main/java/io/spring/guides/gs_producing_web_service/SendVoteResponse.java
 /Users/Azhar/eVoting/ServerSide/EVoting.WebService/src/main/java/io/spring/guides/gs_producing_web_service/SendVoteRequest.java
 /Users/Azhar/eVoting/ServerSide/EVoting.WebService/src/main/java/wsFunctions/Application.java
+=======
+C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\EVoting.WebService\src\main\java\io\spring\guides\gs_producing_web_service\SendVote.java
+C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\EVoting.WebService\src\main\java\io\spring\guides\gs_producing_web_service\SendVoteResponse.java
+C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\EVoting.WebService\src\main\java\wsFunctions\WebServiceConfig.java
+C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\EVoting.WebService\src\main\java\wsFunctions\EVotingEndpoint.java
+C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\EVoting.WebService\src\main\java\io\spring\guides\gs_producing_web_service\package-info.java
+C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\EVoting.WebService\src\main\java\io\spring\guides\gs_producing_web_service\LoginRequest.java
+C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\EVoting.WebService\src\main\java\wsFunctions\Application.java
+C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\EVoting.WebService\src\main\java\io\spring\guides\gs_producing_web_service\Login.java
+C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\EVoting.WebService\src\main\java\io\spring\guides\gs_producing_web_service\SendVoteRequest.java
+C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\EVoting.WebService\src\main\java\wsFunctions\EVotingRepository.java
+C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\EVoting.WebService\src\main\java\io\spring\guides\gs_producing_web_service\ObjectFactory.java
+C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\EVoting.WebService\src\main\java\io\spring\guides\gs_producing_web_service\LoginResponse.java
+>>>>>>> 1f0d0cddfdb9f36f8100e5dc456100746d646cb3
