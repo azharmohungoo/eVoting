@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/EVoting.Database/database.iml" filepath="$PROJECT_DIR$/EVoting.Database/database.iml" />
+      <module fileurl="file://$PROJECT_DIR$/evoting.iml" filepath="$PROJECT_DIR$/evoting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EVoting.MultiChain/multichain.iml" filepath="$PROJECT_DIR$/EVoting.MultiChain/multichain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EVoting.Security/security.iml" filepath="$PROJECT_DIR$/EVoting.Security/security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EVoting.WebService/webservice.iml" filepath="$PROJECT_DIR$/EVoting.WebService/webservice.iml" />
+    </modules>
+  </component>
+</project>
