@@ -1,9 +1,28 @@
-The server will be limited to a Linux Operating system for the reason that Multichain is not supported on any other Operating System as of yet.  The mobile platform will be limited to only Andriod v5.1 and higher. For the web platform the following browsers will be supported:
-	\begin{itemize}	
-		\item Mozilla firfox v35
-		\item Safari v8
-		\item Chrome v40
-		\item Opera v26
-		\item Internet Explorer v11 
-		\item Microsoft Edge 
-	\end{itemize}
+\begin{enumerate}
+	\item Blockchain
+	\begin{enumerate}
+		\item We're using Multichain to represent the Blockchain component of the Electronic Voting system. The Multchain allows us to manage transactions that happen when a user casts a vote, instantiation and management of all the types of nodes in the chain as well retrieving the balances of all the Party nodes when required. 
+		
+		\item The constraint which has been imposed with regards to the Multichain servers is the fact that there is only Linux support for the servers. 
+		
+	\end{enumerate}
+	
+	\item Ionic
+	\begin{enumerate}
+		\item The Ionic framework allows for develop hybrid mobile applications. The biggest drawback with Ionic since it is not native (Android or IOS) development is that it must support multiple platforms with a single codebase. In the greater scheme of things this is a minor issue since most web browsers are webkit based.
+		
+		\item Hybrid development is best when there won’t be intense functionality such as 3D graphics on the application/website itself. So the architectural constraint with regards to the front end is basically that interfaces of the system should be basically be used for simple message passing.  
+	\end{enumerate}
+	
+	\item Postgre
+	\begin{enumerate}
+		\item Postgre databases have an inherent speed constraint because of its representation of database records as fully instantiated objects in code, this might slow down pre-processing of the system, more especially when it is compared to MySQL. 
+		
+		\item Does not support the entire ANSI SQL 92' standard, much less the ANSI SQL 99' standard
+	\end{enumerate}
+	
+	\item Android 
+	\begin{enumerate}
+		\item The front end of the system will be a website component as well as an android component. The Android component will only be supported by Android 4.3 to more recent releases. 
+	\end{enumerate}
+\end{enumerate}
