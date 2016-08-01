@@ -1,11 +1,11 @@
-The technologies that will be implemented in the system to achieve the desired outcome and allow not only successful completion of the project but doing it in the most 					effective and efficient manner. The technologies are stated with an explaination why they were chosen for this project.
+The technologies that will be implemented in the system to achieve the desired outcome and allow not only successful completion of the project but doing it in the most effective and efficient manner. The technologies are stated with an explaination why they were chosen for this project.
 	\begin{enumerate}
 		\item \textbf{AngularJS:} 
 		\begin{enumerate}
-			\item Implements MVC (Model View Controller) which the is Architectural Pattern that is to be implenmented. Angular manages the components 									and serves as a pipeline to connect them.
-			\item Uses HTML to define the interface which is more intuitive and less convoluted than defining the interface in JavaScript. It is also less brittle to 								reorganize than an interface written in JavaScript.
+			\item Implements MVC (Model View Controller) which the is Architectural Pattern that is to be implenmented. Angular manages the components and serves as a pipeline to connect them.
+			\item Uses HTML to define the interface which is more intuitive and less convoluted than defining the interface in JavaScript. It is also less brittle to reorganize than an interface written in JavaScript.
 			\item The data models are POJO (plain old JavaScript objects) which means there is no need for extraneous getter and setter functions.
-			\item Behaviour with directives will allow us to invent our own HTML elements by putting all the DOM manipulation code into directives. They are 									separated out of the MVC application, therefore the MVC application only concerns itself with updating the view with the new data.
+			\item Behaviour with directives will allow us to invent our own HTML elements by putting all the DOM manipulation code into directives. They are separated out of the MVC application, therefore the MVC application only concerns itself with updating the view with the new data.
 			\item Flexibility with filters which will allow the filters to be standalone functions that will be separate from the applicaiton similar to directives, but are only concerned with data transformations such as formatting numbers or reversing the order of an array.
 			\item Consise code because of all the aforementioned points will cause less code to be written. No need to write a MVC pipeline. The view is defined just by HTML, models are simpler because there are no extra getter and setter functions. Data binding means there is no need to put data into the data manually. Parrellel team work is possible since the directives are separate from the application code. The filters allow data manipulation on the view level without changing the controllers.
 			\item AngularJS can be unit tested by mocking data into the controller and measuring the output and behaviour.
