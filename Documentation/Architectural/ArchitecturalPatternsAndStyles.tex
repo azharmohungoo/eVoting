@@ -1,22 +1,42 @@
-The project implementaton will use MVC (Model View controller) pattern for the project. As the following benefits will be utilised provided by implementing MVC
+Electronic Voting will make use of a combination between the Client-Server and Component-Based architecture styles. The system will be devided into a 'client side' and a 'server side', with a RESTFull web service running on the server side as a communication medium between the two. Component-Based architecture style will be used on the server's side, where each component contains eveything necessary to execute only one desired aspect of the system.
+We will be using Component-Based architecture to seperate all of the functionalty for Voter, Activator, Party, Admin, Security, Blockchain and Database into their own respective modules. Reasons for Client-Server style:
 	\begin{enumerate}
-		\item Separation of concerns thus allowing:
+		\item Accessibility:
 		\begin{enumerate}
-			\item Re-use of the business logic across the platform 
-			\item Multiple user interfaces can be developed without concerning the codebase
+			\item EVoting can be accessed form various platforms on a local network or over the Internet.
+			\item Our server can be accessed remotely by administrators or support teams.
+		\end{enumerate}
+		\item Upgradation and Scalability:
+		\begin{enumerate}
+			\item Performance changes on the server can be easily made by upgrading the server.
+			\item New resources can be added to the server.
+		\end{enumerate}
+		\item Plugability:
+		\begin{enumerate}
+			\item We are using a RESTFull web service on the server end.
+			\item Because of this, it allowes us add any number of client platform types (eg iOS, Windows apps, or even other web applications) to integrate with our system if they support our communication medium.
+		\end{enumerate}
+	\end{enumerate}
+	
+Reasons for using a Component-Based architecture style:
+	\begin{enumerate}
+		\item Separation of concern (modularization):
+		\begin{enumerate}
+			\item Re-use of the business logic across the platform.
+			\item Multiple modules can be developed without affecting the other modules.
 		\end{enumerate}
 		
 		\item Developer specialisation and focus:
 		\begin{enumerate}
-			\item The developers of UI can focus exclusively on the UI screens without bogged down with business logic.
-			\item The developer of Model / business can focus exclusively on the business logic implementations, modifications, updations without concerning the look and feel and it has nothing to with business logic.
+			\item A developer can focus exclusively on one part of the business logic while another developer can focus on other business logic.
+			\item A developer that has more experience and better skill levels in a certain module, can give better input.
+			\item If there is a bug in a module, only that module needs attention.
 		\end{enumerate}
 		
 		\item Parallel development by separate teams:
 		\begin{enumerate}
-			\item Business logic developers can build the classes, while the UI developers can involve in designing UI screens simultaneously, resulting the interdependency issues and time conservation.
+			\item Business logic developers can build the classes, while the UI developer(s) can involve in designing UI screens simultaneously.
 			\item UI updations can be made without slowing down the business logic process.
-			\item Business logic rules changes are very less that needs the revision / updations of the UI.
 		\end{enumerate}
 		
 		\item Multiple view support:
@@ -24,8 +44,9 @@ The project implementaton will use MVC (Model View controller) pattern for the p
 			\item Due to the separation of the model from the view, the user interface can display multiple views of the same data at the same time.
 		\end{enumerate}
 		
-		\item Change Accommodation:
+		\item Testing:
 		\begin{enumerate}
-			\item User interfaces tend to change more frequently than business rules. (different colors, fonts, screen layouts, and levels of support for new 									devices such as cell phones or PDAs) Because the model does not depend on the views, adding new types of views to the system generally does not affect the model. As a result, the scope of change is confined to the view.
+			\item Different bussiness logic modules can be tested independantly of other modules by using intergration and unit testing.
+			\item Each module can expect that the other modules have a good level of correctness, thus expecting a pre-defined output.
 		\end{enumerate}
 	\end{enumerate}
