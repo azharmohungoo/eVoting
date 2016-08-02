@@ -1,22 +1,13 @@
 \begin{enumerate}
-		\item\textbf{Convenience}
-		Preprocessing will be used on the client side to speed up system responsiveness and reduce work load on server nodes.
+		\item\textbf{Authentication}\newline
+		All of our web service methods requires that the requesting object contains an ID number and a password. We will be authenticating the user to see if he/she is in fact registered, and if he/she has access to our methods' functionality and will be denied otherwise.
 		
-		\item\textbf{Privacy}
-		It is crucial to our client that no one (not even administrators) should be able to see which user voted for which candidate. Encryption will be used to ensure privacy. By encrypting the from and to address of a vote, anonymity is ensured.
+		\item\textbf{Encryption}\newline
+		To ensure a safe and secure system, we will be encrypting the users' password on the client side before sending it to the server side. We won't be decrypting the password, nor will we know how to decrypt it. The encrypted passwords will directly be stored in our database as a string. As soon as a user is to be authenticated, the ecrypted password strings will be matched to see if the password is the same.\newline Encryption will also be used to encrypt the voting node's address and party node's address. This we will be decrypted on the server side.
 		
-		\item\textbf{Availability}
-		Fault detection, fault prevention and fault recovery will be used to ensure availability. Ping/echo commands will be used between nodes to detect possible node unavailability, active redundancy will be used for fault prevention and  for fault recovery a reset to a valid state will be used.
+		\item\textbf{Database Indexing}\newline
+		All of our database tables will have primary keys, and also foreign keys linking to other tables.
 		
-		\item\textbf{System Accountability}
-		Exception classes will be used to ensure system accountability. As soon as a system error is encountered, an associated exception will be raised to determine the origin and cause of the error. This allows the system to transparently recover from expected and unexpected system errors.
-		
-		\item\textbf{Authentication and Control}
-		Administrator and user authentication will be used to ensure the system isn't tampered with.
-		
-		\item\textbf{Eligibility}
-		Administrators and users will go through an authorization process to ensure they can only do pre-determined alowed operations. For example a user aren't allowed to receive a vote, and a candidate is not allowed to send a vote.
-		
-		\item\textbf{Optimization}
-		Database indexing will be used on the server's database when creating user and candidate accounts.
+		\item\textbf{Database Integrity}\newline
+		To ensure database data fault prevention, each database base will have its respective audit table. Inside each audit table, there will be collumns for: the type of modification (insert/update/delete); a date column when the modification was made; a column specifying who did the modification (Admin, Node1, Node2 etc); and the rest of the columns will all of the original table's columns. Its important to note that no one, not even the Administrator, will be able to delete rows from the audit table.
 \end{enumerate}	
