@@ -10,6 +10,11 @@ angular.module('app.controllers', [])
 
 .controller('voteNationalCtrl', function($scope) {
 
+  $scope.castVote = function() {
+
+    alert("Congratulations. Your vote has been cast. ")
+  }
+
 })
 
 
