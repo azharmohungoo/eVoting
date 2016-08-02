@@ -5,6 +5,16 @@
 \contentsline {subsection}{\numberline {4.1}Web Service}{5}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Blockchain}{6}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Database}{7}{subsection.4.3}
+<<<<<<< HEAD
+\contentsline {subsection}{\numberline {4.4}Security}{11}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Admin}{12}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Voter}{13}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}Activator}{20}{subsection.4.7}
+\contentsline {subsection}{\numberline {4.8}Party}{21}{subsection.4.8}
+\contentsline {subsection}{\numberline {4.9}Domain Model}{22}{subsection.4.9}
+\contentsline {section}{\numberline {5}Open Issues}{23}{section.5}
+\contentsline {subsection}{\numberline {5.1}GitHub Repository}{23}{subsection.5.1}
+=======
 \contentsline {subsection}{\numberline {4.4}Admin}{11}{subsection.4.4}
 \contentsline {subsection}{\numberline {4.5}Voter}{12}{subsection.4.5}
 \contentsline {subsection}{\numberline {4.6}Activator}{13}{subsection.4.6}
@@ -12,3 +22,4 @@
 \contentsline {subsection}{\numberline {4.8}Domain Model}{15}{subsection.4.8}
 \contentsline {section}{\numberline {5}Open Issues}{16}{section.5}
 \contentsline {subsection}{\numberline {5.1}GitHub Repository}{16}{subsection.5.1}
+>>>>>>> d6c3e53a3a9c8bea87e9096cc4bbe3975897b581
