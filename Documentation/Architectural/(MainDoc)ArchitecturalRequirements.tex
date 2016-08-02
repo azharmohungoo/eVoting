@@ -6,6 +6,7 @@
 
 \usepackage[pdftex]{graphicx}
 \usepackage{hyperref}
+\usepackage{float}
 \usepackage{cite}
 \hypersetup{
 	colorlinks=true,
@@ -34,6 +35,13 @@
 	\newpage
 
 	\section{Architectural Requirements}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.75\linewidth]{../Images/System/HighLevel_Overview.jpg}
+		\caption{High Level System Diagram}
+	\end{figure}
+	
+	\newpage
 	
 	\subsection{Architectural Scope}
 		\input{ArchitecturalScope.tex}
@@ -44,14 +52,20 @@
 	\subsection{Integration and Access Channel Requirements}
 		\input{IntegrationAndAccessChannelRequirements.tex}
 	
+	\newpage
+	
 	\subsection{Architectural Constraints}
 		\input{ArchitecturalConstraints.tex}
+	
+	\newpage
 	
 	\subsection{Architectural Patterns and Styles}
 		\input{ArchitecturalPatternsAndStyles.tex}
 	
 	\subsection{Architectural Tactics and Strategies}
 		\input{ArchitecturalTacticsAndStrategies.tex}
+	
+	\newpage
 	
 	\subsection{Reference Architectures and Frameworks}
 		\input{ReferenceArchitecturesAndFrameworks.tex}

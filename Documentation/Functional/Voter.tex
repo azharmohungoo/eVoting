@@ -104,6 +104,8 @@
 				\end{itemize}
 			\end{enumerate}
 			
+			\newpage
+			
 			\item \textbf{Functional Requirements}
 			\begin{figure}[H]
 				\centering
@@ -116,8 +118,6 @@
 				\item A Voter is invalid if their credentials do not checkout. 
 				\item The Voter module's login passes information to the Database modules validateVoter function to check whether the Voter attempting to log in is valid or not.  
 			\end{enumerate}
-			
-		
 			
 			\item \textbf{Process Design}
 			\begin{figure}[H]
@@ -133,11 +133,9 @@
 				\item The UserDoesNotExist exception is thrown if validateUser returns false. 
 			\end{enumerate}			
 		\end{enumerate}
-\end{enumerate}
 
+\newpage
 
-
-\begin{enumerate}
 	\item \textbf{Cast National Vote}
 	
 	Casting a vote requires voter to be logged in.
@@ -169,6 +167,8 @@
 				\item If the Voter has not been activated by an Activator, the VoterNotActivated exception is thrown and they are disallowed from casting a vote. 
 			\end{itemize}
 			
+			\newpage
+			
 			\item Post-conditions
 			\begin{itemize}
 				\item Voter details in the database reflect that they have cast a National Vote. 
@@ -188,9 +188,6 @@
 			\item Once it has all the addresses, it uses the Blockchain's makeTransaction functionality to cast the vote into the Blockchain. (Sending one coin from the Voting Region Node to the coin accepting Party Node of the Voter's choice.) 
 		\end{enumerate}
 		
-		
-		
-		
 		\item \textbf{Process Design}
 		\begin{figure}[H]
 			\centering
@@ -207,9 +204,7 @@
 			
 		\end{enumerate}
 	\end{enumerate}
-	\end{enumerate}
 
-\begin{enumerate}
 	\item \textbf{Cast Provincial Vote}
 	
 	Casting a vote requires voter to be logged in.
@@ -260,8 +255,7 @@
 			\item Once it has all the addresses, it uses the Blockchain's makeTransaction functionality to cast the vote into the Blockchain. (Sending one coin from the Voting Region Node to the coin accepting Party Node of the Voter's choice.) 
 		\end{enumerate}
 		
-		
-		
+		\newpage
 		
 		\item \textbf{Process Design}
 		\begin{figure}[H]
