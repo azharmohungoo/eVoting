@@ -7,8 +7,8 @@
 			\item \textbf{Service Contract}
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.75\linewidth]{../Images/Database/ServiceContracts/ValidateUser_ServiceContract.png}
-					\caption{Validate User Service Contract}
+					\includegraphics[width=0.75\linewidth]{../Images/Voter/ServiceContracts/register_serviceContract.png}
+					\caption{Register Voter Service Contract}
 				\end{figure}
 				
 			Register creates an initial state for a Voter and captures all the provided information in the database. Once information has been added to the database, the user can edit it themselves by accessing their account once they have logged in. Only valid data will be accepted. 
@@ -39,8 +39,8 @@
 			\item \textbf{Functional Requirements}
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.75\linewidth]{../Images/Database/UseCases/ValidateUser_UseCase.png}
-					\caption{Validate User Use Case}
+					\includegraphics[width=0.75\linewidth]{../Images/Voter/UseCases/register_useCase.png}
+					\caption{Register Voter Use-Case}
 				\end{figure}
 				
 				\begin{enumerate}
@@ -54,8 +54,8 @@
 			\item \textbf{Process Design}
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.75\linewidth]{../Images/Database/Activity/ValidateUser_Activity.png}
-					\caption{Validate User Activity}
+					\includegraphics[width=0.75\linewidth]{../Images/Voter/ActivityDiagrams/register_activity.png}
+					\caption{Register Voter Activity}
 				\end{figure}
 				
 				\begin{enumerate}
@@ -78,8 +78,8 @@
 			\item \textbf{Service Contract}
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.75\linewidth]{../Images/Database/ServiceContracts/ActivateVoter_ServiceContract.png}
-				\caption{Activate Voter Service Contract}
+				\includegraphics[width=0.75\linewidth]{../Images/Voter/ServiceContracts/login_serviceContract.png}
+				\caption{Login Service Contract}
 			\end{figure}
 			
 			Login validates a user and gives them rights to interact with the core system. 
@@ -107,8 +107,8 @@
 			\item \textbf{Functional Requirements}
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.75\linewidth]{../Images/Database/UseCases/ActivateVoter_UseCase.png}
-				\caption{Activate Voter Use Case}
+				\includegraphics[width=0.75\linewidth]{../Images/Voter/UseCases/login_useCase.png}
+				\caption{Login Voter Use-Case}
 			\end{figure}
 			
 			\begin{enumerate}
@@ -122,8 +122,8 @@
 			\item \textbf{Process Design}
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.75\linewidth]{../Images/Database/Activity/ActivateVoter_Activity.png}
-				\caption{Activate Voter Activity}
+				\includegraphics[width=0.75\linewidth]{../Images/Voter/ActivityDiagrams/login_activity.png}
+				\caption{Login Voter Activity}
 			\end{figure}
 			
 			
@@ -146,8 +146,8 @@
 		\item \textbf{Service Contract}
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.75\linewidth]{../Images/Database/ServiceContracts/ValidateUser_ServiceContract.png}
-			\caption{Validate User Service Contract}
+			\includegraphics[width=0.75\linewidth]{../Images/Voter/ServiceContracts/castNationalVote_serviceContract.png}
+			\caption{Cast National Vote Service Contract}
 		\end{figure}
 		
 		Once the Voter is logged in we can retrieve their account information to view their location and their current vote balance(calculated by whether they have voted national, provincial or neither). \newline
@@ -179,8 +179,8 @@
 		\item \textbf{Functional Requirements}
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.75\linewidth]{../Images/Database/UseCases/ValidateUser_UseCase.png}
-			\caption{Validate User Use Case}
+			\includegraphics[width=0.75\linewidth]{../Images/Voter/UseCases/castNationalVote_useCase.png}
+			\caption{Cast National Vote Use Case}
 		\end{figure}
 		
 		\begin{enumerate}
@@ -194,8 +194,8 @@
 		\item \textbf{Process Design}
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.75\linewidth]{../Images/Database/Activity/ValidateUser_Activity.png}
-			\caption{Validate User Activity}
+			\includegraphics[width=0.75\linewidth]{../Images/Voter/ActivityDiagrams/castNationalVote_activity.png}
+			\caption{Cast National Vote Activity}
 		\end{figure}
 		
 		\begin{enumerate}
@@ -207,8 +207,83 @@
 			
 		\end{enumerate}
 	\end{enumerate}
-		
 	\end{enumerate}
+
+\begin{enumerate}
+	\item \textbf{Cast Provincial Vote}
+	
+	Casting a vote requires voter to be logged in.
+	
+	\begin{enumerate}
+		\item \textbf{Service Contract}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.75\linewidth]{../Images/Voter/ServiceContracts/castProvincialVote_serviceContract.png}
+			\caption{Cast Provincial Vote Service Contract}
+		\end{figure}
+		
+		Once the Voter is logged in we can retrieve their account information to view their location and their current vote balance(calculated by whether they have voted national, provincial or neither). \newline
+		The voting node’s address for the current voter(based on the user’s location) as well as the party node’s address are retrieved, this information will be sent to the Blockchain Module to concretely cast the voters vote as Blockchain transaction.
+		\newline				
+		
+		\begin{enumerate}
+			\item Pre-conditions
+			\begin{itemize}
+				\item There must be a connection to the database
+				\item The Voter must not have already cast a Provincial vote in the current election. 
+				\item The Voter must have an Activated status.  
+			\end{itemize}
+			
+			\item Exceptions
+			\begin{itemize}
+				\item If there is no connection to the database, the NoDatabaseConnection exception will be thrown.
+				\item If the Voter has already cast a National vote, the AlreadyVotedProvincial exception is thrown and the service is denied.
+				\item If the Voter has not been activated by an Activator, the VoterNotActivated exception is thrown and they are disallowed from casting a vote. 
+			\end{itemize}
+			
+			\item Post-conditions
+			\begin{itemize}
+				\item Voter details in the database reflect that they have cast a Provincial Vote. 
+				\item The Party which the Voter has voted for shows an increment by one in their node balance. 
+			\end{itemize}
+		\end{enumerate}
+		
+		\item \textbf{Functional Requirements}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.75\linewidth]{../Images/Voter/UseCases/castProvincialVote_useCase.png}
+			\caption{Cast Provincial Vote Use Case}
+		\end{figure}
+		
+		\begin{enumerate}
+			\item The Cast Provincial Vote use case starts uses the database to retrieve the addresses of the Party which is being voted for as well as the Voting region node's addresses.   
+			\item Once it has all the addresses, it uses the Blockchain's makeTransaction functionality to cast the vote into the Blockchain. (Sending one coin from the Voting Region Node to the coin accepting Party Node of the Voter's choice.) 
+		\end{enumerate}
+		
+		
+		
+		
+		\item \textbf{Process Design}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.75\linewidth]{../Images/Voter/ActivityDiagrams/castProvincialVote_activity.png}
+			\caption{Cast Provincial Vote Activity}
+		\end{figure}
+		
+		\begin{enumerate}
+			\item The function first checks to see if there is a connection to the database, if there is not or the connection times out, the NoDatabaseConnection exception is thrown. 
+			\item If a connection exists, it proceeds to check whether the Voter has been activated or not. 
+			\item If the Voter has not been activated, the VoterNotActivated exception is thrown. 
+			\item Then the function checks whether the Voter has already cast a Provincial vote. If they have the AlreadyVotedProvincial exception is thrown.
+			\item If none of the exceptions are thrown, the function then queries the database to find all of the necessary addresses then it calls the Blockchain's makeTransaction function to cast the actual vote.  
+			
+		\end{enumerate}
+	\end{enumerate}
+\end{enumerate}
+
+
+
+
 
 
 
