@@ -17,19 +17,11 @@
       <profile default="true" name="Default" enabled="false">
         <processorPath useClasspath="true" />
       </profile>
-<<<<<<< HEAD
       <profile default="false" name="Annotation profile for database" enabled="true">
-=======
-<<<<<<< HEAD
-    </annotationProcessing>
-=======
-      <profile default="false" name="Maven default annotation processors profile" enabled="true">
->>>>>>> 1f0d0cddfdb9f36f8100e5dc456100746d646cb3
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-<<<<<<< HEAD
         <module name="database" />
       </profile>
       <profile default="false" name="Annotation profile for security" enabled="true">
@@ -46,32 +38,43 @@
         <processorPath useClasspath="true" />
         <module name="multichain" />
       </profile>
+      <profile default="false" name="Annotation profile for activator" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="activator" />
+      </profile>
+      <profile default="false" name="Annotation profile for voter" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="voter" />
+      </profile>
       <profile default="false" name="Annotation profile for webservice" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-=======
-        <module name="activator" />
-        <module name="admin" />
-        <module name="database" />
-        <module name="multichain" />
-        <module name="party" />
-        <module name="security" />
-        <module name="voter" />
->>>>>>> 1f0d0cddfdb9f36f8100e5dc456100746d646cb3
         <module name="webservice" />
+      </profile>
+      <profile default="false" name="Annotation profile for party" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="party" />
+      </profile>
+      <profile default="false" name="Annotation profile for admin" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="admin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-<<<<<<< HEAD
-      <module name="database" target="1.5" />
-      <module name="evoting" target="1.5" />
-      <module name="multichain" target="1.5" />
-      <module name="security" target="1.5" />
-      <module name="webservice" target="1.5" />
-    </bytecodeTargetLevel>
-=======
       <module name="activator" target="1.5" />
       <module name="admin" target="1.5" />
       <module name="database" target="1.5" />
@@ -80,10 +83,7 @@
       <module name="party" target="1.5" />
       <module name="security" target="1.5" />
       <module name="voter" target="1.5" />
-      <module name="VoterModule" target="1.5" />
       <module name="webservice" target="1.5" />
     </bytecodeTargetLevel>
->>>>>>> ab2bb0bad3bbede04c50fda59926e3b121ebf0e2
->>>>>>> 1f0d0cddfdb9f36f8100e5dc456100746d646cb3
   </component>
 </project>
