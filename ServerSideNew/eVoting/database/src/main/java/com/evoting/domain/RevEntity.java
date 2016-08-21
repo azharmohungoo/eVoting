@@ -20,7 +20,7 @@ public class RevEntity extends DefaultRevisionEntity {
     public RevEntity() {
     }
 
-    @Column(name = "user_type", nullable = false, length = 25)
+    @Column(name = "user_type", nullable = false)
     public String getUserType() {
         return userType;
     }
@@ -29,12 +29,12 @@ public class RevEntity extends DefaultRevisionEntity {
         this.userType = userType;
     }
 
-    /*@Column(name = "username", nullable = false, length = 25)
+    /*@Column(name = "username", nullable = false)
     public String getUsername() { return username; }
     TODO
     public void setUsername(String username) { this.username = username; }*/
 
-    @Column(name = "action", nullable = false, length = 6)
+    @Column(name = "action", nullable = false)
     public String getAction() {
         return action;
     }

@@ -32,7 +32,7 @@ public class Permission {
         this.id = id;
     }
 
-    @Column(name = "permission", unique = true, nullable = false, length = 25)
+    @Column(name = "permission", unique = true, nullable = false)
     public String getPermission() {
         return permission;
     }
