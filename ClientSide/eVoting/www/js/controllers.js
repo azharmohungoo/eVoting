@@ -18,7 +18,7 @@ angular.module('app.controllers', [])
 })
 
 
-.controller('eVotingLoginCtrl', function($scope, LoginService, $ionicPopup, $state, userService) {
+.controller('eVotingLoginCtrl', function($scope, LoginService, $ionicPopup, $state) {
   $scope.data = {};
 
   $scope.login = function() {
@@ -34,21 +34,53 @@ angular.module('app.controllers', [])
 
     }
 
-  $scope.GetUsers = function(){
-    alert('something');
-    userService.GetUsers().then(function(result){
-      //$scope.users = users;
-      console.log(result);
 
-    });
-  }
 
 })
 
 
 
 
-.controller('registerCtrl', function($scope) {
+.controller('registerCtrl' , function($scope , RegisterService) {
+
+  var vm = this;
+
+  vm.idNum = "931111119293";
+  vm.password = "aPassword";
+  vm.name = "personsName";
+  vm.surname = "personsSurname";
+  vm.locationRegistered = "Pretoria";
+  vm.cellphone = "08112123";
+  vm.email = "gdido@oid.com";
+
+
+  vm.register = register;
+    function  register() {
+
+
+    var registerRequest = {
+      "name" : vm.name,
+      "password" : vm.password ,
+      "idNum" : vm.idNum,
+      "surname" : vm.surname ,
+      "email" : vm.email ,
+      "cellphone" : vm.cellphone ,
+      "locationRegistered" : vm.locationRegistered
+    }
+
+    alert(JSON.stringify(registerRequest));
+
+    RegisterService.register(registerRequest)
+      .then(function (result) {
+        alert(JSON.stringify(result));
+      }).catch(function (exception)
+    {
+      alert("Previous Exception");
+    });
+
+  }
+
+
 
 })
 
@@ -60,7 +92,7 @@ angular.module('app.controllers', [])
 
 })
 
-  .controller('MainCtrl', function($scope, userService) {
+  .controller('MainCtrl', function($scope) {
 
 
 

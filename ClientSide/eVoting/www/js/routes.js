@@ -61,7 +61,8 @@ angular.module('app.routes', [])
   .state('register', {
     url: '/page6',
     templateUrl: 'templates/register.html',
-    controller: 'registerCtrl'
+    controller: 'registerCtrl',
+    controllerAs: "vm"
   })
 
   .state('tabsController.voteProvincial', {

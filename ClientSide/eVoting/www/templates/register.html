@@ -3,28 +3,37 @@
         <form class="list " id="register-form2">
             <ion-list class=" " id="register-list2">
                 <label name="name" id="register-input3" class="item item-input ">
-                    <input placeholder="Enter name" type="text">
+                    <input ng-model="vm.name" placeholder="Enter name"  type="text">
                 </label>
                 <label name="surname" id="register-input4" class="item item-input ">
-                    <input placeholder="Enter Surname" type="text">
+                    <input ng-model="vm.surname" placeholder="Enter Surname"  type="text">
                 </label>
                 <label name="idNumber" id="register-input6" class="item item-input ">
-                    <input placeholder="Enter ID Number" type="text">
+                    <input ng-model="vm.idNum" placeholder="Enter ID Number" type="text">
                 </label>
                 <label name="password" id="register-input5" class="item item-input ">
-                    <input placeholder="Enter Password" type="password">
+                    <input ng-model="vm.vm.password" placeholder="Enter Password" type="password">
                 </label>
+
+              <label name="email" id="register-input8" class="item item-input ">
+                <input ng-model="vm.email" placeholder="Enter Email " type="email">
+              </label>
+
+              <label name="cellphone" id="register-input9" class="item item-input ">
+                <input ng-model="vm.cellphone" placeholder="Enter Cellphone Number " type="text">
+              </label>
+
             </ion-list>
-            <label name="location" id="register-select1" class="item item-select ">
+            <label name="locationRegistered" id="register-select1" class="item item-select ">
                 <span class="input-label">Location</span>
-                <select>
-                    <option>Pretora</option>
+                <select ng-model="vm.locationRegistered">
+                    <option>Pretoria</option>
                     <option>Joburg</option>
                     <option>Durban</option>
                     <option>Cape Town</option>
                 </select>
             </label>
-            <a class=" button button-stable  button-block " id="register-button3" ui-sref="tabsController.electionInformation">Register</a>
+            <a class=" button button-stable  button-block " id="register-button3" ng-click="vm.register()">Register</a>
         </form>
     </ion-content>
 </ion-view>
