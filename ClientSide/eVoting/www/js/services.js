@@ -32,44 +32,10 @@ angular.module('app.services', [])
   }
 })
 
-  .factory("userService", ['$soap', '$http',function($soap, $http){
-    var base_url = "http://127.0.0.1:8080/ws/evoting.wsdl";
-    var sr ="<soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/' xmlns:gs='http://spring.io/guides/gs-producing-web-service'>" +
-      "<soapenv:Header/>" +
-    "<soapenv:Body>" +
-   "<gs:loginRequest>" +
-    "<gs:username>test</gs:username>" +
-    "<gs:password>test</gs:password>" +
-    "</gs:loginRequest>" +
-    "</soapenv:Body>"+
-    "</soapenv:Envelope>";
-    /*var sr =
-      '<?xml version="1.0" encoding="utf-8"?>' +
-      '<soapenv:Envelope ' +
-      '<soapenv:Body>' +
-      '<api:some_api_call soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">' +
-      '<username xsi:type="xsd:string">login_username</username>' +
-      '<password xsi:type="xsd:string">password</password>' +
-      '</api:some_api_call>' +
-      '</soapenv:Body>' +
-      '</soapenv:Envelope>';*/
-    return {
-      GetUsers: function(){
-       // $soap.post(url,action,params);
-        //{ name: “Andrew” }
-        var params = {username: "test", password:"test"};
+  .factory("userService", [function(){
 
-       // return $soap.get(base_url,"login",params);
-        //return $soap.post(base_url,"login",params);
-        return $http({
-          url:base_url,
-          method:"GET",
-          data: sr,
-          type: "text/xml"
-        });
-      }
-    }
   }])
+
 
 
 ;

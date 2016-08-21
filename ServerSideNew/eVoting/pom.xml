@@ -7,6 +7,11 @@
     <modules>
         <module>webservice</module>
         <module>database</module>
+        <module>voter</module>
+        <module>admin</module>
+        <module>party</module>
+        <module>activator</module>
+        <module>blockchain</module>
     </modules>
 
     <parent>
