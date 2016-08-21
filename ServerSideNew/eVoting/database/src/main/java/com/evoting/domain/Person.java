@@ -25,7 +25,7 @@ public class Person {
     private String locationRegistered;
     private String cellphone;
     private String email;
-    private int votes;
+    private int votes = 0;
     private boolean votedNationalElection = false;
     private boolean votedProvincialElection = false;
     private boolean active = false;
@@ -53,6 +53,15 @@ public class Person {
         this.idNum = idNum;
     }
 
+    @Column(name = "password", unique = true, nullable = false)
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "person_permission",
             joinColumns = { @JoinColumn(name = "permissions") },
@@ -75,12 +84,7 @@ public class Person {
         this.userType = userType;
     }
 
-    @Column(name = "password", unique = true, nullable = false, length = 25)
-    public String getPassword() {
-        return password;
-    }
-
-    @Column(name = "name", unique = true, nullable = false, length = 50)
+    @Column(name = "name", unique = true, nullable = false)
     public String getName() {
         return name;
     }
@@ -89,7 +93,7 @@ public class Person {
         this.name = name;
     }
 
-    @Column(name = "surname", unique = true, nullable = false, length = 50)
+    @Column(name = "surname", unique = true, nullable = false)
     public String getSurname() {
         return surname;
     }
@@ -98,12 +102,7 @@ public class Person {
         this.surname = surname;
     }
 
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    @Column(name = "location_registered", unique = true, nullable = false, length = 50)
+    @Column(name = "location_registered", unique = true, nullable = false)
     public String getLocationRegistered() {
         return locationRegistered;
     }
@@ -112,7 +111,7 @@ public class Person {
         this.locationRegistered = locationRegistered;
     }
 
-    @Column(name = "cellphone", unique = true, nullable = false, length = 12)
+    @Column(name = "cellphone", unique = true, nullable = false)
     public String getCellphone() {
         return cellphone;
     }
@@ -121,7 +120,7 @@ public class Person {
         this.cellphone = cellphone;
     }
 
-    @Column(name = "email", unique = true, nullable = true, length = 25)
+    @Column(name = "email", unique = true, nullable = true)
     public String getEmail() {
         return email;
     }
@@ -130,7 +129,7 @@ public class Person {
         this.email = email;
     }
 
-    @Column(name = "votes")
+    @Column(name = "votes", unique = false, nullable = true)
     public int getVotes() {
         return votes;
     }
@@ -139,7 +138,7 @@ public class Person {
         this.votes = votes;
     }
 
-    @Column(name = "voted_national_election")
+    @Column(name = "voted_national_election", unique = false, nullable = false)
     public boolean isVotedNationalElection() {
         return votedNationalElection;
     }
@@ -148,7 +147,7 @@ public class Person {
         this.votedNationalElection = votedNationalElection;
     }
 
-    @Column(name = "voted_provincial_election")
+    @Column(name = "voted_provincial_election", unique = false, nullable = false)
     public boolean isVotedProvincialElection() {
         return votedProvincialElection;
     }
@@ -157,7 +156,7 @@ public class Person {
         this.votedProvincialElection = votedProvincialElection;
     }
 
-    @Column(name = "active")
+    @Column(name = "active", unique = false, nullable = false)
     public boolean isActive() {
         return active;
     }

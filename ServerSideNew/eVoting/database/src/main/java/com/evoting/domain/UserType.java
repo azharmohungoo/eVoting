@@ -32,6 +32,7 @@ public class UserType {
         this.id = id;
     }
 
+    @Column(name = "user_type", unique = false, nullable = false)
     public String getUserType() {
         return userType;
     }

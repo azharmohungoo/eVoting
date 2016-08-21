@@ -15,10 +15,10 @@ import java.util.Set;
 @Table(name="political_party")
 public class PoliticalParty {
     private int id;
-    private String party;
+    private String partyName;
     private Set<Poll> polls = new HashSet<Poll>(0);
-    private int nationalVoteCount;
-    private int provincialVoteCount;
+    private int nationalVoteCount = 0;
+    private int provincialVoteCount = 0;
     private String blockchainNodeAddress;
     private String ipAddress;
 
@@ -36,13 +36,13 @@ public class PoliticalParty {
         this.id = id;
     }
 
-    @Column(name = "party", unique = true, nullable = false, length = 25)
-    public String getParty() {
-        return party;
+    @Column(name = "party_name", unique = true, nullable = false)
+    public String getPartyName() {
+        return partyName;
     }
 
-    public void setParty(String party) {
-        this.party = party;
+    public void setPartyName(String partyName) {
+        this.partyName = partyName;
     }
 
     @ManyToMany(cascade = CascadeType.ALL)
@@ -57,7 +57,7 @@ public class PoliticalParty {
         this.polls = polls;
     }
 
-    @Column(name = "nationalVoteCount")
+    @Column(name = "national_vote_count", unique = false, nullable = false)
     public int getNationalVoteCount() {
         return nationalVoteCount;
     }
@@ -66,7 +66,7 @@ public class PoliticalParty {
         this.nationalVoteCount = nationalVoteCount;
     }
 
-    @Column(name = "provincialVoteCount")
+    @Column(name = "provincial_vote_count", unique = false, nullable = false)
     public int getProvincialVoteCount() {
         return provincialVoteCount;
     }
@@ -75,7 +75,7 @@ public class PoliticalParty {
         this.provincialVoteCount = provincialVoteCount;
     }
 
-    @Column(name = "blockchainNodeAddress", unique = true, nullable = false)
+    @Column(name = "blockchain_node_address", unique = true, nullable = false)
     public String getBlockchainNodeAddress() {
         return blockchainNodeAddress;
     }
@@ -84,7 +84,7 @@ public class PoliticalParty {
         this.blockchainNodeAddress = blockchainNodeAddress;
     }
 
-    @Column(name = "ipAddress", unique = true, nullable = false)
+    @Column(name = "ip_address", unique = true, nullable = false)
     public String getIpAddress() {
         return ipAddress;
     }
