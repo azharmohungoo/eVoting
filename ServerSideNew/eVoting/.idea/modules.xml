@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/activator/activator.iml" filepath="$PROJECT_DIR$/activator/activator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/admin/admin.iml" filepath="$PROJECT_DIR$/admin/admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/blockchain/blockchain.iml" filepath="$PROJECT_DIR$/blockchain/blockchain.iml" />
       <module fileurl="file://$PROJECT_DIR$/database/database.iml" filepath="$PROJECT_DIR$/database/database.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eVoting.iml" filepath="$PROJECT_DIR$/eVoting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/evoting.iml" filepath="$PROJECT_DIR$/evoting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/party/party.iml" filepath="$PROJECT_DIR$/party/party.iml" />
+      <module fileurl="file://$PROJECT_DIR$/voter/voter.iml" filepath="$PROJECT_DIR$/voter/voter.iml" />
       <module fileurl="file://$PROJECT_DIR$/webservice/webservice.iml" filepath="$PROJECT_DIR$/webservice/webservice.iml" />
     </modules>
   </component>
