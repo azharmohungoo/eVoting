@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<testsuite name="com.evoting.WebServiceApplicationTest" time="0.032" tests="1" errors="0" skipped="0" failures="0">
+=======
 <testsuite name="com.evoting.WebServiceApplicationTest" time="0.016" tests="1" errors="0" skipped="0" failures="0">
+>>>>>>> 7eff702f2caddcff5071c33ef2f152d512a3f27e
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib"/>
@@ -62,5 +66,9 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
+<<<<<<< HEAD
+  <testcase name="contextLoads" classname="com.evoting.WebServiceApplicationTest" time="0.032"/>
+=======
   <testcase name="contextLoads" classname="com.evoting.WebServiceApplicationTest" time="0.016"/>
+>>>>>>> 7eff702f2caddcff5071c33ef2f152d512a3f27e
 </testsuite>
