@@ -1,19 +1,26 @@
 package com.evoting.domain;
 
 import org.hibernate.envers.Audited;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
+
+import static org.hibernate.envers.RelationTargetAuditMode.NOT_AUDITED;
 
 /**
  * Created by Azhar on 2016/07/14.
 
  */
 
-@Entity
+
+
 @Audited
+@Entity
+@EnableTransactionManagement
 @Table(name = "person")
+
 public class Person {
     private int id;
     private Set<Permission> permissions = new HashSet<Permission>(0);
@@ -53,7 +60,7 @@ public class Person {
         this.idNum = idNum;
     }
 
-    @Column(name = "password", unique = true, nullable = false)
+    @Column(name = "password", unique = false, nullable = false)
     public String getPassword() {
         return password;
     }
@@ -84,7 +91,7 @@ public class Person {
         this.userType = userType;
     }
 
-    @Column(name = "name", unique = true, nullable = false)
+    @Column(name = "name", unique = false, nullable = false)
     public String getName() {
         return name;
     }
@@ -93,7 +100,7 @@ public class Person {
         this.name = name;
     }
 
-    @Column(name = "surname", unique = true, nullable = false)
+    @Column(name = "surname", unique = false, nullable = false)
     public String getSurname() {
         return surname;
     }
@@ -102,7 +109,7 @@ public class Person {
         this.surname = surname;
     }
 
-    @Column(name = "location_registered", unique = true, nullable = false)
+    @Column(name = "location_registered", unique = false, nullable = false)
     public String getLocationRegistered() {
         return locationRegistered;
     }
@@ -111,7 +118,7 @@ public class Person {
         this.locationRegistered = locationRegistered;
     }
 
-    @Column(name = "cellphone", unique = true, nullable = false)
+    @Column(name = "cellphone", unique = false, nullable = false)
     public String getCellphone() {
         return cellphone;
     }
