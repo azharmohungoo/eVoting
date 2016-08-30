@@ -7,7 +7,7 @@ import com.sun.media.sound.InvalidDataException;
  */
 public class VoterService {
 
-    private String userType = "Voter";
+    private String userType;
     private String idNum;
     private String password;
     private String name;

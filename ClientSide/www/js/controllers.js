@@ -45,13 +45,13 @@ angular.module('app.controllers', [])
 
   var vm = this;
 
-  vm.idNum = "931111119293";
-  vm.password = "aPassword";
-  vm.name = "personsName";
-  vm.surname = "personsSurname";
-  vm.locationRegistered = "Pretoria";
-  vm.cellphone = "08112123";
-  vm.email = "gdido@oid.com";
+  vm.idNum = "893992";
+  vm.password = "anotherPass";
+  vm.name = "jane";
+  vm.surname = "dee";
+  vm.locationRegistered = "Gauteng";
+  vm.cellphone = "09328873";
+  vm.email = "goglo@oid.com";
 
 
   vm.register = register;
