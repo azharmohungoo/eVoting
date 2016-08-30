@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - evotingdb@localhost" uuid="9de24213-4f2d-48fa-8b0a-7c8335c7b4e4">
+      <secret-storage>master_key</secret-storage>
+      <user-name>codex</user-name>
+      <schema-pattern>evotingdb.pg_catalog evotingdb.public</schema-pattern>
+      <default-schemas>evotingdb.public</default-schemas>
+    </data-source>
+  </component>
+</project>
