@@ -1,7 +1,5 @@
 package voter;
 
-import com.sun.media.sound.InvalidDataException;
-
 /**
  * Created by Gift on 21/08/16.
  */
@@ -16,8 +14,7 @@ public class VoterService {
     private String cellphone;
     private String email;
 
-
-  public  VoterService()
+    public  VoterService()
     {
 
     }
@@ -106,28 +103,20 @@ public class VoterService {
        }
 
         return true;
-
    }
     public VoterService login()
    {
-
      return null;
    }
 
 
    Boolean castNationalVote()
    {
-
        return false;
    }
 
     Boolean castProvincialVote()
     {
-
         return false;
     }
-
-
-
-
 }

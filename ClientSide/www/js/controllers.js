@@ -30,16 +30,8 @@ angular.module('app.controllers', [])
         template: 'Please check your credentials!'
       });
     });
-
-
     }
-
-
-
 })
-
-
-
 
 .controller('registerCtrl' , function($scope , RegisterService) {
 

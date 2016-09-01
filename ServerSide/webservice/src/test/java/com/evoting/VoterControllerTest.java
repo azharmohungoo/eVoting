@@ -1,7 +1,6 @@
 package com.evoting;
 
 import com.evoting.domain.Person;
-import com.evoting.domain.UserType;
 import com.evoting.repositories.PersonRepository;
 import org.junit.Assert;
 import org.junit.Test;
@@ -28,10 +27,6 @@ public class VoterControllerTest {
     @Test
     public void registerTest()
     {
-        VoterService newPerson = new VoterService();
-
-
-
          String idNum = "8999388821";
          String password = "password";
          String name = "aName";
@@ -49,12 +44,9 @@ public class VoterControllerTest {
         voter.setName(name);
         voter.setSurname(surname);
 
-
         vc.register(voter);
 
         Person testPerson = pr.findOne(1);
         Assert.assertNotNull(testPerson);
-
     }
-
 }
