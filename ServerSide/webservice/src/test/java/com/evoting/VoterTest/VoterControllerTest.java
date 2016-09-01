@@ -1,5 +1,6 @@
-package com.evoting;
+package com.evoting.VoterTest;
 
+import com.evoting.VoterController;
 import com.evoting.domain.Person;
 import com.evoting.repositories.PersonRepository;
 import org.junit.Assert;
