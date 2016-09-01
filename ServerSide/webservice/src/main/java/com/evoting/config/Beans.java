@@ -15,7 +15,5 @@ public class Beans {
     public VoterService getVoterService()
     {
         return new VoterService();
-
     }
-
 }

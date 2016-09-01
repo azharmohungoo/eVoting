@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD:ServerSide/webservice/target/surefire-reports/TEST-com.evoting.VoterControllerTest.xml
 <testsuite name="com.evoting.VoterControllerTest" time="0.527" tests="1" errors="0" skipped="0" failures="0">
+=======
+<testsuite name="com.evoting.VoterTest.VoterControllerTest" time="0.07" tests="1" errors="0" skipped="0" failures="0">
+>>>>>>> 01de0846c867df934dc7217757f7e742b7350dfc:ServerSide/webservice/target/surefire-reports/TEST-com.evoting.VoterTest.VoterControllerTest.xml
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.8.0_73\jre\bin"/>
@@ -62,5 +66,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
+<<<<<<< HEAD:ServerSide/webservice/target/surefire-reports/TEST-com.evoting.VoterControllerTest.xml
   <testcase name="registerTest" classname="com.evoting.VoterControllerTest" time="0.527"/>
+=======
+  <testcase name="registerTest" classname="com.evoting.VoterTest.VoterControllerTest" time="0.07"/>
+>>>>>>> 01de0846c867df934dc7217757f7e742b7350dfc:ServerSide/webservice/target/surefire-reports/TEST-com.evoting.VoterTest.VoterControllerTest.xml
 </testsuite>

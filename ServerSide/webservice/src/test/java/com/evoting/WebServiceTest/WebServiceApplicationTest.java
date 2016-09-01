@@ -1,4 +1,4 @@
-package com.evoting;
+package com.evoting.WebServiceTest;
 
 /**
  * Created by Gift on 10/08/16.

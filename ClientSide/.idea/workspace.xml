@@ -119,9 +119,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="Scope" />
       <pane id="Scratches" />
+=======
+>>>>>>> 01de0846c867df934dc7217757f7e742b7350dfc
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -174,6 +178,10 @@
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> 01de0846c867df934dc7217757f7e742b7350dfc
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -611,16 +619,28 @@
       <workItem from="1472552068473" duration="51000" />
       <workItem from="1472565111660" duration="1167000" />
       <workItem from="1472569568533" duration="34000" />
+<<<<<<< HEAD
       <workItem from="1472741888137" duration="631000" />
       <workItem from="1472743792451" duration="2265000" />
+=======
+      <workItem from="1472741888137" duration="824000" />
+      <workItem from="1472744949042" duration="606000" />
+>>>>>>> 01de0846c867df934dc7217757f7e742b7350dfc
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="4148000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+=======
+    <option name="totallyTimeSpent" value="2682000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1436" height="877" extended-state="6" />
+>>>>>>> 01de0846c867df934dc7217757f7e742b7350dfc
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -667,7 +687,11 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="527">
+=======
+        <state vertical-scroll-proportion="0.0">
+>>>>>>> 01de0846c867df934dc7217757f7e742b7350dfc
           <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
           <folding />
         </state>
@@ -675,7 +699,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/services.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="0">
+=======
+        <state vertical-scroll-proportion="0.0">
+>>>>>>> 01de0846c867df934dc7217757f7e742b7350dfc
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -683,7 +711,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="0">
+=======
+        <state vertical-scroll-proportion="0.0">
+>>>>>>> 01de0846c867df934dc7217757f7e742b7350dfc
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -691,7 +723,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="0">
+=======
+        <state vertical-scroll-proportion="0.0">
+>>>>>>> 01de0846c867df934dc7217757f7e742b7350dfc
           <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
           <folding />
         </state>

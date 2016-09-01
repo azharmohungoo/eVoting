@@ -68,8 +68,5 @@
             <artifactId>spring-data-envers</artifactId>
             <version>0.2.0.RELEASE</version>
         </dependency>
-
-
-
     </dependencies>
 </project>

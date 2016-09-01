@@ -7,8 +7,6 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.hibernate.envers.RelationTargetAuditMode.NOT_AUDITED;
-
 /**
  * Created by Azhar on 2016/07/14.
 
@@ -170,5 +168,25 @@ public class Person {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", permissions=" + permissions +
+                ", userType=" + userType +
+                ", idNum='" + idNum + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", locationRegistered='" + locationRegistered + '\'' +
+                ", cellphone='" + cellphone + '\'' +
+                ", email='" + email + '\'' +
+                ", votes=" + votes +
+                ", votedNationalElection=" + votedNationalElection +
+                ", votedProvincialElection=" + votedProvincialElection +
+                ", active=" + active +
+                '}';
     }
 }
