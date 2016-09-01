@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: com.evoting.DatabaseTest.DatabaseServiceTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.575 sec - in com.evoting.DatabaseTest.DatabaseServiceTest
+=======
+<<<<<<< HEAD:ServerSide/webservice/target/surefire-reports/com.evoting.WebServiceApplicationTest.txt
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in com.evoting.WebServiceApplicationTest
+=======
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.887 sec - in com.evoting.DatabaseTest.DatabaseServiceTest
+>>>>>>> 01de0846c867df934dc7217757f7e742b7350dfc:ServerSide/webservice/target/surefire-reports/com.evoting.DatabaseTest.DatabaseServiceTest.txt
+>>>>>>> 4c6ed5da2b2eb5f0cf789e81364000838f5d444b

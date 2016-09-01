@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+com\evoting\repositories\PollRepository.class
+com\evoting\domain\RevEntity.class
+com\evoting\repositories\PoliticalPartyRepository.class
+com\evoting\domain\Person.class
+com\evoting\domain\Poll.class
+com\evoting\domain\UserType.class
+com\evoting\domain\PoliticalParty.class
+com\evoting\domain\RevListener.class
+com\evoting\domain\Permission.class
+com\evoting\repositories\PermissionRepository.class
+com\evoting\repositories\PersonRepository.class
+com\evoting\domain\Address.class
+com\evoting\repositories\UserTypeRepository.class
+=======
 com/evoting/repositories/PermissionRepository.class
 com/evoting/domain/Permission.class
 com/evoting/DatabaseService.class
@@ -12,3 +27,4 @@ com/evoting/domain/PoliticalParty.class
 com/evoting/repositories/PersonRepository.class
 com/evoting/repositories/UserTypeRepository.class
 com/evoting/domain/RevListener.class
+>>>>>>> 01de0846c867df934dc7217757f7e742b7350dfc
