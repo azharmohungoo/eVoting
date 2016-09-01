@@ -24,9 +24,12 @@ public class DatabaseService
             return false;
         }
 
-        
+        if (p.getIdNum().equals(_p.getIdNum()) && p.getPassword().equals(_p.getPassword()))
+        {
+            return true;
+        }
 
-        return true;
+        return false;
     }
 
     public boolean activateUser()
