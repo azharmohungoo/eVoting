@@ -2,7 +2,23 @@ angular.module('app.services', [])
 
 .service('LoginService', function($q) {
   return {
-    loginUser: function(name, pw) {
+    loginUser: function(loginRequest) {
+
+
+      alert("logging in");
+      return $http({url : "http://127.0.0.1:8080/login" , data : loginRequest , method : "POST"})
+        .then(function (result) {
+          alert(JSON.stringify(result))
+          return result;
+        }).catch(function (exception)
+        {
+          return exception;
+        });
+      ;
+
+
+
+      /*
       var deferred = $q.defer();
       var promise = deferred.promise;
 
@@ -20,7 +36,9 @@ angular.module('app.services', [])
         return promise;
       }
       return promise;
+      */
     }
+
   }
 })
 

@@ -19,10 +19,23 @@ angular.module('app.controllers', [])
 
 
 .controller('eVotingLoginCtrl', function($scope, LoginService, $ionicPopup, $state) {
+ 
+  var vm = this;
+  
+  var loginRequest = {"idNum" : vm.idNum , "password" : vm.password}
+  
+  vm.login = login;
+  function login()
+  {
+    LoginService.loginUser(loginRequest)
+  }
+  
+  
+ /*
   $scope.data = {};
 
   $scope.login = function() {
-    LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
+    LoginService.loginUser($scope.data.id, $scope.data.password).success(function(data) {
       $state.go('tabsController.electionInformation');
     }).error(function(data) {
       var alertPopup = $ionicPopup.alert({
@@ -31,6 +44,7 @@ angular.module('app.controllers', [])
       });
     });
     }
+    */
 })
 
 .controller('registerCtrl' , function($scope , RegisterService) {

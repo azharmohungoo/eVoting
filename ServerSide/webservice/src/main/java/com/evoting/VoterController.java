@@ -36,7 +36,6 @@ public class VoterController {
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public Boolean register(@RequestBody VoterService newVoter){
 
-
         Person newPerson = new Person();
         newPerson.setName(newVoter.getName());
         newPerson.setSurname(newVoter.getSurname());
@@ -54,6 +53,23 @@ public class VoterController {
         pr.saveAndFlush(newPerson);
        // pr.save(newPerson);
         System.out.println("Successful save");
+
+        return false;
+    }
+
+    @CrossOrigin
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public Boolean login(@RequestBody VoterService voterLogin){
+
+
+        
+
+        System.out.println("we are loggin in");
+
+        Person aPerson = new Person();
+        aPerson.setIdNum(voterLogin.getIdNum());
+        aPerson.setPassword(voterLogin.getPassword());
+
 
         return false;
     }
