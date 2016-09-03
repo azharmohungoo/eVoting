@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.718" tests="1" errors="0" skipped="0" failures="0">
+=======
+<testsuite name="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.29" tests="1" errors="0" skipped="0" failures="0">
+>>>>>>> e5d79075944d184b4ca2a67842142c0cfa2d0fe3
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.8.0_73\jre\bin"/>
@@ -62,5 +66,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
+<<<<<<< HEAD
   <testcase name="validateUserTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.718"/>
+=======
+  <testcase name="validateUserTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.29"/>
+>>>>>>> e5d79075944d184b4ca2a67842142c0cfa2d0fe3
 </testsuite>
