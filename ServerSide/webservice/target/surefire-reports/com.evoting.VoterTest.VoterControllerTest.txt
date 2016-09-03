@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.evoting.VoterTest.VoterControllerTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD:ServerSide/webservice/target/surefire-reports/com.evoting.VoterControllerTest.txt
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 21.884 sec - in com.evoting.VoterControllerTest
-=======
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 sec - in com.evoting.VoterTest.VoterControllerTest
->>>>>>> 01de0846c867df934dc7217757f7e742b7350dfc:ServerSide/webservice/target/surefire-reports/com.evoting.VoterTest.VoterControllerTest.txt
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.354 sec - in com.evoting.VoterTest.VoterControllerTest

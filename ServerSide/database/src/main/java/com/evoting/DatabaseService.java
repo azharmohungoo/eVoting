@@ -17,14 +17,13 @@ public class DatabaseService
 
     public boolean validateUser(Person _p)
     {
-        Person p  = pr.getPersonByIdNumAndPassword(_p.getIdNum(), _p.getPassword());
+        Person p =  pr.getPersonByIdNumAndPassword(_p.getIdNum(), _p.getPassword());
 
         if (p == null)
         {
             return false;
         }
 
-        
 
         return true;
     }

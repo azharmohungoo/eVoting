@@ -55,7 +55,8 @@ angular.module('app.routes', [])
   .state('eVotingLogin', {
     url: '/page5',
     templateUrl: 'templates/eVotingLogin.html',
-    controller: 'eVotingLoginCtrl'
+    controller: 'eVotingLoginCtrl',
+    controllerAs: "vm"
   })
 
   .state('register', {
