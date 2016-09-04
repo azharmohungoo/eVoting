@@ -4,17 +4,17 @@ package com.evoting;
 public enum BlockchainErrorMessages {
     InvalidIP {
         public String toString() {
-            return "The specified IP address is invalid.";
+            return "Unable to connect to Blockchain: The specified IP address is invalid.";
         }
     },
     InvalidPort {
         public String toString() {
-            return "The specified port is invalid.";
+            return "Unable to connect to Blockchain: The specified port is invalid.";
         }
     },
     InvalidRPCCredentials {
         public String toString() {
-            return "The specified RPC credentials is invalid.";
+            return "Unable to connect to Blockchain: The specified RPC credentials is invalid.";
         }
     },
     InvalidVotesLeft {
