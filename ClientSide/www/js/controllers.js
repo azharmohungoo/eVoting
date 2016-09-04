@@ -17,47 +17,46 @@ angular.module('app.controllers', [])
 
 })
 
+  .controller('eVotingLoginCtrl', function($scope, LoginService) {
 
-.controller('eVotingLoginCtrl', function($scope, LoginService, $ionicPopup, $state) {
- 
-  var vm = this;
-  
-  var loginRequest = {"idNum" : vm.idNum , "password" : vm.password}
-  
-  vm.login = login;
-  function login()
-  {
-    LoginService.loginUser(loginRequest)
-  }
-  
-  
- /*
-  $scope.data = {};
+    var vm = this;
 
-  $scope.login = function() {
-    LoginService.loginUser($scope.data.id, $scope.data.password).success(function(data) {
-      $state.go('tabsController.electionInformation');
-    }).error(function(data) {
-      var alertPopup = $ionicPopup.alert({
-        title: 'Login failed!',
-        template: 'Please check your credentials!'
+    vm.idNum;
+    vm.password;
+
+    vm.login = login;
+    function  login()
+    {
+        var loginRequest = {
+          "password" : vm.password ,
+          "idNum" : vm.idNum
+        }
+
+      alert(JSON.stringify(loginRequest));
+      LoginService.login(loginRequest)
+        .then(function (result)
+        {
+          alert(JSON.stringify(result));
+        }).catch(function (exception)
+      {
+        alert("Previous Exception");
       });
-    });
+
     }
-    */
-})
+  })
+
 
 .controller('registerCtrl' , function($scope , RegisterService) {
 
   var vm = this;
 
-  vm.idNum = "893992";
-  vm.password = "anotherPass";
-  vm.name = "jane";
-  vm.surname = "dee";
-  vm.locationRegistered = "Gauteng";
-  vm.cellphone = "09328873";
-  vm.email = "goglo@oid.com";
+  vm.idNum;
+  vm.password;
+  vm.name;
+  vm.surname;
+  vm.locationRegistered;
+  vm.cellphone;
+  vm.email;
 
 
   vm.register = register;
@@ -85,9 +84,6 @@ angular.module('app.controllers', [])
     });
 
   }
-
-
-
 })
 
 .controller('voteProvincialCtrl', function($scope) {

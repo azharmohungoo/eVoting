@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 /Users/Azhar/eVoting/ServerSide/webservice/src/test/java/com/evoting/WebServiceTest/WebServiceApplicationTest.java
 /Users/Azhar/eVoting/ServerSide/webservice/src/test/java/com/evoting/DatabaseTest/DatabaseServiceTest.java
 /Users/Azhar/eVoting/ServerSide/webservice/src/test/java/com/evoting/VoterTest/VoterControllerTest.java
+=======
+C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\webservice\src\test\java\com\evoting\WebServiceTest\WebServiceApplicationTest.java
+C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\webservice\src\test\java\com\evoting\DatabaseTest\DatabaseServiceTest.java
+C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\webservice\src\test\java\com\evoting\VoterTest\VoterControllerTest.java
+>>>>>>> 01ba23b25d268e36dd5097b4f7b5bb188d6c2058

@@ -61,8 +61,9 @@ public class VoterController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Boolean login(@RequestBody VoterService voterLogin){
 
+        System.out.println(voterLogin.getIdNum());
+        System.out.println(voterLogin.getPassword());
 
-        
 
         System.out.println("we are loggin in");
 
@@ -70,8 +71,11 @@ public class VoterController {
         aPerson.setIdNum(voterLogin.getIdNum());
         aPerson.setPassword(voterLogin.getPassword());
 
+        DatabaseService dbService = new DatabaseService();
 
-        return false;
+
+        return dbService.validateUser(aPerson);
+
     }
 
 

@@ -1,8 +1,13 @@
 angular.module('app.services', [])
 
-.service('LoginService', function($q) {
+
+
+
+
+
+.service('LoginService',  function($http) {
   return {
-    loginUser: function(loginRequest) {
+    login: function(loginRequest) {
 
 
       alert("logging in");
@@ -14,35 +19,13 @@ angular.module('app.services', [])
         {
           return exception;
         });
-      ;
-
-
-
-      /*
-      var deferred = $q.defer();
-      var promise = deferred.promise;
-
-      if (name == 'codeX' && pw == 'password') {
-        deferred.resolve('Welcome ' + name + '!');
-      } else {
-        deferred.reject('Wrong credentials.');
-      }
-      promise.success = function(fn) {
-        promise.then(fn);
-        return promise;
-      }
-      promise.error = function(fn) {
-        promise.then(null, fn);
-        return promise;
-      }
-      return promise;
-      */
     }
 
   }
 })
 
-.factory('RegisterService', RegisterService);
+
+  .factory( 'RegisterService', RegisterService);
 
 RegisterService.$inject = ['$http'];
 function  RegisterService($http) {
@@ -55,12 +38,12 @@ function  RegisterService($http) {
       return $http({url : "http://127.0.0.1:8080/register" , data : registerRequest , method : "POST"})
         .then(function (result) {
           alert(JSON.stringify(result))
-        return result;
-      }).catch(function (exception)
-      {
-        return exception;
-      });
+          return result;
+        }).catch(function (exception)
+        {
+          return exception;
+        });
       ;
     }
   }
-};
+}

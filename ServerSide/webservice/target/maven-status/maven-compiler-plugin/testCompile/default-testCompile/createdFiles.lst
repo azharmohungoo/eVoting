@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 com/evoting/VoterTest/VoterControllerTest.class
 com/evoting/DatabaseTest/DatabaseServiceTest.class
 com/evoting/WebServiceTest/WebServiceApplicationTest.class
+=======
+com\evoting\DatabaseTest\DatabaseServiceTest.class
+com\evoting\WebServiceTest\WebServiceApplicationTest.class
+com\evoting\VoterTest\VoterControllerTest.class
+>>>>>>> 01ba23b25d268e36dd5097b4f7b5bb188d6c2058

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="495922716">
-    <data-source source="LOCAL" name="PostgreSQL - evotingdb@localhost" uuid="9de24213-4f2d-48fa-8b0a-7c8335c7b4e4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1748592974">
+    <data-source source="LOCAL" name="PostgreSQL - evotingdb@localhost" uuid="0cd8b275-979b-476a-9c7b-51d9d4731924">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
