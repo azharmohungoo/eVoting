@@ -23,7 +23,7 @@ import org.apache.log4j.Logger;
 /**
  * Created by Andreas on 2016/08/20.
  */
-public class Blockchain {
+public class Blockchain implements BlockchainInterface {
 
     private String NodeIP;
     private String NodePort;
@@ -88,8 +88,21 @@ public class Blockchain {
                 JSONObject returnedFromNode = getNodeResponse(body);
                 //example return object: {"result":{"protocolversion":10005,"relayfee":0,"timeoffset":0,"blocks":110,"description":"MultiChain blockchain10","burnaddress":"1XXXXXXXJ4XXXXXXrfXXXXXXKfXXXXXXZvV7w9","version":"1.0 alpha 21","keypoolsize":2,"paytxfee":0,"chainname":"blockchain15","difficulty":1.526E-5,"proxy":"","protocol":"multichain","incomingpaused":false,"walletversion":60000,"nodeaddress":"blockchain15@192.168.8.178:6287","balance":1,"keypoololdest":1472842598,"port":6287,"testnet":false,"miningpaused":false,"connections":0,"errors":"","setupblocks":60},"id":null,"error":null}{"result":{"protocolversion":10005,"relayfee":0,"timeoffset":0,"blocks":110,"description":"MultiChain blockchain10","burnaddress":"1XXXXXXXJ4XXXXXXrfXXXXXXKfXXXXXXZvV7w9","version":"1.0 alpha 21","keypoolsize":2,"paytxfee":0,"chainname":"blockchain15","difficulty":1.526E-5,"proxy":"","protocol":"multichain","incomingpaused":false,"walletversion":60000,"nodeaddress":"blockchain15@192.168.8.178:6287","balance":1,"keypoololdest":1472842598,"port":6287,"testnet":false,"miningpaused":false,"connections":0,"errors":"","setupblocks":60},"id":null,"error":null}
 
-                result.put("success","true");
-                result.put("response",returnedFromNode.getJSONObject("result").get("balance").toString());
+                if (returnedFromNode.get("result").toString() == "null") {
+
+                    result.put("success","false");
+
+                    switch (returnedFromNode.getJSONObject("error").get("message").toString())
+                    {
+                        default:
+                            result.put("response", returnedFromNode.getJSONObject("error").get("message").toString());
+                            break;
+                    }
+                }
+                else {
+                    result.put("success", "true");
+                    result.put("response", Double.valueOf(returnedFromNode.getJSONObject("result").get("balance").toString()).longValue());
+                }
             }
             else {
                 result.put("success","false");
@@ -127,6 +140,8 @@ public class Blockchain {
                 JSONObject returnedFromNode = getNodeResponse(body);
                 //example error: Invalid address: "{"result":null,"error":{"code":-5,"message":"Invalid address"},"id":null}[\n]"
                 //example error: Insufficient funds: "{"result":null,"error":{"code":-6,"message":"Insufficient funds"},"id":null}[\n]"
+                //example success: {"result":"46069f50da316908b535afc308f9d65dd01ba00e6bc25bed41cba132dfa41aa7","id":null,"error":null}
+
 
                 if (returnedFromNode.get("result").toString() == "null") {
 
@@ -143,15 +158,13 @@ public class Blockchain {
                             break;
 
                         default:
-                            result.put("response", BlockchainErrorMessages.Unknown.toString());
+                            result.put("response", returnedFromNode.getJSONObject("error").get("message").toString());
                             break;
                     }
-
-
                 }
-                else {
+                else if (returnedFromNode.get("error").toString() == "null") {
                     result.put("success", "true");
-                    result.put("response", returnedFromNode.getJSONObject("result").get("balance").toString());
+                    result.put("response", returnedFromNode.get("result").toString());
                 }
             }
             else {
@@ -165,7 +178,6 @@ public class Blockchain {
         }
         return result;
     }
-
 
     private JSONObject getNodeResponse(JSONObject body){
         JSONObject result = new JSONObject();
@@ -221,9 +233,8 @@ public class Blockchain {
         }
     }
 
-
     //This function is to test if the specified IP Address responds to requests.
-    public boolean pingNode(){
+    private boolean pingNode(){
 
         try {
             InetAddress byName = InetAddress.getByName(NodeIP);
@@ -238,7 +249,7 @@ public class Blockchain {
     }
 
     //This function is to test if the specified IP Address and port responds to requests.
-    public boolean pingNodeWithPort(){
+    private boolean pingNodeWithPort(){
             try (Socket socket = new Socket()) {
                 socket.connect(new InetSocketAddress(NodeIP, Integer.parseInt(NodePort)), 3000);
                 return true;
