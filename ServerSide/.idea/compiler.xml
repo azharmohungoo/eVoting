@@ -34,7 +34,7 @@
     <bytecodeTargetLevel>
       <module name="activator" target="1.6" />
       <module name="admin" target="1.6" />
-      <module name="blockchain" target="1.6" />
+      <module name="blockchain" target="1.8" />
       <module name="database" target="1.6" />
       <module name="evoting" target="1.6" />
       <module name="party" target="1.6" />
