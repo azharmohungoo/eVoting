@@ -38,6 +38,35 @@ public class Person {
     public Person() {
     }
 
+    public Person(int id, String idNum, String password, String name, String surname, String locationRegistered, String cellphone, String email, int votes, boolean votedNationalElection, boolean votedProvincialElection, boolean active) {
+        this.id = id;
+        this.idNum = idNum;
+        this.password = password;
+        this.name = name;
+        this.surname = surname;
+        this.locationRegistered = locationRegistered;
+        this.cellphone = cellphone;
+        this.email = email;
+        this.votes = votes;
+        this.votedNationalElection = votedNationalElection;
+        this.votedProvincialElection = votedProvincialElection;
+        this.active = active;
+    }
+
+    public Person(String idNum, String password, String name, String surname, String locationRegistered, String cellphone, String email, int votes, boolean votedNationalElection, boolean votedProvincialElection, boolean active) {
+        this.idNum = idNum;
+        this.password = password;
+        this.name = name;
+        this.surname = surname;
+        this.locationRegistered = locationRegistered;
+        this.cellphone = cellphone;
+        this.email = email;
+        this.votes = votes;
+        this.votedNationalElection = votedNationalElection;
+        this.votedProvincialElection = votedProvincialElection;
+        this.active = active;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", unique = true, nullable = false)

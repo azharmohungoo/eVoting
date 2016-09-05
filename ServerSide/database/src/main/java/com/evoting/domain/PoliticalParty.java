@@ -25,6 +25,23 @@ public class PoliticalParty {
     public PoliticalParty() {
     }
 
+    public PoliticalParty(int id, String partyName, int nationalVoteCount, int provincialVoteCount, String blockchainNodeAddress, String ipAddress) {
+        this.id = id;
+        this.partyName = partyName;
+        this.nationalVoteCount = nationalVoteCount;
+        this.provincialVoteCount = provincialVoteCount;
+        this.blockchainNodeAddress = blockchainNodeAddress;
+        this.ipAddress = ipAddress;
+    }
+
+    public PoliticalParty(String partyName, int nationalVoteCount, int provincialVoteCount, String blockchainNodeAddress, String ipAddress) {
+        this.partyName = partyName;
+        this.nationalVoteCount = nationalVoteCount;
+        this.provincialVoteCount = provincialVoteCount;
+        this.blockchainNodeAddress = blockchainNodeAddress;
+        this.ipAddress = ipAddress;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", unique = true, nullable = false)

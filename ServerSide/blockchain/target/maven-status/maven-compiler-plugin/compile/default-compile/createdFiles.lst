@@ -8,5 +8,7 @@ com/evoting/BlockchainErrorMessages$1.class
 com/evoting/BlockchainTestMain.class
 com/evoting/BlockchainErrorMessages$4.class
 com/evoting/BlockchainErrorMessages$9.class
+com/evoting/BlockchainInterface.class
 com/evoting/BlockchainErrorMessages$8.class
 com/evoting/BlockchainErrorMessages$3.class
+com/evoting/BlockchainMock.class

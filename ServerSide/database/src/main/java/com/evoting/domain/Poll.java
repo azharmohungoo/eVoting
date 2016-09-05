@@ -21,6 +21,15 @@ public class Poll {
     public Poll() {
     }
 
+    public Poll(int id, String poll) {
+        this.id = id;
+        this.poll = poll;
+    }
+
+    public Poll(String poll) {
+        this.poll = poll;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", unique = true, nullable = false)

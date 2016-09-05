@@ -21,6 +21,15 @@ public class UserType {
     public UserType() {
     }
 
+    public UserType(int id, String userType) {
+        this.id = id;
+        this.userType = userType;
+    }
+
+    public UserType(String userType) {
+        this.userType = userType;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", unique = true, nullable = false)

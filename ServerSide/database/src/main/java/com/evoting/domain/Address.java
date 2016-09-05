@@ -20,6 +20,28 @@ public class Address {
     private String rpcPassword;
     private String blockchainAddress;
 
+    public Address() {
+    }
+
+    public Address(int id, String nodeName, String ipAddress, String port, String rpcUsername, String rpcPassword, String blockchainAddress) {
+        this.id = id;
+        this.nodeName = nodeName;
+        this.ipAddress = ipAddress;
+        this.port = port;
+        this.rpcUsername = rpcUsername;
+        this.rpcPassword = rpcPassword;
+        this.blockchainAddress = blockchainAddress;
+    }
+
+    public Address(String nodeName, String ipAddress, String port, String rpcUsername, String rpcPassword, String blockchainAddress) {
+        this.nodeName = nodeName;
+        this.ipAddress = ipAddress;
+        this.port = port;
+        this.rpcUsername = rpcUsername;
+        this.rpcPassword = rpcPassword;
+        this.blockchainAddress = blockchainAddress;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)

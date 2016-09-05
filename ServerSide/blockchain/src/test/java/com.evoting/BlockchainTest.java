@@ -9,9 +9,6 @@ import org.json.JSONObject;
 import org.junit.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
 
-import static org.junit.Assert.assertEquals;
-
-
 public class BlockchainTest extends TestCase {
 
     @Test

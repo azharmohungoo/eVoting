@@ -1,5 +1,6 @@
 com/evoting/repositories/PermissionRepository.class
 com/evoting/domain/Permission.class
+com/evoting/repositories/AddressRepository.class
 com/evoting/DatabaseService.class
 com/evoting/domain/Address.class
 com/evoting/repositories/PoliticalPartyRepository.class

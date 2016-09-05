@@ -6,6 +6,7 @@
 /Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/domain/Address.java
 /Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/domain/Permission.java
 /Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/repositories/PoliticalPartyRepository.java
+/Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/repositories/AddressRepository.java
 /Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/repositories/UserTypeRepository.java
 /Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/repositories/PersonRepository.java
 /Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/domain/RevEntity.java

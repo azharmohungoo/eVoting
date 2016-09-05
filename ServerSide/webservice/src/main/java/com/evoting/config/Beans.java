@@ -9,8 +9,8 @@ import voter.VoterService;
  */
 
 @Component
-public class Beans {
-
+public class Beans
+{
     @Bean
     public VoterService getVoterService()
     {
