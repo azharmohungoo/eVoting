@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by Azhar on 2016/09/02.
  */
@@ -75,11 +78,35 @@ public class DatabaseServiceTest
     @Test
     public void insertPerson()
     {
-        personRepository.saveAndFlush(new Person("0987654321098", "pass1", "name1", "surname1", "Pretoria", "0987654321", "email1@gmail.com", 2, false, false, false));
-        personRepository.saveAndFlush(new Person("0987654321765", "pass2", "name2", "surname2", "Joburg", "9876543210", "email2@gmail.com", 2, false, false, false));
-        personRepository.saveAndFlush(new Person("0987654321432", "pass3", "name3", "surname3", "Cape Town", "8765432109", "email3@gmail.com", 2, false, false, false));
-        personRepository.saveAndFlush(new Person("0987654321123", "pass4", "name4", "surname4", "Durban", "7654321098", "email4@gmail.com", 2, false, false, false));
-        personRepository.saveAndFlush(new Person("0987654321456", "pass5", "name5", "surname5", "Centurion", "6543210987", "email5@gmail.com", 2, false, false, false));
+        Set<Permission> setP = new HashSet<Permission>(0);
+        setP.add(new Permission("Insert"));
+        setP.add(new Permission("Update"));
+        setP.add(new Permission("Delete"));
+
+        Person p = new Person("0987654321098", "pass1", "name1", "surname1", "Pretoria", "0987654321", "email1@gmail.com", 2, false, false, false);
+        p.setPermissions(setP);
+        p.setUserType(new UserType("Admin"));
+        personRepository.saveAndFlush(p);
+
+        p = new Person("0987654321765", "pass2", "name2", "surname2", "Joburg", "9876543210", "email2@gmail.com", 2, false, false, false);
+        p.setUserType(new UserType("Voter"));
+        personRepository.saveAndFlush(p);
+
+        p = new Person("0987654321432", "pass3", "name3", "surname3", "Cape Town", "8765432109", "email3@gmail.com", 2, false, false, false);
+        p.setUserType(new UserType("Voter"));
+        personRepository.saveAndFlush(p);
+
+        setP = new HashSet<Permission>(0);
+        setP.add(new Permission("Update"));
+
+        p = new Person("0987654321123", "pass4", "name4", "surname4", "Durban", "7654321098", "email4@gmail.com", 2, false, false, false);
+        p.setPermissions(setP);
+        p.setUserType(new UserType("Activator"));
+        personRepository.saveAndFlush(p);
+
+        p = new Person("0987654321456", "pass5", "name5", "surname5", "Centurion", "6543210987", "email5@gmail.com", 2, false, false, false);
+        p.setUserType(new UserType("Party"));
+        personRepository.saveAndFlush(p);
 
         Assert.assertTrue(true);
     }
@@ -96,11 +123,38 @@ public class DatabaseServiceTest
     @Test
     public void insertPoliticalParty()
     {
-        politicalPartyRepository.saveAndFlush(new PoliticalParty("Party1", 0, 0, "ju765redcvbnjiu765rdfghjki", "0.0.0.1"));
-        politicalPartyRepository.saveAndFlush(new PoliticalParty("Party2", 0, 0, "nbgfr567ujbvfrtyuirtyhgfer", "0.0.0.3"));
-        politicalPartyRepository.saveAndFlush(new PoliticalParty("Party3", 0, 0, "7tfyhbef3ufy3ivr3v3iiwhbci", "0.0.0.5"));
-        politicalPartyRepository.saveAndFlush(new PoliticalParty("Party4", 0, 0, "kiu7654ewsdfgyuikmnhytushg", "0.0.0.4"));
-        politicalPartyRepository.saveAndFlush(new PoliticalParty("Party5", 0, 0, "bvcde4567ujkmhgredvhjytrfd", "0.0.0.2"));
+        Set<Poll> setP = new HashSet<Poll>(0);
+        setP.add(new Poll("National Election"));
+        setP.add(new Poll("Provincial Election"));
+
+        PoliticalParty p = new PoliticalParty("Party1", 0, 0, "ju765redcvbnjiu765rdfghjki", "0.0.0.1");
+        p.setPolls(setP);
+        politicalPartyRepository.saveAndFlush(p);
+
+        p = new PoliticalParty("Party2", 0, 0, "nbgfr567ujbvfrtyuirtyhgfer", "0.0.0.3");
+        politicalPartyRepository.saveAndFlush(p);
+
+        setP = new HashSet<Poll>(0);
+        setP.add(new Poll("National Election"));
+        setP.add(new Poll("Provincial Election"));
+
+        p = new PoliticalParty("Party3", 0, 0, "7tfyhbef3ufy3ivr3v3iiwhbci", "0.0.0.5");
+        p.setPolls(setP);
+        politicalPartyRepository.saveAndFlush(p);
+
+        setP = new HashSet<Poll>(0);
+        setP.add(new Poll("National Election"));
+
+        p = new PoliticalParty("Party4", 0, 0, "kiu7654ewsdfgyuikmnhytushg", "0.0.0.4");
+        p.setPolls(setP);
+        politicalPartyRepository.saveAndFlush(p);
+
+        setP = new HashSet<Poll>(0);
+        setP.add(new Poll("Provincial Election"));
+
+        p = new PoliticalParty("Party5", 0, 0, "bvcde4567ujkmhgredvhjytrfd", "0.0.0.2");
+        p.setPolls(setP);
+        politicalPartyRepository.saveAndFlush(p);
 
         Assert.assertTrue(true);
     }

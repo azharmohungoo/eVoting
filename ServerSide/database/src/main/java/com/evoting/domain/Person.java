@@ -9,10 +9,7 @@ import java.util.Set;
 
 /**
  * Created by Azhar on 2016/07/14.
-
  */
-
-
 
 @Audited
 @Entity
@@ -87,7 +84,7 @@ public class Person {
         this.idNum = idNum;
     }
 
-    @Column(name = "password", unique = false, nullable = false)
+    @Column(name = "password", nullable = false)
     public String getPassword() {
         return password;
     }
@@ -98,8 +95,8 @@ public class Person {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "person_permission",
-            joinColumns = { @JoinColumn(name = "permissions") },
-            inverseJoinColumns = { @JoinColumn(name = "persons")} )
+            joinColumns = { @JoinColumn(name = "persons") },
+            inverseJoinColumns = { @JoinColumn(name = "permissions")} )
     public Set<Permission> getPermissions() {
         return permissions;
     }
@@ -108,8 +105,10 @@ public class Person {
         this.permissions = permissions;
     }
 
-    @ManyToOne
-    @JoinTable(name = "person_user_type")
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinTable(name = "person_user_type",
+            joinColumns = { @JoinColumn(name = "persons") },
+            inverseJoinColumns = { @JoinColumn(name = "user_types")} )
     public UserType getUserType() {
         return userType;
     }
@@ -118,7 +117,7 @@ public class Person {
         this.userType = userType;
     }
 
-    @Column(name = "name", unique = false, nullable = false)
+    @Column(name = "name", nullable = false)
     public String getName() {
         return name;
     }
@@ -127,7 +126,7 @@ public class Person {
         this.name = name;
     }
 
-    @Column(name = "surname", unique = false, nullable = false)
+    @Column(name = "surname", nullable = false)
     public String getSurname() {
         return surname;
     }
@@ -136,7 +135,7 @@ public class Person {
         this.surname = surname;
     }
 
-    @Column(name = "location_registered", unique = false, nullable = false)
+    @Column(name = "location_registered", nullable = false)
     public String getLocationRegistered() {
         return locationRegistered;
     }
@@ -145,7 +144,7 @@ public class Person {
         this.locationRegistered = locationRegistered;
     }
 
-    @Column(name = "cellphone", unique = false, nullable = false)
+    @Column(name = "cellphone", unique = true, nullable = false)
     public String getCellphone() {
         return cellphone;
     }
@@ -163,7 +162,7 @@ public class Person {
         this.email = email;
     }
 
-    @Column(name = "votes", unique = false, nullable = true)
+    @Column(name = "votes", nullable = true)
     public int getVotes() {
         return votes;
     }
@@ -172,7 +171,7 @@ public class Person {
         this.votes = votes;
     }
 
-    @Column(name = "voted_national_election", unique = false, nullable = false)
+    @Column(name = "voted_national_election", nullable = false)
     public boolean isVotedNationalElection() {
         return votedNationalElection;
     }
@@ -181,7 +180,7 @@ public class Person {
         this.votedNationalElection = votedNationalElection;
     }
 
-    @Column(name = "voted_provincial_election", unique = false, nullable = false)
+    @Column(name = "voted_provincial_election", nullable = false)
     public boolean isVotedProvincialElection() {
         return votedProvincialElection;
     }
@@ -190,7 +189,7 @@ public class Person {
         this.votedProvincialElection = votedProvincialElection;
     }
 
-    @Column(name = "active", unique = false, nullable = false)
+    @Column(name = "active", nullable = false)
     public boolean isActive() {
         return active;
     }

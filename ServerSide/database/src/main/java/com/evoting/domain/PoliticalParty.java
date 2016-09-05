@@ -64,8 +64,8 @@ public class PoliticalParty {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "political_party_poll",
-            joinColumns = { @JoinColumn(name = "polls") },
-            inverseJoinColumns = { @JoinColumn(name = "political_parties")} )
+            joinColumns = { @JoinColumn(name = "political_parties") },
+            inverseJoinColumns = { @JoinColumn(name = "polls")} )
     public Set<Poll> getPolls() {
         return polls;
     }
@@ -74,7 +74,7 @@ public class PoliticalParty {
         this.polls = polls;
     }
 
-    @Column(name = "national_vote_count", unique = false, nullable = false)
+    @Column(name = "national_vote_count", nullable = false)
     public int getNationalVoteCount() {
         return nationalVoteCount;
     }
@@ -83,7 +83,7 @@ public class PoliticalParty {
         this.nationalVoteCount = nationalVoteCount;
     }
 
-    @Column(name = "provincial_vote_count", unique = false, nullable = false)
+    @Column(name = "provincial_vote_count", nullable = false)
     public int getProvincialVoteCount() {
         return provincialVoteCount;
     }
@@ -92,7 +92,7 @@ public class PoliticalParty {
         this.provincialVoteCount = provincialVoteCount;
     }
 
-    @Column(name = "blockchain_node_address", unique = true, nullable = false)
+    @Column(name = "blockchain_node_address", nullable = false)
     public String getBlockchainNodeAddress() {
         return blockchainNodeAddress;
     }
@@ -101,7 +101,7 @@ public class PoliticalParty {
         this.blockchainNodeAddress = blockchainNodeAddress;
     }
 
-    @Column(name = "ip_address", unique = true, nullable = false)
+    @Column(name = "ip_address", nullable = false)
     public String getIpAddress() {
         return ipAddress;
     }

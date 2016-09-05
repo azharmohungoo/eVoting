@@ -41,7 +41,7 @@ public class UserType {
         this.id = id;
     }
 
-    @Column(name = "user_type", unique = false, nullable = false)
+    @Column(name = "user_type", nullable = false)
     public String getUserType() {
         return userType;
     }
