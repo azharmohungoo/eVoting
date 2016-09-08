@@ -47,7 +47,7 @@ public class VoterControllerTest {
 
         vc.register(voter);
 
-        Person testPerson = pr.findOne(1);
+        Person testPerson = pr.getPersonByName("aName");
         Assert.assertNotNull(testPerson);
     }
 }

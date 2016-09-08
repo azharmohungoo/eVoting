@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="com.evoting.VoterTest.VoterControllerTest" time="0.556" tests="1" errors="0" skipped="0" failures="0">
+=======
+<testsuite name="com.evoting.VoterTest.VoterControllerTest" time="0.021" tests="1" errors="0" skipped="0" failures="0">
+>>>>>>> 0435f0f197017c7c4a774796d053dab2be6c245d
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.8.0_73\jre\bin"/>
@@ -62,5 +66,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
+<<<<<<< HEAD
   <testcase name="registerTest" classname="com.evoting.VoterTest.VoterControllerTest" time="0.556"/>
+=======
+  <testcase name="registerTest" classname="com.evoting.VoterTest.VoterControllerTest" time="0.021"/>
+>>>>>>> 0435f0f197017c7c4a774796d053dab2be6c245d
 </testsuite>

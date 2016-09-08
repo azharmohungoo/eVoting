@@ -21,6 +21,15 @@ public class Permission {
     public Permission() {
     }
 
+    public Permission(int id, String permission) {
+        this.id = id;
+        this.permission = permission;
+    }
+
+    public Permission(String permission) {
+        this.permission = permission;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", unique = true, nullable = false)
@@ -32,7 +41,7 @@ public class Permission {
         this.id = id;
     }
 
-    @Column(name = "permission", unique = true, nullable = false)
+    @Column(name = "permission", nullable = false)
     public String getPermission() {
         return permission;
     }

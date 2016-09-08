@@ -1,23 +1,11 @@
 package com.evoting;
 
-
 import com.evoting.domain.Person;
-import com.evoting.domain.UserType;
 import com.evoting.repositories.PersonRepository;
 import com.evoting.repositories.UserTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.client.support.HttpRequestWrapper;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.support.HttpRequestHandlerServlet;
 import voter.VoterService;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Gift on 21/08/16.
@@ -32,10 +20,13 @@ public class VoterController {
     @Autowired
     UserTypeRepository userType;
 
+    @Autowired
+    DatabaseService dbService;
+
     @CrossOrigin
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public Boolean register(@RequestBody VoterService newVoter){
-
+    public Boolean register(@RequestBody VoterService newVoter)
+    {
         Person newPerson = new Person();
         newPerson.setName(newVoter.getName());
         newPerson.setSurname(newVoter.getSurname());
@@ -59,11 +50,11 @@ public class VoterController {
 
     @CrossOrigin
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public Boolean login(@RequestBody VoterService voterLogin){
+    public Boolean login(@RequestBody VoterService voterLogin)
+    {
 
         System.out.println(voterLogin.getIdNum());
         System.out.println(voterLogin.getPassword());
-
 
         System.out.println("we are loggin in");
 
@@ -71,13 +62,8 @@ public class VoterController {
         aPerson.setIdNum(voterLogin.getIdNum());
         aPerson.setPassword(voterLogin.getPassword());
 
-        DatabaseService dbService = new DatabaseService();
-
+        System.out.println(aPerson.toString());
 
         return dbService.validateUser(aPerson);
-
     }
-
-
-
 }
