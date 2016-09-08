@@ -92,6 +92,12 @@ public class DatabaseServiceTest
         p.setUserType(new UserType("Voter"));
         personRepository.saveAndFlush(p);
 
+     /*   p = new Person("931119", "password", "Gift", "Sefako", "Joburg", "0605250402", "giftsefako@gmail.com", 2, false, false, false);
+        p.setUserType(new UserType("Voter"));
+        personRepository.saveAndFlush(p);
+
+*/
+
         p = new Person("0987654321432", "pass3", "name3", "surname3", "Cape Town", "8765432109", "email3@gmail.com", 2, false, false, false);
         p.setUserType(new UserType("Voter"));
         personRepository.saveAndFlush(p);

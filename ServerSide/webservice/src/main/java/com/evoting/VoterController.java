@@ -1,11 +1,18 @@
 package com.evoting;
 
+import com.evoting.domain.Address;
 import com.evoting.domain.Person;
+import com.evoting.domain.PoliticalParty;
+import com.evoting.repositories.AddressRepository;
 import com.evoting.repositories.PersonRepository;
+import com.evoting.repositories.PoliticalPartyRepository;
 import com.evoting.repositories.UserTypeRepository;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import voter.VoteRequest;
 import voter.VoterService;
+
 
 /**
  * Created by Gift on 21/08/16.
@@ -22,6 +29,12 @@ public class VoterController {
 
     @Autowired
     DatabaseService dbService;
+
+    @Autowired
+    PoliticalPartyRepository ppr;
+
+    @Autowired
+    AddressRepository ar;
 
     @CrossOrigin
     @RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -62,8 +75,51 @@ public class VoterController {
         aPerson.setIdNum(voterLogin.getIdNum());
         aPerson.setPassword(voterLogin.getPassword());
 
-        System.out.println(aPerson.toString());
+       // System.out.println(aPerson.toString());
 
-        return dbService.validateUser(aPerson);
+        boolean successful = dbService.validateUser(aPerson);
+       // Person loggedIn = pr.getPersonByIdNumAndPassword(voterLogin.getIdNum(),voterLogin.getPassword());
+      //  String voterDetails = ""
+        return  successful;
     }
+
+    @CrossOrigin
+    @RequestMapping(value = "/castVote", method = RequestMethod.POST)
+    public Boolean castVote(@RequestBody VoteRequest voteRequest)
+    {
+        System.out.println("in here now");
+
+        System.out.println(voteRequest.getPartyName());
+
+        PoliticalParty party = ppr.findByPartyName(voteRequest.getPartyName());
+
+        Address votingNode = ar.findByNodeName("Pretoria");
+
+
+        /*
+             voting(location) node
+                -ip address
+                -rpc password
+                -rpc username
+                -port
+
+              party node
+                -node address
+                -amount == 1
+
+
+         */
+
+
+
+        BlockchainMock blockchain = new BlockchainMock(votingNode.getIpAddress(),"7419", votingNode.getRpcUsername(),votingNode.getRpcPassword());
+        JSONObject result = blockchain.sendVoteToNode(party.getBlockchainNodeAddress(),1000);
+
+        if(result.get("success").toString().equals("true"))
+        return true;
+        else
+            return false;
+    }
+
+
 }

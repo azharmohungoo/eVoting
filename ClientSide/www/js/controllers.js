@@ -8,21 +8,24 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('voteNationalCtrl', function($scope) {
+.controller('voteNationalCtrl', function($scope, VoteNationalService) {
 
   $scope.castVote = function() {
 
-    alert("Congratulations. Your vote has been cast. ")
+    alert("Attempting to cast your vote.")
+    var castNationalRequest = {
+
+      "partyName": "Party1"
+
+    }
+    VoteNationalService.castNational(castNationalRequest);
   }
 
 })
 
   .controller('eVotingLoginCtrl', function($scope, LoginService) {
 
-   
-
     var vm = this;
-
 
     vm.idNum;
     vm.password;
@@ -35,15 +38,17 @@ angular.module('app.controllers', [])
           "idNum" : vm.idNum
         }
 
-      alert(JSON.stringify(loginRequest));
+     // alert(JSON.stringify(loginRequest));
       LoginService.login(loginRequest)
-        .then(function (result)
+        .success(function (result)
         {
 
+
           alert(JSON.stringify(result));
+
         }).catch(function (exception)
       {
-        alert("Previous Exception");
+        alert("Exception");
       });
 
     }

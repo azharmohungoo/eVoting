@@ -10,4 +10,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface PoliticalPartyRepository extends JpaRepository<PoliticalParty, Integer>
 {
     PoliticalParty findById(int id);
+    PoliticalParty findByPartyName(String partyName);
 }
