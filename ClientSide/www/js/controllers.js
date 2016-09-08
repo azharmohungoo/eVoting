@@ -19,7 +19,10 @@ angular.module('app.controllers', [])
 
   .controller('eVotingLoginCtrl', function($scope, LoginService) {
 
+   
+
     var vm = this;
+
 
     vm.idNum;
     vm.password;
@@ -36,6 +39,7 @@ angular.module('app.controllers', [])
       LoginService.login(loginRequest)
         .then(function (result)
         {
+
           alert(JSON.stringify(result));
         }).catch(function (exception)
       {

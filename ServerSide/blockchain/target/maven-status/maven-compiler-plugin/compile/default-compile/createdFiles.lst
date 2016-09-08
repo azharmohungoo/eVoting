@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+com\evoting\BlockchainErrorMessages$2.class
+com\evoting\BlockchainTestMain.class
+com\evoting\BlockchainErrorMessages$8.class
+com\evoting\BlockchainErrorMessages.class
+com\evoting\BlockchainMock.class
+com\evoting\BlockchainErrorMessages$1.class
+com\evoting\BlockchainErrorMessages$9.class
+com\evoting\BlockchainErrorMessages$5.class
+com\evoting\BlockchainInterface.class
+com\evoting\BlockchainErrorMessages$4.class
+com\evoting\Blockchain.class
+com\evoting\BlockchainErrorMessages$6.class
+com\evoting\BlockchainErrorMessages$3.class
+com\evoting\BlockchainErrorMessages$7.class
+=======
 com/evoting/BlockchainErrorMessages$7.class
 com/evoting/BlockchainErrorMessages.class
 com/evoting/BlockchainErrorMessages$2.class
@@ -12,3 +28,4 @@ com/evoting/BlockchainInterface.class
 com/evoting/BlockchainErrorMessages$8.class
 com/evoting/BlockchainErrorMessages$3.class
 com/evoting/BlockchainMock.class
+>>>>>>> 0435f0f197017c7c4a774796d053dab2be6c245d
