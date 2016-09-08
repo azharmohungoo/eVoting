@@ -45,11 +45,11 @@ public class DatabaseServiceTest
     @Test
     public void insertAddress()
     {
-        addressRepository.saveAndFlush(new Address("UP", "0.0.0.1", "9182", "rpcUser1", "rpcPass1", "kjytdcvbji8ygfdswe456ujkiuytrd"));
-        addressRepository.saveAndFlush(new Address("WITS", "0.0.0.2", "9732", "rpcUser2", "rpcPass2", "jytredvhju7654ewe4567uvfrtyuse"));
-        addressRepository.saveAndFlush(new Address("UCT", "0.0.0.3", "9652", "rpcUser3", "rpcPass3", "juy5redcvbju765redvbnji876rkuy"));
-        addressRepository.saveAndFlush(new Address("UNISA", "0.0.0.4", "9382", "rpcUser4", "rpcPass4", "jytredvhju7654ewe4567uvfrtyuse"));
-        addressRepository.saveAndFlush(new Address("Stellenbosch", "0.0.0.5", "9292", "rpcUser5", "rpcPass5", "juy5redcvbju765redvbnji876rkuy"));
+        addressRepository.saveAndFlush(new Address("Pretoria", "0.0.0.1", "9182", "rpcUser1", "rpcPass1", "kjytdcvbji8ygfdswe456ujkiuytrd"));
+        addressRepository.saveAndFlush(new Address("Joburg", "0.0.0.2", "9732", "rpcUser2", "rpcPass2", "jytredvhju7654ewe4567uvfrtyuse"));
+        addressRepository.saveAndFlush(new Address("Cape Town", "0.0.0.3", "9652", "rpcUser3", "rpcPass3", "juy5redcvbju765redvbnji876rkuy"));
+        addressRepository.saveAndFlush(new Address("Durban", "0.0.0.4", "9382", "rpcUser4", "rpcPass4", "jytredvhju7654ewe4567uvfrtyuse"));
+        addressRepository.saveAndFlush(new Address("Centurion", "0.0.0.5", "9292", "rpcUser5", "rpcPass5", "juy5redcvbju765redvbnji876rkuy"));
 
         Assert.assertTrue(true);
     }
