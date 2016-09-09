@@ -8,48 +8,91 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('voteNationalCtrl', function($scope) {
+.controller('voteNationalCtrl', function($scope, VoteNationalService) {
 
-  $scope.castVote = function() {
+  $scope.castVote = function(party) {
 
-    alert("Congratulations. Your vote has been cast. ")
-  }
+    alert("Attempting to cast your vote for : " + party)
+    var castNationalRequest = {
 
-})
-
-
-.controller('eVotingLoginCtrl', function($scope, LoginService, $ionicPopup, $state, userService) {
-  $scope.data = {};
-
-  $scope.login = function() {
-    LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
-      $state.go('tabsController.electionInformation');
-    }).error(function(data) {
-      var alertPopup = $ionicPopup.alert({
-        title: 'Login failed!',
-        template: 'Please check your credentials!'
-      });
-    });
-
+      "partyName": party
 
     }
-
-  $scope.GetUsers = function(){
-    alert('something');
-    userService.GetUsers().then(function(result){
-      //$scope.users = users;
-      console.log(result);
-
-    });
+    VoteNationalService.castNational(castNationalRequest);
   }
 
 })
 
+  .controller('eVotingLoginCtrl', function($scope, LoginService) {
+
+    var vm = this;
+
+    vm.idNum;
+    vm.password;
+
+    vm.login = login;
+    function  login()
+    {
+        var loginRequest = {
+          "password" : vm.password ,
+          "idNum" : vm.idNum
+        }
+
+     // alert(JSON.stringify(loginRequest));
+      LoginService.login(loginRequest)
+        .success(function (result)
+        {
 
 
+         // alert(JSON.stringify(result));
 
-.controller('registerCtrl', function($scope) {
+        }).catch(function (exception)
+      {
+        alert("Exception");
+      });
 
+    }
+  })
+
+
+.controller('registerCtrl' , function($scope , RegisterService) {
+
+  var vm = this;
+
+  vm.idNum;
+  vm.password;
+  vm.name;
+  vm.surname;
+  vm.locationRegistered;
+  vm.cellphone;
+  vm.email;
+
+
+  vm.register = register;
+    function  register() {
+
+
+    var registerRequest = {
+      "name" : vm.name,
+      "password" : vm.password ,
+      "idNum" : vm.idNum,
+      "surname" : vm.surname ,
+      "email" : vm.email ,
+      "cellphone" : vm.cellphone ,
+      "locationRegistered" : vm.locationRegistered
+    }
+
+   // alert(JSON.stringify(registerRequest));
+
+    RegisterService.register(registerRequest)
+      .then(function (result) {
+        alert(JSON.stringify(result));
+      }).catch(function (exception)
+    {
+      alert("Previous Exception");
+    });
+
+  }
 })
 
 .controller('voteProvincialCtrl', function($scope) {
@@ -60,7 +103,7 @@ angular.module('app.controllers', [])
 
 })
 
-  .controller('MainCtrl', function($scope, userService) {
+  .controller('MainCtrl', function($scope) {
 
 
 

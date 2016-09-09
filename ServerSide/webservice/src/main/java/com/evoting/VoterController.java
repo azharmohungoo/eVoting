@@ -53,12 +53,12 @@ public class VoterController {
         newPerson.setVotedNationalElection(false);
         newPerson.setVotedProvincialElection(false);
 
-        System.out.println("trying to persist");
+        System.out.println("Trying to persist new Voter");
         pr.saveAndFlush(newPerson);
        // pr.save(newPerson);
         System.out.println("Successful save");
 
-        return false;
+        return true;
     }
 
     @CrossOrigin
@@ -69,7 +69,7 @@ public class VoterController {
         System.out.println(voterLogin.getIdNum());
         System.out.println(voterLogin.getPassword());
 
-        System.out.println("we are loggin in");
+        System.out.println("Logging in user");
 
         Person aPerson = new Person();
         aPerson.setIdNum(voterLogin.getIdNum());
@@ -87,7 +87,7 @@ public class VoterController {
     @RequestMapping(value = "/castVote", method = RequestMethod.POST)
     public Boolean castVote(@RequestBody VoteRequest voteRequest)
     {
-        System.out.println("in here now");
+        System.out.println("Cast Vote Request");
 
         System.out.println(voteRequest.getPartyName());
 
@@ -111,9 +111,11 @@ public class VoterController {
          */
 
 
+        BlockchainMock blockchain = new BlockchainMock("196.248.196.124","7419", "multichainrpc","51i1XY2ELS96V7xGEA3cGh5iy8KDTxpo2ckaXZ7CBM43");
+        JSONObject result = blockchain.sendVoteToNode("15DmYUc17VEx7zvJoAxcPu1fBAREGYVj4ScVwe",1000);
 
-        BlockchainMock blockchain = new BlockchainMock(votingNode.getIpAddress(),"7419", votingNode.getRpcUsername(),votingNode.getRpcPassword());
-        JSONObject result = blockchain.sendVoteToNode(party.getBlockchainNodeAddress(),1000);
+       // BlockchainMock blockchain = new BlockchainMock(votingNode.getIpAddress(),"7419", votingNode.getRpcUsername(),votingNode.getRpcPassword());
+       // JSONObject result = blockchain.sendVoteToNode(party.getBlockchainNodeAddress(),1000);
 
         if(result.get("success").toString().equals("true"))
         return true;

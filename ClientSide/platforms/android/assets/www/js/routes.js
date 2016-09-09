@@ -55,13 +55,15 @@ angular.module('app.routes', [])
   .state('eVotingLogin', {
     url: '/page5',
     templateUrl: 'templates/eVotingLogin.html',
-    controller: 'eVotingLoginCtrl'
+    controller: 'eVotingLoginCtrl',
+    controllerAs: "vm"
   })
 
   .state('register', {
     url: '/page6',
     templateUrl: 'templates/register.html',
-    controller: 'registerCtrl'
+    controller: 'registerCtrl',
+    controllerAs: "vm"
   })
 
   .state('tabsController.voteProvincial', {
