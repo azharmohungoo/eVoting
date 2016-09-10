@@ -1,20 +1,20 @@
-Electronic Voting will make use of a combination between the Client-Server and Component-Based architecture styles. The system will be devided into a 'client side' and a 'server side', with a RESTFull web service running on the server side as a communication medium between the two. Component-Based architecture style will be used on the server's side, where each component contains eveything necessary to execute only one desired aspect of the system.
-We will be using Component-Based architecture to seperate all of the functionalty for Voter, Activator, Party, Admin, Security, Blockchain and Database into their own respective modules. Reasons for Client-Server style:
+Electronic Voting will make use of a combination between the Client-Server and Component-Based architecture styles. The system will be divided into a 'client side' and a 'server side', with a RESTful web service running on the server side as a communication medium between the two. Component-Based architecture style will be used on the server side, where each component contains everything necessary to execute only one desired aspect of the system.
+We will be using Component-Based architecture to separate all of the functionality for Voter, Activator, Party, Admin, Security, Blockchain and Database into their own respective modules. Reasons for Client-Server style:
 	\begin{enumerate}
 		\item Accessibility:
 		\begin{enumerate}
-			\item EVoting can be accessed form various platforms on a local network or over the Internet.
+			\item eVoting can be accessed form various platforms on a local network or over the Internet.
 			\item Our server can be accessed remotely by administrators or support teams.
 		\end{enumerate}
-		\item Upgradation and Scalability:
+		\item Adaptability and Scalability:
 		\begin{enumerate}
 			\item Performance changes on the server can be easily made by upgrading the server.
 			\item New resources can be added to the server.
 		\end{enumerate}
-		\item Plugability:
+		\item Pluggability:
 		\begin{enumerate}
-			\item We are using a RESTFull web service on the server end.
-			\item Because of this, it allowes us add any number of client platform types (eg iOS, Windows apps, or even other web applications) to integrate with our system if they support our communication medium.
+			\item We are using a RESTful web service on the server end.
+			\item Because of this, it allows us add any number of client platform types (eg iOS, Windows apps, or even other web applications) to integrate with our system if they support our communication medium.
 		\end{enumerate}
 	\end{enumerate}
 	
@@ -36,7 +36,7 @@ Reasons for using a Component-Based architecture style:
 		\item Parallel development by separate teams:
 		\begin{enumerate}
 			\item Business logic developers can build the classes, while the UI developer(s) can involve in designing UI screens simultaneously.
-			\item UI updations can be made without slowing down the business logic process.
+			\item UI updates can be made without slowing down the business logic process.
 		\end{enumerate}
 		
 		\item Multiple view support:
@@ -46,7 +46,7 @@ Reasons for using a Component-Based architecture style:
 		
 		\item Testing:
 		\begin{enumerate}
-			\item Different bussiness logic modules can be tested independantly of other modules by using intergration and unit testing.
+			\item Different business logic modules can be tested independently of other modules by using integration and unit testing.
 			\item Each module can expect that the other modules have a good level of correctness, thus expecting a pre-defined output.
 		\end{enumerate}
 	\end{enumerate}

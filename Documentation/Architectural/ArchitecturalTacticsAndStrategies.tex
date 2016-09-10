@@ -3,11 +3,11 @@
 		All of our web service methods requires that the requesting object contains an ID number and a password. We will be authenticating the user to see if he/she is in fact registered, and if he/she has access to our methods' functionality and will be denied otherwise.
 		
 		\item\textbf{Encryption}\newline
-		To ensure a safe and secure system, we will be encrypting the users' password on the client side before sending it to the server side. We won't be decrypting the password, nor will we know how to decrypt it. The encrypted passwords will directly be stored in our database as a string. As soon as a user is to be authenticated, the ecrypted password strings will be matched to see if the password is the same.\newline Encryption will also be used to encrypt the voting node's address and party node's address. This we will be decrypted on the server side.
+		To ensure a safe and secure system, we will be encrypting the users' password on the client side before sending it to the server side. We won't be decrypting the password, nor will we know how to decrypt it. The encrypted passwords will directly be stored in our database as a string. As soon as a user is to be authenticated, the encrypted password strings will be matched to see if the password is the same.\newline Encryption will also be used to encrypt the voting node's address and party node's address. This we will be decrypted on the server side.
 		
 		\item\textbf{Database Indexing}\newline
 		All of our database tables will have primary keys, and also foreign keys linking to other tables.
 		
 		\item\textbf{Database Integrity}\newline
-		To ensure database data fault prevention, each database base will have its respective audit table. Inside each audit table, there will be collumns for: the type of modification (insert/update/delete); a date column when the modification was made; a column specifying who did the modification (Admin, Node1, Node2 etc); and the rest of the columns will all of the original table's columns. Its important to note that no one, not even the Administrator, will be able to delete rows from the audit table.
+		To ensure database data fault prevention, each database base will have its respective audit table. Inside each audit table, there will be columns for: the type of modification (insert/update/delete); a date column when the modification was made; a column specifying who did the modification (Admin, Node1, Node2 etc); and the rest of the columns will all of the original table's columns. Its important to note that no one, not even the Administrator, will be able to delete rows from the audit table.
 \end{enumerate}	
