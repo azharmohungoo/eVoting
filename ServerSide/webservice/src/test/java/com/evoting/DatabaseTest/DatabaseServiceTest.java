@@ -25,6 +25,9 @@ public class DatabaseServiceTest
     DatabaseService ds;
 
     @Autowired
+    ActivationStationRepository activationStationRepository;
+
+    @Autowired
     AddressRepository addressRepository;
 
     @Autowired
@@ -166,6 +169,21 @@ public class DatabaseServiceTest
     }
 
     @Test
+    public void insertActivationStation()
+    {
+        activationStationRepository.saveAndFlush(new ActivationStation("Pretoria", "University of Pretoria"));
+        activationStationRepository.saveAndFlush(new ActivationStation("Pretoria", "Tshwane University of Technologu"));
+        activationStationRepository.saveAndFlush(new ActivationStation("Johannesburg", "University of Johannesburg"));
+        activationStationRepository.saveAndFlush(new ActivationStation("Johannesburg", "University of the Witwatersrand"));
+        activationStationRepository.saveAndFlush(new ActivationStation("Cape Town", "University of Cape Town"));
+        activationStationRepository.saveAndFlush(new ActivationStation("Stellenbosch", "University of Stellenbosch"));
+        activationStationRepository.saveAndFlush(new ActivationStation("Durban", "University of Kwa-Zulu Natal"));
+        activationStationRepository.saveAndFlush(new ActivationStation("Durban", "Durban University of Technology"));
+
+        Assert.assertTrue(true);
+    }
+
+    @Test
     public void validateUserTest()
     {
         String idNum = "0987656789531";
@@ -178,17 +196,13 @@ public class DatabaseServiceTest
         Assert.assertFalse(ds.validateUser(p));
     }
 
-    /*@Test
+    @Test
     public void activateVoterTest()
     {
-        String idNum = "0987656789555";
-        String password = "anotherPassword";
-
         Person p = new Person();
-        p.setIdNum(idNum);
-        p.setPassword(password);
-        p.setActive(false);
+        p.setIdNum("0987654321456");
+        p.setPassword("pass5");
 
         Assert.assertTrue(ds.activateVoter(p));
-    }*/
+    }
 }
