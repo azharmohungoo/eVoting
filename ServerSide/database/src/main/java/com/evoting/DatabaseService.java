@@ -32,8 +32,42 @@ public class DatabaseService
         return false;
     }
 
-    public boolean activateUser()
+    public boolean activateVoter(Person _p)
     {
+        Person p = pr.getPersonByIdNumAndPassword(_p.getIdNum(), _p.getPassword());
+
+        if (p == null)
+        {
+            return false;
+        }
+
+        if (p.getIdNum().equals(_p.getIdNum()) && p.getPassword().equals(_p.getPassword()))
+        {
+            pr.setActivationStatusFor(true, p.getIdNum(), p.getPassword());
+            return true;
+        }
+
         return false;
+    }
+
+    public boolean isActive(Person _p)
+    {
+        Person p = pr.getPersonByIdNumAndPassword(_p.getIdNum(), _p.getPassword());
+
+        return p.isActive();
+    }
+
+    public boolean canVoteNational(Person _p)
+    {
+        Person p = pr.getPersonByIdNumAndPassword(_p.getIdNum(), _p.getPassword());
+
+        return p.isVotedNationalElection();
+    }
+
+    public boolean canVoteProvicial(Person _p)
+    {
+        Person p = pr.getPersonByIdNumAndPassword(_p.getIdNum(), _p.getPassword());
+
+        return p.isVotedProvincialElection();
     }
 }

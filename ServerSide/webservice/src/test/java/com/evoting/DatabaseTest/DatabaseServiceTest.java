@@ -177,4 +177,18 @@ public class DatabaseServiceTest
 
         Assert.assertFalse(ds.validateUser(p));
     }
+
+    /*@Test
+    public void activateVoterTest()
+    {
+        String idNum = "0987656789555";
+        String password = "anotherPassword";
+
+        Person p = new Person();
+        p.setIdNum(idNum);
+        p.setPassword(password);
+        p.setActive(false);
+
+        Assert.assertTrue(ds.activateVoter(p));
+    }*/
 }

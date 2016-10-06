@@ -1,29 +1,27 @@
 \begin{itemize}
 		\item The aim of the Electronic Voting system is to allow users to participate in elections remotely, i.e. that they do not have to go into a voting station to cast their vote. The easiest way to achieve this is by providing both a web interface as well as an Android interface (seeing as Android is currently the most widely used operating system for mobiles in South Africa). 
 		
-		\item The ultimate goal is that users will be able to easily download and use the Android application from the Google Play Store. The web interface will obviously be accessed from the users prefered browser – so we will, whilst developing the system test it currently with multiple web browsers too to ensure that users are never disadvanatged according to their preferred browser.  
+		\item The ultimate goal is that users will be able to easily download and use the Android application from the Google Play Store. The web interface will obviously be accessed from the users preferred browser – so we will, whilst developing the system test it currently with multiple web browsers too to ensure that users are never disadvantaged according to their preferred browser.  
 		
 		\item The Electronic Voting system requires the use of Blockchain to maintain elections, votes, voters and candidates – as well a generic version of the system which allows participants to partake in surveys. 
 		
 		Blockchain Explained: 
 		\begin{enumerate}
-			\item[] The Blockchain is a shared transperent ledger on which the entire Bitcoin network relies. All confirmed transactions are included in the block chain. 
+			\item[] The Blockchain is a shared transparent ledger on which the entire Bitcoin network relies. All confirmed transactions are included in the block chain. 
 			
 			Once a transaction is entered in the Blockchain, it can never be erased or modified. Blockchain also allows us to ensure that voters cannot vote more times than allowed. So once a vote has been cast, a voter is sure that their vote was counted for the right candidate. 
 		\end{enumerate}
 		
 		\item The backbone of our Blockchain servers will be the Linux based MultiChain implementation which will allow us to create and manage nodes of the which we will use to implement our own local Blockchain. 
 		
-		\item The backend of the system will be implemented using Java since it intergrates easily with the Spring Framework.   			
+		\item The backend of the system will be implemented using Java since it integrates easily with the Spring Framework.   			
 		
 		\item PostgreSQL will be used for the database as it provides several external authentication tools and it provides support for the use of JSON(this is also how MultiChain communicates with browsers in the MultiChain Explorer that provides a visual representation of the local blockchain), which will assist with the integration of the server-side communication. 
 		
-		\item SOAP – Simple Object Access Protocol
+		\item RESTful
 		\begin{enumerate}
-			\item The front end will communicate with the backend using SOAP. SOAP (Simple Object Access Protocol) is a messaging protocol that allows programs that run on disparate operating systems (such as Windows and Linux) to communicate using Hypertext Transfer Protocol (HTTP) and its Extensible Markup Language (XML).
+			\item The front end will communicate with the backend using a RESTful webservice. REST (REpresentational State Transfer) is an architectural style, and an approach to communications that is often used in the development of Web services. 
 			
-			\item SOAP defines the XML-based message format that Web service-enabled applications use to communicate and inter-operate with each other over the Web. This will be an advantage for the Electronic Voting System since it will basically be developed as mobile-first website using Ionic which allows us to eventually package the website as an Android application. 
-			
-			\item SOAP is a standard for encoding messages and data required for requests in XML that will invoke functions in the web service application which will allow for communication with the rest of the system modules.
+			\item REST uses a smaller message format than SOAP, which uses XML for all messages, which makes the message size much larger, and thus less efficient. This means REST provides better performance, as well as lowers costs over time. Moreover, there is no intensive processing required, thus it’s much faster than traditional SOAP.
 		\end{enumerate}
 \end{itemize}
