@@ -11,5 +11,5 @@ public interface PersonRepository extends JpaRepository<Person, Integer>
 {
     Person getPersonByIdNumAndPassword(String idNum, String password);
     Person getPersonByName(String name);
-    //Person setActivationStatusFor(boolean activate, String idNum, String password);
+    //void setActiveByIdNum(boolean activate, String idNum);
 }
