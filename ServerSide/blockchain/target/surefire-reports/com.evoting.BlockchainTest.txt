@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.evoting.BlockchainTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.796 sec - in com.evoting.BlockchainTest
-=======
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.266 sec - in com.evoting.BlockchainTest
->>>>>>> d66c4a8eedc34266eb9956fd233f7bc2b984045b
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.732 sec - in com.evoting.BlockchainTest

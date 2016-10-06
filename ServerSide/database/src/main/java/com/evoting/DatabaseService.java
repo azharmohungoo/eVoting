@@ -32,7 +32,7 @@ public class DatabaseService
         return false;
     }
 
-    public boolean activateVoter(Person _p)
+  /*  public boolean activateVoter(Person _p)
     {
         Person p = pr.getPersonByIdNumAndPassword(_p.getIdNum(), _p.getPassword());
 
@@ -48,7 +48,7 @@ public class DatabaseService
         }
 
         return false;
-    }
+    } */
 
     public boolean isActive(Person _p)
     {
