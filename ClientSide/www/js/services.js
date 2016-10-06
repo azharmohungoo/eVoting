@@ -24,16 +24,19 @@ angular.module('app.services', [])
   return {
     login: function(loginRequest) {
 
-    //  alert("logging in attempt");
       return $http({url : "http://127.0.0.1:8080/login" , data : loginRequest , method : "POST"})
         .then(function (result) {
-          alert(result.data);
-
-          if(result.data == true)
+          alert(JSON.stringify(result));
+         // alert(result.data.success);
+          if(result.data.success == true)
           {
-            alert("Successful login");
-            $state.go('tabsController.electionInformation');
+            alert("Successful login as : " +  result.data.name + " " + result.data.surname);
+           var userName = result.data.name;
+           // alert(userName);
+           // var loggedInUser = {name:result.data.name, lastName:result.data.surname}
 
+            $state.go('tabsController.electionInformation');
+            return result.data;
           }
           else {alert("Unsuccessful login");}
           return result;
