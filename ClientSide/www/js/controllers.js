@@ -40,16 +40,12 @@ angular.module('app.controllers', [])
 
      // alert(JSON.stringify(loginRequest));
       LoginService.login(loginRequest)
-        .success(function (result)
+        .then(function (result)
         {
+           $scope.name = result.name;
+          console.log(result);
 
-
-         // alert(JSON.stringify(result));
-
-        }).catch(function (exception)
-      {
-        alert("Exception");
-      });
+        });
 
     }
   })
@@ -82,7 +78,6 @@ angular.module('app.controllers', [])
       "locationRegistered" : vm.locationRegistered
     }
 
-   // alert(JSON.stringify(registerRequest));
 
     RegisterService.register(registerRequest)
       .then(function (result) {
@@ -99,7 +94,34 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('accountInformationCtrl', function($scope) {
+.controller('accountInformationCtrl', function($scope, LoginService) {
+
+  $ionicPlatform.registerBackButtonAction(function (e) {
+    e.preventDefault();
+    function showConfirm() {
+      var confirmPopup = $ionicPopup.show({
+        title: 'Logout...',
+        template: 'Are you sure you want to logout?',
+        buttons: [{
+          text: 'Cancel',
+          type : '',
+        }, {
+          text: 'Ok',
+          type : 'button-calm',
+          onTap: function () {
+// write your code for logout here..
+          }
+        }]
+      });
+    };
+    if ($ionicHistory.backView()) {
+      $ionicHistory.backView().go();
+    } else {
+      showConfirm();
+    }
+    return false;
+  }, 101);
+
 
 })
 

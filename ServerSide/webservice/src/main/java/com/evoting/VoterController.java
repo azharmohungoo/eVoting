@@ -9,9 +9,15 @@ import com.evoting.repositories.PoliticalPartyRepository;
 import com.evoting.repositories.UserTypeRepository;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import voter.VoteRequest;
 import voter.VoterService;
+
+import javax.json.Json;
+import javax.json.JsonObject;
 
 
 /**
@@ -62,8 +68,8 @@ public class VoterController {
     }
 
     @CrossOrigin
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public Boolean login(@RequestBody VoterService voterLogin)
+    @RequestMapping(value = "/login", method = RequestMethod.POST , produces = "application/JSON")
+    public String login(@RequestBody VoterService voterLogin)
     {
 
         System.out.println(voterLogin.getIdNum());
@@ -76,11 +82,43 @@ public class VoterController {
         aPerson.setPassword(voterLogin.getPassword());
 
        // System.out.println(aPerson.toString());
-
+        Person loggedInAs;
         boolean successful = dbService.validateUser(aPerson);
-       // Person loggedIn = pr.getPersonByIdNumAndPassword(voterLogin.getIdNum(),voterLogin.getPassword());
-      //  String voterDetails = ""
-        return  successful;
+        if(successful == true)
+        {
+            loggedInAs  = pr.getPersonByIdNumAndPassword(aPerson.getIdNum(),aPerson.getPassword());
+            JsonObject result = Json.createObjectBuilder()
+                    .add("success", successful)
+                    .add("name", loggedInAs.getName() )
+                    .add("surname", loggedInAs.getSurname())
+                    .add("IDNum", loggedInAs.getIdNum())
+                    .add("votes",loggedInAs.getVotes())
+                    .add("votedNational", loggedInAs.isVotedNationalElection())
+                    .add("votedProvincial", loggedInAs.isVotedProvincialElection())
+                    .add("email", loggedInAs.getEmail())
+                    .add("activated", loggedInAs.isActive())
+                    .add("locationRegistered", loggedInAs.getLocationRegistered())
+                    .build();
+
+            return result.toString();
+        }
+        else {
+
+             JsonObject result = Json.createObjectBuilder()
+                    .add("success",successful)
+                    .add("reason" , "Invalid User")
+                    .build();
+            return result.toString();
+        }
+
+
+        //return new ResponseEntity<>(loggedInAs, HttpStatus.OK);
+        //return  successful;
+
+
+
+
+
     }
 
     @CrossOrigin
