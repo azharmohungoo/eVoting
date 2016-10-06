@@ -86,12 +86,12 @@ public class DatabaseServiceTest
         setP.add(new Permission("Update"));
         setP.add(new Permission("Delete"));
 
-        Person p = new Person("0987654321098", "pass1", "name1", "surname1", "Pretoria", "0987654321", "email1@gmail.com", 2, false, false, false);
+        Person p = new Person("0987654321098", "e6c3da5b206634d7f3f3586d747ffdb36b5c675757b380c6a5fe5c570c714349", "name1", "surname1", "Pretoria", "0987654321", "email1@gmail.com", 2, false, false, false); //password: "pass1"
         p.setPermissions(setP);
         p.setUserType(new UserType("Admin"));
         personRepository.saveAndFlush(p);
 
-        p = new Person("0987654321765", "pass2", "name2", "surname2", "Joburg", "9876543210", "email2@gmail.com", 2, false, false, false);
+        p = new Person("0987654321765", "1ba3d16e9881959f8c9a9762854f72c6e6321cdd44358a10a4e939033117eab9", "name2", "surname2", "Joburg", "9876543210", "email2@gmail.com", 2, false, false, false); //password: "pass1"
         p.setUserType(new UserType("Voter"));
         personRepository.saveAndFlush(p);
 
@@ -101,19 +101,19 @@ public class DatabaseServiceTest
 
 */
 
-        p = new Person("0987654321432", "pass3", "name3", "surname3", "Cape Town", "8765432109", "email3@gmail.com", 2, false, false, false);
+        p = new Person("0987654321432", "3acb59306ef6e660cf832d1d34c4fba3d88d616f0bb5c2a9e0f82d18ef6fc167", "name3", "surname3", "Cape Town", "8765432109", "email3@gmail.com", 2, false, false, false); //password: "pass3"
         p.setUserType(new UserType("Voter"));
         personRepository.saveAndFlush(p);
 
         setP = new HashSet<Permission>(0);
         setP.add(new Permission("Update"));
 
-        p = new Person("0987654321123", "pass4", "name4", "surname4", "Durban", "7654321098", "email4@gmail.com", 2, false, false, false);
+        p = new Person("0987654321123", "a417b5dc3d06d15d91c6687e27fc1705ebc56b3b2d813abe03066e5643fe4e74", "name4", "surname4", "Durban", "7654321098", "email4@gmail.com", 2, false, false, false);//password: "pass4"
         p.setPermissions(setP);
         p.setUserType(new UserType("Activator"));
         personRepository.saveAndFlush(p);
 
-        p = new Person("0987654321456", "pass5", "name5", "surname5", "Centurion", "6543210987", "email5@gmail.com", 2, false, false, false);
+        p = new Person("0987654321456", "0eeac8171768d0cdef3a20fee6db4362d019c91e10662a6b55186336e1a42778", "name5", "surname5", "Centurion", "6543210987", "email5@gmail.com", 2, false, false, false);//password: "pass5"
         p.setUserType(new UserType("Party"));
         personRepository.saveAndFlush(p);
 

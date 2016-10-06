@@ -34,7 +34,7 @@ angular.module('app.controllers', [])
     function  login()
     {
         var loginRequest = {
-          "password" : vm.password ,
+          "password" : Sha256.hash(vm.password) ,
           "idNum" : vm.idNum
         }
 
@@ -71,7 +71,7 @@ angular.module('app.controllers', [])
 
     var registerRequest = {
       "name" : vm.name,
-      "password" : vm.password ,
+      "password" : Sha256.hash(vm.password) ,
       "idNum" : vm.idNum,
       "surname" : vm.surname ,
       "email" : vm.email ,
