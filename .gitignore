@@ -2,6 +2,14 @@
 # Project Specific
 ######################
 /target/www/**
+/ServerSide/activator/target/**
+/ServerSide/admin/target/**
+/ServerSide/blockchain/target/**
+/ServerSide/database/target/**
+/ServerSide/party/target/**
+/ServerSide/voter/target/**
+/ServerSide/webservice/target/**
+.iml
 
 ######################
 # Node
@@ -51,6 +59,7 @@ local.properties
 # Intellij
 ######################
 /ServerSide/.idea/**
+/ClientSide/.idea/**
 *.iws
 *.ipr
 *.ids
