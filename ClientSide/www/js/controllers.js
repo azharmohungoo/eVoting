@@ -23,7 +23,7 @@ angular.module('app.controllers', [])
 
 })
 
-  .controller('eVotingLoginCtrl', function($scope, LoginService) {
+  .controller('eVotingLoginCtrl', function($scope, LoginService, $localStorage) {
 
     var vm = this;
 
@@ -34,16 +34,17 @@ angular.module('app.controllers', [])
     function  login()
     {
         var loginRequest = {
-          "password" : vm.password ,
+          "password" : Sha256.hash(vm.password) ,
           "idNum" : vm.idNum
         }
 
-     // alert(JSON.stringify(loginRequest));
       LoginService.login(loginRequest)
         .then(function (result)
         {
            $scope.name = result.name;
-          console.log(result);
+          $localStorage.data = result;
+
+         // console.log(result);
 
         });
 
@@ -70,7 +71,7 @@ angular.module('app.controllers', [])
 
     var registerRequest = {
       "name" : vm.name,
-      "password" : vm.password ,
+      "password" : Sha256.hash(vm.password) ,
       "idNum" : vm.idNum,
       "surname" : vm.surname ,
       "email" : vm.email ,
@@ -94,34 +95,17 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('accountInformationCtrl', function($scope, LoginService) {
+.controller('accountInformationCtrl', function($scope, $localStorage) {
 
-  $ionicPlatform.registerBackButtonAction(function (e) {
-    e.preventDefault();
-    function showConfirm() {
-      var confirmPopup = $ionicPopup.show({
-        title: 'Logout...',
-        template: 'Are you sure you want to logout?',
-        buttons: [{
-          text: 'Cancel',
-          type : '',
-        }, {
-          text: 'Ok',
-          type : 'button-calm',
-          onTap: function () {
-// write your code for logout here..
-          }
-        }]
-      });
-    };
-    if ($ionicHistory.backView()) {
-      $ionicHistory.backView().go();
-    } else {
-      showConfirm();
-    }
-    return false;
-  }, 101);
-
+    $scope.name = $localStorage.data.name;
+    $scope.surname = $localStorage.data.surname;
+    $scope.IDNum = $localStorage.data.IDNum;
+    $scope.votes =  $localStorage.data.votes;
+    $scope.votedNational = $localStorage.data.votedNational;
+    $scope.votedProvincial = $localStorage.data.votedProvincial;
+    $scope.email = $localStorage.data.email;
+    $scope.activated = $localStorage.data.activated;
+    $scope.locationRegistered = $localStorage.data.locationRegistered;
 
 })
 
