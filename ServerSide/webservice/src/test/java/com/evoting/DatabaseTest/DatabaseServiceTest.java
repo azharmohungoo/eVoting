@@ -86,7 +86,7 @@ public class DatabaseServiceTest
         setP.add(new Permission("Update"));
         setP.add(new Permission("Delete"));
 
-        Person p = new Person("0987654321098", "e6c3da5b206634d7f3f3586d747ffdb36b5c675757b380c6a5fe5c570c714349", "name1", "surname1", "Pretoria", "0987654321", "email1@gmail.com", 2, false, false, false); //password: "pass1"
+        Person p = new Person("0987654321098", "e6c3da5b206634d7f3f3586d747ffdb36b5c675757b380c6a5fe5c570c714349", "name1", "surname1", "Pretoria", "0987654321", "email1@gmail.com", 0, false, false, false); //password: "pass1"
         p.setPermissions(setP);
         p.setUserType(new UserType("Admin"));
         personRepository.saveAndFlush(p);
@@ -207,6 +207,38 @@ public class DatabaseServiceTest
         p.setUserType(new UserType("Voter"));
 
         ds.addVoter(p);
+
+        Assert.assertNotNull(personRepository.getPersonByIdNumAndPassword(p.getIdNum(), p.getPassword()));
+    }
+
+    @Test
+    public void addAdminTest()
+    {
+        Set<Permission> setP = new HashSet<Permission>(0);
+        setP.add(new Permission("Insert"));
+        setP.add(new Permission("Update"));
+        setP.add(new Permission("Delete"));
+
+        Person p = new Person("9979303249786", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "newAdminName", "NewAdminSurname", "", "2287654399", "newAdmin@gmail.com", 0, false, false, false);
+        p.setPermissions(setP);
+        p.setUserType(new UserType("Admin"));
+
+        ds.addAdmin(p);
+
+        Assert.assertNotNull(personRepository.getPersonByIdNumAndPassword(p.getIdNum(), p.getPassword()));
+    }
+
+    @Test
+    public void addActivatorTest()
+    {
+        Set<Permission> setP = new HashSet<Permission>(0);
+        setP.add(new Permission("Update"));
+
+        Person p = new Person("2793032497862", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "newActivatorName", "NewActivatorSurname", "", "7787654399", "newActivator@gmail.com", 0, false, false, false);
+        p.setPermissions(setP);
+        p.setUserType(new UserType("Activator"));
+
+        ds.addActivator(p);
 
         Assert.assertNotNull(personRepository.getPersonByIdNumAndPassword(p.getIdNum(), p.getPassword()));
     }

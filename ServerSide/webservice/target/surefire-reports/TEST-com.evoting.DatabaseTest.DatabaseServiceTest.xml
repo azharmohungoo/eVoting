@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.535" tests="10" errors="0" skipped="0" failures="0">
+<testsuite name="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.539" tests="12" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib"/>
@@ -33,7 +33,6 @@
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="10.11.6"/>
-    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="user.home" value="/Users/Azhar"/>
     <property name="user.timezone" value="Africa/Johannesburg"/>
     <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
@@ -58,18 +57,18 @@
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
-    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="insertAddress" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.237"/>
-  <testcase name="validateUserTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.118"/>
-  <testcase name="insertPermission" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.024"/>
-  <testcase name="addVoterTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.026"/>
-  <testcase name="insertPerson" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.04"/>
-  <testcase name="insertPoll" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.011"/>
-  <testcase name="insertUserType" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.011"/>
-  <testcase name="activateVoterTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.016"/>
-  <testcase name="insertActivationStation" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.023"/>
-  <testcase name="insertPoliticalParty" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.029"/>
+  <testcase name="insertAddress" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.204"/>
+  <testcase name="validateUserTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.115"/>
+  <testcase name="insertPermission" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.025"/>
+  <testcase name="addAdminTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.035"/>
+  <testcase name="addVoterTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.011"/>
+  <testcase name="insertPerson" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.042"/>
+  <testcase name="insertPoll" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.01"/>
+  <testcase name="insertUserType" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.013"/>
+  <testcase name="activateVoterTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.015"/>
+  <testcase name="insertActivationStation" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.025"/>
+  <testcase name="addActivatorTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.009"/>
+  <testcase name="insertPoliticalParty" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.035"/>
 </testsuite>
