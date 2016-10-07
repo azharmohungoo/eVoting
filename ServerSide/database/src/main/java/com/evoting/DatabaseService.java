@@ -32,7 +32,7 @@ public class DatabaseService
         return false;
     }
 
-  /*  public boolean activateVoter(Person _p)
+    public boolean activateVoter(Person _p)
     {
         Person p = pr.getPersonByIdNumAndPassword(_p.getIdNum(), _p.getPassword());
 
@@ -50,7 +50,7 @@ public class DatabaseService
         }
 
         return false;
-    } */
+    }
 
     public boolean isActive(Person _p)
     {
@@ -86,5 +86,28 @@ public class DatabaseService
         }
 
         return p.isVotedProvincialElection();
+    }
+
+    public boolean addVoter(Person _p)
+    {
+        if (_p != null)
+        {
+            pr.saveAndFlush(_p);
+            System.out.println("Voter added");
+
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean addAdmin()
+    {
+        return false;
+    }
+
+    public boolean addActivator()
+    {
+        return false;
     }
 }

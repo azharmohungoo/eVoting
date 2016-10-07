@@ -14,8 +14,7 @@ public class VoterService {
     private String cellphone;
     private String email;
 
-    public  VoterService()
-    {
+    public VoterService() {
 
     }
 
@@ -94,29 +93,24 @@ public class VoterService {
         this.email = email;
     }
 
-    public Boolean register(String userType, String idNum, String password, String name, String surname, String locationRegistered, String cellphone, String email)
-   {
+    public Boolean register(String userType, String idNum, String password, String name, String surname, String locationRegistered, String cellphone, String email) {
 
-       if(idNum == null || idNum.length() !=  13)
-       {
-           return false;
-       }
+        if (idNum == null || idNum.length() != 13) {
+            return false;
+        }
 
         return true;
-   }
-    public VoterService login()
-   {
-     return null;
-   }
+    }
 
+    public VoterService login() {
+        return null;
+    }
 
-   Boolean castNationalVote()
-   {
-       return false;
-   }
+    Boolean castNationalVote() {
+        return false;
+    }
 
-    Boolean castProvincialVote()
-    {
+    Boolean castProvincialVote() {
         return false;
     }
 }

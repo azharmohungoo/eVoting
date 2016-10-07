@@ -95,12 +95,6 @@ public class DatabaseServiceTest
         p.setUserType(new UserType("Voter"));
         personRepository.saveAndFlush(p);
 
-     /*   p = new Person("931119", "password", "Gift", "Sefako", "Joburg", "0605250402", "giftsefako@gmail.com", 2, false, false, false);
-        p.setUserType(new UserType("Voter"));
-        personRepository.saveAndFlush(p);
-
-*/
-
         p = new Person("0987654321432", "3acb59306ef6e660cf832d1d34c4fba3d88d616f0bb5c2a9e0f82d18ef6fc167", "name3", "surname3", "Cape Town", "8765432109", "email3@gmail.com", 2, false, false, false); //password: "pass3"
         p.setUserType(new UserType("Voter"));
         personRepository.saveAndFlush(p);
@@ -201,8 +195,19 @@ public class DatabaseServiceTest
     {
         Person p = new Person();
         p.setIdNum("0987654321456");
-        p.setPassword("pass5");
+        p.setPassword("0eeac8171768d0cdef3a20fee6db4362d019c91e10662a6b55186336e1a42778");
 
         Assert.assertTrue(ds.activateVoter(p));
+    }
+
+    @Test
+    public void addVoterTest()
+    {
+        Person p = new Person("5679303249786", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "newVoterName", "NewVoterSurname", "Pretoria - UP", "0987654399", "newVoter@gmail.com", 2, false, false, false);
+        p.setUserType(new UserType("Voter"));
+
+        ds.addVoter(p);
+
+        Assert.assertNotNull(personRepository.getPersonByIdNumAndPassword(p.getIdNum(), p.getPassword()));
     }
 }
