@@ -17,7 +17,7 @@ function  RegisterService($http) {
       return $http({url : "http://localhost:8080/register" , data : registerRequest , method : "POST"})
         .then(function (result) {
           //alert(JSON.stringify(result)) //
-          $location.path('/');
+          //$location.path('/');
           return result.data;
         }).catch(function (exception)
         {

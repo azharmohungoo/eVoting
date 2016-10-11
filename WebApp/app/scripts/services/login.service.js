@@ -19,7 +19,7 @@ angular.module('eVotingWebApp')
               // alert(userName);
               // var loggedInUser = {name:result.data.name, lastName:result.data.surname}
 
-              //$location.path('/');
+              $location.path('/admin');
               return result.data;
             }
             else {

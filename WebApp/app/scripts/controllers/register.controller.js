@@ -25,8 +25,8 @@ angular.module('eVotingWebApp')
 
       var registerRequest = {
         "idNum" : vm.idNum,
-        //"password" : Sha256.hash(vm.password) ,
-        "password" : vm.password ,
+        "password" : Sha256.hash(vm.password) ,
+        //"password" : vm.password ,
         "name" : vm.name,
         "surname" : vm.surname ,
         "locationRegistered" : vm.locationRegistered ,

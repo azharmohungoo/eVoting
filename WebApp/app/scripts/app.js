@@ -34,6 +34,10 @@ angular
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl',
         controllerAs: 'vm'
+      }).when('/admin', {
+        templateUrl: 'views/admin.html',
+        //controller: 'RegisterCtrl',
+        //controllerAs: 'vm'
       })
       .otherwise({
         redirectTo: '/'

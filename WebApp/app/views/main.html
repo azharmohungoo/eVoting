@@ -10,9 +10,9 @@
   <fieldset>
     <legend>Login</legend>
 
-    <label>ID Number: </label><input style="margin-left: 20px" type="text" id="idNum" name="id" class="id" placeholder="ID Number" required autofocus>
+    <label>ID Number: </label><input style="margin-left: 20px" type="text" ng-model="vm.idNum" id="idNum" name="id" class="id" placeholder="ID Number" required autofocus>
     <br>
-    <label>Password: </label><input style="margin-left: 26px" type="password" id="password" name="Password"class="password" placeholder="Password" required>
+    <label>Password: </label><input style="margin-left: 26px" type="password" ng-model="vm.password" id="password" name="Password"class="password" placeholder="Password" required>
 
     <br><br>
 

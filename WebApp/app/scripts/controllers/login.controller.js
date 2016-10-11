@@ -9,13 +9,16 @@ angular.module('eVotingWebApp')
   .controller('LoginCtrl', function ($scope, LoginService, $localStorage) {
     var vm = this;
 
+    vm.idNum;
+    vm.password;
+
     vm.login = login;
 
     function  login()
     {
       var loginRequest = {
-        //"password" : Sha256.hash(vm.password) ,
-        "password" : vm.password ,
+        "password" : Sha256.hash(vm.password) ,
+        //"password" : vm.password ,
         "idNum" : vm.idNum
       }
 
