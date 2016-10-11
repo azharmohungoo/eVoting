@@ -9,9 +9,6 @@ import com.evoting.repositories.PoliticalPartyRepository;
 import com.evoting.repositories.UserTypeRepository;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import voter.VoteRequest;
 import voter.VoterService;
@@ -58,6 +55,8 @@ public class VoterController {
         newPerson.setActive(false);
         newPerson.setVotedNationalElection(false);
         newPerson.setVotedProvincialElection(false);
+        //newPerson.setVotes(2);
+        //newPerson.setUserType(new UserType("Voter"));
 
         System.out.println("Trying to persist new Voter");
         pr.saveAndFlush(newPerson);
