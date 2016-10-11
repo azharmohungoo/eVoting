@@ -1,0 +1,81 @@
+\documentclass[11pt]{article}
+\addtolength{\oddsidemargin}{-1.cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-2cm}
+\addtolength{\textheight}{3.5cm}
+
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{cite}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=magenta,
+	urlcolor=cyan,
+}
+
+% define the title
+\author{Team CodeX}
+\title{Unit Test Plan and Report}
+
+\begin{document}
+	\setlength{\parskip}{6pt}
+	
+	% generates the title
+	\input{CoverPage.tex}
+	
+	\renewcommand{\thesection}{\arabic{section}}
+	\newpage
+	
+	\tableofcontents
+	
+	\textsc{}\\[1cm]
+	
+	\newpage
+	
+	\section{Introduction}
+	
+		\subsection{Purpose}
+		
+		\subsection{Scope}
+		
+		\subsection{Test Environment}
+		
+		\subsection{Assumptions and Dependencies}
+		
+	\newpage	
+		
+	\begin{center}
+		\section*{Unit Test Plan}
+	\end{center}
+	
+	\section{Test Items}
+	
+	\section{Functional Features to be Tested}
+	
+	\section{Test Cases}
+	
+	\section{Item Pass/Fail Criteria}
+	
+	\section{Test Deliverables}
+	
+	\newpage
+	
+	\begin{center}
+		\section*{Unit Test Report}
+	\end{center}
+	
+	\section{Detailed Test Results}
+	
+		\subsection{Overview of Test Results}
+		
+		\subsection{Functional Requirements Test Results}
+		
+	\newpage	
+		
+	\section{Other}
+	
+	\section{Conclusions and Recommendations}
+	
+\end{document}

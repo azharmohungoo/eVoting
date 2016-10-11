@@ -3,15 +3,13 @@ package com.evoting;
 import com.evoting.domain.Address;
 import com.evoting.domain.Person;
 import com.evoting.domain.PoliticalParty;
+import com.evoting.domain.UserType;
 import com.evoting.repositories.AddressRepository;
 import com.evoting.repositories.PersonRepository;
 import com.evoting.repositories.PoliticalPartyRepository;
 import com.evoting.repositories.UserTypeRepository;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import voter.VoteRequest;
 import voter.VoterService;
@@ -60,12 +58,14 @@ public class VoterController {
         newPerson.setCellphone(newVoter.getCellphone());
         newPerson.setEmail(newVoter.getEmail());
         newPerson.setPassword(newVoter.getPassword());
-        newPerson.setUserType(userType.findById(1));
+        //newPerson.setUserType(userType.findById(1));
         newPerson.setIdNum(newVoter.getIdNum());
         newPerson.setLocationRegistered(newVoter.getLocationRegistered());
         newPerson.setActive(false);
         newPerson.setVotedNationalElection(false);
         newPerson.setVotedProvincialElection(false);
+        newPerson.setVotes(2);
+        newPerson.setUserType(new UserType("Voter"));
 
         System.out.println("Trying to persist new Voter");
         pr.saveAndFlush(newPerson);
@@ -104,6 +104,7 @@ public class VoterController {
                     .add("votedNational", loggedInAs.isVotedNationalElection())
                     .add("votedProvincial", loggedInAs.isVotedProvincialElection())
                     .add("email", loggedInAs.getEmail())
+                    .add("cellphone", loggedInAs.getCellphone())
                     .add("activated", loggedInAs.isActive())
                     .add("locationRegistered", loggedInAs.getLocationRegistered())
                     .build();

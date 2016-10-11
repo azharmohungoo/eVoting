@@ -1,11 +1,13 @@
 package voter;
 
+import org.hibernate.usertype.UserType;
+
 /**
  * Created by Gift on 21/08/16.
  */
 public class VoterService {
 
-    private String userType;
+    private UserType userType;
     private String idNum;
     private String password;
     private String name;
@@ -14,16 +16,15 @@ public class VoterService {
     private String cellphone;
     private String email;
 
-    public  VoterService()
-    {
+    public VoterService() {
 
     }
 
-    public String getUserType() {
+    public UserType getUserType() {
         return userType;
     }
 
-    public void setUserType(String userType) {
+    public void setUserType(UserType userType) {
         this.userType = userType;
     }
 
@@ -83,7 +84,7 @@ public class VoterService {
         this.email = email;
     }
 
-    public VoterService(String userType, String idNum, String password, String name, String surname, String locationRegistered, String cellphone, String email) {
+    public VoterService(UserType userType, String idNum, String password, String name, String surname, String locationRegistered, String cellphone, String email) {
         this.userType = userType;
         this.idNum = idNum;
         this.password = password;
@@ -94,29 +95,24 @@ public class VoterService {
         this.email = email;
     }
 
-    public Boolean register(String userType, String idNum, String password, String name, String surname, String locationRegistered, String cellphone, String email)
-   {
+    public Boolean register(String userType, String idNum, String password, String name, String surname, String locationRegistered, String cellphone, String email) {
 
-       if(idNum == null || idNum.length() !=  13)
-       {
-           return false;
-       }
+        if (idNum == null || idNum.length() != 13) {
+            return false;
+        }
 
         return true;
-   }
-    public VoterService login()
-   {
-     return null;
-   }
+    }
 
+    public VoterService login() {
+        return null;
+    }
 
-   Boolean castNationalVote()
-   {
-       return false;
-   }
+    Boolean castNationalVote() {
+        return false;
+    }
 
-    Boolean castProvincialVote()
-    {
+    Boolean castProvincialVote() {
         return false;
     }
 }

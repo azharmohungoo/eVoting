@@ -1,0 +1,29 @@
+<div class="jumbotron">
+  <h1>Welcome!</h1>
+  <p class="lead">
+    <img src="images/yeoman.png" alt="eVoting Website"><br>
+  </p>
+  <p>Welcome to the eVoting system created by Team CodeX. We hope that the system simplifies the way elections work and that it saves time by doing so. </p>
+</div>
+
+<div class="row marketing">
+  <fieldset>
+    <legend>Login</legend>
+
+    <label>ID Number: </label><input style="margin-left: 20px" type="text" ng-model="vm.idNum" id="idNum" name="id" class="id" placeholder="ID Number" required autofocus>
+    <br>
+    <label>Password: </label><input style="margin-left: 26px" type="password" ng-model="vm.password" id="password" name="Password"class="password" placeholder="Password" required>
+
+    <br><br>
+
+    <a style="margin-left: 180px;" class="btn btn-success" value="Sign In" ng-click="vm.login()">Sign in</a>
+
+    <br><br>
+
+    <span style="color: red">NOTE:</span> if you are a voter and have not registered yet, click <a value="Register" href="#/register">here</a>
+  </fieldset>
+
+  <fieldset>
+    <legend></legend>
+  </fieldset>
+</div>

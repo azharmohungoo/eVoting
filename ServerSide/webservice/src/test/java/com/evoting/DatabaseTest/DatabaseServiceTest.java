@@ -86,7 +86,7 @@ public class DatabaseServiceTest
         setP.add(new Permission("Update"));
         setP.add(new Permission("Delete"));
 
-        Person p = new Person("0987654321098", "e6c3da5b206634d7f3f3586d747ffdb36b5c675757b380c6a5fe5c570c714349", "name1", "surname1", "Pretoria", "0987654321", "email1@gmail.com", 2, false, false, false); //password: "pass1"
+        Person p = new Person("0987654321098", "e6c3da5b206634d7f3f3586d747ffdb36b5c675757b380c6a5fe5c570c714349", "name1", "surname1", "Pretoria", "0987654321", "email1@gmail.com", 0, false, false, false); //password: "pass1"
         p.setPermissions(setP);
         p.setUserType(new UserType("Admin"));
         personRepository.saveAndFlush(p);
@@ -94,12 +94,6 @@ public class DatabaseServiceTest
         p = new Person("0987654321765", "1ba3d16e9881959f8c9a9762854f72c6e6321cdd44358a10a4e939033117eab9", "name2", "surname2", "Joburg", "9876543210", "email2@gmail.com", 2, false, false, false); //password: "pass1"
         p.setUserType(new UserType("Voter"));
         personRepository.saveAndFlush(p);
-
-     /*   p = new Person("931119", "password", "Gift", "Sefako", "Joburg", "0605250402", "giftsefako@gmail.com", 2, false, false, false);
-        p.setUserType(new UserType("Voter"));
-        personRepository.saveAndFlush(p);
-
-*/
 
         p = new Person("0987654321432", "3acb59306ef6e660cf832d1d34c4fba3d88d616f0bb5c2a9e0f82d18ef6fc167", "name3", "surname3", "Cape Town", "8765432109", "email3@gmail.com", 2, false, false, false); //password: "pass3"
         p.setUserType(new UserType("Voter"));
@@ -204,5 +198,48 @@ public class DatabaseServiceTest
         p.setPassword("0eeac8171768d0cdef3a20fee6db4362d019c91e10662a6b55186336e1a42778");
 
         Assert.assertTrue(ds.activateVoter(p));
+    }
+
+    @Test
+    public void addVoterTest()
+    {
+        Person p = new Person("5679303249786", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "newVoterName", "NewVoterSurname", "Pretoria - UP", "0987654399", "newVoter@gmail.com", 2, false, false, false);
+        p.setUserType(new UserType("Voter"));
+
+        ds.addVoter(p);
+
+        Assert.assertNotNull(personRepository.getPersonByIdNumAndPassword(p.getIdNum(), p.getPassword()));
+    }
+
+    @Test
+    public void addAdminTest()
+    {
+        Set<Permission> setP = new HashSet<Permission>(0);
+        setP.add(new Permission("Insert"));
+        setP.add(new Permission("Update"));
+        setP.add(new Permission("Delete"));
+
+        Person p = new Person("9979303249786", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "newAdminName", "NewAdminSurname", "", "2287654399", "newAdmin@gmail.com", 0, false, false, false);
+        p.setPermissions(setP);
+        p.setUserType(new UserType("Admin"));
+
+        ds.addAdmin(p);
+
+        Assert.assertNotNull(personRepository.getPersonByIdNumAndPassword(p.getIdNum(), p.getPassword()));
+    }
+
+    @Test
+    public void addActivatorTest()
+    {
+        Set<Permission> setP = new HashSet<Permission>(0);
+        setP.add(new Permission("Update"));
+
+        Person p = new Person("2793032497862", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "newActivatorName", "NewActivatorSurname", "", "7787654399", "newActivator@gmail.com", 0, false, false, false);
+        p.setPermissions(setP);
+        p.setUserType(new UserType("Activator"));
+
+        ds.addActivator(p);
+
+        Assert.assertNotNull(personRepository.getPersonByIdNumAndPassword(p.getIdNum(), p.getPassword()));
     }
 }

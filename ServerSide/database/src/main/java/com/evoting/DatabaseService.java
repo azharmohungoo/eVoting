@@ -88,4 +88,43 @@ public class DatabaseService
 
         return p.isVotedProvincialElection();
     }
+
+    public boolean addVoter(Person _p)
+    {
+        if (_p != null)
+        {
+            pr.saveAndFlush(_p);
+            System.out.println("Voter added");
+
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean addAdmin(Person _p)
+    {
+        if (_p != null)
+        {
+            pr.saveAndFlush(_p);
+            System.out.println("Admin added");
+
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean addActivator(Person _p)
+    {
+        if (_p != null)
+        {
+            pr.saveAndFlush(_p);
+            System.out.println("Activator added");
+
+            return true;
+        }
+
+        return false;
+    }
 }
