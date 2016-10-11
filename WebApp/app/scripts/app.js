@@ -34,10 +34,26 @@ angular
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl',
         controllerAs: 'vm'
-      }).when('/admin', {
+      })
+      .when('/admin', {
         templateUrl: 'views/admin.html',
-        //controller: 'RegisterCtrl',
+        //controller: '',
         //controllerAs: 'vm'
+      })
+      .when('/activator', {
+        templateUrl: 'views/activator.html',
+        //controller: '',
+        //controllerAs: ''
+      })
+      .when('/party', {
+        templateUrl: 'views/party.html',
+        //controller: '',
+        //controllerAs: ''
+      })
+      .when('/voter', {
+        templateUrl: 'views/voter.html',
+        //controller: '',
+        //controllerAs: ''
       })
       .otherwise({
         redirectTo: '/'

@@ -15,11 +15,23 @@ angular.module('eVotingWebApp')
             if(result.data.success == true)
             {
               alert("Successful login as : " +  result.data.name + " " + result.data.surname);
-              var userName = result.data.name;
-              // alert(userName);
+              //var type = result.data.name;
+              //alert(userName);
               // var loggedInUser = {name:result.data.name, lastName:result.data.surname}
 
-              $location.path('/admin');
+              $location.path('/voter');
+
+              /*
+              switch(result.data.userType) {
+                case n:
+                  code block
+                  break;
+                case n:
+                  code block
+                  break;
+              }
+              */
+
               return result.data;
             }
             else {

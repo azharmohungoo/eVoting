@@ -3,6 +3,7 @@ package com.evoting;
 import com.evoting.domain.Address;
 import com.evoting.domain.Person;
 import com.evoting.domain.PoliticalParty;
+import com.evoting.domain.UserType;
 import com.evoting.repositories.AddressRepository;
 import com.evoting.repositories.PersonRepository;
 import com.evoting.repositories.PoliticalPartyRepository;
@@ -49,14 +50,14 @@ public class VoterController {
         newPerson.setCellphone(newVoter.getCellphone());
         newPerson.setEmail(newVoter.getEmail());
         newPerson.setPassword(newVoter.getPassword());
-        newPerson.setUserType(userType.findById(1));
+        //newPerson.setUserType(userType.findById(1));
         newPerson.setIdNum(newVoter.getIdNum());
         newPerson.setLocationRegistered(newVoter.getLocationRegistered());
         newPerson.setActive(false);
         newPerson.setVotedNationalElection(false);
         newPerson.setVotedProvincialElection(false);
-        //newPerson.setVotes(2);
-        //newPerson.setUserType(new UserType("Voter"));
+        newPerson.setVotes(2);
+        newPerson.setUserType(new UserType("Voter"));
 
         System.out.println("Trying to persist new Voter");
         pr.saveAndFlush(newPerson);
