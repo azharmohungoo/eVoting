@@ -96,6 +96,7 @@ public class VoterController {
                     .add("votedNational", loggedInAs.isVotedNationalElection())
                     .add("votedProvincial", loggedInAs.isVotedProvincialElection())
                     .add("email", loggedInAs.getEmail())
+                    .add("cellphone", loggedInAs.getCellphone())
                     .add("activated", loggedInAs.isActive())
                     .add("locationRegistered", loggedInAs.getLocationRegistered())
                     .build();

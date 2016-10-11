@@ -52,8 +52,18 @@ angular
       })
       .when('/voter', {
         templateUrl: 'views/voter.html',
+        controller: 'VoterCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/election', {
+        templateUrl: 'views/election.html',
         //controller: '',
         //controllerAs: ''
+      })
+      .when('/accountInfo', {
+        templateUrl: 'views/accountInfo.html',
+        controller: 'VoterCtrl',
+        controllerAs: 'vm'
       })
       .otherwise({
         redirectTo: '/'

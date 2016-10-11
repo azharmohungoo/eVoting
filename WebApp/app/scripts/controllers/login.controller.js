@@ -28,7 +28,7 @@ angular.module('eVotingWebApp')
           $scope.name = result.name;
           $localStorage.data = result;
 
-          // console.log(result);
+          console.log(result);
 
         });
     }
