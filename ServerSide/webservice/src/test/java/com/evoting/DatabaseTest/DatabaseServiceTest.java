@@ -201,7 +201,7 @@ public class DatabaseServiceTest
     {
         Person p = new Person();
         p.setIdNum("0987654321456");
-        p.setPassword("pass5");
+        p.setPassword("0eeac8171768d0cdef3a20fee6db4362d019c91e10662a6b55186336e1a42778");
 
         Assert.assertTrue(ds.activateVoter(p));
     }

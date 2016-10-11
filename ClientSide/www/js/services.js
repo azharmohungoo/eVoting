@@ -18,7 +18,22 @@ angular.module('app.services', [])
 
 })
 
+.service('ViewPartyService', function($http){
+  return {
 
+    getParty: function(viewPartyRequest)
+    {
+      return $http({url : "http://127.0.0.1:8080/getParty" , data : viewPartyRequest , method : "POST"})
+        .then(function(result)
+      {
+          alert(result);
+      })
+
+    }
+
+  }
+  
+})
 
 .service('LoginService',  function($http, $state) {
   return {

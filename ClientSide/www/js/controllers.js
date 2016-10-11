@@ -2,13 +2,50 @@ angular.module('app.controllers', [])
 
 .controller('eVotingCtrl', function($scope) {
 
+
+
 })
 
 .controller('electionInformationCtrl', function($scope) {
 
 })
 
-.controller('voteNationalCtrl', function($scope, VoteNationalService) {
+
+.controller('viewPartyCtrl', function($scope, $localStorage, ViewPartyService){
+
+  $scope.getParty = function()
+  {
+      var loadPartyRequest = {
+        "PartyName" : $localStorage.partyName
+      }
+
+    ViewPartyService.getParty(loadPartyRequest)
+      .then(function (result)
+      {
+        $scope.name = result.name;
+        $localStorage.data = result;
+
+        // console.log(result);
+
+      });
+  }
+
+})
+
+.controller('voteNationalCtrl', function($scope, VoteNationalService, $localStorage) {
+
+
+  $scope.getParty = function(partyName)
+  {
+
+    $localStorage.partyName = partyName;
+
+    alert("Viewing " + $localStorage.partyName);
+
+
+  }
+
+
 
   $scope.castVote = function(party) {
 
@@ -23,7 +60,12 @@ angular.module('app.controllers', [])
 
 })
 
+
+
+
+
   .controller('eVotingLoginCtrl', function($scope, LoginService, $localStorage) {
+
 
     var vm = this;
 

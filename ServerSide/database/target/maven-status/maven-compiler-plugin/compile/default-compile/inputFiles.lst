@@ -1,11 +1,12 @@
-<<<<<<< HEAD
 C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\database\src\main\java\com\evoting\domain\Address.java
+C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\database\src\main\java\com\evoting\repositories\ActivationStationRepository.java
 C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\database\src\main\java\com\evoting\domain\Poll.java
 C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\database\src\main\java\com\evoting\repositories\PoliticalPartyRepository.java
 C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\database\src\main\java\com\evoting\domain\UserType.java
 C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\database\src\main\java\com\evoting\repositories\AddressRepository.java
 C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\database\src\main\java\com\evoting\domain\RevListener.java
 C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\database\src\main\java\com\evoting\domain\RevEntity.java
+C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\database\src\main\java\com\evoting\domain\ActivationStation.java
 C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\database\src\main\java\com\evoting\repositories\PermissionRepository.java
 C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\database\src\main\java\com\evoting\repositories\PersonRepository.java
 C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\database\src\main\java\com\evoting\domain\Permission.java
@@ -14,22 +15,3 @@ C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\database\src\main\java\com\evot
 C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\database\src\main\java\com\evoting\domain\PoliticalParty.java
 C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\database\src\main\java\com\evoting\DatabaseService.java
 C:\Users\Gift\Documents\CodeX\eVoting\ServerSide\database\src\main\java\com\evoting\domain\Person.java
-=======
-/Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/repositories/PollRepository.java
-/Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/repositories/PermissionRepository.java
-/Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/domain/PoliticalParty.java
-/Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/domain/RevListener.java
-/Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/domain/ActivationStation.java
-/Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/domain/Person.java
-/Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/domain/Address.java
-/Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/domain/Permission.java
-/Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/repositories/PoliticalPartyRepository.java
-/Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/repositories/AddressRepository.java
-/Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/repositories/UserTypeRepository.java
-/Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/repositories/ActivationStationRepository.java
-/Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/repositories/PersonRepository.java
-/Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/domain/RevEntity.java
-/Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/domain/Poll.java
-/Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/domain/UserType.java
-/Users/Azhar/eVoting/ServerSide/database/src/main/java/com/evoting/DatabaseService.java
->>>>>>> c5ef6584d3b99e10a1347d523acc993cb2a3a444
