@@ -11,41 +11,37 @@ angular.module('app.controllers', [])
 })
 
 
-.controller('viewPartyCtrl', function($scope, $localStorage, ViewPartyService){
+.controller('viewPartyCtrl', function($scope, $localStorage){
 
-  $scope.getParty = function()
-  {
-      var loadPartyRequest = {
-        "PartyName" : $localStorage.partyName
-      }
 
-    ViewPartyService.getParty(loadPartyRequest)
-      .then(function (result)
-      {
-        $scope.name = result.name;
-        $localStorage.data = result;
+  $scope.thePartyName = "";
+alert( "local " + $localStorage.thePartyName);
 
-        // console.log(result);
+     $scope.thePartyName = $localStorage.thePartyName;
 
-      });
-  }
 
 })
 
-.controller('voteNationalCtrl', function($scope, VoteNationalService, $localStorage) {
-
+.controller('voteNationalCtrl', function($scope, VoteNationalService ,  $localStorage) {
 
   $scope.getParty = function(partyName)
   {
+    var loadPartyRequest = {
+      "partyName" : partyName
+    };
 
-    $localStorage.partyName = partyName;
+    alert("sending to service " + partyName );
+    VoteNationalService.getParty(loadPartyRequest)
+      .then(function (result)
+      {
+        alert("Back inside the controller");
+        alert("from the server " + result.data.partyName);
 
-    alert("Viewing " + $localStorage.partyName);
+        $localStorage.thePartyName = result.data.partyName;
 
 
-  }
-
-
+      });
+  };
 
   $scope.castVote = function(party) {
 
@@ -54,7 +50,7 @@ angular.module('app.controllers', [])
 
       "partyName": party
 
-    }
+    };
     VoteNationalService.castNational(castNationalRequest);
   }
 

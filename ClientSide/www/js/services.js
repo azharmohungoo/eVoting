@@ -3,6 +3,7 @@ angular.module('app.services', [])
 
 .service('VoteNationalService', function($http){
   return {
+
     castNational: function (castNationalRequest) {
 
       alert("Casting national vote");
@@ -12,11 +13,18 @@ angular.module('app.services', [])
           alert(result.data);
         })
 
-    }
+    },
 
+  getParty: function(viewPartyRequest)
+  {
+    return $http({url : "http://127.0.0.1:8080/getParty" , data : viewPartyRequest , method : "POST"})
+
+
+  }
   }
 
 })
+
 
 .service('ViewPartyService', function($http){
   return {
@@ -26,13 +34,13 @@ angular.module('app.services', [])
       return $http({url : "http://127.0.0.1:8080/getParty" , data : viewPartyRequest , method : "POST"})
         .then(function(result)
       {
-          alert(result);
+          alert(result.data);
       })
 
     }
 
   }
-  
+
 })
 
 .service('LoginService',  function($http, $state) {
