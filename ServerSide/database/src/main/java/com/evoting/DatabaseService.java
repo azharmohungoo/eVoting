@@ -34,7 +34,7 @@ public class DatabaseService
 
     public boolean activateVoter(Person _p)
     {
-        Person p = pr.getPersonByIdNumAndPassword(_p.getIdNum(), _p.getPassword());
+        Person p = pr.getPersonByIdNum(_p.getIdNum());
 
         if (p == null)
         {
@@ -62,6 +62,18 @@ public class DatabaseService
         }
 
         return p.isActive();
+    }
+
+    public boolean findVoter(Person _p)
+    {
+        Person p = pr.getPersonByIdNum(_p.getIdNum());
+
+        if (p == null)
+        {
+            return false;
+        }
+
+        return true;
     }
 
     public boolean canVoteNational(Person _p)

@@ -19,18 +19,22 @@ angular.module('eVotingWebApp')
               //alert(userName);
               // var loggedInUser = {name:result.data.name, lastName:result.data.surname}
 
-              $location.path('/voter');
+              //$location.path('/voter');
 
-              /*
               switch(result.data.userType) {
-                case n:
-                  code block
+                case "Admin":
+                  $location.path('/admin');
                   break;
-                case n:
-                  code block
+                case "Activator":
+                  $location.path('/activator');
+                  break;
+                case "Party":
+                  $location.path('/party');
+                  break;
+                case "Voter":
+                  $location.path('/voter');
                   break;
               }
-              */
 
               return result.data;
             }

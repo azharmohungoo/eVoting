@@ -89,7 +89,7 @@ public class VoterController {
             loggedInAs  = pr.getPersonByIdNumAndPassword(aPerson.getIdNum(),aPerson.getPassword());
             JsonObject result = Json.createObjectBuilder()
                     .add("success", successful)
-                    .add("name", loggedInAs.getName() )
+                    .add("name", loggedInAs.getName())
                     .add("surname", loggedInAs.getSurname())
                     .add("IDNum", loggedInAs.getIdNum())
                     .add("votes",loggedInAs.getVotes())
@@ -99,6 +99,7 @@ public class VoterController {
                     .add("cellphone", loggedInAs.getCellphone())
                     .add("activated", loggedInAs.isActive())
                     .add("locationRegistered", loggedInAs.getLocationRegistered())
+                    .add("userType", loggedInAs.getUserType().getUserType())
                     .build();
 
             return result.toString();
@@ -115,11 +116,6 @@ public class VoterController {
 
         //return new ResponseEntity<>(loggedInAs, HttpStatus.OK);
         //return  successful;
-
-
-
-
-
     }
 
     @CrossOrigin
@@ -162,5 +158,96 @@ public class VoterController {
             return false;
     }
 
+    @CrossOrigin
+    @RequestMapping(value = "/search", method = RequestMethod.POST , produces = "application/JSON")
+    public String search(@RequestBody VoterService voterLogin)
+    {
 
+        System.out.println(voterLogin.getIdNum());
+
+        System.out.println("Searching for user");
+
+        Person aPerson = new Person();
+        aPerson.setIdNum(voterLogin.getIdNum());
+
+        // System.out.println(aPerson.toString());
+        Person found;
+        boolean successful = dbService.findVoter(aPerson);
+        if(successful == true)
+        {
+            found  = pr.getPersonByIdNum(aPerson.getIdNum());
+            JsonObject result = Json.createObjectBuilder()
+                    .add("success", successful)
+                    .add("name", found.getName())
+                    .add("surname", found.getSurname())
+                    .add("IDNum", found.getIdNum())
+                    .add("votes",found.getVotes())
+                    .add("votedNational", found.isVotedNationalElection())
+                    .add("votedProvincial", found.isVotedProvincialElection())
+                    .add("email", found.getEmail())
+                    .add("cellphone", found.getCellphone())
+                    .add("activated", found.isActive())
+                    .add("locationRegistered", found.getLocationRegistered())
+                    .add("userType", found.getUserType().getUserType())
+                    .build();
+
+            return result.toString();
+        }
+        else {
+
+            JsonObject result = Json.createObjectBuilder()
+                    .add("success",successful)
+                    .add("reason" , "Invalid User")
+                    .build();
+            return result.toString();
+        }
+    }
+
+    @CrossOrigin
+    @RequestMapping(value = "/activate", method = RequestMethod.POST , produces = "application/JSON")
+    public String activate(@RequestBody VoterService voterLogin)
+    {
+
+        System.out.println(voterLogin.getIdNum());
+
+        System.out.println("Searching for user");
+
+        Person aPerson = new Person();
+        aPerson.setIdNum(voterLogin.getIdNum());
+
+        // System.out.println(aPerson.toString());
+        Person found;
+        boolean successful1 = dbService.findVoter(aPerson);
+        boolean successful2 = dbService.activateVoter(aPerson);
+
+        if(successful1 == true && successful2 == true)
+        {
+            found  = pr.getPersonByIdNum(aPerson.getIdNum());
+            JsonObject result = Json.createObjectBuilder()
+                    .add("success", successful1)
+                    .add("name", found.getName())
+                    .add("surname", found.getSurname())
+                    .add("IDNum", found.getIdNum())
+                    .add("votes",found.getVotes())
+                    .add("votedNational", found.isVotedNationalElection())
+                    .add("votedProvincial", found.isVotedProvincialElection())
+                    .add("email", found.getEmail())
+                    .add("cellphone", found.getCellphone())
+                    .add("activated", found.isActive())
+                    .add("locationRegistered", found.getLocationRegistered())
+                    .add("userType", found.getUserType().getUserType())
+                    .build();
+
+            return result.toString();
+        }
+        else {
+
+            JsonObject result = Json.createObjectBuilder()
+                    .add("success1",successful1)
+                    .add("success2",successful2)
+                    .add("reason" , "Invalid User")
+                    .build();
+            return result.toString();
+        }
+    }
 }
