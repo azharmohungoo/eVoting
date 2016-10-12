@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="com.evoting.BlockchainTest" time="7.315" tests="2" errors="0" skipped="0" failures="0">
+=======
+<<<<<<< HEAD
+<testsuite name="com.evoting.BlockchainTest" time="1.251" tests="2" errors="0" skipped="0" failures="0">
+=======
+<<<<<<< HEAD
+<testsuite name="com.evoting.BlockchainTest" time="4.027" tests="2" errors="0" skipped="0" failures="0">
+=======
+<testsuite name="com.evoting.BlockchainTest" time="1.252" tests="2" errors="0" skipped="0" failures="0">
+>>>>>>> 2a582e0fd17f411b9516d9d2aa63c8e8c8821a4b
+>>>>>>> 63c10b69fb5e7c85540acb88681dbe9770d625e9
+>>>>>>> 129c8bc0a532bfbfe5a18195f2240559733331d3
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.8.0_73\jre\bin"/>
@@ -62,6 +74,18 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
+<<<<<<< HEAD
   <testcase name="testInvalidIPAddress" classname="com.evoting.BlockchainTest" time="7.315"/>
+=======
+<<<<<<< HEAD
+  <testcase name="testInvalidIPAddress" classname="com.evoting.BlockchainTest" time="1.251"/>
+=======
+<<<<<<< HEAD
+  <testcase name="testInvalidIPAddress" classname="com.evoting.BlockchainTest" time="4.027"/>
+=======
+  <testcase name="testInvalidIPAddress" classname="com.evoting.BlockchainTest" time="1.252"/>
+>>>>>>> 2a582e0fd17f411b9516d9d2aa63c8e8c8821a4b
+>>>>>>> 63c10b69fb5e7c85540acb88681dbe9770d625e9
+>>>>>>> 129c8bc0a532bfbfe5a18195f2240559733331d3
   <testcase name="testEmptyParameters" classname="com.evoting.BlockchainTest" time="0"/>
 </testsuite>

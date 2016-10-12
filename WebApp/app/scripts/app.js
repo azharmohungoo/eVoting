@@ -42,8 +42,8 @@ angular
       })
       .when('/activator', {
         templateUrl: 'views/activator.html',
-        //controller: '',
-        //controllerAs: ''
+        controller: 'ActivatorCtrl',
+        controllerAs: 'vm'
       })
       .when('/party', {
         templateUrl: 'views/party.html',
@@ -63,6 +63,11 @@ angular
       .when('/accountInfo', {
         templateUrl: 'views/accountInfo.html',
         controller: 'VoterCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/logout', {
+        templateUrl: 'views/main.html',
+        controller: 'LogoutCtrl',
         controllerAs: 'vm'
       })
       .otherwise({

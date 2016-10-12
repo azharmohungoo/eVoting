@@ -17,4 +17,5 @@ angular.module('eVotingWebApp')
     $scope.votedProvincial = $localStorage.data.votedProvincial;
     $scope.votes =  $localStorage.data.votes;
     $scope.activated = $localStorage.data.activated;
+    $scope.userType = $localStorage.data.userType;
   })

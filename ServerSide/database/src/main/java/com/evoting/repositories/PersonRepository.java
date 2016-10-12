@@ -11,4 +11,5 @@ public interface PersonRepository extends JpaRepository<Person, Integer>
 {
     Person getPersonByIdNumAndPassword(String idNum, String password);
     Person getPersonByName(String name);
+    Person getPersonByIdNum(String idNum);
 }

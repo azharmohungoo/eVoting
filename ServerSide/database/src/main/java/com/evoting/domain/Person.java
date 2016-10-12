@@ -217,4 +217,14 @@ public class Person {
                 ", active=" + active +
                 '}';
     }
+
+    /*public String getUserTypeString()
+    {
+        return userType.getUserType();
+    }
+
+    public void setUserTypeString(UserType userType)
+    {
+        this.userType = userType;
+    }*/
 }

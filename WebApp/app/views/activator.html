@@ -1,10 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div class="jumbotron">
+  <h1>{{ name }}</h1>
 
-</body>
-</html>
+  <form>
+    <label>ID Number: </label><input style="margin-left: 77px" type="text" ng-model="vm.idNum" id="idNum" name="id" class="id" placeholder="ID Number" required autofocus>
+
+    <br><br>
+
+    <a class="btn btn-success" value="Search" ng-click="vm.search()">Search</a>
+  </form>
+
+  <div class="row marketing">
+    <fieldset>
+      <legend></legend>
+    </fieldset>
+
+    <h2>{{ message.fullName }}</h2>
+    <p>{{ message.idNum }}</p>
+    <p>{{ message.email }}</p>
+    <p>{{ message.cellphone }}</p>
+    <p>{{ message.locationRegistered }}</p>
+    <p>{{ message.activationStatus }}</p>
+    <p>{{ message.votesRemaining }}</p>
+
+    <button style="margin-left: 500px" id="btnActivate" value="Activate" ng-click="vm.activate()" hidden>Activate</button>
+
+    <fieldset>
+      <legend></legend>
+    </fieldset>
+  </div>
+</div>
