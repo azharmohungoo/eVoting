@@ -41,6 +41,14 @@ public class VoterController {
     AddressRepository ar;
 
     @CrossOrigin
+    @RequestMapping(value = "getParty" , method = RequestMethod.POST)
+    public Boolean getParty()
+    {
+
+        return false;
+    }
+
+    @CrossOrigin
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public Boolean register(@RequestBody VoterService newVoter)
     {
@@ -116,6 +124,10 @@ public class VoterController {
 
         //return new ResponseEntity<>(loggedInAs, HttpStatus.OK);
         //return  successful;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 63c10b69fb5e7c85540acb88681dbe9770d625e9
     }
 
     @CrossOrigin
@@ -131,19 +143,6 @@ public class VoterController {
         Address votingNode = ar.findByNodeName("Pretoria");
 
 
-        /*
-             voting(location) node
-                -ip address
-                -rpc password
-                -rpc username
-                -port
-
-              party node
-                -node address
-                -amount == 1
-
-
-         */
 
 
         BlockchainMock blockchain = new BlockchainMock("196.248.196.124","7419", "multichainrpc","51i1XY2ELS96V7xGEA3cGh5iy8KDTxpo2ckaXZ7CBM43");

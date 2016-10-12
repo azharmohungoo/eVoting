@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.578" tests="12" errors="0" skipped="0" failures="0">
+=======
+<<<<<<< HEAD
+<testsuite name="com.evoting.DatabaseTest.DatabaseServiceTest" time="2.624" tests="9" errors="0" skipped="0" failures="0">
+=======
+<testsuite name="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.619" tests="12" errors="0" skipped="0" failures="0">
+>>>>>>> 2a582e0fd17f411b9516d9d2aa63c8e8c8821a4b
+>>>>>>> 63c10b69fb5e7c85540acb88681dbe9770d625e9
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib"/>
@@ -25,10 +33,18 @@
     <property name="java.io.tmpdir" value="/var/folders/z7/p6s55zdx2yddqznxssj_xj680000gn/T/"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+<<<<<<< HEAD
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="classworlds.conf" value="C:\Users\Gift\Documents\apache-maven-3.3.9-bin\apache-maven-3.3.9\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files (x86)\Java\jdk1.8.0_73\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;c:\mingw\bin;c:\mingw\libexec\gcc\x86_64-pc-mingw32\5.3.0;C:\PVSW\bin;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\Common Files\Roxio Shared\9.0\DLLShared\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Java\jdk1.8.0_73\bin;C:\Program Files (x86)\Java\jdk1.8.0_73\bin;C:\Users\Gift\Documents\apache-maven-3.3.9-bin\apache-maven-3.3.9\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 &amp; MySQL Utilities 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 &amp; MySQL Utilities 1.5\Doctrine extensions for PHP\;C:\Program Files (x86)\Android\android-sdk\tools;C:\Program Files (x86)\Android\android-sdk\platform-tools;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\;C:\Program Files (x86)\GnuWin32\bin;C:\Program Files (x86)\dm845c\dm\bin;C:\xampp\php;C:\Program Files\Perforce;C:\Program Files\Perforce\DVCS\;C:\Users\Gift\AppData\Local\Programs\Python\Python36\Scripts\;C:\Users\Gift\AppData\Local\Programs\Python\Python36\;C:\Users\Gift\AppData\Roaming\npm;C:\Program Files (x86)\Microsoft VS Code\bin;."/>
+=======
     <property name="os.name" value="Mac OS X"/>
     <property name="classworlds.conf" value="/usr/local/Cellar/maven/3.3.9/libexec/bin/m2.conf"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/Azhar/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+>>>>>>> 2a582e0fd17f411b9516d9d2aa63c8e8c8821a4b
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -47,11 +63,20 @@
     <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
+<<<<<<< HEAD
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="1.8.0_73"/>
+    <property name="java.ext.dirs" value="C:\Program Files (x86)\Java\jdk1.8.0_73\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files (x86)\Java\jdk1.8.0_73\jre\lib\resources.jar;C:\Program Files (x86)\Java\jdk1.8.0_73\jre\lib\rt.jar;C:\Program Files (x86)\Java\jdk1.8.0_73\jre\lib\sunrsasign.jar;C:\Program Files (x86)\Java\jdk1.8.0_73\jre\lib\jsse.jar;C:\Program Files (x86)\Java\jdk1.8.0_73\jre\lib\jce.jar;C:\Program Files (x86)\Java\jdk1.8.0_73\jre\lib\charsets.jar;C:\Program Files (x86)\Java\jdk1.8.0_73\jre\lib\jfr.jar;C:\Program Files (x86)\Java\jdk1.8.0_73\jre\classes"/>
+    <property name="sun.stderr.encoding" value="cp437"/>
+=======
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="java.version" value="1.8.0_31"/>
     <property name="java.ext.dirs" value="/Users/Azhar/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
     <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/classes"/>
+>>>>>>> 2a582e0fd17f411b9516d9d2aa63c8e8c8821a4b
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="maven.home" value="/usr/local/Cellar/maven/3.3.9/libexec"/>
     <property name="file.separator" value="/"/>
@@ -62,7 +87,22 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
+<<<<<<< HEAD
   <testcase name="insertAddress" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.243"/>
+=======
+<<<<<<< HEAD
+  <testcase name="insertAddress" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.648"/>
+  <testcase name="validateUserTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="1.025"/>
+  <testcase name="insertPermission" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.15"/>
+  <testcase name="insertPerson" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.249"/>
+  <testcase name="insertPoll" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.044"/>
+  <testcase name="insertUserType" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.063"/>
+  <testcase name="activateVoterTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.153"/>
+  <testcase name="insertActivationStation" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.125"/>
+  <testcase name="insertPoliticalParty" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.167"/>
+=======
+  <testcase name="insertAddress" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.261"/>
+>>>>>>> 63c10b69fb5e7c85540acb88681dbe9770d625e9
   <testcase name="validateUserTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.123"/>
   <testcase name="insertPermission" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.023"/>
   <testcase name="addAdminTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.034"/>
@@ -71,7 +111,14 @@
   <testcase name="insertPoll" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.01"/>
   <testcase name="insertUserType" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.013"/>
   <testcase name="activateVoterTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.018"/>
+<<<<<<< HEAD
   <testcase name="insertActivationStation" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.023"/>
   <testcase name="addActivatorTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.009"/>
   <testcase name="insertPoliticalParty" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.03"/>
+=======
+  <testcase name="insertActivationStation" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.025"/>
+  <testcase name="addActivatorTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.011"/>
+  <testcase name="insertPoliticalParty" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.034"/>
+>>>>>>> 2a582e0fd17f411b9516d9d2aa63c8e8c8821a4b
+>>>>>>> 63c10b69fb5e7c85540acb88681dbe9770d625e9
 </testsuite>
