@@ -1,2 +1,2 @@
-voter/VoteRequest.class
-voter/VoterService.class
+voter\VoteRequest.class
+voter\VoterService.class

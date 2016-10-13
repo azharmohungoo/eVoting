@@ -40,12 +40,36 @@ public class VoterController {
     @Autowired
     AddressRepository ar;
 
-    @CrossOrigin
-    @RequestMapping(value = "getParty" , method = RequestMethod.POST)
-    public Boolean getParty()
-    {
 
-        return false;
+
+    @CrossOrigin
+    @RequestMapping(value = "/getParty" , method = RequestMethod.POST, produces = "application/JSON")
+    public String getParty(@RequestBody VoteRequest voteRequest)
+    {
+        System.out.println("inside get party");
+        System.out.println(voteRequest.getPartyName());
+
+        PoliticalParty party = ppr.findByPartyName(voteRequest.getPartyName());
+
+      //  System.out.println("returned from db " + party.getPartyName());
+        if(party == null)
+        {
+            System.out.println("party is null");
+            JsonObject result = Json.createObjectBuilder()
+                    .add("partyName", "Null")
+                    .build();
+
+            return result.toString();
+        }
+        else {
+
+            JsonObject result = Json.createObjectBuilder()
+                    .add("partyName", party.getPartyName())
+                    .build();
+
+            return result.toString();
+        }
+
     }
 
     @CrossOrigin
@@ -58,7 +82,6 @@ public class VoterController {
         newPerson.setCellphone(newVoter.getCellphone());
         newPerson.setEmail(newVoter.getEmail());
         newPerson.setPassword(newVoter.getPassword());
-        //newPerson.setUserType(userType.findById(1));
         newPerson.setIdNum(newVoter.getIdNum());
         newPerson.setLocationRegistered(newVoter.getLocationRegistered());
         newPerson.setActive(false);
@@ -122,8 +145,18 @@ public class VoterController {
         }
 
 
+<<<<<<< HEAD
+=======
         //return new ResponseEntity<>(loggedInAs, HttpStatus.OK);
         //return  successful;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 129c8bc0a532bfbfe5a18195f2240559733331d3
+
+>>>>>>> 63c10b69fb5e7c85540acb88681dbe9770d625e9
+>>>>>>> ce23c9903f645808c01e64680c8bf71f5b755680
     }
 
     @CrossOrigin

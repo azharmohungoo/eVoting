@@ -1,11 +1,11 @@
-<ion-view style="" class=" " id="viewParty" title="View Party" ng-init="getParty()">
+<ion-view cache-view="false" style="" class=" " id="viewParty" title="View Party" ng-init="getParty()">
   <ion-content class="has-header" padding="true">
     <div style="background: rgba(14, 5, 21, 0.76)">
-      <h2 align="center"> Party 1 </h2>
+      <h2 align="center">  {{ thePartyName }}  </h2>
       <div style="border-radius: 95%; height: 20px"> <img style="border-radius: 120%; height: 60px; bottom: 50px" src="../img/politician.jpg"> </div>
     </div>
 <div style="position: absolute; top:150px; align-content: center">
-  <h3 align="center">Party One Information</h3>
+  <h3 align="center">{{ thePartyName }} Information</h3>
   <p> Some relevant party information</p>
 
 </div>
