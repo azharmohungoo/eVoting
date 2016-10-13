@@ -34,12 +34,7 @@ public class DatabaseService
 
     public boolean activateVoter(Person _p)
     {
-<<<<<<< HEAD
         Person p = pr.getPersonByIdNum(_p.getIdNum());
-=======
-        System.out.println(_p.getPassword());
-        Person p = pr.getPersonByIdNumAndPassword(_p.getIdNum(), _p.getPassword());
->>>>>>> 63c10b69fb5e7c85540acb88681dbe9770d625e9
 
         if (p == null)
         {

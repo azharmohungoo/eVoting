@@ -124,10 +124,6 @@ public class VoterController {
 
         //return new ResponseEntity<>(loggedInAs, HttpStatus.OK);
         //return  successful;
-<<<<<<< HEAD
-=======
-
->>>>>>> 63c10b69fb5e7c85540acb88681dbe9770d625e9
     }
 
     @CrossOrigin
