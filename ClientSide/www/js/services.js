@@ -18,8 +18,7 @@ angular.module('app.services', [])
   getParty: function(viewPartyRequest)
   {
     return $http({url : "http://127.0.0.1:8080/getParty" , data : viewPartyRequest , method : "POST"})
-
-
+    
   }
   }
 

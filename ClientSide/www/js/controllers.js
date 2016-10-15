@@ -14,8 +14,8 @@ angular.module('app.controllers', [])
 .controller('viewPartyCtrl', function($scope, $localStorage){
 
 
-  $scope.thePartyName = "";
-alert( "local " + $localStorage.thePartyName);
+  //  $scope.thePartyName = "";
+//alert( "local " + $localStorage.thePartyName);
 
      $scope.thePartyName = $localStorage.thePartyName;
 
@@ -34,8 +34,8 @@ alert( "local " + $localStorage.thePartyName);
     VoteNationalService.getParty(loadPartyRequest)
       .then(function (result)
       {
-        alert("Back inside the controller");
-        alert("from the server " + result.data.partyName);
+       // alert("Back inside the controller");
+       // alert("from the server " + result.data.partyName);
 
         $localStorage.thePartyName = result.data.partyName;
 

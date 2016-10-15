@@ -144,16 +144,6 @@ public class VoterController {
             return result.toString();
         }
 
-
-<<<<<<< HEAD
-=======
-        //return new ResponseEntity<>(loggedInAs, HttpStatus.OK);
-        //return  successful;
-<<<<<<< HEAD
-=======
->>>>>>> 129c8bc0a532bfbfe5a18195f2240559733331d3
-
->>>>>>> 63c10b69fb5e7c85540acb88681dbe9770d625e9
     }
 
     @CrossOrigin
