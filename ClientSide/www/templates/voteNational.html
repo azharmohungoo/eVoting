@@ -1,4 +1,4 @@
-<ion-view style="" class=" " id="page4" title="Vote National">
+<ion-view cache-view="false" style="" class=" " id="page4" title="Vote National">
     <ion-content class="has-header" padding="true">
       <br>
     <div style="background: rgba(14, 5, 21, 0.76);  border-radius: 25%; width: 350px ; height: 90px">
@@ -6,7 +6,7 @@
      <div style="border-radius: 95%; height: 20px"> <img style="border-radius: 120%; height: 50px; bottom: 50px" src="../img/politician.jpg"> </div>
       <h3 align="center" style=" position:absolute;  top: 40px; left: 100px; color: white">Party One</h3>
       <button style="border-radius: 100%;position: absolute; left: 250px; top:50px; width: auto" ng-click="castVote('Party1')"> Cast Vote</button>
-      <button style="border-radius: 100%;position: absolute; left: 250px; top:80px; width: auto" ui-sref="tabsController.viewParty" ng-click="getParty('Party1')"> View Party</button>
+      <button style="border-radius: 100%;position: absolute; left: 250px; top:80px; width: auto" ng-click="getParty('Party1')"> View Party</button>
     </div>
 <br>
       <div style="background: rgba(60, 5, 22, 0.76);  border-radius: 25%; width: 350px ; height: 90px">
@@ -14,7 +14,7 @@
         <div style="border-radius: 95%; height: 20px"> <img style="border-radius: 120%; height: 50px; bottom: 50px" src="../img/politician.jpg"> </div>
         <h3 align="center" style=" position:absolute;  top: 150px; left: 100px; color: white">Party Two</h3>
         <button style="border-radius: 100%;position: absolute; left: 250px; top:160px; width: auto" ng-click="castVote('Party2')"> Cast Vote</button>
-        <button style="border-radius: 100%;position: absolute; left: 250px; top:190px; width: auto"  ui-sref="tabsController.viewParty" ng-click="getParty('Party2')">View Party</button>
+        <button style="border-radius: 100%;position: absolute; left: 250px; top:190px; width: auto"  ng-click="getParty('Party2')">View Party</button>
       </div>
 <br>
 

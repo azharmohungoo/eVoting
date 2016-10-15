@@ -21,6 +21,12 @@ public class PoliticalParty {
     private int provincialVoteCount = 0;
     private String blockchainNodeAddress;
     private String ipAddress;
+    private String partyDescription;
+    private String imgURL;
+
+
+
+
 
     public PoliticalParty() {
     }
@@ -109,4 +115,27 @@ public class PoliticalParty {
     public void setIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
     }
+
+
+    @Column(name="partyDescription", nullable = true)
+    public String getPartyDescription() {
+        return partyDescription;
+    }
+
+
+    public void setPartyDescription(String partyDescription) {
+        this.partyDescription = partyDescription;
+    }
+
+
+    @Column(name="imgURL", nullable = true)
+    public String getImgURL() {
+        return imgURL;
+    }
+
+    public void setImgURL(String imgURL) {
+        this.imgURL = imgURL;
+    }
+
+
 }

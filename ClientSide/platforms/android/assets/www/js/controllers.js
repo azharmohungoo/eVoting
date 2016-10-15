@@ -2,13 +2,45 @@ angular.module('app.controllers', [])
 
 .controller('eVotingCtrl', function($scope) {
 
+
+
 })
 
 .controller('electionInformationCtrl', function($scope) {
 
 })
 
-.controller('voteNationalCtrl', function($scope, VoteNationalService) {
+
+.controller('viewPartyCtrl', function($scope, $localStorage){
+
+
+  //  $scope.thePartyName = "";
+//alert( "local " + $localStorage.thePartyName);
+
+
+  $scope.thePartyName = $localStorage.thePartyName;
+
+
+
+
+})
+
+.controller('voteNationalCtrl', function($scope, VoteNationalService ,  $localStorage, $state) {
+
+  $scope.getParty = function(partyName)
+  {
+    var loadPartyRequest = {
+      "partyName" : partyName
+    };
+
+    alert("sending to service " + partyName );
+    VoteNationalService.getParty(loadPartyRequest)
+      .then(function (result)
+      {
+        $localStorage.thePartyName = result.data.partyName;
+        $state.go('tabsController.viewParty');
+      });
+  };
 
   $scope.castVote = function(party) {
 
@@ -17,13 +49,18 @@ angular.module('app.controllers', [])
 
       "partyName": party
 
-    }
+    };
     VoteNationalService.castNational(castNationalRequest);
   }
 
 })
 
-  .controller('eVotingLoginCtrl', function($scope, LoginService) {
+
+
+
+
+  .controller('eVotingLoginCtrl', function($scope, LoginService, $localStorage) {
+
 
     var vm = this;
 
@@ -34,22 +71,18 @@ angular.module('app.controllers', [])
     function  login()
     {
         var loginRequest = {
-          "password" : vm.password ,
+          "password" : Sha256.hash(vm.password) ,
           "idNum" : vm.idNum
         }
 
-     // alert(JSON.stringify(loginRequest));
       LoginService.login(loginRequest)
-        .success(function (result)
+        .then(function (result)
         {
+          $localStorage.data = result;
 
+         // console.log(result);
 
-         // alert(JSON.stringify(result));
-
-        }).catch(function (exception)
-      {
-        alert("Exception");
-      });
+        });
 
     }
   })
@@ -74,7 +107,7 @@ angular.module('app.controllers', [])
 
     var registerRequest = {
       "name" : vm.name,
-      "password" : vm.password ,
+      "password" : Sha256.hash(vm.password) ,
       "idNum" : vm.idNum,
       "surname" : vm.surname ,
       "email" : vm.email ,
@@ -82,7 +115,6 @@ angular.module('app.controllers', [])
       "locationRegistered" : vm.locationRegistered
     }
 
-   // alert(JSON.stringify(registerRequest));
 
     RegisterService.register(registerRequest)
       .then(function (result) {
@@ -99,7 +131,17 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('accountInformationCtrl', function($scope) {
+.controller('accountInformationCtrl', function($scope, $localStorage) {
+
+    $scope.name = $localStorage.data.name;
+    $scope.surname = $localStorage.data.surname;
+    $scope.IDNum = $localStorage.data.IDNum;
+    $scope.votes =  $localStorage.data.votes;
+    $scope.votedNational = $localStorage.data.votedNational;
+    $scope.votedProvincial = $localStorage.data.votedProvincial;
+    $scope.email = $localStorage.data.email;
+    $scope.activated = $localStorage.data.activated;
+    $scope.locationRegistered = $localStorage.data.locationRegistered;
 
 })
 

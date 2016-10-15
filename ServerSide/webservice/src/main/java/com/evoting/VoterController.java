@@ -142,6 +142,7 @@ public class VoterController {
                     .build();
             return result.toString();
         }
+
     }
 
     @CrossOrigin

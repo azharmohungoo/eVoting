@@ -14,15 +14,18 @@ angular.module('app.controllers', [])
 .controller('viewPartyCtrl', function($scope, $localStorage){
 
 
-  $scope.thePartyName = "";
-alert( "local " + $localStorage.thePartyName);
+  //  $scope.thePartyName = "";
+//alert( "local " + $localStorage.thePartyName);
 
-     $scope.thePartyName = $localStorage.thePartyName;
+
+  $scope.thePartyName = $localStorage.thePartyName;
+
+
 
 
 })
 
-.controller('voteNationalCtrl', function($scope, VoteNationalService ,  $localStorage) {
+.controller('voteNationalCtrl', function($scope, VoteNationalService ,  $localStorage, $state) {
 
   $scope.getParty = function(partyName)
   {
@@ -34,12 +37,8 @@ alert( "local " + $localStorage.thePartyName);
     VoteNationalService.getParty(loadPartyRequest)
       .then(function (result)
       {
-        alert("Back inside the controller");
-        alert("from the server " + result.data.partyName);
-
         $localStorage.thePartyName = result.data.partyName;
-
-
+        $state.go('tabsController.viewParty');
       });
   };
 
@@ -79,7 +78,6 @@ alert( "local " + $localStorage.thePartyName);
       LoginService.login(loginRequest)
         .then(function (result)
         {
-           $scope.name = result.name;
           $localStorage.data = result;
 
          // console.log(result);
