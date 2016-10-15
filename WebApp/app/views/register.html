@@ -1,23 +1,29 @@
-<div class="jumbotron">
-  <h1>Register</h1>
+<div ng-include src="'views/nav.html'"></div>
 
-  <form>
-    <label>ID Number: </label><input style="margin-left: 77px" type="text" ng-model="vm.idNum" id="idNum" name="id" class="id" placeholder="ID Number" required autofocus>
-    <br>
-    <label>Password: </label><input style="margin-left: 82px" type="password" ng-model="vm.password" id="password" name="Password"class="password" placeholder="Password" required>
-    <br>
-    <label>Name: </label><input style="margin-left: 107px" type="text" ng-model="vm.name" id="name" name="Name"class="name" placeholder="Name" required>
-    <br>
-    <label>Surname: </label><input style="margin-left: 88px" type="text" ng-model="vm.surname" id="surname" name="Surname" class="surname" placeholder="Surname" required>
-    <br>
-    <label>Location registered: </label><input style="margin-left: 20px" type="text" ng-model="vm.locationRegistered" id="locationRegistered" name="LocationRegistered" class="locationRegistered" placeholder="Pretoria - UP" required>
-    <br>
-    <label>Cellphone: </label><input style="margin-left: 83px" type="text" ng-model="vm.cellphone" id="cellphone" name="Cellphone" class="cellphone" placeholder="0821234321" required>
-    <br>
-    <label>Email: </label><input style="margin-left: 113px" type="email" ng-model="vm.email" id="email" name="Email" class="email" placeholder="email@gmail.com" required>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Register</h1>
 
-    <br><br>
+    <form>
+      <label>ID Number: </label><input style="margin-left: 77px" type="text" ng-model="vm.idNum" id="idNum" name="id" class="id" placeholder="ID Number" required autofocus>
+      <br>
+      <label>Password: </label><input style="margin-left: 82px" type="password" ng-model="vm.password" id="password" name="Password"class="password" placeholder="Password" required>
+      <br>
+      <label>Name: </label><input style="margin-left: 107px" type="text" ng-model="vm.name" id="name" name="Name"class="name" placeholder="Name" required>
+      <br>
+      <label>Surname: </label><input style="margin-left: 88px" type="text" ng-model="vm.surname" id="surname" name="Surname" class="surname" placeholder="Surname" required>
+      <br>
+      <label>Location registered: </label><input style="margin-left: 20px" type="text" ng-model="vm.locationRegistered" id="locationRegistered" name="LocationRegistered" class="locationRegistered" placeholder="Pretoria - UP" required>
+      <br>
+      <label>Cellphone: </label><input style="margin-left: 83px" type="text" ng-model="vm.cellphone" id="cellphone" name="Cellphone" class="cellphone" placeholder="0821234321" required>
+      <br>
+      <label>Email: </label><input style="margin-left: 113px" type="email" ng-model="vm.email" id="email" name="Email" class="email" placeholder="email@gmail.com" required>
 
-    <a class="btn btn-success" value="Register" ng-click="vm.register()">Register</a>
-  </form>
+      <br><br>
+
+      <a class="btn btn-success" value="Register" ng-click="vm.register()">Register</a>
+      <br>
+      <a style="float: right;" href="#/voter">Go back</a>
+    </form>
+  </div>
 </div>

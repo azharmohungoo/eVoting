@@ -23,13 +23,9 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'LoginCtrl',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        isRole: 'none'
       })
-      /*.when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl',
-        controllerAs: 'vm'
-      })*/
       .when('/register', {
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl',
@@ -38,39 +34,79 @@ angular
       .when('/admin', {
         templateUrl: 'views/admin.html',
         controller: 'AdminCtrl',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        isRole: 'Admin'
       })
       .when('/activator', {
         templateUrl: 'views/activator.html',
         controller: 'ActivatorCtrl',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        isRole: 'Activator'
       })
       .when('/party', {
         templateUrl: 'views/party.html',
-        //controller: '',
-        //controllerAs: ''
+        controller: '',
+        controllerAs: '',
+        isRole: 'Party'
       })
       .when('/voter', {
         templateUrl: 'views/voter.html',
         controller: 'VoterCtrl',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        isRole: 'Voter'
       })
       .when('/election', {
         templateUrl: 'views/election.html',
-        //controller: '',
-        //controllerAs: ''
+        controller: '',
+        controllerAs: '',
+        isRole: 'Voter'
       })
       .when('/accountInfo', {
         templateUrl: 'views/accountInfo.html',
         controller: 'VoterCtrl',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        isRole: 'Voter'
       })
       .when('/logout', {
         templateUrl: 'views/main.html',
-        controller: 'LogoutCtrl',
+        controller: 'LogoutCtrl'
+        //controllerAs: 'vm'
+      })
+      .when('/accessdenied', {
+        templateUrl: 'views/accessDenied.html',
+        controller: 'AccessDeniedCtrl',
         controllerAs: 'vm'
       })
       .otherwise({
         redirectTo: '/'
       });
+  })
+
+  .run(function ($rootScope, $location, $localStorage) {
+    $rootScope.$on('$routeChangeStart', function (event, next) {
+      //alert(next);
+      //console.log(next);
+
+      if (next.originalPath == "/register")
+      {
+        $location.path(next.originalPath);
+      }
+      else if ($localStorage.data == undefined)
+      {
+        $location.path("/");
+      }
+      else if (next.redirectTo != undefined)
+      {
+        $location.path(next.redirectTo);
+      }
+      else if (next.isRole == "none" || $localStorage.data.userType == next.isRole)
+      {
+        $location.path(next.originalPath);
+      }
+      else
+      {
+        $location.path('/accessdenied');
+        //$location.path(next.originalPath);
+      }
+    });
   });

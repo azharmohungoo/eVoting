@@ -7,6 +7,7 @@
 angular.module('eVotingWebApp')
 
   .controller('LogoutCtrl',function($location, $scope, $localStorage){
-    $localStorage.$reset;
-    $location.path('#/');
+    alert("clear");
+    $localStorage.$reset();
+    $location.path('/');
   });
