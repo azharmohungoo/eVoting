@@ -23,12 +23,40 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
 <<<<<<< HEAD
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/main.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4695122">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.5">
+              <caret line="4" column="94" selection-start-line="4" selection-start-column="94" selection-end-line="4" selection-end-column="94" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+=======
+<<<<<<< HEAD
       <file leaf-file-name="election.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/election.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
 =======
+>>>>>>> ce23c9903f645808c01e64680c8bf71f5b755680
       <file leaf-file-name="activator.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/activator.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -43,14 +71,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activator.controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="activator.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/activator.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7093023">
+            <state vertical-scroll-proportion="0.0">
               <caret line="61" column="32" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.125">
+              <caret line="13" column="50" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-56.25">
+              <caret line="90" column="1" selection-start-line="90" selection-start-column="1" selection-end-line="90" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,10 +167,8 @@
         <option value="$PROJECT_DIR$/app/scripts/controllers/register.service.js" />
         <option value="$PROJECT_DIR$/app/views/login.html" />
         <option value="$PROJECT_DIR$/app/views/Voter.html" />
-        <option value="$PROJECT_DIR$/app/views/admin.html" />
         <option value="$PROJECT_DIR$/app/views/party.html" />
         <option value="$PROJECT_DIR$/app/views/register.html" />
-        <option value="$PROJECT_DIR$/app/views/main.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/register.controller.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/register.service.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/login.controller.js" />
@@ -138,6 +184,8 @@
         <option value="$PROJECT_DIR$/app/scripts/services/activator.service.js" />
         <option value="$PROJECT_DIR$/app/views/activator.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/activator.controller.js" />
+        <option value="$PROJECT_DIR$/app/views/admin.html" />
+        <option value="$PROJECT_DIR$/app/views/main.html" />
       </list>
     </option>
   </component>
@@ -761,15 +809,26 @@
       <workItem from="1476114252756" duration="1285000" />
       <workItem from="1476116483480" duration="11000" />
 <<<<<<< HEAD
+      <workItem from="1476116503608" duration="39695000" />
+=======
+<<<<<<< HEAD
       <workItem from="1476116503608" duration="23775000" />
       <workItem from="1476229951614" duration="1215000" />
 =======
       <workItem from="1476116503608" duration="37683000" />
 >>>>>>> 129c8bc0a532bfbfe5a18195f2240559733331d3
+>>>>>>> ce23c9903f645808c01e64680c8bf71f5b755680
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="40991000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1436" height="877" extended-state="6" />
+    <editor active="false" />
+=======
 <<<<<<< HEAD
     <option name="totallyTimeSpent" value="26286000" />
   </component>
@@ -783,6 +842,7 @@
     <frame x="0" y="23" width="1436" height="877" extended-state="6" />
     <editor active="true" />
 >>>>>>> 129c8bc0a532bfbfe5a18195f2240559733331d3
+>>>>>>> ce23c9903f645808c01e64680c8bf71f5b755680
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -974,6 +1034,8 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/app/views/admin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09146342">
@@ -983,6 +1045,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> ce23c9903f645808c01e64680c8bf71f5b755680
     <entry file="file://$PROJECT_DIR$/app/scripts/services/register.service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1002,6 +1065,8 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.81707317">
@@ -1019,6 +1084,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> ce23c9903f645808c01e64680c8bf71f5b755680
     <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41860464">
@@ -1032,6 +1098,8 @@
         <state />
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/app/views/main.html">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -1050,6 +1118,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> ce23c9903f645808c01e64680c8bf71f5b755680
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/voter.controller.js">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -1154,10 +1223,14 @@
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/activator.controller.js">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+        <state vertical-scroll-proportion="0.0">
+=======
+<<<<<<< HEAD
         <state relative-caret-position="34">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
 =======
         <state vertical-scroll-proportion="0.7093023">
+>>>>>>> ce23c9903f645808c01e64680c8bf71f5b755680
           <caret line="61" column="32" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
 >>>>>>> 129c8bc0a532bfbfe5a18195f2240559733331d3
           <folding>
@@ -1182,6 +1255,43 @@
           <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.125">
+          <caret line="13" column="50" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-56.25">
+          <caret line="90" column="1" selection-start-line="90" selection-start-column="1" selection-end-line="90" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5">
+          <caret line="4" column="94" selection-start-line="4" selection-start-column="94" selection-end-line="4" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4695122">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#fieldset#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

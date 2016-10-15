@@ -37,8 +37,8 @@ angular
       })
       .when('/admin', {
         templateUrl: 'views/admin.html',
-        //controller: '',
-        //controllerAs: 'vm'
+        controller: 'AdminCtrl',
+        controllerAs: 'vm'
       })
       .when('/activator', {
         templateUrl: 'views/activator.html',

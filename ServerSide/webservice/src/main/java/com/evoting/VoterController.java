@@ -1,9 +1,6 @@
 package com.evoting;
 
-import com.evoting.domain.Address;
-import com.evoting.domain.Person;
-import com.evoting.domain.PoliticalParty;
-import com.evoting.domain.UserType;
+import com.evoting.domain.*;
 import com.evoting.repositories.AddressRepository;
 import com.evoting.repositories.PersonRepository;
 import com.evoting.repositories.PoliticalPartyRepository;
@@ -16,6 +13,8 @@ import voter.VoterService;
 
 import javax.json.Json;
 import javax.json.JsonObject;
+import java.util.HashSet;
+import java.util.Set;
 
 
 /**
@@ -143,7 +142,10 @@ public class VoterController {
                     .build();
             return result.toString();
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 371a471efae42ac22429962f508ab8587f07a83c
     }
 
     @CrossOrigin
@@ -264,5 +266,60 @@ public class VoterController {
                     .build();
             return result.toString();
         }
+    }
+
+    @CrossOrigin
+    @RequestMapping(value = "/adminRegister", method = RequestMethod.POST)
+    public Boolean adminRegister(@RequestBody VoterService newUser)
+    {
+        Person p = new Person();
+        p.setName(newUser.getName());
+        p.setSurname(newUser.getSurname());
+        p.setCellphone(newUser.getCellphone());
+        p.setEmail(newUser.getEmail());
+        p.setPassword(newUser.getPassword());
+        p.setIdNum(newUser.getIdNum());
+        p.setLocationRegistered(newUser.getLocationRegistered());
+        p.setActive(false);
+        p.setVotedNationalElection(false);
+        p.setVotedProvincialElection(false);
+        p.setVotes(0);
+
+        Set<Permission> setP;
+
+        switch (newUser.getUserType())
+        {
+            case "admin":
+                p.setUserType(new UserType("Admin"));
+
+                setP = new HashSet<Permission>(0);
+                setP.add(new Permission("Insert"));
+                setP.add(new Permission("Update"));
+                setP.add(new Permission("Delete"));
+
+                p.setPermissions(setP);
+
+                dbService.addAdmin(p);
+                break;
+
+            case "activator":
+                p.setUserType(new UserType("Activator"));
+
+                setP = new HashSet<Permission>(0);
+                setP.add(new Permission("Update"));
+
+                p.setPermissions(setP);
+
+                dbService.addActivator(p);
+                break;
+
+            case "party":
+                p.setUserType(new UserType("Party"));
+
+                dbService.addParty(p);
+                break;
+        }
+
+        return true;
     }
 }
