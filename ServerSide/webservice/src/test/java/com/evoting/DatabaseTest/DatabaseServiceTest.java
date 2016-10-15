@@ -242,4 +242,16 @@ public class DatabaseServiceTest
 
         Assert.assertNotNull(personRepository.getPersonByIdNumAndPassword(p.getIdNum(), p.getPassword()));
     }
+
+
+    @Test
+    public void addPartyTest()
+    {
+        Person p = new Person("7891236781456", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "newPartyName", "NewPartySurname", "Pretoria - UP", "3455654399", "newParty@gmail.com", 0, false, false, false);
+        p.setUserType(new UserType("Voter"));
+
+        ds.addParty(p);
+
+        Assert.assertNotNull(personRepository.getPersonByIdNumAndPassword(p.getIdNum(), p.getPassword()));
+    }
 }

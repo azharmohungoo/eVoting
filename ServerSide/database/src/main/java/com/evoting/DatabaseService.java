@@ -138,4 +138,17 @@ public class DatabaseService
 
         return false;
     }
+
+    public boolean addParty(Person _p)
+    {
+        if (_p != null)
+        {
+            pr.saveAndFlush(_p);
+            System.out.println("Party added");
+
+            return true;
+        }
+
+        return false;
+    }
 }

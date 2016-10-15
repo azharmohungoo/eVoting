@@ -1,9 +1,6 @@
 package com.evoting;
 
-import com.evoting.domain.Address;
-import com.evoting.domain.Person;
-import com.evoting.domain.PoliticalParty;
-import com.evoting.domain.UserType;
+import com.evoting.domain.*;
 import com.evoting.repositories.AddressRepository;
 import com.evoting.repositories.PersonRepository;
 import com.evoting.repositories.PoliticalPartyRepository;
@@ -16,6 +13,8 @@ import voter.VoterService;
 
 import javax.json.Json;
 import javax.json.JsonObject;
+import java.util.HashSet;
+import java.util.Set;
 
 
 /**
@@ -143,20 +142,6 @@ public class VoterController {
                     .build();
             return result.toString();
         }
-
-
-<<<<<<< HEAD
-=======
-        //return new ResponseEntity<>(loggedInAs, HttpStatus.OK);
-        //return  successful;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 129c8bc0a532bfbfe5a18195f2240559733331d3
-
->>>>>>> 63c10b69fb5e7c85540acb88681dbe9770d625e9
->>>>>>> ce23c9903f645808c01e64680c8bf71f5b755680
     }
 
     @CrossOrigin
@@ -277,5 +262,60 @@ public class VoterController {
                     .build();
             return result.toString();
         }
+    }
+
+    @CrossOrigin
+    @RequestMapping(value = "/adminRegister", method = RequestMethod.POST)
+    public Boolean adminRegister(@RequestBody VoterService newUser)
+    {
+        Person p = new Person();
+        p.setName(newUser.getName());
+        p.setSurname(newUser.getSurname());
+        p.setCellphone(newUser.getCellphone());
+        p.setEmail(newUser.getEmail());
+        p.setPassword(newUser.getPassword());
+        p.setIdNum(newUser.getIdNum());
+        p.setLocationRegistered(newUser.getLocationRegistered());
+        p.setActive(false);
+        p.setVotedNationalElection(false);
+        p.setVotedProvincialElection(false);
+        p.setVotes(0);
+
+        Set<Permission> setP;
+
+        switch (newUser.getUserType())
+        {
+            case "admin":
+                p.setUserType(new UserType("Admin"));
+
+                setP = new HashSet<Permission>(0);
+                setP.add(new Permission("Insert"));
+                setP.add(new Permission("Update"));
+                setP.add(new Permission("Delete"));
+
+                p.setPermissions(setP);
+
+                dbService.addAdmin(p);
+                break;
+
+            case "activator":
+                p.setUserType(new UserType("Activator"));
+
+                setP = new HashSet<Permission>(0);
+                setP.add(new Permission("Update"));
+
+                p.setPermissions(setP);
+
+                dbService.addActivator(p);
+                break;
+
+            case "party":
+                p.setUserType(new UserType("Party"));
+
+                dbService.addParty(p);
+                break;
+        }
+
+        return true;
     }
 }
