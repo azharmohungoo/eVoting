@@ -4,15 +4,15 @@
 
       <h4 align="center">Currently Logged in : </h4>
       <div align="center" style="border: #000000 solid">
-        <p>Name : CodeX</p>
-        <p>ID Number : 931111111922932</p>
-        <p>National Vote Balance : 1</p>
-        <p>Provincial Vote Balance : 1</p>
+        <p>Name : {{ name }}</p>
+        <p>ID Number : {{ IDNum }} </p>
+        <p>Voted National : {{ votedNational }}</p>
+        <p>Provincial Vote Balance : {{ votedProvincial }} </p>
 
       </div>
       <br>
 
-      <h5>Activation Stations Near You : </h5>
+      <h5>Activation Stations Near {{ locationRegistered }} : </h5>
       <div align="center">
         <p>Brooklyn Primary School</p>
         <p>The University of Pretoria(Hatfield Campus)</p>

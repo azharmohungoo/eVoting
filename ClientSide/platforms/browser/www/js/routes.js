@@ -8,8 +8,6 @@ angular.module('app.routes', [])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-
-
       .state('eVoting', {
     url: '/page2',
     templateUrl: 'templates/eVoting.html',
@@ -31,7 +29,7 @@ angular.module('app.routes', [])
       views: {
         'tab1': {
           templateUrl: 'templates/viewParty.html',
-          //controller: 'electionInformationCtrl'
+          controller: 'viewPartyCtrl'
         }
       }
     })

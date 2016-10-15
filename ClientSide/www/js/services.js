@@ -1,14 +1,25 @@
 angular.module('app.services', [])
 
 
-.service('VoteNationalService', function($http){
+  .service('ipProvider', function(){
+
+    return {
+       getIP : function () {
+         return "127.0.0.1";
+       }
+
+  }
+  })
+
+.service('VoteNationalService', function($http, ipProvider){
   return {
 
     castNational: function (castNationalRequest) {
 
       alert("Casting national vote");
-     // alert(JSON.stringify(castNationalRequest));
-      return $http({ url : "http://127.0.0.1:8080/castVote" , data : castNationalRequest , method : "POST" })
+     var myUrl = "http://" + ipProvider.getIP() + ":8080/castVote";
+      alert(myUrl);
+      return $http({ url : myUrl , data : castNationalRequest , method : "POST" })
         .then(function (result){
           alert(result.data);
         })
@@ -17,20 +28,22 @@ angular.module('app.services', [])
 
   getParty: function(viewPartyRequest)
   {
-    return $http({url : "http://127.0.0.1:8080/getParty" , data : viewPartyRequest , method : "POST"})
-    
+    var myUrl = "http://" + ipProvider.getIP() + ":8080/getParty";
+    return $http({url : myUrl , data : viewPartyRequest , method : "POST"})
+
   }
   }
 
 })
 
 
-.service('ViewPartyService', function($http){
+.service('ViewPartyService', function($http, ipProvider){
   return {
 
     getParty: function(viewPartyRequest)
     {
-      return $http({url : "http://127.0.0.1:8080/getParty" , data : viewPartyRequest , method : "POST"})
+      var myUrl = "http://" + ipProvider.getIP() + ":8080/getParty";
+      return $http({url : myUrl , data : viewPartyRequest , method : "POST"})
         .then(function(result)
       {
           alert(result.data);
@@ -42,11 +55,12 @@ angular.module('app.services', [])
 
 })
 
-.service('LoginService',  function($http, $state) {
+.service('LoginService',  function($http, $state, ipProvider) {
   return {
     login: function(loginRequest) {
 
-      return $http({url : "http://127.0.0.1:8080/login" , data : loginRequest , method : "POST"})
+      var myUrl = "http://" + ipProvider.getIP() + ":8080/login";
+      return $http({url : myUrl , data : loginRequest , method : "POST"})
         .then(function (result) {
           alert(JSON.stringify(result));
          // alert(result.data.success);
@@ -75,14 +89,15 @@ angular.module('app.services', [])
   .factory( 'RegisterService', RegisterService);
 
 RegisterService.$inject = ['$http'];
-function  RegisterService($http) {
+function  RegisterService($http, ipProvider) {
 
   return {
     register : function(registerRequest){
 
       alert("Registering..");
 
-      return $http({url : "http://127.0.0.1:8080/register" , data : registerRequest , method : "POST"})
+      var myUrl = "http://" + ipProvider.getIP() + ":8080/register";
+      return $http({url : myUrl , data : registerRequest , method : "POST"})
         .then(function (result) {
         //  alert(JSON.stringify(result))
           return result.data;
