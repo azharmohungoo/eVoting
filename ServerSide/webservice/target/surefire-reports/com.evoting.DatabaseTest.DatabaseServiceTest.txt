@@ -1,6 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: com.evoting.DatabaseTest.DatabaseServiceTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 13, Failures: 0, Errors: 13, Skipped: 0, Time elapsed: 65.355 sec <<< FAILURE! - in com.evoting.DatabaseTest.DatabaseServiceTest
 addPartyTest(com.evoting.DatabaseTest.DatabaseServiceTest)  Time elapsed: 0.026 sec  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
@@ -3291,3 +3292,10 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
 
+=======
+<<<<<<< HEAD
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.75 sec - in com.evoting.DatabaseTest.DatabaseServiceTest
+=======
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 33.785 sec - in com.evoting.DatabaseTest.DatabaseServiceTest
+>>>>>>> a51e1843c9278416e74af2cb16a6e69311f68198
+>>>>>>> 2c3b36dcdbc67c31f8d381ed4eda5bd96deeaf77

@@ -13,6 +13,7 @@ angular.module('eVotingWebApp')
     vm.password;
 
     vm.login = login;
+    vm.isLoggedIn = isLoggedIn;
 
     function  login()
     {
@@ -31,5 +32,15 @@ angular.module('eVotingWebApp')
           console.log(result);
 
         });
+    }
+
+    function isLoggedIn()
+    {
+      if ($localStorage.data == undefined)
+      {
+        return false;
+      }
+
+      return true;
     }
   });

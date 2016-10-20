@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.05" tests="13" errors="13" skipped="0" failures="0">
+=======
+<<<<<<< HEAD
+<testsuite name="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.591" tests="13" errors="0" skipped="0" failures="0">
+=======
+<testsuite name="com.evoting.DatabaseTest.DatabaseServiceTest" time="1.479" tests="13" errors="0" skipped="0" failures="0">
+>>>>>>> a51e1843c9278416e74af2cb16a6e69311f68198
+>>>>>>> 2c3b36dcdbc67c31f8d381ed4eda5bd96deeaf77
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.8.0_73\jre\bin"/>
@@ -62,6 +70,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
+<<<<<<< HEAD
   <testcase name="addPartyTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.026">
     <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException"><![CDATA[java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
@@ -6921,4 +6930,35 @@ Caused by: java.net.ConnectException: Connection refused: connect
 
 ]]></system-out>
   </testcase>
+=======
+<<<<<<< HEAD
+  <testcase name="addPartyTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.357"/>
+  <testcase name="insertAddress" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.026"/>
+  <testcase name="validateUserTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.004"/>
+  <testcase name="insertPermission" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.013"/>
+  <testcase name="addAdminTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.021"/>
+  <testcase name="addVoterTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.01"/>
+  <testcase name="insertPerson" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.046"/>
+  <testcase name="insertPoll" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.009"/>
+  <testcase name="insertUserType" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.013"/>
+  <testcase name="activateVoterTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.023"/>
+  <testcase name="insertActivationStation" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.026"/>
+  <testcase name="addActivatorTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.011"/>
+  <testcase name="insertPoliticalParty" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.032"/>
+=======
+  <testcase name="addPartyTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.886"/>
+  <testcase name="insertAddress" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.09"/>
+  <testcase name="validateUserTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.011"/>
+  <testcase name="insertPermission" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.033"/>
+  <testcase name="addAdminTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.045"/>
+  <testcase name="addVoterTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.023"/>
+  <testcase name="insertPerson" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.1"/>
+  <testcase name="insertPoll" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.025"/>
+  <testcase name="insertUserType" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.034"/>
+  <testcase name="activateVoterTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.049"/>
+  <testcase name="insertActivationStation" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.065"/>
+  <testcase name="addActivatorTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.029"/>
+  <testcase name="insertPoliticalParty" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.089"/>
+>>>>>>> a51e1843c9278416e74af2cb16a6e69311f68198
+>>>>>>> 2c3b36dcdbc67c31f8d381ed4eda5bd96deeaf77
 </testsuite>

@@ -1,11 +1,15 @@
-<div class="jumbotron">
-  <h2>{{ name }} {{ surname }}</h2>
-  <p>ID number: {{ IDNum }}</p>
-  <p>Email: {{ email }}</p>
-  <p>Cellphone: {{ cellphone }}</p>
-  <p>Location Registered: {{ locationRegistered }}</p>
-  <p>Activation status: {{ activated }}</p>
-  <p>Votes remaining: {{ votes }}</p>
+<div ng-include src="'views/nav.html'"></div>
 
-  <a style="float: right;" href="#/voter">Back</a>
+<div class="container">
+    <div class="jumbotron">
+    <h2>{{ name }} {{ surname }}</h2>
+    <p>ID number: {{ IDNum }}</p>
+    <p>Email: {{ email }}</p>
+    <p>Cellphone: {{ cellphone }}</p>
+    <p>Location Registered: {{ locationRegistered }}</p>
+    <p>Activation status: {{ activated }}</p>
+    <p>Votes remaining: {{ votes }}</p>
+
+    <a style="float: right;" href="#/voter">Go back</a>
+  </div>
 </div>

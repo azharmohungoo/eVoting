@@ -6,8 +6,11 @@
 
 \usepackage[pdftex]{graphicx}
 \usepackage{hyperref}
+\usepackage{cleveref}
 \usepackage{float}
 \usepackage{cite}
+\usepackage{placeins}
+\usepackage{booktabs}
 \hypersetup{
 	colorlinks=true,
 	linkcolor=black,
@@ -20,6 +23,8 @@
 \title{Unit Test Plan and Report}
 
 \begin{document}
+	\setcounter{tocdepth}{6}
+	\setcounter{secnumdepth}{6}
 	\setlength{\parskip}{6pt}
 	
 	% generates the title
@@ -35,45 +40,271 @@
 	\newpage
 	
 	\section{Introduction}
+	Software testing is performed to verify that the completed software package functions according to the expectations defined by our requirements/specifications.\newline
+	EVoting consists of different components, each designed to do a specific seperate task. It is important to test each component individually to insure that they do what is expected from them before building the project as a whole and executing it. Tests are therefore essential to our system to prevent bugs, compile time and run time errors.
 	
-		\subsection{Purpose}
-		
-		\subsection{Scope}
-		
-		\subsection{Test Environment}
-		
-		\subsection{Assumptions and Dependencies}
-		
+	\subsection{Purpose}
+	EVoting is an electronic voting system, designed specifically for government elections, but it can also be used in other scenarios where reliable electronic voting is needed. Since it is crutial that the voting procesess cannot be tampered with in any way, both reliability and security is of main importance. It is there extremely important to test the crutial parts of the system to ensure the system executes as expected and eliminate unexpected security and reliability threats.
+	\subsection{Scope}
+	The scope of this document is structured as follows:\newline
+	In this document, we elaborate on the purpose as well as the specific details to why we are testing certain funtionality. The functionality that are considered for
+	testing are listed in \autoref{sec:FunctionalFeaturesToBeTested}. Tests that have been identied from the requirements are discussed in detail in section TODO Furthermore, this document outlines the test environment and the risks involved in the testing approaches that will be followed. Assumptions and
+	dependencies of this test plan will also be mentioned. \Cref{sec:DetailedTestResults} outlines, discusses and concludes on the results of the tests.
+	\subsection{Test Environment}
+	Our testing environment is as follows:
+	\subsubsection{Programming Languages:}
+	Java version 1.8+
+	\subsubsection{Testing Framework:}
+	JUnit Testing framework.\newline
+	Maven - Testing phase.
+	\subsubsection{Coding Environment:}
+	IntelliJ Ultimate Edition 2016.1
+	\subsubsection{Operating Systems:}
+	Windows 10\newline
+	Mac OS\newline
+	Android version 4.4+
+	\subsubsection{Internet Browsers:}
+	HTML5 supported web browsers.\newline
+	Firefox\newline
+	Chrome\newline
+	Safari
+	\subsection{Assumptions and Dependencies}
+	Assumptions:
+	\begin{itemize}
+		\item Server-side, client-side and the Blockchain are running on the same network.
+		\item Each OS doesn't have a firewall blocking any of the incoming and outgoning messages as well as ports used by the system.
+		\item The Blockchain is running (at least 1 Admin Node).
+	\end{itemize}
+	Dependencies:
+	\begin{itemize}
+		\item The Blockchain is reachable by the system.
+		\item Network IP range and mask: 192.168.1.0/255.255.255.0.
+		\item Each Blockchain node and the webservice all have static IP addresses.
+	\end{itemize}
 	\newpage	
-		
+	
 	\begin{center}
 		\section*{Unit Test Plan}
 	\end{center}
 	
-	\section{Test Items}
-	
 	\section{Functional Features to be Tested}
+	\label{sec:FunctionalFeaturesToBeTested}
+	The aspects that will be tested and evaluated in these tests are described in the following sections. The items that are tested is the crutial fundamental use cases that are required of the system to function at a core level. These use cases are specified in the section below.\newline
+	
+	The following is a list of features to be tested:
+	\begin{itemize}
+		\item Blockchain Module:
+		\begin{itemize}
+			\item Connection to the blockchain and general module configuration.
+			\item Be able to send a vote from and to different Nodes.
+			\item Be able to get the vote balance of a Node.
+		\end{itemize}
+	\end{itemize}
+	2. TODO-Andreas: Provide references to the Requirements and/or Design specications of the features to be tested. Explain briefly and provide a table to introduce the different test cases
+	
+	\FloatBarrier
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+	\centering
+	\caption{Test Cases Descriptions}
+	\label{my-label}
+	\begin{tabular}{p{3cm}|p{2cm}|p{6cm}|p{2.5cm}}
+		\toprule
+		\multicolumn{1}{c|}{\textbf{Feature ID}} & \multicolumn{1}{l|}{\textbf{Source}} & \multicolumn{1}{l|}{\textbf{Summary}} & \textbf{Test Case ID} \\ \midrule
+
+		\multicolumn{1}{p{0.75cm}}{TODO} & \multicolumn{1}{p{2cm}}{Blockchain} & \multicolumn{1}{p{6cm}}{Test the general configuration. These test won't stop the system from building. But if these fail then some configuration might need to get checked.} & \multicolumn{1}{c}{1} \\ \midrule
+		
+		\multicolumn{1}{p{0.75cm}}{TODO} & \multicolumn{1}{p{2cm}}{Blockchain} & \multicolumn{1}{p{6cm}}{Test the sendVote functionality to ensure voters' vote won't get lost during run time.} & \multicolumn{1}{c}{1} \\ \midrule
+		
+		\multicolumn{1}{p{0.75cm}}{TODO} & \multicolumn{1}{p{2cm}}{Blockchain} & \multicolumn{1}{p{6cm}}{Test the getBalance functionality to see if parties can retrieve their total votes.} & \multicolumn{1}{c}{1} \\ \midrule
+		
+		\multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{test} & \multicolumn{1}{l|}{test} & 1 \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+\FloatBarrier
 	
 	\section{Test Cases}
+	\subsection{Blockchain Module}
+	\subsubsection{Test Case 1: ConfigurationAndConnection}
+	\paragraph{Condition 1: InvalidIPandPort}	
+	\subparagraph{Objective:}
+	The purpose of this test is to see if the system can detect if the specified Node IP address and port are invalid or empty.
+	\subparagraph{Input:}
+	Parameters:
+	\begin{itemize}
+		\item An incorrect IP address string and/or
+		\item An incorrect port address string.
+		\item A correct RPC username string.
+		\item A correct RPC password string.
+		\item A correct Node address (to address).
+		\item A positive interger amount.
+	\end{itemize}
+	\subparagraph{Outcome:}
+	\begin{itemize}
+		\item JSON Object returned with a key-value pair of "success":"false".
+		\item Also a key-value pair of "result":$<$BlockchainErrorMessages.InvalidIP$>$ or "result":$<$BlockchainErrorMessages.InvalidPort$>$ respectively where the values in brackets are strings defined in the BlockchainErrorMessages enumerate.
+	\end{itemize}
+	
+	\paragraph{Condition 2: InvalidRPCCredentials}	
+	\subparagraph{Objective:}
+	The purpose of this test is to see if the system can detect if the specified RPC username and/or password are incorrect.
+	\subparagraph{Input:}
+	Parameters:
+	\begin{itemize}
+		\item A correct IP address string.
+		\item A correct port address string.
+		\item An incorrect RPC username string and/or
+		\item An incorrect RPC password string.
+		\item A correct Node address (to address).
+		\item A positive interger amount.
+	\end{itemize}
+	\subparagraph{Outcome:}
+	\begin{itemize}
+		\item JSON Object returned with a key-value pair of "success":"false".
+		\item Also a key-value pair of "result":$<$BlockchainErrorMessages.InvalidRPCCredentials$>$ where the value in brackets is a string defined in the BlockchainErrorMessages enumerate.
+	\end{itemize}
+
+	\subsubsection{Test Case 2: sendVote}
+	\paragraph{Condition 1: InvalidToAddress}	
+	\subparagraph{Objective:}
+	The purpose of this test is to see if the system can detect wether votes are trying to be sent to an invalid Node address (i.e. an address that doesn't exist in the Blockchain).
+	\subparagraph{Input:}
+	Parameters:
+	\begin{itemize}
+		\item A correct IP address string.
+		\item A correct port address string.
+		\item A correct RPC username string and/or
+		\item A correct RPC password string.
+		\item An incorrect Node address (to address).
+		\item A positive interger amount.
+	\end{itemize}
+	\subparagraph{Outcome:}
+	\begin{itemize}
+		\item JSON Object returned with a key-value pair of "success":"false".
+		\item Also a key-value pair of "result":$<$BlockchainErrorMessages.InvalidToAddress$>$ where the value in brackets is a string defined in the BlockchainErrorMessages enumerate.
+	\end{itemize}
+
+	\paragraph{Condition 2: InvalidVotesLeft}	
+	\subparagraph{Objective:}
+	The purpose of this test is to see if the system can detect wether a voting Node is trying to send a vote when its vote balance is 0.
+	\subparagraph{Input:}
+	Parameters:
+	\begin{itemize}
+		\item A correct IP address string.
+		\item A correct port address string.
+		\item A correct RPC username string and/or
+		\item A correct RPC password string.
+		\item A correct Node address (to address).
+		\item A positive interger amount.
+	\end{itemize}
+	Existing Entity: The voting Node's vote balance is 0.
+	\subparagraph{Outcome:}
+	\begin{itemize}
+		\item JSON Object returned with a key-value pair of "success":"false".
+		\item Also a key-value pair of "result":$<$BlockchainErrorMessages.InvalidVotesLeft$>$ where the value in brackets is a string defined in the BlockchainErrorMessages enumerate.
+	\end{itemize}
+	
+	\paragraph{Condition 3: SendVoteFromAdminToNode}	
+	\subparagraph{Objective:}
+	The purpose of this test is to see if the system can successfully send 1 vote from the Admin Node to any other Node.
+	\subparagraph{Input:}
+	Parameters:
+	\begin{itemize}
+		\item A correct IP address string.
+		\item A correct port address string.
+		\item A correct RPC username string and/or
+		\item A correct RPC password string.
+		\item A correct Node address (to address).
+		\item A positive interger amount.
+	\end{itemize}
+	\subparagraph{Outcome:}
+	\begin{itemize}
+		\item JSON Object returned with a key-value pair of "success":"true".
+		\item Also a key-value pair of "result":$<$TransactionHash$>$ where the value in brackets is a hash value to identify the transaction.
+	\end{itemize}
+	
+	\paragraph{Condition 4: SendVoteFromNodeToAdmin}	
+	\subparagraph{Objective:}
+	The purpose of this test is to see if the system can successfully send 1 vote from a Node other than the Admin to the Admin Node.
+	\subparagraph{Input:}
+	Parameters:
+	\begin{itemize}
+		\item A correct IP address string.
+		\item A correct port address string.
+		\item A correct RPC username string and/or
+		\item A correct RPC password string.
+		\item A correct Node address (to address).
+		\item A positive interger amount.
+	\end{itemize}
+	\subparagraph{Outcome:}
+	\begin{itemize}
+		\item JSON Object returned with a key-value pair of "success":"true".
+		\item Also a key-value pair of "result":$<$TransactionHash$>$ where the value in brackets is a hash value to identify the transaction.
+	\end{itemize}
+	
+	\subsubsection{Test Case 3: GetBalance}
+	\paragraph{Condition 1: GetAdminBalance}	
+	\subparagraph{Objective:}
+	The purpose of this test is to see if the system can successfully retrieve the vote balance of the Admin Node.
+	\subparagraph{Input:}
+	Parameters:
+	\begin{itemize}
+		\item A correct IP address string.
+		\item A correct port address string.
+		\item A correct RPC username string and/or
+		\item A correct RPC password string.
+	\end{itemize}
+	\subparagraph{Outcome:}
+	\begin{itemize}
+		\item JSON Object returned with a key-value pair of "success":"false".
+		\item Also a key-value pair of "result":$<$Balance$>$ where the value in brackets is an interger of the balance.
+	\end{itemize}
+	
+	\paragraph{Condition 2: GetNodeBalance}	
+	\subparagraph{Objective:}
+	The purpose of this test is to see if the system can successfully retrieve the vote balance of any other Node other than the Admin Node.
+	\subparagraph{Input:}
+	Parameters:
+	\begin{itemize}
+		\item A correct IP address string.
+		\item A correct port address string.
+		\item A correct RPC username string and/or
+		\item A correct RPC password string.
+	\end{itemize}
+	\subparagraph{Outcome:}
+	\begin{itemize}
+		\item JSON Object returned with a key-value pair of "success":"false".
+		\item Also a key-value pair of "result":$<$Balance$>$ where the value in brackets is an interger of the balance.
+	\end{itemize}
 	
 	\section{Item Pass/Fail Criteria}
-	
+	\begin{itemize}
+		\item All of the post conditions has to be met.
+		\item TODO-Andreas
+	\end{itemize}
+	If any of the above criteria are not met, the item will be considered failed.
+
 	\section{Test Deliverables}
-	
+	\begin{itemize}
+		\item Test Report located at: 
+		\item The link to Test Code:
+	\end{itemize}
 	\newpage
-	
 	\begin{center}
 		\section*{Unit Test Report}
 	\end{center}
 	
 	\section{Detailed Test Results}
+	\label{sec:DetailedTestResults}
+		
+	\subsection{Overview of Test Results}
 	
-		\subsection{Overview of Test Results}
-		
-		\subsection{Functional Requirements Test Results}
-		
+	\subsection{Functional Requirements Test Results}
+	
 	\newpage	
-		
+	
 	\section{Other}
 	
 	\section{Conclusions and Recommendations}

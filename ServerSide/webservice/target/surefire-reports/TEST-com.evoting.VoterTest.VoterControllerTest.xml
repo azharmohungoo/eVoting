@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="com.evoting.VoterTest.VoterControllerTest" time="0.002" tests="1" errors="1" skipped="0" failures="0">
+=======
+<<<<<<< HEAD
+<testsuite name="com.evoting.VoterTest.VoterControllerTest" time="0.021" tests="1" errors="0" skipped="0" failures="0">
+=======
+<testsuite name="com.evoting.VoterTest.VoterControllerTest" time="0.052" tests="1" errors="0" skipped="0" failures="0">
+>>>>>>> a51e1843c9278416e74af2cb16a6e69311f68198
+>>>>>>> 2c3b36dcdbc67c31f8d381ed4eda5bd96deeaf77
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.8.0_73\jre\bin"/>
@@ -62,6 +70,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
+<<<<<<< HEAD
   <testcase name="registerTest" classname="com.evoting.VoterTest.VoterControllerTest" time="0.002">
     <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException"><![CDATA[java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
@@ -586,4 +595,11 @@ Caused by: java.net.ConnectException: Connection refused: connect
 
 ]]></system-out>
   </testcase>
+=======
+<<<<<<< HEAD
+  <testcase name="registerTest" classname="com.evoting.VoterTest.VoterControllerTest" time="0.021"/>
+=======
+  <testcase name="registerTest" classname="com.evoting.VoterTest.VoterControllerTest" time="0.052"/>
+>>>>>>> a51e1843c9278416e74af2cb16a6e69311f68198
+>>>>>>> 2c3b36dcdbc67c31f8d381ed4eda5bd96deeaf77
 </testsuite>

@@ -2,14 +2,54 @@
 \BOOKMARK [2][-]{subsection.1.1}{Purpose}{section.1}% 2
 \BOOKMARK [2][-]{subsection.1.2}{Scope}{section.1}% 3
 \BOOKMARK [2][-]{subsection.1.3}{Test Environment}{section.1}% 4
-\BOOKMARK [2][-]{subsection.1.4}{Assumptions and Dependencies}{section.1}% 5
-\BOOKMARK [1][-]{section.2}{Test Items}{}% 6
-\BOOKMARK [1][-]{section.3}{Functional Features to be Tested}{}% 7
-\BOOKMARK [1][-]{section.4}{Test Cases}{}% 8
-\BOOKMARK [1][-]{section.5}{Item Pass/Fail Criteria}{}% 9
-\BOOKMARK [1][-]{section.6}{Test Deliverables}{}% 10
-\BOOKMARK [1][-]{section.7}{Detailed Test Results}{}% 11
-\BOOKMARK [2][-]{subsection.7.1}{Overview of Test Results}{section.7}% 12
-\BOOKMARK [2][-]{subsection.7.2}{Functional Requirements Test Results}{section.7}% 13
-\BOOKMARK [1][-]{section.8}{Other}{}% 14
-\BOOKMARK [1][-]{section.9}{Conclusions and Recommendations}{}% 15
+\BOOKMARK [3][-]{subsubsection.1.3.1}{Programming Languages:}{subsection.1.3}% 5
+\BOOKMARK [3][-]{subsubsection.1.3.2}{Testing Framework:}{subsection.1.3}% 6
+\BOOKMARK [3][-]{subsubsection.1.3.3}{Coding Environment:}{subsection.1.3}% 7
+\BOOKMARK [3][-]{subsubsection.1.3.4}{Operating Systems:}{subsection.1.3}% 8
+\BOOKMARK [3][-]{subsubsection.1.3.5}{Internet Browsers:}{subsection.1.3}% 9
+\BOOKMARK [2][-]{subsection.1.4}{Assumptions and Dependencies}{section.1}% 10
+\BOOKMARK [1][-]{section.2}{Functional Features to be Tested}{}% 11
+\BOOKMARK [1][-]{section.3}{Test Cases}{}% 12
+\BOOKMARK [2][-]{subsection.3.1}{Blockchain Module}{section.3}% 13
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Test Case 1: ConfigurationAndConnection}{subsection.3.1}% 14
+\BOOKMARK [4][-]{paragraph.3.1.1.1}{Condition 1: InvalidIPandPort}{subsubsection.3.1.1}% 15
+\BOOKMARK [5][-]{subparagraph.3.1.1.1.1}{Objective:}{paragraph.3.1.1.1}% 16
+\BOOKMARK [5][-]{subparagraph.3.1.1.1.2}{Input:}{paragraph.3.1.1.1}% 17
+\BOOKMARK [5][-]{subparagraph.3.1.1.1.3}{Outcome:}{paragraph.3.1.1.1}% 18
+\BOOKMARK [4][-]{paragraph.3.1.1.2}{Condition 2: InvalidRPCCredentials}{subsubsection.3.1.1}% 19
+\BOOKMARK [5][-]{subparagraph.3.1.1.2.1}{Objective:}{paragraph.3.1.1.2}% 20
+\BOOKMARK [5][-]{subparagraph.3.1.1.2.2}{Input:}{paragraph.3.1.1.2}% 21
+\BOOKMARK [5][-]{subparagraph.3.1.1.2.3}{Outcome:}{paragraph.3.1.1.2}% 22
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Test Case 2: sendVote}{subsection.3.1}% 23
+\BOOKMARK [4][-]{paragraph.3.1.2.1}{Condition 1: InvalidToAddress}{subsubsection.3.1.2}% 24
+\BOOKMARK [5][-]{subparagraph.3.1.2.1.1}{Objective:}{paragraph.3.1.2.1}% 25
+\BOOKMARK [5][-]{subparagraph.3.1.2.1.2}{Input:}{paragraph.3.1.2.1}% 26
+\BOOKMARK [5][-]{subparagraph.3.1.2.1.3}{Outcome:}{paragraph.3.1.2.1}% 27
+\BOOKMARK [4][-]{paragraph.3.1.2.2}{Condition 2: InvalidVotesLeft}{subsubsection.3.1.2}% 28
+\BOOKMARK [5][-]{subparagraph.3.1.2.2.1}{Objective:}{paragraph.3.1.2.2}% 29
+\BOOKMARK [5][-]{subparagraph.3.1.2.2.2}{Input:}{paragraph.3.1.2.2}% 30
+\BOOKMARK [5][-]{subparagraph.3.1.2.2.3}{Outcome:}{paragraph.3.1.2.2}% 31
+\BOOKMARK [4][-]{paragraph.3.1.2.3}{Condition 3: SendVoteFromAdminToNode}{subsubsection.3.1.2}% 32
+\BOOKMARK [5][-]{subparagraph.3.1.2.3.1}{Objective:}{paragraph.3.1.2.3}% 33
+\BOOKMARK [5][-]{subparagraph.3.1.2.3.2}{Input:}{paragraph.3.1.2.3}% 34
+\BOOKMARK [5][-]{subparagraph.3.1.2.3.3}{Outcome:}{paragraph.3.1.2.3}% 35
+\BOOKMARK [4][-]{paragraph.3.1.2.4}{Condition 4: SendVoteFromNodeToAdmin}{subsubsection.3.1.2}% 36
+\BOOKMARK [5][-]{subparagraph.3.1.2.4.1}{Objective:}{paragraph.3.1.2.4}% 37
+\BOOKMARK [5][-]{subparagraph.3.1.2.4.2}{Input:}{paragraph.3.1.2.4}% 38
+\BOOKMARK [5][-]{subparagraph.3.1.2.4.3}{Outcome:}{paragraph.3.1.2.4}% 39
+\BOOKMARK [3][-]{subsubsection.3.1.3}{Test Case 3: GetBalance}{subsection.3.1}% 40
+\BOOKMARK [4][-]{paragraph.3.1.3.1}{Condition 1: GetAdminBalance}{subsubsection.3.1.3}% 41
+\BOOKMARK [5][-]{subparagraph.3.1.3.1.1}{Objective:}{paragraph.3.1.3.1}% 42
+\BOOKMARK [5][-]{subparagraph.3.1.3.1.2}{Input:}{paragraph.3.1.3.1}% 43
+\BOOKMARK [5][-]{subparagraph.3.1.3.1.3}{Outcome:}{paragraph.3.1.3.1}% 44
+\BOOKMARK [4][-]{paragraph.3.1.3.2}{Condition 2: GetNodeBalance}{subsubsection.3.1.3}% 45
+\BOOKMARK [5][-]{subparagraph.3.1.3.2.1}{Objective:}{paragraph.3.1.3.2}% 46
+\BOOKMARK [5][-]{subparagraph.3.1.3.2.2}{Input:}{paragraph.3.1.3.2}% 47
+\BOOKMARK [5][-]{subparagraph.3.1.3.2.3}{Outcome:}{paragraph.3.1.3.2}% 48
+\BOOKMARK [1][-]{section.4}{Item Pass/Fail Criteria}{}% 49
+\BOOKMARK [1][-]{section.5}{Test Deliverables}{}% 50
+\BOOKMARK [1][-]{section.6}{Detailed Test Results}{}% 51
+\BOOKMARK [2][-]{subsection.6.1}{Overview of Test Results}{section.6}% 52
+\BOOKMARK [2][-]{subsection.6.2}{Functional Requirements Test Results}{section.6}% 53
+\BOOKMARK [1][-]{section.7}{Other}{}% 54
+\BOOKMARK [1][-]{section.8}{Conclusions and Recommendations}{}% 55
