@@ -19,7 +19,6 @@ angular.module('app.services', [])
       alert("Casting national vote");
      var myUrl = "http://" + ipProvider.getIP() + ":8080/castVote";
       alert(myUrl);
-     // alert(JSON.stringify(castNationalRequest));
       return $http({ url : myUrl , data : castNationalRequest , method : "POST" })
         .then(function (result){
           alert(result.data);
@@ -89,7 +88,8 @@ angular.module('app.services', [])
 
   .factory( 'RegisterService', RegisterService);
 
-RegisterService.$inject = ['$http'];
+RegisterService.$inject = ['$http', 'ipProvider'];
+
 function  RegisterService($http, ipProvider) {
 
   return {

@@ -84,7 +84,7 @@ public class VoterController {
         newPerson.setPassword(newVoter.getPassword());
         newPerson.setIdNum(newVoter.getIdNum());
         newPerson.setLocationRegistered(newVoter.getLocationRegistered());
-        newPerson.setActive(false);
+        newPerson.setActive(true);
         newPerson.setVotedNationalElection(false);
         newPerson.setVotedProvincialElection(false);
         newPerson.setVotes(2);
@@ -92,7 +92,6 @@ public class VoterController {
 
         System.out.println("Trying to persist new Voter");
         pr.saveAndFlush(newPerson);
-       // pr.save(newPerson);
         System.out.println("Successful save");
 
         return true;
@@ -123,6 +122,7 @@ public class VoterController {
                     .add("name", loggedInAs.getName())
                     .add("surname", loggedInAs.getSurname())
                     .add("IDNum", loggedInAs.getIdNum())
+                    .add("password", loggedInAs.getPassword())
                     .add("votes",loggedInAs.getVotes())
                     .add("votedNational", loggedInAs.isVotedNationalElection())
                     .add("votedProvincial", loggedInAs.isVotedProvincialElection())
@@ -148,27 +148,114 @@ public class VoterController {
 
     @CrossOrigin
     @RequestMapping(value = "/castVote", method = RequestMethod.POST)
-    public Boolean castVote(@RequestBody VoteRequest voteRequest)
+    public String castVote(@RequestBody VoteRequest voteRequest)
     {
         System.out.println("Cast Vote Request");
 
-        System.out.println(voteRequest.getPartyName());
-
-        PoliticalParty party = ppr.findByPartyName(voteRequest.getPartyName());
-
-        Address votingNode = ar.findByNodeName("Pretoria");
-
+        System.out.println("the party " + voteRequest.getPartyName());
+        System.out.println("the voter id "  + voteRequest.getVoterID());
+        System.out.println("the voter password " + voteRequest.getVoterPassword());
+        System.out.println("the vote type " + voteRequest.getVoteType());
 
 
+        Person voter = pr.getPersonByIdNumAndPassword(voteRequest.getVoterID(),voteRequest.getVoterPassword());
+        System.out.println("voter voted national " + voter.isVotedNationalElection());
+        System.out.println("voter voted provincial " + voter.isVotedProvincialElection());
 
+        if(voter == null)
+        {
+            System.out.println("voter is null");
+            JsonObject result = Json.createObjectBuilder()
+                    .add("success", false)
+                    .add("reason" , "Invalid request : Voter not found.")
+                    .build();
+            return result.toString();
+        }
+        else
+        {
+            System.out.println("voter is not null");
+            if(voter.isActive() == false)
+            {
+                System.out.println("voter is not activated");
+                JsonObject result = Json.createObjectBuilder()
+                        .add("success", false)
+                        .add("reason" , "Invalid request : You have not been activated.")
+                        .build();
+                return result.toString();
+            }
+            else
+            {
+                System.out.println("voter activated");
+                if(voteRequest.getVoteType() == "National" && voter.isVotedNationalElection() == false)
+                {
+                    System.out.println("voting national");
+                    Boolean success = castTheVote(voteRequest.getPartyName(), voter.getLocationRegistered());
+
+                    if(success == true)
+                    {
+                        voter.setVotedNationalElection(true);
+                        voter.setVotes(voter.getVotes() -1);
+                        pr.save(voter);
+
+                        JsonObject result = Json.createObjectBuilder()
+                                .add("success", success)
+                                .add("reason" , "Success: You have cast your National Vote for " + voteRequest.getPartyName())
+                                .build();
+                        return result.toString();
+
+                    }
+                }
+               else if(voteRequest.getVoteType() == "Provincial" && voter.isVotedProvincialElection() == false)
+                {
+                    System.out.println("voting provincial");
+                    Boolean success = castTheVote(voteRequest.getPartyName(), voter.getLocationRegistered());
+
+                    if(success == true)
+                    {
+                        voter.setVotedProvincialElection(true);
+                        voter.setVotes(voter.getVotes() - 1);
+                        pr.save(voter);
+
+                        JsonObject result = Json.createObjectBuilder()
+                                .add("success", success)
+                                .add("reason" , "Success: You have cast your Provincial Vote for " + voteRequest.getPartyName())
+                                .build();
+                        return result.toString();
+                    }
+                }
+                else
+                {
+                    JsonObject result = Json.createObjectBuilder()
+                            .add("success", false)
+                            .add("reason" , "Invalid request")
+                            .build();
+                    return result.toString();
+                }
+
+            }
+
+        }
+
+        JsonObject result = Json.createObjectBuilder()
+                .add("success", false)
+                .add("reason" , "Invalid request")
+                .build();
+        return result.toString();
+
+    }
+
+    public Boolean castTheVote(String partyName, String location)
+
+    {  PoliticalParty party = ppr.findByPartyName(partyName);
+        Address votingNode = ar.findByNodeName(location);
         BlockchainMock blockchain = new BlockchainMock("196.248.196.124","7419", "multichainrpc","51i1XY2ELS96V7xGEA3cGh5iy8KDTxpo2ckaXZ7CBM43");
         JSONObject result = blockchain.sendVoteToNode("15DmYUc17VEx7zvJoAxcPu1fBAREGYVj4ScVwe",1000);
 
-       // BlockchainMock blockchain = new BlockchainMock(votingNode.getIpAddress(),"7419", votingNode.getRpcUsername(),votingNode.getRpcPassword());
-       // JSONObject result = blockchain.sendVoteToNode(party.getBlockchainNodeAddress(),1000);
+        // BlockchainMock blockchain = new BlockchainMock(votingNode.getIpAddress(),"7419", votingNode.getRpcUsername(),votingNode.getRpcPassword());
+        // JSONObject result = blockchain.sendVoteToNode(party.getBlockchainNodeAddress(),1000);
 
         if(result.get("success").toString().equals("true"))
-        return true;
+            return true;
         else
             return false;
     }

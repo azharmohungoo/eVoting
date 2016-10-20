@@ -1,6 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: com.evoting.BlockchainTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 6, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 5.276 sec <<< FAILURE! - in com.evoting.BlockchainTest
 testSendVoteFromVotingNode(com.evoting.BlockchainTest)  Time elapsed: 1.247 sec  <<< FAILURE!
 junit.framework.ComparisonFailure: true expected:<[fals]e> but was:<[tru]e>
@@ -26,3 +27,14 @@ junit.framework.ComparisonFailure: true expected:<[fals]e> but was:<[tru]e>
 	at junit.framework.TestCase.assertEquals(TestCase.java:261)
 	at com.evoting.BlockchainTest.testSendVoteFromAdmin(BlockchainTest.java:76)
 
+=======
+<<<<<<< HEAD
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.893 sec - in com.evoting.BlockchainTest
+=======
+<<<<<<< HEAD
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.247 sec - in com.evoting.BlockchainTest
+=======
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.174 sec - in com.evoting.BlockchainTest
+>>>>>>> a51e1843c9278416e74af2cb16a6e69311f68198
+>>>>>>> 2c3b36dcdbc67c31f8d381ed4eda5bd96deeaf77
+>>>>>>> f84b89a4ad250e23c5d5b2a6538f93bcd5516b4f
