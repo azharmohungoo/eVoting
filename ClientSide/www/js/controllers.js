@@ -42,12 +42,17 @@ angular.module('app.controllers', [])
       });
   };
 
-  $scope.castVote = function(party) {
+  $scope.castVote = function(party, voteType) {
 
     alert("Attempting to cast your vote for : " + party)
+    var voterID =$localStorage.data.IDNum;
+alert(voterID);
     var castNationalRequest = {
 
-      "partyName": party
+      "partyName": party,
+      "voterID": voterID,
+      "voterPassword": $localStorage.data.password,
+      "voteType":voteType
 
     };
     VoteNationalService.castNational(castNationalRequest);
@@ -79,8 +84,6 @@ angular.module('app.controllers', [])
         .then(function (result)
         {
           $localStorage.data = result;
-
-         // console.log(result);
 
         });
 
