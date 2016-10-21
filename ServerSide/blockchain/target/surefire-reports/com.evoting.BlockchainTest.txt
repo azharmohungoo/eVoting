@@ -1,20 +1,33 @@
 -------------------------------------------------------------------------------
 Test set: com.evoting.BlockchainTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
+Tests run: 6, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 5.38 sec <<< FAILURE! - in com.evoting.BlockchainTest
+testSendVoteFromVotingNode(com.evoting.BlockchainTest)  Time elapsed: 1.341 sec  <<< FAILURE!
+=======
 Tests run: 6, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 3.265 sec <<< FAILURE! - in com.evoting.BlockchainTest
 testSendVoteFromVotingNode(com.evoting.BlockchainTest)  Time elapsed: 1.245 sec  <<< FAILURE!
+>>>>>>> 3d4491c7097ae58883473aa0fd1b9b8a3dce6dd3
 junit.framework.ComparisonFailure: true expected:<[fals]e> but was:<[tru]e>
 	at junit.framework.Assert.assertEquals(Assert.java:100)
 	at junit.framework.TestCase.assertEquals(TestCase.java:261)
 	at com.evoting.BlockchainTest.testSendVoteFromVotingNode(BlockchainTest.java:104)
 
+<<<<<<< HEAD
+testVotingNodeBalance(com.evoting.BlockchainTest)  Time elapsed: 1.003 sec  <<< FAILURE!
+=======
 testVotingNodeBalance(com.evoting.BlockchainTest)  Time elapsed: 1.005 sec  <<< FAILURE!
+>>>>>>> 3d4491c7097ae58883473aa0fd1b9b8a3dce6dd3
 junit.framework.ComparisonFailure: true expected:<[fals]e> but was:<[tru]e>
 	at junit.framework.Assert.assertEquals(Assert.java:100)
 	at junit.framework.TestCase.assertEquals(TestCase.java:261)
 	at com.evoting.BlockchainTest.testVotingNodeBalance(BlockchainTest.java:89)
 
+<<<<<<< HEAD
+testAdminBalance(com.evoting.BlockchainTest)  Time elapsed: 1.003 sec  <<< FAILURE!
+=======
 testAdminBalance(com.evoting.BlockchainTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+>>>>>>> 3d4491c7097ae58883473aa0fd1b9b8a3dce6dd3
 junit.framework.ComparisonFailure: true expected:<[fals]e> but was:<[tru]e>
 	at junit.framework.Assert.assertEquals(Assert.java:100)
 	at junit.framework.TestCase.assertEquals(TestCase.java:261)

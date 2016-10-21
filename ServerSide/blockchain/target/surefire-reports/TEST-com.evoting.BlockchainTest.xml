@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<testsuite name="com.evoting.BlockchainTest" time="5.376" tests="6" errors="0" skipped="0" failures="4">
+=======
 <testsuite name="com.evoting.BlockchainTest" time="3.264" tests="6" errors="0" skipped="0" failures="4">
+>>>>>>> 3d4491c7097ae58883473aa0fd1b9b8a3dce6dd3
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib"/>
@@ -32,9 +36,14 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+<<<<<<< HEAD
+    <property name="os.version" value="4.4.0-45-generic"/>
+    <property name="user.home" value="/home/gift"/>
+=======
     <property name="os.version" value="10.11.6"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="user.home" value="/Users/Azhar"/>
+>>>>>>> 3d4491c7097ae58883473aa0fd1b9b8a3dce6dd3
     <property name="user.timezone" value="Africa/Johannesburg"/>
     <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
@@ -62,22 +71,35 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
+<<<<<<< HEAD
+  <testcase name="testSendVoteFromVotingNode" classname="com.evoting.BlockchainTest" time="1.341">
+=======
   <testcase name="testSendVoteFromVotingNode" classname="com.evoting.BlockchainTest" time="1.245">
+>>>>>>> 3d4491c7097ae58883473aa0fd1b9b8a3dce6dd3
     <failure message="true expected:&lt;[fals]e&gt; but was:&lt;[tru]e&gt;" type="junit.framework.ComparisonFailure"><![CDATA[junit.framework.ComparisonFailure: true expected:<[fals]e> but was:<[tru]e>
 	at junit.framework.Assert.assertEquals(Assert.java:100)
 	at junit.framework.TestCase.assertEquals(TestCase.java:261)
 	at com.evoting.BlockchainTest.testSendVoteFromVotingNode(BlockchainTest.java:104)
 ]]></failure>
   </testcase>
+<<<<<<< HEAD
+  <testcase name="testVotingNodeBalance" classname="com.evoting.BlockchainTest" time="1.003">
+=======
   <testcase name="testVotingNodeBalance" classname="com.evoting.BlockchainTest" time="1.005">
+>>>>>>> 3d4491c7097ae58883473aa0fd1b9b8a3dce6dd3
     <failure message="true expected:&lt;[fals]e&gt; but was:&lt;[tru]e&gt;" type="junit.framework.ComparisonFailure"><![CDATA[junit.framework.ComparisonFailure: true expected:<[fals]e> but was:<[tru]e>
 	at junit.framework.Assert.assertEquals(Assert.java:100)
 	at junit.framework.TestCase.assertEquals(TestCase.java:261)
 	at com.evoting.BlockchainTest.testVotingNodeBalance(BlockchainTest.java:89)
 ]]></failure>
   </testcase>
+<<<<<<< HEAD
+  <testcase name="testInvalidIPAddress" classname="com.evoting.BlockchainTest" time="1.024"/>
+  <testcase name="testAdminBalance" classname="com.evoting.BlockchainTest" time="1.003">
+=======
   <testcase name="testInvalidIPAddress" classname="com.evoting.BlockchainTest" time="1.011"/>
   <testcase name="testAdminBalance" classname="com.evoting.BlockchainTest" time="0.001">
+>>>>>>> 3d4491c7097ae58883473aa0fd1b9b8a3dce6dd3
     <failure message="true expected:&lt;[fals]e&gt; but was:&lt;[tru]e&gt;" type="junit.framework.ComparisonFailure"><![CDATA[junit.framework.ComparisonFailure: true expected:<[fals]e> but was:<[tru]e>
 	at junit.framework.Assert.assertEquals(Assert.java:100)
 	at junit.framework.TestCase.assertEquals(TestCase.java:261)

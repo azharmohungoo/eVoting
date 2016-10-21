@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.evoting.WebServiceTest.WebServiceApplicationTest" time="0.005" tests="1" errors="0" skipped="0" failures="0">
+=======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.evoting.WebServiceTest.WebServiceApplicationTest" time="0.02" tests="1" errors="0" skipped="0" failures="0">
+>>>>>>> 3d4491c7097ae58883473aa0fd1b9b8a3dce6dd3
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib"/>
@@ -32,9 +36,14 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+<<<<<<< HEAD
+    <property name="os.version" value="4.4.0-45-generic"/>
+    <property name="user.home" value="/home/gift"/>
+=======
     <property name="os.version" value="10.11.6"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="user.home" value="/Users/Azhar"/>
+>>>>>>> 3d4491c7097ae58883473aa0fd1b9b8a3dce6dd3
     <property name="user.timezone" value="Africa/Johannesburg"/>
     <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
