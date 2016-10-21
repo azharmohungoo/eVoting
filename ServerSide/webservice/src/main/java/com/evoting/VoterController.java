@@ -152,15 +152,9 @@ public class VoterController {
     {
         System.out.println("Cast Vote Request");
 
-        System.out.println("the party " + voteRequest.getPartyName());
-        System.out.println("the voter id "  + voteRequest.getVoterID());
-        System.out.println("the voter password " + voteRequest.getVoterPassword());
-        System.out.println("the vote type " + voteRequest.getVoteType());
-
-
         Person voter = pr.getPersonByIdNumAndPassword(voteRequest.getVoterID(),voteRequest.getVoterPassword());
-        System.out.println("voter voted national " + voter.isVotedNationalElection());
-        System.out.println("voter voted provincial " + voter.isVotedProvincialElection());
+        PoliticalParty theParty = ppr.findByPartyName(voteRequest.getPartyName());
+
 
         if(voter == null)
         {
@@ -185,42 +179,69 @@ public class VoterController {
             }
             else
             {
-                System.out.println("voter activated");
-                if(voteRequest.getVoteType() == "National" && voter.isVotedNationalElection() == false)
+                if(voteRequest.getVoteType().equals("National"))
                 {
-                    System.out.println("voting national");
-                    Boolean success = castTheVote(voteRequest.getPartyName(), voter.getLocationRegistered());
-
-                    if(success == true)
+                    if(voter.isVotedNationalElection() == false)
                     {
-                        voter.setVotedNationalElection(true);
-                        voter.setVotes(voter.getVotes() -1);
-                        pr.save(voter);
+                        System.out.println("voting national");
+                        Boolean success = castTheVote(voteRequest.getPartyName(), voter.getLocationRegistered());
 
+                        if (success == true) {
+                            voter.setVotedNationalElection(true);
+                            voter.setVotes(voter.getVotes() - 1);
+                            pr.save(voter);
+
+                            theParty.setNationalVoteCount(theParty.getNationalVoteCount() + 1);
+                            ppr.save(theParty);
+
+
+                            JsonObject result = Json.createObjectBuilder()
+                                    .add("success", success)
+                                    .add("reason", "Success: You have cast your National Vote for " + voteRequest.getPartyName())
+                                    .build();
+                            return result.toString();
+
+                        }
+                    }
+                    else
+                    {
                         JsonObject result = Json.createObjectBuilder()
-                                .add("success", success)
-                                .add("reason" , "Success: You have cast your National Vote for " + voteRequest.getPartyName())
+                                .add("success", false)
+                                .add("reason", "You have already cast a " + voteRequest.getVoteType() + " vote.")
                                 .build();
                         return result.toString();
-
                     }
                 }
-               else if(voteRequest.getVoteType() == "Provincial" && voter.isVotedProvincialElection() == false)
+               else if(voteRequest.getVoteType().equals("Provincial"))
                 {
-                    System.out.println("voting provincial");
-                    Boolean success = castTheVote(voteRequest.getPartyName(), voter.getLocationRegistered());
-
-                    if(success == true)
+                    if(voter.isVotedProvincialElection() == false)
                     {
-                        voter.setVotedProvincialElection(true);
-                        voter.setVotes(voter.getVotes() - 1);
-                        pr.save(voter);
 
+                        Boolean success = castTheVote(voteRequest.getPartyName(), voter.getLocationRegistered());
+
+                        if (success == true) {
+                            voter.setVotedProvincialElection(true);
+                            voter.setVotes(voter.getVotes() - 1);
+                            pr.save(voter);
+
+                            theParty.setNationalVoteCount(theParty.getProvincialVoteCount() + 1);
+                            ppr.save(theParty);
+
+                            JsonObject result = Json.createObjectBuilder()
+                                    .add("success", success)
+                                    .add("reason", "Success: You have cast your Provincial Vote for " + voteRequest.getPartyName())
+                                    .build();
+                            return result.toString();
+                        }
+                    }
+                    else
+                    {
                         JsonObject result = Json.createObjectBuilder()
-                                .add("success", success)
-                                .add("reason" , "Success: You have cast your Provincial Vote for " + voteRequest.getPartyName())
+                                .add("success", false)
+                                .add("reason", "You have already cast a " + voteRequest.getVoteType() + " vote.")
                                 .build();
                         return result.toString();
+
                     }
                 }
                 else
@@ -238,7 +259,7 @@ public class VoterController {
 
         JsonObject result = Json.createObjectBuilder()
                 .add("success", false)
-                .add("reason" , "Invalid request")
+                .add("reason" , "Unable to cast vote")
                 .build();
         return result.toString();
 

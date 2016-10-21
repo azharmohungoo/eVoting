@@ -13,15 +13,7 @@ angular.module('app.controllers', [])
 
 .controller('viewPartyCtrl', function($scope, $localStorage){
 
-
-  //  $scope.thePartyName = "";
-//alert( "local " + $localStorage.thePartyName);
-
-
   $scope.thePartyName = $localStorage.thePartyName;
-
-
-
 
 })
 
@@ -59,10 +51,6 @@ alert(voterID);
   }
 
 })
-
-
-
-
 
   .controller('eVotingLoginCtrl', function($scope, LoginService, $localStorage) {
 
