@@ -4,11 +4,11 @@
 
 angular.module('eVotingWebApp')
 
-  .service('LoginService',  function($http, $location) {
+  .service('LoginService',  function($http, ipProvider) {
     return {
       login: function(loginRequest)
       {
-        return $http({url : "http://localhost:8080/login" , data : loginRequest , method : "POST"})
+        return $http({url : "http://"+ipProvider.getIP()+":8080/login" , data : loginRequest , method : "POST"})
           .then(function (result) {
             alert(JSON.stringify(result));
             // alert(result.data.success);
@@ -35,7 +35,7 @@ angular.module('eVotingWebApp')
 
       loginP: function(loginPRequest)
       {
-        return $http({url : "http://localhost:8080/loginP" , data : loginPRequest , method : "POST"})
+        return $http({url : "http://"+ipProvider.getIP()+":8080/loginP" , data : loginPRequest , method : "POST"})
           .then(function (result) {
             alert(JSON.stringify(result));
             // alert(result.data.success);

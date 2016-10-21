@@ -8,13 +8,13 @@ angular.module('eVotingWebApp')
 
 AdminService.$inject = ['$http'];
 
-function  AdminService($http) {
+function  AdminService($http, ipProvider) {
   return {
     adminRegister : function(adminRegisterRequest){
 
       alert("Registering..");
 
-      return $http({url : "http://localhost:8080/adminRegister" , data : adminRegisterRequest , method : "POST"})
+      return $http({url : "http://"+ipProvider.getIP()+":8080/adminRegister" , data : adminRegisterRequest , method : "POST"})
         .then(function (result) {
           //alert(JSON.stringify(result)) //
           //$location.path('/');
@@ -30,7 +30,7 @@ function  AdminService($http) {
 
       alert("Registering..");
 
-      return $http({url : "http://localhost:8080/registerParty" , data : adminRegisterPartyRequest , method : "POST"})
+      return $http({url : "http://"+ipProvider.getIP()+":8080/registerParty" , data : adminRegisterPartyRequest , method : "POST"})
         .then(function (result) {
           //alert(JSON.stringify(result)) //
           //$location.path('/');
@@ -43,7 +43,7 @@ function  AdminService($http) {
     },
 
     search: function (searchRequest) {
-      return $http({url: "http://localhost:8080/search", data: searchRequest, method: "POST"})
+      return $http({url: "http://"+ipProvider.getIP()+":8080/search", data: searchRequest, method: "POST"})
         .then(function (result) {
           alert(JSON.stringify(result));
           // alert(result.data.success);
@@ -62,7 +62,7 @@ function  AdminService($http) {
     },
 
     deactivate: function (deactivateRequest) {
-      return $http({url: "http://localhost:8080/deactivate", data: deactivateRequest, method: "POST"})
+      return $http({url: "http://"+ipProvider.getIP()+":8080/deactivate", data: deactivateRequest, method: "POST"})
         .then(function (result) {
           alert(JSON.stringify(result));
           // alert(result.data.success);

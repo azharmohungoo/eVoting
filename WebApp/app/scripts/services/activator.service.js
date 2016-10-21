@@ -4,10 +4,10 @@
 
 angular.module('eVotingWebApp')
 
-  .service('ActivatorService',  function($http) {
+  .service('ActivatorService',  function($http, ipProvider) {
       return {
         search: function (searchRequest) {
-          return $http({url: "http://localhost:8080/search", data: searchRequest, method: "POST"})
+          return $http({url: "http://"+ipProvider.getIP()+":8080/search", data: searchRequest, method: "POST"})
             .then(function (result) {
               alert(JSON.stringify(result));
               // alert(result.data.success);
@@ -26,7 +26,7 @@ angular.module('eVotingWebApp')
         },
 
         activate: function (activateRequest) {
-          return $http({url: "http://localhost:8080/activate", data: activateRequest, method: "POST"})
+          return $http({url: "http://"+ipProvider.getIP()+":8080/activate", data: activateRequest, method: "POST"})
             .then(function (result) {
               alert(JSON.stringify(result));
               // alert(result.data.success);
