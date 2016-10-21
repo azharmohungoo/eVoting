@@ -37,6 +37,18 @@ angular
         controllerAs: 'vm',
         isRole: 'Admin'
       })
+      .when('/adminAddUser', {
+        templateUrl: 'views/adminAddUser.html',
+        controller: 'AdminCtrl',
+        controllerAs: 'vm',
+        isRole: 'Admin'
+      })
+      .when('/adminDeactivateUser', {
+        templateUrl: 'views/adminDeactivateUser.html',
+        controller: 'AdminCtrl',
+        controllerAs: 'vm',
+        isRole: 'Admin'
+      })
       .when('/activator', {
         templateUrl: 'views/activator.html',
         controller: 'ActivatorCtrl',
@@ -70,7 +82,6 @@ angular
       .when('/logout', {
         templateUrl: 'views/main.html',
         controller: 'LogoutCtrl'
-        //controllerAs: 'vm'
       })
       .when('/accessdenied', {
         templateUrl: 'views/accessDenied.html',

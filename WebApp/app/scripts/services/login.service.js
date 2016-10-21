@@ -21,20 +21,32 @@ angular.module('eVotingWebApp')
 
               //$location.path('/voter');
 
-              switch(result.data.userType) {
-                case "Admin":
-                  $location.path('/admin');
-                  break;
-                case "Activator":
-                  $location.path('/activator');
-                  break;
-                case "Party":
-                  $location.path('/party');
-                  break;
-                case "Voter":
-                  $location.path('/voter');
-                  break;
-              }
+              return result.data;
+            }
+            else {
+              //$location.path('/');
+              alert("Unsuccessful login");}
+            return result;
+          }).catch(function (exception)
+          {
+            return exception;
+          });
+      },
+
+      loginP: function(loginPRequest)
+      {
+        return $http({url : "http://localhost:8080/loginP" , data : loginPRequest , method : "POST"})
+          .then(function (result) {
+            alert(JSON.stringify(result));
+            // alert(result.data.success);
+            if(result.data.success == true)
+            {
+              alert("Successful login as : " +  result.data.partyName);
+              //var type = result.data.name;
+              //alert(userName);
+              // var loggedInUser = {name:result.data.name, lastName:result.data.surname}
+
+              //$location.path('/voter');
 
               return result.data;
             }
@@ -47,6 +59,5 @@ angular.module('eVotingWebApp')
             return exception;
           });
       }
-
     }
   })

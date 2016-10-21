@@ -1,5 +1,3 @@
-com/evoting/ActivatorController.class
 com/evoting/config/Beans.class
 com/evoting/VoterController.class
-com/evoting/AdminController.class
 com/evoting/WebServiceApplication.class

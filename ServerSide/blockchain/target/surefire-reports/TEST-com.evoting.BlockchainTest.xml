@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.evoting.BlockchainTest" time="5.266" tests="6" errors="0" skipped="0" failures="4">
+<testsuite name="com.evoting.BlockchainTest" time="5.262" tests="6" errors="0" skipped="0" failures="4">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib"/>
@@ -62,7 +62,7 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="testSendVoteFromVotingNode" classname="com.evoting.BlockchainTest" time="1.246">
+  <testcase name="testSendVoteFromVotingNode" classname="com.evoting.BlockchainTest" time="1.24">
     <failure message="true expected:&lt;[fals]e&gt; but was:&lt;[tru]e&gt;" type="junit.framework.ComparisonFailure"><![CDATA[junit.framework.ComparisonFailure: true expected:<[fals]e> but was:<[tru]e>
 	at junit.framework.Assert.assertEquals(Assert.java:100)
 	at junit.framework.TestCase.assertEquals(TestCase.java:261)
@@ -76,15 +76,15 @@
 	at com.evoting.BlockchainTest.testVotingNodeBalance(BlockchainTest.java:89)
 ]]></failure>
   </testcase>
-  <testcase name="testInvalidIPAddress" classname="com.evoting.BlockchainTest" time="1.009"/>
-  <testcase name="testAdminBalance" classname="com.evoting.BlockchainTest" time="1.002">
+  <testcase name="testInvalidIPAddress" classname="com.evoting.BlockchainTest" time="1.011"/>
+  <testcase name="testAdminBalance" classname="com.evoting.BlockchainTest" time="1.004">
     <failure message="true expected:&lt;[fals]e&gt; but was:&lt;[tru]e&gt;" type="junit.framework.ComparisonFailure"><![CDATA[junit.framework.ComparisonFailure: true expected:<[fals]e> but was:<[tru]e>
 	at junit.framework.Assert.assertEquals(Assert.java:100)
 	at junit.framework.TestCase.assertEquals(TestCase.java:261)
 	at com.evoting.BlockchainTest.testAdminBalance(BlockchainTest.java:63)
 ]]></failure>
   </testcase>
-  <testcase name="testSendVoteFromAdmin" classname="com.evoting.BlockchainTest" time="1.006">
+  <testcase name="testSendVoteFromAdmin" classname="com.evoting.BlockchainTest" time="1.004">
     <failure message="true expected:&lt;[fals]e&gt; but was:&lt;[tru]e&gt;" type="junit.framework.ComparisonFailure"><![CDATA[junit.framework.ComparisonFailure: true expected:<[fals]e> but was:<[tru]e>
 	at junit.framework.Assert.assertEquals(Assert.java:100)
 	at junit.framework.TestCase.assertEquals(TestCase.java:261)

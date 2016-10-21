@@ -11,4 +11,5 @@ public interface PoliticalPartyRepository extends JpaRepository<PoliticalParty, 
 {
     PoliticalParty findById(int id);
     PoliticalParty findByPartyName(String partyName);
+    PoliticalParty getPartyByPartyIdAndPassword(String partyId, String password);
 }

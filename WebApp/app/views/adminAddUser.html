@@ -1,0 +1,67 @@
+<!--div class="row">
+
+  <div class="col-lg-6 col-xs-6">hgtytycgcutf</div>
+
+  <div class="col-lg-6 col-xs-6">5465775767 <span class="glyphicon glyphicon-cloud  pull-right"></span></div>
+
+</div-->
+
+<div ng-include src="'views/nav.html'"></div>
+
+<div class="container">
+  <div class="jumbotron">
+      <h3>Admin</h3>
+
+      <div class="row">
+        <h3>Add User</h3>
+
+        <label>Type of user: </label>
+        <select id="userT" style="margin-left: 140px" ng-model="vm.userType">
+          <option value="admin">Admin</option>
+          <option value="activator">Activator</option>
+          <option value="party">Party</option>
+        </select>
+
+        <form ng-if="vm.checkUserT1()">
+          <br>
+          <label>ID Number: </label><input style="margin-left: 77px" type="text" ng-model="vm.idNum" id="idNum" name="id" class="id" placeholder="ID Number" required autofocus>
+          <br>
+          <label>Password: </label><input style="margin-left: 82px" type="password" ng-model="vm.password" id="password" name="Password"class="password" placeholder="Password" required>
+          <br>
+          <label>Name: </label><input style="margin-left: 107px" type="text" ng-model="vm.name" id="name" name="Name"class="name" placeholder="Name" required>
+          <br>
+          <label>Surname: </label><input style="margin-left: 88px" type="text" ng-model="vm.surname" id="surname" name="Surname" class="surname" placeholder="Surname" required>
+          <br>
+          <label>Location registered: </label><input style="margin-left: 20px" type="text" ng-model="vm.locationRegistered" id="locationRegistered" name="LocationRegistered" class="locationRegistered" placeholder="Pretoria - UP" required>
+          <br>
+          <label>Cellphone: </label><input style="margin-left: 83px" type="text" ng-model="vm.cellphone" id="cellphone" name="Cellphone" class="cellphone" placeholder="0821234321" required>
+          <br>
+          <label>Email: </label><input style="margin-left: 113px" type="email" ng-model="vm.email" id="email" name="Email" class="email" placeholder="email@gmail.com" required>
+
+          <br><br>
+
+          <a class="btn btn-success" value="Register" ng-click="vm.admin()">Register</a>
+        </form>
+
+        <form ng-if="vm.checkUserT2()">
+          <br>
+          <label>ID Number: </label><input style="margin-left: 77px" type="text" ng-model="vm.pIdNum" id="pIdNum" name="pIdNum" class="pIdNum" placeholder="ID Number" required autofocus>
+          <br>
+          <label>Password: </label><input style="margin-left: 82px" type="password" ng-model="vm.pPassword" id="pPassword" name="pPassword" class="pPassword" placeholder="Password" required>
+          <br>
+          <label>Name: </label><input style="margin-left: 107px" type="text" ng-model="vm.pName" id="pName" name="pName"class="pName" placeholder="pName" required>
+          <br>
+          <label>Description: </label><input style="margin-left: 70px" type="text" ng-model="vm.pDescription" id="pDescription" name="pDescription" class="pDescription" placeholder="Description" required>
+          <br>
+          <label>Image Url: </label><input style="margin-left: 80px" type="text" ng-model="vm.pImgUrl" id="pImgUrl" name="pImgUrl" class="pImgUrl" placeholder="Image URL" required>
+
+          <br><br>
+
+          <a class="btn btn-success" value="Register" ng-click="vm.admin()">Register</a>
+        </form>
+
+        <a style="float: right;" href="#/admin">Go back</a>
+        </div>
+      </div>
+    </div>
+</div>
