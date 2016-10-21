@@ -72,7 +72,6 @@ public class DatabaseServiceTest
     {
         userTypeRepository.saveAndFlush(new UserType("Admin"));
         userTypeRepository.saveAndFlush(new UserType("Voter"));
-        userTypeRepository.saveAndFlush(new UserType("Party"));
         userTypeRepository.saveAndFlush(new UserType("Activator"));
 
         Assert.assertTrue(true);
@@ -107,10 +106,6 @@ public class DatabaseServiceTest
         p.setUserType(new UserType("Activator"));
         personRepository.saveAndFlush(p);
 
-        p = new Person("0987654321456", "0eeac8171768d0cdef3a20fee6db4362d019c91e10662a6b55186336e1a42778", "name5", "surname5", "Centurion", "6543210987", "email5@gmail.com", 2, false, false, false);//password: "pass5"
-        p.setUserType(new UserType("Party"));
-        personRepository.saveAndFlush(p);
-
         Assert.assertTrue(true);
     }
 
@@ -130,32 +125,32 @@ public class DatabaseServiceTest
         setP.add(new Poll("National Election"));
         setP.add(new Poll("Provincial Election"));
 
-        PoliticalParty p = new PoliticalParty("Party1", 0, 0, "ju765redcvbnjiu765rdfghjki", "0.0.0.1");
+        PoliticalParty p = new PoliticalParty("partyId1", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party1", 0, 0, "ju765redcvbnjiu765rdfghjki", "0.0.0.1", "partyDecs1", "party1.img");
         p.setPolls(setP);
         politicalPartyRepository.saveAndFlush(p);
 
-        p = new PoliticalParty("Party2", 0, 0, "nbgfr567ujbvfrtyuirtyhgfer", "0.0.0.3");
+        p = new PoliticalParty("partyId2", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party2", 0, 0, "nbgfr567ujbvfrtyuirtyhgfer", "0.0.0.3", "partyDecs2", "party2.img");
         politicalPartyRepository.saveAndFlush(p);
 
         setP = new HashSet<Poll>(0);
         setP.add(new Poll("National Election"));
         setP.add(new Poll("Provincial Election"));
 
-        p = new PoliticalParty("Party3", 0, 0, "7tfyhbef3ufy3ivr3v3iiwhbci", "0.0.0.5");
+        p = new PoliticalParty("partyId3", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party3", 0, 0, "7tfyhbef3ufy3ivr3v3iiwhbci", "0.0.0.5", "partyDecs3", "party3.img");
         p.setPolls(setP);
         politicalPartyRepository.saveAndFlush(p);
 
         setP = new HashSet<Poll>(0);
         setP.add(new Poll("National Election"));
 
-        p = new PoliticalParty("Party4", 0, 0, "kiu7654ewsdfgyuikmnhytushg", "0.0.0.4");
+        p = new PoliticalParty("partyId4", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party4", 0, 0, "kiu7654ewsdfgyuikmnhytushg", "0.0.0.4", "partyDecs4", "party4.img");
         p.setPolls(setP);
         politicalPartyRepository.saveAndFlush(p);
 
         setP = new HashSet<Poll>(0);
         setP.add(new Poll("Provincial Election"));
 
-        p = new PoliticalParty("Party5", 0, 0, "bvcde4567ujkmhgredvhjytrfd", "0.0.0.2");
+        p = new PoliticalParty("partyId5", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party5", 0, 0, "bvcde4567ujkmhgredvhjytrfd", "0.0.0.2", "partyDecs5", "party5.img");
         p.setPolls(setP);
         politicalPartyRepository.saveAndFlush(p);
 
@@ -191,11 +186,24 @@ public class DatabaseServiceTest
     }
 
     @Test
+    public void validatePartyTest()
+    {
+        String idNum = "partyii";
+        String password = "ppp";
+
+        PoliticalParty p = new PoliticalParty();
+        p.setPartyId(idNum);
+        p.setPassword(password);
+
+        Assert.assertFalse(ds.validateParty(p));
+    }
+
+    @Test
     public void activateVoterTest()
     {
         Person p = new Person();
-        p.setIdNum("0987654321456");
-        p.setPassword("0eeac8171768d0cdef3a20fee6db4362d019c91e10662a6b55186336e1a42778");
+        p.setIdNum("0987654321765");
+        p.setPassword("1ba3d16e9881959f8c9a9762854f72c6e6321cdd44358a10a4e939033117eab9");
 
         Assert.assertTrue(ds.activateVoter(p));
     }
@@ -247,11 +255,14 @@ public class DatabaseServiceTest
     @Test
     public void addPartyTest()
     {
-        Person p = new Person("7891236781456", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "newPartyName", "NewPartySurname", "Pretoria - UP", "3455654399", "newParty@gmail.com", 0, false, false, false);
-        p.setUserType(new UserType("Party"));
+        Set<Poll> setP = new HashSet<Poll>(0);
+        setP.add(new Poll("National Election"));
+        setP.add(new Poll("Provincial Election"));
 
-        ds.addParty(p);
+        PoliticalParty p = new PoliticalParty("partyId6", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party6", 0, 0, "bvcde4567ujkmhgredvhjytrfd", "0.0.0.2", "partyDecs6", "party6.img");
+        p.setPolls(setP);
+        politicalPartyRepository.saveAndFlush(p);
 
-        Assert.assertNotNull(personRepository.getPersonByIdNumAndPassword(p.getIdNum(), p.getPassword()));
+        Assert.assertNotNull(politicalPartyRepository.getPartyByPartyIdAndPassword(p.getPartyId(), p.getPassword()));
     }
 }

@@ -34,7 +34,6 @@ public class VoteRequest {
         this.voterPassword = voterPassword;
     }
 
-
     public String  getPartyName()
     {
         return partyName;

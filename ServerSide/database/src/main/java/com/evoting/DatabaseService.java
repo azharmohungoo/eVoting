@@ -1,7 +1,9 @@
 package com.evoting;
 
 import com.evoting.domain.Person;
+import com.evoting.domain.PoliticalParty;
 import com.evoting.repositories.PersonRepository;
+import com.evoting.repositories.PoliticalPartyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +16,8 @@ public class DatabaseService
 {
     @Autowired
     PersonRepository pr;
+    @Autowired
+    PoliticalPartyRepository ppr;
 
     public boolean validateUser(Person _p)
     {
@@ -26,6 +30,24 @@ public class DatabaseService
 
         if (p.getIdNum().equals(_p.getIdNum()) && p.getPassword().equals(_p.getPassword()))
         {
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean validateParty(PoliticalParty _p)
+    {
+        PoliticalParty p = ppr.getPartyByPartyIdAndPassword(_p.getPartyId(), _p.getPassword());
+
+        if (p == null)
+        {
+            return false;
+        }
+
+        if (p.getPartyId().equals(_p.getPartyId()) && p.getPassword().equals(_p.getPassword()))
+        {
+            System.out.println("true");
             return true;
         }
 
@@ -45,6 +67,26 @@ public class DatabaseService
         {
             p.setActive(true);
             System.out.println("Voter activated");
+            pr.save(p);
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean deactivateVoter(Person _p)
+    {
+        Person p = pr.getPersonByIdNum(_p.getIdNum());
+
+        if (p == null)
+        {
+            return false;
+        }
+
+        if (p.getIdNum().equals(_p.getIdNum()))
+        {
+            p.setActive(false);
+            System.out.println("Voter deactivated");
             pr.save(p);
             return true;
         }

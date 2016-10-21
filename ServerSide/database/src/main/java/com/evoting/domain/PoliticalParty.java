@@ -15,6 +15,8 @@ import java.util.Set;
 @Table(name="political_party")
 public class PoliticalParty {
     private int id;
+    private String partyId;
+    private String password;
     private String partyName;
     private Set<Poll> polls = new HashSet<Poll>(0);
     private int nationalVoteCount = 0;
@@ -23,10 +25,6 @@ public class PoliticalParty {
     private String ipAddress;
     private String partyDescription;
     private String imgURL;
-
-
-
-
 
     public PoliticalParty() {
     }
@@ -40,12 +38,17 @@ public class PoliticalParty {
         this.ipAddress = ipAddress;
     }
 
-    public PoliticalParty(String partyName, int nationalVoteCount, int provincialVoteCount, String blockchainNodeAddress, String ipAddress) {
+    public PoliticalParty(String partyId, String password, String partyName, int nationalVoteCount, int provincialVoteCount, String blockchainNodeAddress, String ipAddress, String partyDescription, String imgURL)
+    {
+        this.partyId = partyId;
+        this.password = password;
         this.partyName = partyName;
         this.nationalVoteCount = nationalVoteCount;
         this.provincialVoteCount = provincialVoteCount;
         this.blockchainNodeAddress = blockchainNodeAddress;
         this.ipAddress = ipAddress;
+        this.partyDescription = partyDescription;
+        this.imgURL = imgURL;
     }
 
     @Id
@@ -57,6 +60,23 @@ public class PoliticalParty {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Column(name = "party_idNum", nullable = false)
+    public String getPartyId() {
+        return partyId;
+    }
+
+    public void setPartyId(String partyId) {
+        this.partyId = partyId;
+    }
+    @Column(name = "party_password", nullable = false)
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Column(name = "party_name", unique = true, nullable = false)
@@ -116,17 +136,14 @@ public class PoliticalParty {
         this.ipAddress = ipAddress;
     }
 
-
     @Column(name="partyDescription", nullable = true)
     public String getPartyDescription() {
         return partyDescription;
     }
 
-
     public void setPartyDescription(String partyDescription) {
         this.partyDescription = partyDescription;
     }
-
 
     @Column(name="imgURL", nullable = true)
     public String getImgURL() {
@@ -136,6 +153,5 @@ public class PoliticalParty {
     public void setImgURL(String imgURL) {
         this.imgURL = imgURL;
     }
-
-
 }
+

@@ -1,0 +1,43 @@
+<!--div class="row">
+
+  <div class="col-lg-6 col-xs-6">hgtytycgcutf</div>
+
+  <div class="col-lg-6 col-xs-6">5465775767 <span class="glyphicon glyphicon-cloud  pull-right"></span></div>
+
+</div-->
+
+<div ng-include src="'views/nav.html'"></div>
+
+<div class="container">
+  <div class="jumbotron">
+      <h3>Admin</h3>
+      <h3>Deactivate User</h3>
+
+    <form>
+      <label>ID Number: </label><input style="margin-left: 77px" type="text" ng-model="vm.idNum" id="idNumN" name="id" class="id" placeholder="ID Number" required autofocus>
+
+      <br><br>
+
+      <a class="btn btn-success" value="Search" ng-click="vm.search()">Search</a>
+    </form>
+
+      <fieldset>
+        <legend></legend>
+      </fieldset>
+
+      <h2>{{ message.fullName }}</h2>
+      <p>{{ message.idNum }}</p>
+      <p>{{ message.email }}</p>
+      <p>{{ message.cellphone }}</p>
+      <p>{{ message.locationRegistered }}</p>
+      <p>{{ message.activationStatus }}</p>
+      <p>{{ message.votesRemaining }}</p>
+
+      <button style="margin-left: 500px" id="btnDeactivate" value="Deactivate" ng-click="vm.deactivate()" hidden>Deactivate</button>
+      <a style="float: right;" href="#/admin">Go back</a>
+
+      <fieldset>
+        <legend></legend>
+      </fieldset>
+    </div>
+  </div>
