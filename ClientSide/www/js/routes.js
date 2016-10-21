@@ -69,7 +69,7 @@ angular.module('app.routes', [])
     views: {
       'tab3': {
         templateUrl: 'templates/voteProvincial.html',
-        controller: 'voteProvincialCtrl'
+        controller: 'voteNationalCtrl'
       }
     }
   })

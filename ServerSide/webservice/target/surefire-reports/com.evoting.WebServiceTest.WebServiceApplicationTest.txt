@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.evoting.WebServiceTest.WebServiceApplicationTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in com.evoting.WebServiceTest.WebServiceApplicationTest
+=======
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 sec - in com.evoting.WebServiceTest.WebServiceApplicationTest
+>>>>>>> 11d375a55a3486846e81638e43bf34f75f42ce13

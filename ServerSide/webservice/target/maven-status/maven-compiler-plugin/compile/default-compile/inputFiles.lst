@@ -1,3 +1,11 @@
+<<<<<<< HEAD
 /Users/Azhar/eVoting/ServerSide/webservice/src/main/java/com/evoting/WebServiceApplication.java
 /Users/Azhar/eVoting/ServerSide/webservice/src/main/java/com/evoting/config/Beans.java
 /Users/Azhar/eVoting/ServerSide/webservice/src/main/java/com/evoting/VoterController.java
+=======
+/home/gift/Desktop/eVoting/ServerSide/webservice/src/main/java/com/evoting/ActivatorController.java
+/home/gift/Desktop/eVoting/ServerSide/webservice/src/main/java/com/evoting/config/Beans.java
+/home/gift/Desktop/eVoting/ServerSide/webservice/src/main/java/com/evoting/AdminController.java
+/home/gift/Desktop/eVoting/ServerSide/webservice/src/main/java/com/evoting/VoterController.java
+/home/gift/Desktop/eVoting/ServerSide/webservice/src/main/java/com/evoting/WebServiceApplication.java
+>>>>>>> 11d375a55a3486846e81638e43bf34f75f42ce13

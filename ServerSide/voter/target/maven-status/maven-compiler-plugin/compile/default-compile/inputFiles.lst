@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 /Users/Azhar/eVoting/ServerSide/voter/src/main/java/voter/VoterService.java
 /Users/Azhar/eVoting/ServerSide/voter/src/main/java/voter/PartyService.java
 /Users/Azhar/eVoting/ServerSide/voter/src/main/java/voter/VoteRequest.java
+=======
+/home/gift/Desktop/eVoting/ServerSide/voter/src/main/java/voter/VoterService.java
+/home/gift/Desktop/eVoting/ServerSide/voter/src/main/java/voter/VoteRequest.java
+>>>>>>> 11d375a55a3486846e81638e43bf34f75f42ce13
