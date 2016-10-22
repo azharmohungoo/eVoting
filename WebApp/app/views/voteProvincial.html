@@ -1,0 +1,49 @@
+<div ng-include src="'views/nav.html'"></div>
+
+<div class="container">
+  <div class="jumbotron">
+    <h2>Provincial Election</h2><br>
+
+    <div style="margin-left: 120px">
+      <div style="background: rgba(14, 5, 21, 0.76);  border-radius: 25%; width: 350px ; height: 90px;">
+        <img class="pull-left" style="border-radius: 120%; height: 50px; margin-top: 30px; margin-left: 30px" src="../img/politician.jpg">
+        <h3 align="center" style="color: black; margin-bottom: 20px;">Party One</h3>
+        <button style="border-radius: 100%; margin-right: 20px" ng-click="castVote('Party1', 'Provincial')"> Cast Vote</button>
+        <button style="border-radius: 100%;" ng-click="getParty('Party1')"> View Party</button>
+      </div>
+
+      <br>
+
+      <div style="background: rgba(60, 5, 22, 0.76);  border-radius: 25%; width: 350px ; height: 90px">
+        <img class="pull-left" style="border-radius: 120%; height: 50px; margin-top: 30px; margin-left: 30px" src="../img/politician.jpg">
+        <h3 align="center" style="color: black; margin-bottom: 20px;">Party Two</h3>
+        <button style="border-radius: 100%; margin-right: 20px" ng-click="castVote('Party2', 'Provincial')"> Cast Vote</button>
+        <button style="border-radius: 100%;" ng-click="getParty('Party2')"> View Party</button>
+      </div>
+
+
+      <br>
+
+      <div style="background: rgba(60, 5, 22, 0.76);  border-radius: 25%; width: 350px ; height: 90px">
+        <img class="pull-left" style="border-radius: 120%; height: 50px; margin-top: 30px; margin-left: 30px" src="../img/politician.jpg">
+        <h3 align="center" style="color: black; margin-bottom: 20px;">Party Three</h3>
+        <button style="border-radius: 100%; margin-right: 20px" ng-click="castVote('Party3', 'Provincial')"> Cast Vote</button>
+        <button style="border-radius: 100%;" ng-click="getParty('Party3')"> View Party</button>
+      </div>
+
+      <br>
+
+      <div style="background: rgba(60, 5, 22, 0.76);  border-radius: 25%; width: 350px ; height: 90px">
+        <img class="pull-left" style="border-radius: 120%; height: 50px; margin-top: 30px; margin-left: 30px" src="../img/politician.jpg">
+        <h3 align="center" style="color: black; margin-bottom: 20px;">Party Four</h3>
+        <button style="border-radius: 100%; margin-right: 20px" ng-click="castVote('Party4', 'Provincial')"> Cast Vote</button>
+        <button style="border-radius: 100%;" ng-click="getParty('Party4')"> View Party</button>
+      </div>
+    </div>
+
+    <br>
+
+
+    <a style="float: right;" href="#/election">Go back</a>
+  </div>
+</div>

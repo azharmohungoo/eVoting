@@ -73,6 +73,24 @@ angular
         controllerAs: '',
         isRole: 'Voter'
       })
+      .when('/voteNational', {
+        templateUrl: 'views/voteNational.html',
+        controller: 'ElectionCtrl',
+        controllerAs: 'vm',
+        isRole: 'Voter'
+      })
+      .when('/voteProvincial', {
+        templateUrl: 'views/voteProvincial.html',
+        controller: 'ElectionCtrl',
+        controllerAs: 'vm',
+        isRole: 'Voter'
+      })
+      .when('/viewParty', {
+        templateUrl: 'views/viewParty.html',
+        controller: 'ViewPartyCtrl',
+        controllerAs: 'vm',
+        isRole: 'Voter'
+      })
       .when('/accountInfo', {
         templateUrl: 'views/accountInfo.html',
         controller: 'VoterCtrl',
