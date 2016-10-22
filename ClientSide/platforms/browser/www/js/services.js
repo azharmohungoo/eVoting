@@ -21,7 +21,7 @@ angular.module('app.services', [])
       alert(myUrl);
       return $http({ url : myUrl , data : castNationalRequest , method : "POST" })
         .then(function (result){
-          alert(result.data);
+          alert(result.data.reason);
         })
 
     },

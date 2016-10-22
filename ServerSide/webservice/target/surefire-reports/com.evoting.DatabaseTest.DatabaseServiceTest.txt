@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.evoting.DatabaseTest.DatabaseServiceTest
 -------------------------------------------------------------------------------
-Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.419 sec - in com.evoting.DatabaseTest.DatabaseServiceTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.763 sec - in com.evoting.DatabaseTest.DatabaseServiceTest

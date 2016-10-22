@@ -244,14 +244,6 @@ public class VoterController {
 
                     }
                 }
-                else
-                {
-                    JsonObject result = Json.createObjectBuilder()
-                            .add("success", false)
-                            .add("reason" , "Invalid request")
-                            .build();
-                    return result.toString();
-                }
 
             }
 
@@ -259,7 +251,7 @@ public class VoterController {
 
         JsonObject result = Json.createObjectBuilder()
                 .add("success", false)
-                .add("reason" , "Unable to cast vote")
+                .add("reason" , "Unable to cast vote because something we dont know")
                 .build();
         return result.toString();
 
