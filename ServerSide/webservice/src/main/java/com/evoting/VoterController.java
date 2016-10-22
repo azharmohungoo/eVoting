@@ -83,7 +83,7 @@ public class VoterController {
         newPerson.setPassword(newVoter.getPassword());
         newPerson.setIdNum(newVoter.getIdNum());
         newPerson.setLocationRegistered(newVoter.getLocationRegistered());
-        newPerson.setActive(true);
+        newPerson.setActive(false);
         newPerson.setVotedNationalElection(false);
         newPerson.setVotedProvincialElection(false);
         newPerson.setVotes(2);
