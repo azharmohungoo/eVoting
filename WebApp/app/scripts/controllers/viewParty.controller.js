@@ -1,3 +1,11 @@
-/**
- * Created by Azhar on 2016/10/22.
- */
+'use strict';
+
+angular.module('eVotingWebApp')
+
+.controller('ViewPartyCtrl', function($scope, $localStorage){
+
+  alert($localStorage.thePartyName);
+
+    $scope.thePartyName = $localStorage.thePartyName;
+
+})

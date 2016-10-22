@@ -1,29 +1,27 @@
-/**
- * Created by Azhar on 2016/10/22.
- */
 
 angular.module('eVotingWebApp')
 
-.factory('ElectionService', ElectionService);
+  .service('ElectionService',  function($http, ipProvider) {
+      return {
 
-ElectionService.$inject = ['$http'];
+        castNational: function (castNationalRequest) {
 
-function  RegisterService($http, ipProvider) {
-  return {
-    register : function(registerRequest){
+          alert("Casting national vote");
+          var myUrl = "http://" + ipProvider.getIP() + ":8080/castVote";
+          alert(myUrl);
+          return $http({ url : myUrl , data : castNationalRequest , method : "POST" })
+            .then(function (result){
+              alert(result.data.reason);
+            })
 
-      alert("Registering..");
+        },
 
-      return $http({url : "http://"+ipProvider.getIP()+":8080/register" , data : registerRequest , method : "POST"})
-        .then(function (result) {
-          //alert(JSON.stringify(result)) //
-          //$location.path('/');
-          return result.data;
-        }).catch(function (exception)
+        getParty: function(viewPartyRequest)
         {
-          return exception;
-        });
-      ;
+          var myUrl = "http://" + ipProvider.getIP() + ":8080/getParty";
+          return $http({url : myUrl , data : viewPartyRequest , method : "POST"})
+
+        }
+      }
     }
-  }
-}
+  )

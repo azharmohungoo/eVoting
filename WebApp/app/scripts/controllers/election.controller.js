@@ -7,12 +7,7 @@
 angular.module('eVotingWebApp')
 
 .controller('ElectionCtrl', function($scope, ElectionService ,  $localStorage, $location) {
-  var vm = this;
-
-  vm.getParty = getParty;
-  vm.castVote = castVote;
-
-  function getParty(partyName)
+  $scope.getParty = function(partyName)
   {
     var loadPartyRequest = {
       "partyName" : partyName
@@ -23,11 +18,13 @@ angular.module('eVotingWebApp')
       .then(function (result)
       {
         $localStorage.thePartyName = result.data.partyName;
-        $location.path('/viewParty');
+        alert("my guy, the party name " + $localStorage.thePartyName);
+        $location.path("/viewParty");
+        //$state.go('tabsController.viewParty');
       });
   };
 
-  function castVote(party, voteType) {
+  $scope.castVote = function(party, voteType) {
 
     alert("Attempting to cast your vote for : " + party)
     var voterID =$localStorage.data.IDNum;
@@ -40,7 +37,6 @@ angular.module('eVotingWebApp')
       "voteType":voteType
 
     };
-
     ElectionService.castNational(castNationalRequest);
   }
 

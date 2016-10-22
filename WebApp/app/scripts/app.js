@@ -88,7 +88,7 @@ angular
       .when('/viewParty', {
         templateUrl: 'views/viewParty.html',
         controller: 'ViewPartyCtrl',
-        controllerAs: 'vm',
+       // controllerAs: 'vm',
         isRole: 'Voter'
       })
       .when('/accountInfo', {

@@ -34,6 +34,7 @@ angular.module('eVotingWebApp')
         "email" : vm.email
       }
 
+      alert("about to send to service");
       RegisterService.register(registerRequest)
         .then(function (result) {
           alert(JSON.stringify(result));

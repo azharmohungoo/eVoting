@@ -6,7 +6,7 @@ angular.module('eVotingWebApp')
 
 .factory('RegisterService', RegisterService);
 
-RegisterService.$inject = ['$http'];
+RegisterService.$inject = ['$http', 'ipProvider'];
 
 function  RegisterService($http, ipProvider) {
   return {

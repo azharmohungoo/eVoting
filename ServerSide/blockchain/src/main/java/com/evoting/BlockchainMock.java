@@ -73,4 +73,6 @@ public class BlockchainMock implements BlockchainInterface {
 
         return result;
     };
+
+    public int getPartyBalance(){return 1;}
 }
