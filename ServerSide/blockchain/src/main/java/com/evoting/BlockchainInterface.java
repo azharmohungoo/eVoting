@@ -17,7 +17,7 @@ interface BlockchainInterface {
 
     public JSONObject getBalance();
 
-    public String getPartyBalance();
+    public int getPartyBalance();
 
     public JSONObject sendVoteToNode(String address, double ammount);
 }
