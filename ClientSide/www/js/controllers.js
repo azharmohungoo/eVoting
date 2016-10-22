@@ -6,7 +6,8 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('electionInformationCtrl', function($scope) {
+.controller('electionInformationCtrl', function($scope, $localStorage) {
+
 
 })
 
@@ -38,7 +39,7 @@ angular.module('app.controllers', [])
 
     alert("Attempting to cast your vote for : " + party)
     var voterID =$localStorage.data.IDNum;
-alert(voterID);
+    alert(voterID);
     var castNationalRequest = {
 
       "partyName": party,
@@ -122,7 +123,7 @@ alert(voterID);
 
 })
 
-.controller('accountInformationCtrl', function($scope, $localStorage) {
+.controller('accountInformationCtrl', function($scope, $localStorage, $state) {
 
     $scope.name = $localStorage.data.name;
     $scope.surname = $localStorage.data.surname;
@@ -133,6 +134,12 @@ alert(voterID);
     $scope.email = $localStorage.data.email;
     $scope.activated = $localStorage.data.activated;
     $scope.locationRegistered = $localStorage.data.locationRegistered;
+
+   $scope.logout = function () {
+     alert("clear");
+     $localStorage.$reset();
+     $state.go('eVotingLogin');
+   }
 
 })
 
