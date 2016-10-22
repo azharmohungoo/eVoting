@@ -5,7 +5,7 @@ angular.module('app.services', [])
 
     return {
        getIP : function () {
-         return "127.0.0.1";
+         return "192.168.43.55";
        }
 
   }
