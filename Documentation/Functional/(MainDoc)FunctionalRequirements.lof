@@ -1,35 +1,41 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Scope Diagram}}{5}{figure.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces Validate User Service Contract}}{6}{figure.2}
-\contentsline {figure}{\numberline {3}{\ignorespaces Validate User Use Case}}{7}{figure.3}
-\contentsline {figure}{\numberline {4}{\ignorespaces Validate User Activity}}{7}{figure.4}
-\contentsline {figure}{\numberline {5}{\ignorespaces Activate Voter Service Contract}}{8}{figure.5}
-\contentsline {figure}{\numberline {6}{\ignorespaces Activate Voter Use Case}}{9}{figure.6}
-\contentsline {figure}{\numberline {7}{\ignorespaces Activate Voter Activity}}{9}{figure.7}
-\contentsline {figure}{\numberline {8}{\ignorespaces Register Voter Service Contract}}{10}{figure.8}
-\contentsline {figure}{\numberline {9}{\ignorespaces Register Voter Use-Case}}{11}{figure.9}
-\contentsline {figure}{\numberline {10}{\ignorespaces Register Voter Activity}}{11}{figure.10}
-\contentsline {figure}{\numberline {11}{\ignorespaces Login Service Contract}}{12}{figure.11}
-\contentsline {figure}{\numberline {12}{\ignorespaces Login Voter Use-Case}}{13}{figure.12}
-\contentsline {figure}{\numberline {13}{\ignorespaces Login Voter Activity}}{13}{figure.13}
-\contentsline {figure}{\numberline {14}{\ignorespaces Cast National Vote Service Contract}}{14}{figure.14}
-\contentsline {figure}{\numberline {15}{\ignorespaces Cast National Vote Use Case}}{15}{figure.15}
-\contentsline {figure}{\numberline {16}{\ignorespaces Cast National Vote Activity}}{15}{figure.16}
-\contentsline {figure}{\numberline {17}{\ignorespaces Cast Provincial Vote Service Contract}}{16}{figure.17}
-\contentsline {figure}{\numberline {18}{\ignorespaces Cast Provincial Vote Use Case}}{17}{figure.18}
-\contentsline {figure}{\numberline {19}{\ignorespaces Cast Provincial Vote Activity}}{18}{figure.19}
-\contentsline {figure}{\numberline {20}{\ignorespaces Activate Voter Service Contract}}{19}{figure.20}
-\contentsline {figure}{\numberline {21}{\ignorespaces Activate User Use Case}}{20}{figure.21}
-\contentsline {figure}{\numberline {22}{\ignorespaces Activate User Activity}}{20}{figure.22}
-\contentsline {figure}{\numberline {23}{\ignorespaces Remove Voter Service Contract}}{21}{figure.23}
-\contentsline {figure}{\numberline {24}{\ignorespaces Remove Voter Use Case}}{22}{figure.24}
-\contentsline {figure}{\numberline {25}{\ignorespaces Remove Voter Activity}}{22}{figure.25}
-\contentsline {figure}{\numberline {26}{\ignorespaces Check National Number Votes Service Contract}}{23}{figure.26}
-\contentsline {figure}{\numberline {27}{\ignorespaces Check National Number Votes Use Case}}{23}{figure.27}
-\contentsline {figure}{\numberline {28}{\ignorespaces Check National Number Votes Activity}}{24}{figure.28}
-\contentsline {figure}{\numberline {29}{\ignorespaces Check National Number Votes Service Contract}}{24}{figure.29}
-\contentsline {figure}{\numberline {30}{\ignorespaces Check National Number Votes Use Case}}{24}{figure.30}
-\contentsline {figure}{\numberline {31}{\ignorespaces Check National Number Votes Activity}}{25}{figure.31}
-\contentsline {figure}{\numberline {32}{\ignorespaces Voter Domain Model}}{25}{figure.32}
-\contentsline {figure}{\numberline {33}{\ignorespaces Party Domain Model}}{26}{figure.33}
-\contentsline {figure}{\numberline {34}{\ignorespaces Admin Domain Model}}{26}{figure.34}
-\contentsline {figure}{\numberline {35}{\ignorespaces Activator Domain Model}}{27}{figure.35}
+\contentsline {figure}{\numberline {2}{\ignorespaces Send Vote Service Contract}}{6}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Send Vote Use Case}}{7}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces Send Vote Activity}}{7}{figure.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Get Balance Service Contract}}{8}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces Get Balance Use Case}}{10}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Get Balance Activity}}{10}{figure.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Validate User Service Contract}}{11}{figure.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces Validate User Use Case}}{12}{figure.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces Validate User Activity}}{12}{figure.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Activate Voter Service Contract}}{13}{figure.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces Activate Voter Use Case}}{14}{figure.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces Activate Voter Activity}}{14}{figure.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces Register Voter Service Contract}}{15}{figure.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces Register Voter Use-Case}}{16}{figure.15}
+\contentsline {figure}{\numberline {16}{\ignorespaces Register Voter Activity}}{16}{figure.16}
+\contentsline {figure}{\numberline {17}{\ignorespaces Login Service Contract}}{17}{figure.17}
+\contentsline {figure}{\numberline {18}{\ignorespaces Login Voter Use-Case}}{18}{figure.18}
+\contentsline {figure}{\numberline {19}{\ignorespaces Login Voter Activity}}{18}{figure.19}
+\contentsline {figure}{\numberline {20}{\ignorespaces Cast National Vote Service Contract}}{19}{figure.20}
+\contentsline {figure}{\numberline {21}{\ignorespaces Cast National Vote Use Case}}{20}{figure.21}
+\contentsline {figure}{\numberline {22}{\ignorespaces Cast National Vote Activity}}{20}{figure.22}
+\contentsline {figure}{\numberline {23}{\ignorespaces Cast Provincial Vote Service Contract}}{21}{figure.23}
+\contentsline {figure}{\numberline {24}{\ignorespaces Cast Provincial Vote Use Case}}{22}{figure.24}
+\contentsline {figure}{\numberline {25}{\ignorespaces Cast Provincial Vote Activity}}{23}{figure.25}
+\contentsline {figure}{\numberline {26}{\ignorespaces Activate Voter Service Contract}}{24}{figure.26}
+\contentsline {figure}{\numberline {27}{\ignorespaces Activate User Use Case}}{25}{figure.27}
+\contentsline {figure}{\numberline {28}{\ignorespaces Activate User Activity}}{25}{figure.28}
+\contentsline {figure}{\numberline {29}{\ignorespaces Remove Voter Service Contract}}{26}{figure.29}
+\contentsline {figure}{\numberline {30}{\ignorespaces Remove Voter Use Case}}{27}{figure.30}
+\contentsline {figure}{\numberline {31}{\ignorespaces Remove Voter Activity}}{27}{figure.31}
+\contentsline {figure}{\numberline {32}{\ignorespaces Check National Number Votes Service Contract}}{28}{figure.32}
+\contentsline {figure}{\numberline {33}{\ignorespaces Check National Number Votes Use Case}}{28}{figure.33}
+\contentsline {figure}{\numberline {34}{\ignorespaces Check National Number Votes Activity}}{29}{figure.34}
+\contentsline {figure}{\numberline {35}{\ignorespaces Check National Number Votes Service Contract}}{29}{figure.35}
+\contentsline {figure}{\numberline {36}{\ignorespaces Check National Number Votes Use Case}}{29}{figure.36}
+\contentsline {figure}{\numberline {37}{\ignorespaces Check National Number Votes Activity}}{30}{figure.37}
+\contentsline {figure}{\numberline {38}{\ignorespaces Voter Domain Model}}{30}{figure.38}
+\contentsline {figure}{\numberline {39}{\ignorespaces Party Domain Model}}{31}{figure.39}
+\contentsline {figure}{\numberline {40}{\ignorespaces Admin Domain Model}}{31}{figure.40}
+\contentsline {figure}{\numberline {41}{\ignorespaces Activator Domain Model}}{32}{figure.41}
