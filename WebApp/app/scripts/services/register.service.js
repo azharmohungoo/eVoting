@@ -8,13 +8,13 @@ angular.module('eVotingWebApp')
 
 RegisterService.$inject = ['$http'];
 
-function  RegisterService($http) {
+function  RegisterService($http, ipProvider) {
   return {
     register : function(registerRequest){
 
       alert("Registering..");
 
-      return $http({url : "http://localhost:8080/register" , data : registerRequest , method : "POST"})
+      return $http({url : "http://"+ipProvider.getIP()+":8080/register" , data : registerRequest , method : "POST"})
         .then(function (result) {
           //alert(JSON.stringify(result)) //
           //$location.path('/');
