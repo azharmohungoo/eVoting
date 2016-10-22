@@ -13,10 +13,6 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.http.*;
 import org.json.*;
 
-//import org.apache.logging.log4j.Logger;
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.*;
-
 import org.apache.log4j.Logger;
 
 
@@ -113,6 +109,13 @@ public class Blockchain implements BlockchainInterface {
             result.put("success","false");
             result.put("response", BlockchainErrorMessages.InvalidIP.toString());
         }
+        return result;
+    }
+
+    public String getPartyBalance(){
+
+        String result = getBalance().get("response").toString();
+
         return result;
     }
 
