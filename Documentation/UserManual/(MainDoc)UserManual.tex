@@ -108,7 +108,9 @@
 	server=1\newline
 	rpcport=7419\newline\newline
 	
-	Then we need to change the actual blockchain configuration. Edit the "params.dat" file and make sure the following values are the same in your file:\newline\newline
+	Then we need to change the actual blockchain configuration. Edit the "params.dat" file and make sure the following values are as follows:\newline\newline\newline
+	This part is to ensure the blockchain is private.\newline
+	
 	anyone-can-connect = false\newline
 	anyone-can-send = false\newline
 	anyone-can-receive = false\newline
@@ -119,5 +121,15 @@
 	allow-p2sh-outputs = true\newline
 	allow-multisig-outputs = true\newline
 	\newline
-	
+	The following line is to give the admin an initial value of 10000000 which will be spread between all the Voting Nodes.\newline
+	first-block-reward = 1000000\newline\newline
+	This line is to make a vote a multiple of 1 and not a decimal value:\newline
+	native-currency-multiple = 100000000 \newline\newline
+	The complete params.dat file that is used for eVoting can be found on our Github page at EVoting/Documentation/BlockchainConfigurationFiles/params.dat
+	\newline\newline
+	To start the admin node and also the blockchain, issue the command:\newline
+	multichaind EVoting\newline
+	Now that the blockchain is running, other nodes can connect to it. In the terminal of the Voting Node, issue this command:\newline
+	multichaind EVoting@192.168.1.20:4771\newline
+	Where the IP is the IP address of the root node.
 \end{document}
