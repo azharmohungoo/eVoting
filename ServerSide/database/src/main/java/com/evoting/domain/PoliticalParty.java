@@ -27,6 +27,13 @@ public class PoliticalParty {
     private String blockchainProvincialNodeAddress;
     private String ipProvincialAddress;
 
+    private String rpcNationalUsername;
+    private String rpcNationalPassword;
+    private String rpcProvincialUsername;
+    private String rpcProvincialPassword;
+
+
+
 
     private String partyDescription;
     private String imgURL;
@@ -46,7 +53,7 @@ public class PoliticalParty {
         this.ipProvincialAddress = ipProvincialAddress;
     }
 
-    public PoliticalParty(String partyId, String password, String partyName, int nationalVoteCount, int provincialVoteCount, String blockchainNationalNodeAddress, String ipNationalAddress, String blockchainProvincialNodeAddress, String ipProvincialAddress, String partyDescription, String imgURL)
+    public PoliticalParty(String partyId, String password, String partyName, int nationalVoteCount, int provincialVoteCount, String blockchainNationalNodeAddress, String blockchainNationalRPCUsername, String blockchainNationalRPCPassword, String ipNationalAddress, String blockchainProvincialNodeAddress, String blockchainProvintialRPCUsername, String blockchainProvintialRPCPassword, String ipProvincialAddress, String partyDescription, String imgURL)
     {
         this.partyId = partyId;
         this.password = password;
@@ -59,6 +66,10 @@ public class PoliticalParty {
         this.ipProvincialAddress = ipProvincialAddress;
         this.partyDescription = partyDescription;
         this.imgURL = imgURL;
+        this.rpcNationalUsername = blockchainNationalRPCUsername;
+        this.rpcNationalPassword = blockchainNationalRPCPassword;
+        this.rpcProvincialUsername = blockchainProvintialRPCUsername;
+        this.rpcProvincialPassword = blockchainProvintialRPCPassword;
     }
 
     @Id
@@ -181,6 +192,42 @@ public class PoliticalParty {
 
     public void setImgURL(String imgURL) {
         this.imgURL = imgURL;
+    }
+
+    @Column(name="get_rpc_national_username", nullable = true)
+    public String getRpcNationalUsername() {
+        return rpcNationalUsername;
+    }
+
+    public void setRpcNationalUsername(String rpcNationalUsername) {
+        this.rpcNationalUsername = rpcNationalUsername;
+    }
+
+    @Column(name="get_rpc_national_password", nullable = true)
+    public String getRpcNationalPassword() {
+        return rpcNationalPassword;
+    }
+
+    public void setRpcNationalPassword(String rpcNationalPassword) {
+        this.rpcNationalPassword = rpcNationalPassword;
+    }
+
+    @Column(name="get_rpc_provincial_username", nullable = true)
+    public String getRpcProvincialUsername() {
+        return rpcProvincialUsername;
+    }
+
+    public void setRpcProvincialUsername(String rpcProvincialUsername) {
+        this.rpcProvincialUsername = rpcProvincialUsername;
+    }
+
+    @Column(name="get_rpc_provincial_password", nullable = true)
+    public String getRpcProvincialPassword() {
+        return rpcProvincialPassword;
+    }
+
+    public void setRpcProvincialPassword(String rpcProvincialPassword) {
+        this.rpcProvincialPassword = rpcProvincialPassword;
     }
 }
 

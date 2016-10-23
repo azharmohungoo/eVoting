@@ -57,6 +57,7 @@
 	\subsubsection{Testing Framework:}
 	JUnit Testing framework.\newline
 	Maven - Testing phase.
+	Spring Boot.
 	\subsubsection{Coding Environment:}
 	IntelliJ Ultimate Edition 2016.1
 	\subsubsection{Operating Systems:}
@@ -68,12 +69,15 @@
 	Firefox\newline
 	Chrome\newline
 	Safari
+	\subsubsection{Database:}
+	PostgreSQL
 	\subsection{Assumptions and Dependencies}
 	Assumptions:
 	\begin{itemize}
 		\item Server-side, client-side and the Blockchain are running on the same network.
 		\item Each OS doesn't have a firewall blocking any of the incoming and outgoning messages as well as ports used by the system.
 		\item The Blockchain is running (at least 1 Admin Node).
+		\item The database is reachable by the system.
 	\end{itemize}
 	Dependencies:
 	\begin{itemize}
@@ -99,40 +103,31 @@
 			\item Be able to send a vote from and to different Nodes.
 			\item Be able to get the vote balance of a Node.
 		\end{itemize}
+		\item{Database Module:}
+		\begin{itemize}
+			\item Validate a voter's login credentials via the webserver.
+			\item Validate a political party's login credentials via the webserver.
+			\item A voter's active state after being activated via the webserver.
+			\item Add an Admin into the database via the webserver.
+			\item Add an Activater into the database via the webserver.
+			\item Add a Voter into the database via the webserver.
+		\end{itemize}
+		\item{Voter Module}
+		\begin{itemize}
+			\item Register a new voter via the webservice.
+		\end{itemize}
 	\end{itemize}
 	2. TODO-Andreas: Provide references to the Requirements and/or Design specications of the features to be tested. Explain briefly and provide a table to introduce the different test cases
 	
-	\FloatBarrier
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-\begin{table}[]
-	\centering
-	\caption{Test Cases Descriptions}
-	\label{my-label}
-	\begin{tabular}{p{3cm}|p{2cm}|p{6cm}|p{2.5cm}}
-		\toprule
-		\multicolumn{1}{c|}{\textbf{Feature ID}} & \multicolumn{1}{l|}{\textbf{Source}} & \multicolumn{1}{l|}{\textbf{Summary}} & \textbf{Test Case ID} \\ \midrule
-
-		\multicolumn{1}{p{0.75cm}}{TODO} & \multicolumn{1}{p{2cm}}{Blockchain} & \multicolumn{1}{p{6cm}}{Test the general configuration. These test won't stop the system from building. But if these fail then some configuration might need to get checked.} & \multicolumn{1}{c}{1} \\ \midrule
-		
-		\multicolumn{1}{p{0.75cm}}{TODO} & \multicolumn{1}{p{2cm}}{Blockchain} & \multicolumn{1}{p{6cm}}{Test the sendVote functionality to ensure voters' vote won't get lost during run time.} & \multicolumn{1}{c}{1} \\ \midrule
-		
-		\multicolumn{1}{p{0.75cm}}{TODO} & \multicolumn{1}{p{2cm}}{Blockchain} & \multicolumn{1}{p{6cm}}{Test the getBalance functionality to see if parties can retrieve their total votes.} & \multicolumn{1}{c}{1} \\ \midrule
-		
-		\multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{test} & \multicolumn{1}{l|}{test} & 1 \\ \bottomrule
-	\end{tabular}
-\end{table}
-
-\FloatBarrier
 	
 	\section{Test Cases}
 	\subsection{Blockchain Module}
+	\label{sec:BlockchainModuleTestCases}
 	\subsubsection{Test Case 1: ConfigurationAndConnection}
 	\paragraph{Condition 1: InvalidIPandPort}	
 	\subparagraph{Objective:}
 	The purpose of this test is to see if the system can detect if the specified Node IP address and port are invalid or empty.
 	\subparagraph{Input:}
-	Parameters:
 	\begin{itemize}
 		\item An incorrect IP address string and/or
 		\item An incorrect port address string.
@@ -151,7 +146,6 @@
 	\subparagraph{Objective:}
 	The purpose of this test is to see if the system can detect if the specified RPC username and/or password are incorrect.
 	\subparagraph{Input:}
-	Parameters:
 	\begin{itemize}
 		\item A correct IP address string.
 		\item A correct port address string.
@@ -171,7 +165,6 @@
 	\subparagraph{Objective:}
 	The purpose of this test is to see if the system can detect wether votes are trying to be sent to an invalid Node address (i.e. an address that doesn't exist in the Blockchain).
 	\subparagraph{Input:}
-	Parameters:
 	\begin{itemize}
 		\item A correct IP address string.
 		\item A correct port address string.
@@ -190,7 +183,6 @@
 	\subparagraph{Objective:}
 	The purpose of this test is to see if the system can detect wether a voting Node is trying to send a vote when its vote balance is 0.
 	\subparagraph{Input:}
-	Parameters:
 	\begin{itemize}
 		\item A correct IP address string.
 		\item A correct port address string.
@@ -210,7 +202,6 @@
 	\subparagraph{Objective:}
 	The purpose of this test is to see if the system can successfully send 1 vote from the Admin Node to any other Node.
 	\subparagraph{Input:}
-	Parameters:
 	\begin{itemize}
 		\item A correct IP address string.
 		\item A correct port address string.
@@ -229,7 +220,6 @@
 	\subparagraph{Objective:}
 	The purpose of this test is to see if the system can successfully send 1 vote from a Node other than the Admin to the Admin Node.
 	\subparagraph{Input:}
-	Parameters:
 	\begin{itemize}
 		\item A correct IP address string.
 		\item A correct port address string.
@@ -249,7 +239,6 @@
 	\subparagraph{Objective:}
 	The purpose of this test is to see if the system can successfully retrieve the vote balance of the Admin Node.
 	\subparagraph{Input:}
-	Parameters:
 	\begin{itemize}
 		\item A correct IP address string.
 		\item A correct port address string.
@@ -266,7 +255,6 @@
 	\subparagraph{Objective:}
 	The purpose of this test is to see if the system can successfully retrieve the vote balance of any other Node other than the Admin Node.
 	\subparagraph{Input:}
-	Parameters:
 	\begin{itemize}
 		\item A correct IP address string.
 		\item A correct port address string.
@@ -279,18 +267,113 @@
 		\item Also a key-value pair of "result":$<$Balance$>$ where the value in brackets is an interger of the balance.
 	\end{itemize}
 	
-	\section{Item Pass/Fail Criteria}
-	\begin{itemize}
-		\item All of the post conditions has to be met.
-		\item TODO-Andreas
-	\end{itemize}
-	If any of the above criteria are not met, the item will be considered failed.
+	
+	
+	
+	
+		\subsection{Database Module}
+		\label{sec:DatabaseModuleTestCases}
+		\subsubsection{Test Case 1: ValidateUser}
+		\paragraph{Condition 1: InvalidInput}	
+		\subparagraph{Objective:}
+		The purpose of this test is to see if the database module's validateUser process can detect if invalid credentials have been entered.
+		\subparagraph{Input:}
+		\begin{itemize}
+			\item An ID number string.
+			\item An invalid password.
+		\end{itemize}
+		\subparagraph{Outcome:}
+		\begin{itemize}
+			\item A boolean "False" value returned from database module.
+		\end{itemize}
+		
+		\paragraph{Condition 2: ValidInput}	
+		\subparagraph{Objective:}
+		The purpose of this test is to see if the database module's validateUser process can detect if valid credentials have been entered.
+		\subparagraph{Input:}
+		\begin{itemize}
+			\item An ID number string.
+			\item A valid password.
+		\end{itemize}
+		\subparagraph{Outcome:}
+		\begin{itemize}
+			\item A boolean "True" value returned from database module.
+		\end{itemize}
+		
+		\subsubsection{Test Case 2: ValidateParty}
+		\paragraph{Condition 1: InvalidInput}	
+		\subparagraph{Objective:}
+		The purpose of this test is to see if the Database Module's validateParty process can detect if invalid credentials have been entered.
+		\subparagraph{Input:}
+		\begin{itemize}
+			\item An ID number string.
+			\item An invalid password.
+		\end{itemize}
+		\subparagraph{Outcome:}
+		\begin{itemize}
+			\item A boolean "False" value returned from database module.
+		\end{itemize}
+		
+		\paragraph{Condition 2: ValidInput}	
+		\subparagraph{Objective:}
+		The purpose of this test is to see if the Database Module's validateParty process can detect if valid credentials have been entered.
+		\subparagraph{Input:}
+		\begin{itemize}
+			\item An ID number string.
+			\item A valid password.
+		\end{itemize}
+		\subparagraph{Outcome:}
+		\begin{itemize}
+			\item A boolean "True" value returned from database module.
+		\end{itemize}
+	
+		\subsubsection{Test Case 2: ActivateVoter}
+		\paragraph{Condition 1: InvalidInput}	
+		\subparagraph{Objective:}
+		The purpose of this test is to see if the Database Module's activateVoter process can successfully change the active state of a voter.
+		\subparagraph{Input:}
+		\begin{itemize}
+			\item An ID number string.
+			\item An invalid password.
+		\end{itemize}
+		\subparagraph{Outcome:}
+		\begin{itemize}
+			\item A boolean "True" value returned from database module.
+		\end{itemize}
+		
+		\subsubsection{Test Case 3: AddVoter}
+		\paragraph{Condition 1: ValidInput}	
+		\subparagraph{Objective:}
+		The purpose of this test is to see if the Database Module's addVoter process can successfully add a new voter into the database.
+		\subparagraph{Input:}
+		\begin{itemize}
+			\item An ID number string.
+			\item A password string.
+			\item A name string.
+			\item A surname string.
+			\item A location string.
+			\item A mobile number string.
+			\item An email string.
+			\item An integer with their available votes.
+			\item A boolean value indicating if they have already voted for national election.
+			\item A boolean value indicating if they have already voted for provintial election.
+			\item A boolean value indicating if the user is active.
+		\end{itemize}
+		\subparagraph{Outcome:}
+		\begin{itemize}
+			\item A boolean "True" value returned from database module.
+		\end{itemize}
 
-	\section{Test Deliverables}
-	\begin{itemize}
-		\item Test Report located at: 
-		\item The link to Test Code:
-	\end{itemize}
+	
+	
+	
+	\section{Item Pass/Fail Criteria}
+	Blockchain Module:\newline
+	If any of the test outcomes is not the same as the outcomes discussed in \Cref{sec:BlockchainModuleTestCases}, the test wil be considered failed.
+	
+	Database Module:\newline
+	
+
 	\newpage
 	\begin{center}
 		\section*{Unit Test Report}
@@ -303,7 +386,7 @@
 	
 	\subsection{Functional Requirements Test Results}
 	
-	\newpage	
+	\newpage
 	
 	\section{Other}
 	
