@@ -56,37 +56,36 @@ public class VoterController {
         if(theParty == null)
         {
             System.out.println("the party is null");
+
         }
         else
         {
             System.out.println("the party name is " + theParty.getPartyName());
         }
 
-        PoliticalParty party1 = ppr.findByPartyName("Party1");
-        PoliticalParty party2 = ppr.findByPartyName("Party2");
-        PoliticalParty party3 = ppr.findByPartyName("Party3");
-        PoliticalParty party4 = ppr.findByPartyName("Party4");
-
-        //int allProvincialVotes = getTheProvincialBalance("Party1") + getTheProvincialBalance("Party2") + getTheProvincialBalance("Party3") + getTheProvincialBalance("Party4");
+       // int allProvincialVotes = getTheProvincialBalance("Party1") + getTheProvincialBalance("Party2") + getTheProvincialBalance("Party3") + getTheProvincialBalance("Party4");
         //int allNationalVotes =  getTheNationalBalance("Party1") + getTheNationalBalance("Party2") + getTheNationalBalance("Party3") + getTheNationalBalance("Party4");
 
-       // nationalPercentage = (getTheNationalBalance(theParty.getPartyName())/allNationalVotes) * 100;
+        //nationalPercentage = (getTheNationalBalance(theParty.getPartyName())/allNationalVotes) * 100;
         //provincialPercentage  = (getTheProvincialBalance(theParty.getPartyName())/allProvincialVotes) * 100;
 
 
-       int allProvincialVotes = party1.getProvincialVoteCount() + party2.getProvincialVoteCount() + party3.getProvincialVoteCount() + party4.getProvincialVoteCount();
-       int allNationalVotes = party1.getNationalVoteCount() + party2.getNationalVoteCount() + party3.getProvincialVoteCount() + party4.getNationalVoteCount();
+//       int allProvincialVotes = party1.getProvincialVoteCount() + party2.getProvincialVoteCount() + party3.getProvincialVoteCount() + party4.getProvincialVoteCount();
+  //     int allNationalVotes = party1.getNationalVoteCount() + party2.getNationalVoteCount() + party3.getProvincialVoteCount() + party4.getNationalVoteCount();
 
        // nationalPercentage = (theParty.getNationalVoteCount()/allNationalVotes) * 100;
         //provincialPercentage  = (theParty.getProvincialVoteCount()/allProvincialVotes) * 100;
 
-        nationalPercentage = 23.64;
-                provincialPercentage = 45.32;
+       // nationalPercentage = 23.64;
+         //       provincialPercentage = 45.32;
+
+        int provincial = theParty.getProvincialVoteCount();
+        int national = theParty.getNationalVoteCount();
 
         JsonObject result = Json.createObjectBuilder()
                 .add("partyName", "Party1")
-                .add("nationalPercentage", nationalPercentage)
-                .add("provincialPercentage", provincialPercentage)
+                .add("nationalPercentage", national)
+                .add("provincialPercentage", provincial)
                 .build();
 
         return result.toString();
@@ -234,7 +233,7 @@ public class VoterController {
                     if(voter.isVotedNationalElection() == false)
                     {
                         System.out.println("voting national");
-                        Boolean success = castTheVote(voteRequest.getPartyName(), voter.getLocationRegistered());
+                        Boolean success = castTheVote(voteRequest.getPartyName(), voter.getLocationRegistered(), voteRequest.getVoteType());
 
                         if (success == true) {
                             voter.setVotedNationalElection(true);
@@ -267,14 +266,14 @@ public class VoterController {
                     if(voter.isVotedProvincialElection() == false)
                     {
 
-                        Boolean success = castTheVote(voteRequest.getPartyName(), voter.getLocationRegistered());
+                        Boolean success = castTheVote(voteRequest.getPartyName(), voter.getLocationRegistered(), voteRequest.getVoteType());
 
                         if (success == true) {
                             voter.setVotedProvincialElection(true);
                             voter.setVotes(voter.getVotes() - 1);
                             pr.save(voter);
 
-                            theParty.setNationalVoteCount(theParty.getProvincialVoteCount() + 1);
+                            theParty.setProvincialVoteCount(theParty.getProvincialVoteCount() + 1);
                             ppr.save(theParty);
 
                             JsonObject result = Json.createObjectBuilder()
@@ -311,18 +310,17 @@ public class VoterController {
 
     {  PoliticalParty party = ppr.findByPartyName(partyName);
 
-        BlockchainMock blockchain = new BlockchainMock(party.getIpProvincialAddress(),"7419","multichainrpc","51i1XY2ELS96V7xGEA3cGh5iy8KDTxpo2ckaXZ7CBM43");
+        Blockchain blockchain = new Blockchain(party.getIpProvincialAddress(),"7419", party.getRpcProvincialUsername(),party.getRpcProvincialPassword());
 
         int result = blockchain.getPartyBalance(); //sendVoteToNode(party.getBlockchainNodeAddress(),1000);
-            return result;
-
+        return result;
     }
 
     public int getTheNationalBalance(String partyName)
 
     {  PoliticalParty party = ppr.findByPartyName(partyName);
 
-        BlockchainMock blockchain = new BlockchainMock("196.248.196.124","7419", "multichainrpc","51i1XY2ELS96V7xGEA3cGh5iy8KDTxpo2ckaXZ7CBM43");
+        Blockchain blockchain = new Blockchain(party.getIpNationalAddress(),"7419", party.getRpcNationalUsername(),party.getRpcNationalPassword());
 
         int result = blockchain.getPartyBalance(); //sendVoteToNode(party.getBlockchainNodeAddress(),1000);
         return result;
@@ -332,19 +330,32 @@ public class VoterController {
 
 
 
-    public Boolean castTheVote(String partyName, String location)
+    public Boolean castTheVote(String partyName, String location , String voteType)
     {  PoliticalParty party = ppr.findByPartyName(partyName);
         Address votingNode = ar.findByNodeName(location);
-        BlockchainMock blockchain = new BlockchainMock("196.248.196.124","7419", "multichainrpc","51i1XY2ELS96V7xGEA3cGh5iy8KDTxpo2ckaXZ7CBM43");
-        JSONObject result = blockchain.sendVoteToNode("15DmYUc17VEx7zvJoAxcPu1fBAREGYVj4ScVwe",1000);
+        //BlockchainMock blockchain = new BlockchainMock("196.248.196.124","7419", "multichainrpc","51i1XY2ELS96V7xGEA3cGh5iy8KDTxpo2ckaXZ7CBM43");
+        //JSONObject result = blockchain.sendVoteToNode("15DmYUc17VEx7zvJoAxcPu1fBAREGYVj4ScVwe",1000);
 
-        // BlockchainMock blockchain = new BlockchainMock(votingNode.getIpAddress(),"7419", votingNode.getRpcUsername(),votingNode.getRpcPassword());
-        // JSONObject result = blockchain.sendVoteToNode(party.getBlockchainNodeAddress(),1000);
+         Blockchain blockchain = new Blockchain(votingNode.getIpAddress(),"7419", votingNode.getRpcUsername(),votingNode.getRpcPassword());
 
-        if(result.get("success").toString().equals("true"))
-            return true;
-        else
-            return false;
+        if(voteType.equals("National")) {
+            JSONObject result = blockchain.sendVoteToNode(party.getBlockchainNationalNodeAddress(), 1);
+
+            if (result.get("success").toString().equals("true"))
+                return true;
+            else
+                return false;
+        }
+        else if(voteType.equals("Provincial")) {
+            JSONObject result = blockchain.sendVoteToNode(party.getBlockchainProvincialNodeAddress(), 1);
+
+            if (result.get("success").toString().equals("true"))
+                return true;
+            else
+                return false;
+        }
+
+        return false;
     }
 
     @CrossOrigin
