@@ -8,6 +8,7 @@ import com.evoting.repositories.UserTypeRepository;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import voter.PartyService;
 import voter.VoteRequest;
 import voter.VoterService;
 
@@ -40,6 +41,56 @@ public class VoterController {
     AddressRepository ar;
 
 
+
+
+    @CrossOrigin
+    @RequestMapping(value = "/getPartyStats" , method = RequestMethod.POST, produces = "application/JSON")
+    public String getPartyStats(@RequestBody VoteRequest voteRequest)
+    {
+        System.out.println("inside get stats");
+        System.out.println("the party name bih " + voteRequest.getPartyName());
+
+        double nationalPercentage, provincialPercentage;
+
+        PoliticalParty theParty = ppr.getPartyByPartyId(voteRequest.getPartyName());
+        if(theParty == null)
+        {
+            System.out.println("the party is null");
+        }
+        else
+        {
+            System.out.println("the party name is " + theParty.getPartyName());
+        }
+
+        PoliticalParty party1 = ppr.findByPartyName("Party1");
+        PoliticalParty party2 = ppr.findByPartyName("Party2");
+        PoliticalParty party3 = ppr.findByPartyName("Party3");
+        PoliticalParty party4 = ppr.findByPartyName("Party4");
+
+        //int allProvincialVotes = getTheProvincialBalance("Party1") + getTheProvincialBalance("Party2") + getTheProvincialBalance("Party3") + getTheProvincialBalance("Party4");
+        //int allNationalVotes =  getTheNationalBalance("Party1") + getTheNationalBalance("Party2") + getTheNationalBalance("Party3") + getTheNationalBalance("Party4");
+
+       // nationalPercentage = (getTheNationalBalance(theParty.getPartyName())/allNationalVotes) * 100;
+        //provincialPercentage  = (getTheProvincialBalance(theParty.getPartyName())/allProvincialVotes) * 100;
+
+
+       int allProvincialVotes = party1.getProvincialVoteCount() + party2.getProvincialVoteCount() + party3.getProvincialVoteCount() + party4.getProvincialVoteCount();
+       int allNationalVotes = party1.getNationalVoteCount() + party2.getNationalVoteCount() + party3.getProvincialVoteCount() + party4.getNationalVoteCount();
+
+       // nationalPercentage = (theParty.getNationalVoteCount()/allNationalVotes) * 100;
+        //provincialPercentage  = (theParty.getProvincialVoteCount()/allProvincialVotes) * 100;
+
+        nationalPercentage = 23.64;
+                provincialPercentage = 45.32;
+
+        JsonObject result = Json.createObjectBuilder()
+                .add("partyName", "Party1")
+                .add("nationalPercentage", nationalPercentage)
+                .add("provincialPercentage", provincialPercentage)
+                .build();
+
+        return result.toString();
+    }
 
     @CrossOrigin
     @RequestMapping(value = "/getParty" , method = RequestMethod.POST, produces = "application/JSON")
@@ -256,8 +307,32 @@ public class VoterController {
 
     }
 
-    public Boolean castTheVote(String partyName, String location)
+    public int getTheProvincialBalance(String partyName)
 
+    {  PoliticalParty party = ppr.findByPartyName(partyName);
+
+        BlockchainMock blockchain = new BlockchainMock(party.getIpProvincialAddress(),"7419","multichainrpc","51i1XY2ELS96V7xGEA3cGh5iy8KDTxpo2ckaXZ7CBM43");
+
+        int result = blockchain.getPartyBalance(); //sendVoteToNode(party.getBlockchainNodeAddress(),1000);
+            return result;
+
+    }
+
+    public int getTheNationalBalance(String partyName)
+
+    {  PoliticalParty party = ppr.findByPartyName(partyName);
+
+        BlockchainMock blockchain = new BlockchainMock("196.248.196.124","7419", "multichainrpc","51i1XY2ELS96V7xGEA3cGh5iy8KDTxpo2ckaXZ7CBM43");
+
+        int result = blockchain.getPartyBalance(); //sendVoteToNode(party.getBlockchainNodeAddress(),1000);
+        return result;
+
+    }
+
+
+
+
+    public Boolean castTheVote(String partyName, String location)
     {  PoliticalParty party = ppr.findByPartyName(partyName);
         Address votingNode = ar.findByNodeName(location);
         BlockchainMock blockchain = new BlockchainMock("196.248.196.124","7419", "multichainrpc","51i1XY2ELS96V7xGEA3cGh5iy8KDTxpo2ckaXZ7CBM43");
@@ -467,4 +542,76 @@ public class VoterController {
             return result.toString();
         }
     }
+
+    @CrossOrigin
+    @RequestMapping(value = "/registerParty", method = RequestMethod.POST)
+    public Boolean registerParty(@RequestBody PartyService newParty)
+    {
+        PoliticalParty newPoliticalParty = new PoliticalParty();
+        newPoliticalParty.setPartyId(newParty.getPartyId());
+        newPoliticalParty.setPassword(newParty.getPassword());
+        newPoliticalParty.setPartyName(newParty.getPartyName());
+        newPoliticalParty.setNationalVoteCount(newParty.getNationalVoteCount());
+        newPoliticalParty.setProvincialVoteCount(newParty.getProvincialVoteCount());
+        newPoliticalParty.setBlockchainNationalNodeAddress(newParty.getBlockchainNodeAddress());
+        newPoliticalParty.setIpNationalAddress(newParty.getIpAddress());
+        newPoliticalParty.setBlockchainProvincialNodeAddress(newParty.getBlockchainNodeAddress());
+        newPoliticalParty.setIpProvincialAddress(newParty.getIpAddress());
+        newPoliticalParty.setPartyDescription(newParty.getPartyDescription());
+        newPoliticalParty.setImgURL(newParty.getImgURL());
+
+        System.out.println("Trying to persist new Voter");
+        ppr.saveAndFlush(newPoliticalParty);
+        System.out.println("Successful save");
+
+        return true;
+    }
+
+
+
+    @CrossOrigin
+    @RequestMapping(value = "/loginP", method = RequestMethod.POST , produces = "application/JSON")
+    public String loginP(@RequestBody PartyService party)
+    {
+        System.out.println(party.getPartyId());
+        System.out.println(party.getPassword());
+
+        System.out.println("Logging in party");
+
+        PoliticalParty aVoter = new PoliticalParty();
+        aVoter.setPartyId(party.getPartyId());
+        aVoter.setPassword(party.getPassword());
+
+        // System.out.println(aPerson.toString());
+        PoliticalParty loggedInAs;
+        boolean successful = dbService.validateParty(aVoter);
+        if(successful == true)
+        {
+            loggedInAs  = ppr.getPartyByPartyIdAndPassword(aVoter.getPartyId(),aVoter.getPassword());
+            JsonObject result = Json.createObjectBuilder()
+                    .add("success", successful)
+                    .add("partyId", loggedInAs.getPartyId())
+                    .add("password", loggedInAs.getPassword())
+                    .add("partyName", loggedInAs.getPartyName())
+                    .add("nationalVoteCount", loggedInAs.getNationalVoteCount())
+                    .add("provincialVoteCount",loggedInAs.getProvincialVoteCount())
+                    .add("partyDescription", loggedInAs.getPartyDescription())
+                    .add("imgURL", loggedInAs.getImgURL())
+                    .build();
+
+            return result.toString();
+        }
+        else {
+
+            JsonObject result = Json.createObjectBuilder()
+                    .add("success",successful)
+                    .add("reason" , "Invalid User")
+                    .build();
+            return result.toString();
+        }
+
+    }
+
+
+
 }

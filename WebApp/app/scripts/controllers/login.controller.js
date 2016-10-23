@@ -12,6 +12,7 @@ angular.module('eVotingWebApp')
     vm.idNum;
     vm.password;
 
+
     vm.checkU = checkU;
     vm.loginP = loginP;
     vm.login = login;
@@ -72,6 +73,9 @@ angular.module('eVotingWebApp')
         .then(function (result)
         {
           $scope.partyName = result.partyName;
+          $localStorage.partyName = vm.idNum;
+
+         // alert(vm.idNum);
           result.userType = "Party";
           $localStorage.data = result;
           console.log(result);

@@ -57,8 +57,8 @@ angular
       })
       .when('/party', {
         templateUrl: 'views/party.html',
-        controller: '',
-        controllerAs: '',
+        controller: 'PartyCtrl',
+       // controllerAs: '',
         isRole: 'Party'
       })
       .when('/voter', {

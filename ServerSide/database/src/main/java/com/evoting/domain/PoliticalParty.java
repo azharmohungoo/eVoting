@@ -21,32 +21,42 @@ public class PoliticalParty {
     private Set<Poll> polls = new HashSet<Poll>(0);
     private int nationalVoteCount = 0;
     private int provincialVoteCount = 0;
-    private String blockchainNodeAddress;
-    private String ipAddress;
+
+    private String blockchainNationalNodeAddress;
+    private String ipNationalAddress;
+    private String blockchainProvincialNodeAddress;
+    private String ipProvincialAddress;
+
+
     private String partyDescription;
     private String imgURL;
+
 
     public PoliticalParty() {
     }
 
-    public PoliticalParty(int id, String partyName, int nationalVoteCount, int provincialVoteCount, String blockchainNodeAddress, String ipAddress) {
+    public PoliticalParty(int id, String partyName, int nationalVoteCount, int provincialVoteCount, String blockchainNationalNodeAddress, String ipNationalAddress , String blockchainProvincialNodeAddress, String ipProvincialAddress) {
         this.id = id;
         this.partyName = partyName;
         this.nationalVoteCount = nationalVoteCount;
         this.provincialVoteCount = provincialVoteCount;
-        this.blockchainNodeAddress = blockchainNodeAddress;
-        this.ipAddress = ipAddress;
+        this.blockchainNationalNodeAddress = blockchainNationalNodeAddress;
+        this.ipNationalAddress = ipNationalAddress;
+        this.blockchainProvincialNodeAddress = blockchainProvincialNodeAddress;
+        this.ipProvincialAddress = ipProvincialAddress;
     }
 
-    public PoliticalParty(String partyId, String password, String partyName, int nationalVoteCount, int provincialVoteCount, String blockchainNodeAddress, String ipAddress, String partyDescription, String imgURL)
+    public PoliticalParty(String partyId, String password, String partyName, int nationalVoteCount, int provincialVoteCount, String blockchainNationalNodeAddress, String ipNationalAddress, String blockchainProvincialNodeAddress, String ipProvincialAddress, String partyDescription, String imgURL)
     {
         this.partyId = partyId;
         this.password = password;
         this.partyName = partyName;
         this.nationalVoteCount = nationalVoteCount;
         this.provincialVoteCount = provincialVoteCount;
-        this.blockchainNodeAddress = blockchainNodeAddress;
-        this.ipAddress = ipAddress;
+        this.blockchainNationalNodeAddress = blockchainNationalNodeAddress;
+        this.ipNationalAddress = ipNationalAddress;
+        this.blockchainProvincialNodeAddress = blockchainProvincialNodeAddress;
+        this.ipProvincialAddress = ipProvincialAddress;
         this.partyDescription = partyDescription;
         this.imgURL = imgURL;
     }
@@ -118,23 +128,42 @@ public class PoliticalParty {
         this.provincialVoteCount = provincialVoteCount;
     }
 
-    @Column(name = "blockchain_node_address", nullable = false)
-    public String getBlockchainNodeAddress() {
-        return blockchainNodeAddress;
+    @Column(name = "blockchain_national_node_address", nullable = false)
+    public String getBlockchainNationalNodeAddress() {
+        return blockchainNationalNodeAddress;
     }
 
-    public void setBlockchainNodeAddress(String blockchainNodeAddress) {
-        this.blockchainNodeAddress = blockchainNodeAddress;
+    public void setBlockchainNationalNodeAddress(String blockchainNationalNodeAddress) {
+        this.blockchainNationalNodeAddress = blockchainNationalNodeAddress;
     }
 
-    @Column(name = "ip_address", nullable = false)
-    public String getIpAddress() {
-        return ipAddress;
+    @Column(name = "ip_national_address", nullable = false)
+    public String getIpNationalAddress() {
+        return ipNationalAddress;
     }
 
-    public void setIpAddress(String ipAddress) {
-        this.ipAddress = ipAddress;
+    public void setIpNationalAddress(String ipAddress) {
+        this.ipNationalAddress = ipAddress;
     }
+
+    @Column(name = "blockchain_provincial_node_address", nullable = false)
+    public String getBlockchainProvincialNodeAddress() {
+        return blockchainProvincialNodeAddress;
+    }
+
+    public void setBlockchainProvincialNodeAddress(String blockchainProvincialNodeAddress) {
+        this.blockchainProvincialNodeAddress = blockchainProvincialNodeAddress;
+    }
+
+    @Column(name = "ip_provincial_address", nullable = false)
+    public String getIpProvincialAddress() {
+        return ipProvincialAddress;
+    }
+
+    public void setIpProvincialAddress(String ipAddress) {
+        this.ipProvincialAddress = ipAddress;
+    }
+
 
     @Column(name="partyDescription", nullable = true)
     public String getPartyDescription() {

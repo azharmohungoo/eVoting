@@ -125,32 +125,32 @@ public class DatabaseServiceTest
         setP.add(new Poll("National Election"));
         setP.add(new Poll("Provincial Election"));
 
-        PoliticalParty p = new PoliticalParty("partyId1", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party1", 0, 0, "ju765redcvbnjiu765rdfghjki", "0.0.0.1", "partyDecs1", "party1.img");
+        PoliticalParty p = new PoliticalParty("partyId1", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party1", 0, 0, "ju765redcvbnjiu765rdfghjki", "0.0.0.1", "ju765redcvbnjiu765rdfghjki", "0.0.0.1", "partyDecs1", "party1.img");
         p.setPolls(setP);
         politicalPartyRepository.saveAndFlush(p);
 
-        p = new PoliticalParty("partyId2", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party2", 0, 0, "nbgfr567ujbvfrtyuirtyhgfer", "0.0.0.3", "partyDecs2", "party2.img");
+        p = new PoliticalParty("partyId2", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party2", 0, 0, "nbgfr567ujbvfrtyuirtyhgfer", "0.0.0.3", "nbgfr567ujbvfrtyuirtyhgfer", "0.0.0.3", "partyDecs2", "party2.img");
         politicalPartyRepository.saveAndFlush(p);
 
         setP = new HashSet<Poll>(0);
         setP.add(new Poll("National Election"));
         setP.add(new Poll("Provincial Election"));
 
-        p = new PoliticalParty("partyId3", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party3", 0, 0, "7tfyhbef3ufy3ivr3v3iiwhbci", "0.0.0.5", "partyDecs3", "party3.img");
+        p = new PoliticalParty("partyId3", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party3", 0, 0, "7tfyhbef3ufy3ivr3v3iiwhbci", "0.0.0.5", "7tfyhbef3ufy3ivr3v3iiwhbci", "0.0.0.5", "partyDecs3", "party3.img");
         p.setPolls(setP);
         politicalPartyRepository.saveAndFlush(p);
 
         setP = new HashSet<Poll>(0);
         setP.add(new Poll("National Election"));
 
-        p = new PoliticalParty("partyId4", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party4", 0, 0, "kiu7654ewsdfgyuikmnhytushg", "0.0.0.4", "partyDecs4", "party4.img");
+        p = new PoliticalParty("partyId4", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party4", 0, 0, "kiu7654ewsdfgyuikmnhytushg", "0.0.0.4", "kiu7654ewsdfgyuikmnhytushg", "0.0.0.4", "partyDecs4", "party4.img");
         p.setPolls(setP);
         politicalPartyRepository.saveAndFlush(p);
 
         setP = new HashSet<Poll>(0);
         setP.add(new Poll("Provincial Election"));
 
-        p = new PoliticalParty("partyId5", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party5", 0, 0, "bvcde4567ujkmhgredvhjytrfd", "0.0.0.2", "partyDecs5", "party5.img");
+        p = new PoliticalParty("partyId5", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party5", 0, 0, "bvcde4567ujkmhgredvhjytrfd", "0.0.0.2", "bvcde4567ujkmhgredvhjytrfd", "0.0.0.2", "partyDecs5", "party5.img");
         p.setPolls(setP);
         politicalPartyRepository.saveAndFlush(p);
 
@@ -259,7 +259,7 @@ public class DatabaseServiceTest
         setP.add(new Poll("National Election"));
         setP.add(new Poll("Provincial Election"));
 
-        PoliticalParty p = new PoliticalParty("partyId6", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party6", 0, 0, "bvcde4567ujkmhgredvhjytrfd", "0.0.0.2", "partyDecs6", "party6.img");
+        PoliticalParty p = new PoliticalParty("partyId6", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party6", 0, 0, "bvcde4567ujkmhgredvhjytrfd", "0.0.0.2", "bvcde4567ujkmhgredvhjytrfd", "0.0.0.2", "partyDecs6", "party6.img");
         p.setPolls(setP);
         politicalPartyRepository.saveAndFlush(p);
 

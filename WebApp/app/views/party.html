@@ -1,5 +1,8 @@
-<div ng-include src="'views/nav.html'"></div>
+<div ng-include src="'views/nav.html'" onload="'getPartyStats()'"></div>
 
 <div class="container">
-
+<h1> {{ thePartyName }}</h1>
+  <h2>Current National Votes : {{ nationalPercentage }}</h2>
+  <h2>Current Provincial Votes : {{ provincialPercentage }}</h2>
+  <button type="button"  ng-click="getPartyStats()">Get Stats</button>
 </div>
