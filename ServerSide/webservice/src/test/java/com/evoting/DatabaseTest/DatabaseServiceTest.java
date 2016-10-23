@@ -122,7 +122,7 @@ public class DatabaseServiceTest
         setP.add(new Poll("National Election"));
         setP.add(new Poll("Provincial Election"));
 
-        PoliticalParty p = new PoliticalParty("partyId1", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party1", 0, 0, "1FpW3AZpEoVdmNAU6ZHQEPSmDqvSqqQhMCJ1aj","multichainrpc","BNnekCRDZvdRXR7L5CNkQLZbvG2ireydBVPVdAhQNEj9" , "192.168.1.60", "1Paz4iA82kH5apakEJCFQqGX887MTxHk8tkyCU","multichainrpc","DJL3J3wNRD9qJdDLkVGCvbSkXyoVYE6pw8yrG8maM8ZX", "192.168.1.65", "partyDecs1", "party1.img");
+        PoliticalParty p = new PoliticalParty("partyId1", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "Party1", 0, 0, "1QoKsm2sTax6ejR959iej5s1AdHuqpfBqRRZ4z","multichainrpc","BNnekCRDZvdRXR7L5CNkQLZbvG2ireydBVPVdAhQNEj9" , "192.168.1.60", "1ZwBGVH9rJ75hQvbMRCM3BXWTGgbJi74Aqvfg8","multichainrpc","DJL3J3wNRD9qJdDLkVGCvbSkXyoVYE6pw8yrG8maM8ZX", "192.168.1.65", "partyDecs1", "party1.img");
         p.setPolls(setP);
         politicalPartyRepository.saveAndFlush(p);
 
