@@ -5,7 +5,7 @@ angular.module('app.services', [])
 
     return {
        getIP : function () {
-         return "192.168.1.5";
+         return "127.0.0.1";
        }
 
   }
@@ -63,13 +63,10 @@ angular.module('app.services', [])
       return $http({url : myUrl , data : loginRequest , method : "POST"})
         .then(function (result) {
           alert(JSON.stringify(result));
-         // alert(result.data.success);
           if(result.data.success == true)
           {
             alert("Successful login as : " +  result.data.name + " " + result.data.surname);
            var userName = result.data.name;
-           // alert(userName);
-           // var loggedInUser = {name:result.data.name, lastName:result.data.surname}
 
             $state.go('tabsController.electionInformation');
             return result.data;
@@ -100,7 +97,6 @@ function  RegisterService($http, ipProvider) {
       var myUrl = "http://" + ipProvider.getIP() + ":8080/register";
       return $http({url : myUrl , data : registerRequest , method : "POST"})
         .then(function (result) {
-        //  alert(JSON.stringify(result))
           return result.data;
         }).catch(function (exception)
         {
