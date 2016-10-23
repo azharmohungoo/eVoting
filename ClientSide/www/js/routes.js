@@ -27,7 +27,7 @@ angular.module('app.routes', [])
     .state('tabsController.viewParty', {
       url: '/viewParty',
       views: {
-        'tab1': {
+        'tab2': {
           templateUrl: 'templates/viewParty.html',
           controller: 'viewPartyCtrl'
         }
