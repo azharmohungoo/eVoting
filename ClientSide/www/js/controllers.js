@@ -1,19 +1,13 @@
 angular.module('app.controllers', [])
 
 .controller('eVotingCtrl', function($scope) {
-
-
-
 })
 
 .controller('electionInformationCtrl', function($scope, $localStorage) {
-
-
 })
 
 
 .controller('viewPartyCtrl', function($scope, $localStorage){
-
   $scope.thePartyName = $localStorage.thePartyName;
 
 })
@@ -26,7 +20,6 @@ angular.module('app.controllers', [])
       "partyName" : partyName
     };
 
-    alert("sending to service " + partyName );
     VoteNationalService.getParty(loadPartyRequest)
       .then(function (result)
       {
@@ -37,9 +30,7 @@ angular.module('app.controllers', [])
 
   $scope.castVote = function(party, voteType) {
 
-    alert("Attempting to cast your vote for : " + party)
     var voterID =$localStorage.data.IDNum;
-    alert(voterID);
     var castNationalRequest = {
 
       "partyName": party,
@@ -49,12 +40,15 @@ angular.module('app.controllers', [])
 
     };
     VoteNationalService.castNational(castNationalRequest);
+  };
+
+  $scope.notAvailable = function () {
+    alert("Sorry, technically available.");
   }
 
 })
 
   .controller('eVotingLoginCtrl', function($scope, LoginService, $localStorage) {
-
 
     var vm = this;
 
@@ -73,14 +67,12 @@ angular.module('app.controllers', [])
         .then(function (result)
         {
           $localStorage.data = result;
-
         });
-
     }
   })
 
 
-.controller('registerCtrl' , function($scope , RegisterService) {
+.controller('registerCtrl' , function($scope , RegisterService, $state) {
 
   var vm = this;
 
@@ -92,10 +84,8 @@ angular.module('app.controllers', [])
   vm.cellphone;
   vm.email;
 
-
   vm.register = register;
     function  register() {
-
 
     var registerRequest = {
       "name" : vm.name,
@@ -107,14 +97,18 @@ angular.module('app.controllers', [])
       "locationRegistered" : vm.locationRegistered
     }
 
-
     RegisterService.register(registerRequest)
       .then(function (result) {
-        alert(JSON.stringify(result));
-      }).catch(function (exception)
-    {
-      alert("Previous Exception");
-    });
+        if(result == true)
+        {
+          alert("Success! You can now log in.");
+          $state.go('eVotingLogin');
+        }
+        else
+        {
+            alert("Ooops.. something went wrong. Please try again.")
+        }
+      })
 
   }
 })
@@ -136,7 +130,7 @@ angular.module('app.controllers', [])
     $scope.locationRegistered = $localStorage.data.locationRegistered;
 
    $scope.logout = function () {
-     alert("clear");
+     alert("Logging Out. Thank You.");
      $localStorage.$reset();
      $state.go('eVotingLogin');
    }
@@ -144,8 +138,6 @@ angular.module('app.controllers', [])
 })
 
   .controller('MainCtrl', function($scope) {
-
-
 
 
   })

@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.evoting.VoterTest.VoterControllerTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec - in com.evoting.VoterTest.VoterControllerTest
+=======
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 sec - in com.evoting.VoterTest.VoterControllerTest
+>>>>>>> 53476c1c4c87a76ce3e0a0d186c3ab128d3f032f

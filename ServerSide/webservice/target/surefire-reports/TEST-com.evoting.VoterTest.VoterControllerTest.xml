@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.evoting.VoterTest.VoterControllerTest" time="0.024" tests="1" errors="0" skipped="0" failures="0">
+=======
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.evoting.VoterTest.VoterControllerTest" time="0.064" tests="1" errors="0" skipped="0" failures="0">
+>>>>>>> 53476c1c4c87a76ce3e0a0d186c3ab128d3f032f
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib"/>
@@ -62,5 +66,9 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
+<<<<<<< HEAD
   <testcase name="registerTest" classname="com.evoting.VoterTest.VoterControllerTest" time="0.018"/>
+=======
+  <testcase name="registerTest" classname="com.evoting.VoterTest.VoterControllerTest" time="0.063"/>
+>>>>>>> 53476c1c4c87a76ce3e0a0d186c3ab128d3f032f
 </testsuite>

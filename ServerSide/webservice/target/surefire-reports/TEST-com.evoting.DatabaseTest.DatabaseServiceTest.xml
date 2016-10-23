@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.evoting.DatabaseTest.DatabaseServiceTest" time="7.968" tests="14" errors="0" skipped="0" failures="0">
+=======
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.evoting.DatabaseTest.DatabaseServiceTest" time="22.667" tests="14" errors="0" skipped="0" failures="0">
+>>>>>>> 53476c1c4c87a76ce3e0a0d186c3ab128d3f032f
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib"/>
@@ -62,6 +66,7 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
+<<<<<<< HEAD
   <testcase name="addPartyTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.188"/>
   <testcase name="insertAddress" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.01"/>
   <testcase name="validateUserTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.006"/>
@@ -76,4 +81,20 @@
   <testcase name="insertActivationStation" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.023"/>
   <testcase name="addActivatorTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.013"/>
   <testcase name="insertPoliticalParty" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.039"/>
+=======
+  <testcase name="addPartyTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.475"/>
+  <testcase name="insertAddress" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.053"/>
+  <testcase name="validateUserTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.032"/>
+  <testcase name="insertPermission" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.057"/>
+  <testcase name="addAdminTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.114"/>
+  <testcase name="addVoterTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.041"/>
+  <testcase name="insertPerson" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.136"/>
+  <testcase name="validatePartyTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.008"/>
+  <testcase name="insertPoll" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.041"/>
+  <testcase name="insertUserType" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.052"/>
+  <testcase name="activateVoterTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.082"/>
+  <testcase name="insertActivationStation" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.124"/>
+  <testcase name="addActivatorTest" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.036"/>
+  <testcase name="insertPoliticalParty" classname="com.evoting.DatabaseTest.DatabaseServiceTest" time="0.138"/>
+>>>>>>> 53476c1c4c87a76ce3e0a0d186c3ab128d3f032f
 </testsuite>

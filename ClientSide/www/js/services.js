@@ -16,9 +16,8 @@ angular.module('app.services', [])
 
     castNational: function (castNationalRequest) {
 
-      alert("Casting national vote");
+      alert("Casting vote..");
      var myUrl = "http://" + ipProvider.getIP() + ":8080/castVote";
-      alert(myUrl);
       return $http({ url : myUrl , data : castNationalRequest , method : "POST" })
         .then(function (result){
           alert(result.data.reason);
@@ -62,7 +61,6 @@ angular.module('app.services', [])
       var myUrl = "http://" + ipProvider.getIP() + ":8080/login";
       return $http({url : myUrl , data : loginRequest , method : "POST"})
         .then(function (result) {
-          alert(JSON.stringify(result));
           if(result.data.success == true)
           {
             alert("Successful login as : " +  result.data.name + " " + result.data.surname);

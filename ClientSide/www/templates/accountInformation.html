@@ -2,13 +2,14 @@
     <ion-content class="has-header" padding="true">
 
 
-      <h3 align="center">{{ name }} </h3>
+      <h3 align="center">Logged in as : {{ name }} </h3>
       <div align="center" style="border: #000000 solid">
 
         <p>ID Number : {{ IDNum }} </p>
         <p>Voted National : {{ votedNational }}</p>
         <p>Provincial Vote Balance : {{ votedProvincial }} </p>
         <p>Vote Balance : {{ votes }} </p>
+        <p> Activation Status : {{ activated }}</p>
 
       </div>
       <br>
@@ -22,8 +23,7 @@
 
       </div>
 
-      <input ng-click="logout()" type="button" value="Log Out">
-
+      <a class=" button button-stable  button-block button-calm" id="eVotingLogin-button1"   ng-click="logout()">Log Out</a>
 
     </ion-content>
 
