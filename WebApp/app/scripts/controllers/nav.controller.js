@@ -14,7 +14,6 @@ angular.module('eVotingWebApp')
 
     function logOut()
     {
-      //alert("clear");
       $localStorage.$reset();
       $location.path('/');
     }

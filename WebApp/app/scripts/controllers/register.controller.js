@@ -6,7 +6,7 @@
 
 angular.module('eVotingWebApp')
 
-  .controller('RegisterCtrl' , function($scope , RegisterService) {
+  .controller('RegisterCtrl' , function($scope , RegisterService, $location) {
     var vm = this;
 
     vm.idNum;
@@ -21,8 +21,6 @@ angular.module('eVotingWebApp')
 
     function register() {
 
-      //alert(vm.name + " " + vm.surname + " " + vm.idNum + " " + vm.password + " " + vm.email + " " + vm.cellphone + " " + vm.locationRegistered);
-
       var registerRequest = {
         "idNum" : vm.idNum,
         "password" : Sha256.hash(vm.password) ,
@@ -34,10 +32,10 @@ angular.module('eVotingWebApp')
         "email" : vm.email
       }
 
-      alert("about to send to service");
       RegisterService.register(registerRequest)
         .then(function (result) {
-          alert(JSON.stringify(result));
+          alert("You have successfully been registered!");
+          $location.path("/");
         }).catch(function (exception)
       {
         alert("Previous Exception");

@@ -3,24 +3,14 @@
   <div class="header">
     <div class="navbar navbar-default" role="navigation">
       <div class="container">
-        <div class="navbar-header">
+        <div class="row">
+          <div class="navbar-header col-lg-6 col-xs-6">
+            <img src="images/evoting.png" style="width: 40%" alt="eVoting Website">
+          </div>
 
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-
-          <a class="navbar-brand" >Electronic Voting</a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-          <ul id="headerMainP" ng-if="vm.isLoggedIn()" class="nav navbar-nav navbar-right">
-            <li class=""><a ng-click="vm.logOut()">Logout</a></li>
-          </ul>
-
+          <div class="collapse navbar-collapse col-lg-6 col-xs-6" id="js-navbar-collapse">
+            <br><a style="margin-left: 280px" ng-if="vm.isLoggedIn()" ng-click="vm.logOut()">Logout</a>
+          </div>
         </div>
       </div>
     </div>

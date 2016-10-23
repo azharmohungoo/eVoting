@@ -11,9 +11,6 @@ angular.module('eVotingWebApp')
         {
           alert(result.data);
         })
-
     }
-
   }
-
 })

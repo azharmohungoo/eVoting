@@ -32,7 +32,14 @@
           <br>
           <label>Surname: </label><input style="margin-left: 88px" type="text" ng-model="vm.surname" id="surname" name="Surname" class="surname" placeholder="Surname" required>
           <br>
-          <label>Location registered: </label><input style="margin-left: 20px" type="text" ng-model="vm.locationRegistered" id="locationRegistered" name="LocationRegistered" class="locationRegistered" placeholder="Pretoria - UP" required>
+          <label>Location registered: </label>
+          <select id="locationRegistered" style="margin-left: 60px" ng-model="vm.locationRegistered">
+            <option value="Pretoria">Pretoria</option>
+            <option value="Johannesburg">Johannesburg</option>
+            <option value="Cape Town">Cape Town</option>
+            <option value="Durban">Durban</option>
+            <option value="Stellenbosch">Stellenbosch</option>
+          </select>
           <br>
           <label>Cellphone: </label><input style="margin-left: 83px" type="text" ng-model="vm.cellphone" id="cellphone" name="Cellphone" class="cellphone" placeholder="0821234321" required>
           <br>
@@ -59,8 +66,8 @@
 
           <a class="btn btn-success" value="Register" ng-click="vm.admin()">Register</a>
         </form>
-
-        <a style="float: right;" href="#/admin">Go back</a>
+        <br><br>
+        <a class="glyphicon glyphicon-circle-arrow-left" style="float: right;" href="#/admin">&nbsp;Back</a>
         </div>
       </div>
     </div>

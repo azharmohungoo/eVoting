@@ -10,11 +10,8 @@ angular.module('eVotingWebApp')
 
         getPartyStats: function(getPartyStatsRequest)
         {
-
-          alert("sending to server");
           var myUrl = "http://" + ipProvider.getIP() + ":8080/getPartyStats";
           return $http({url : myUrl , data : getPartyStatsRequest , method : "POST"})
-
         }
       }
     }

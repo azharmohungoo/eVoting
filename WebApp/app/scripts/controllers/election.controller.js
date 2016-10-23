@@ -20,7 +20,6 @@ angular.module('eVotingWebApp')
         $localStorage.thePartyName = result.data.partyName;
         alert("my guy, the party name " + $localStorage.thePartyName);
         $location.path("/viewParty");
-        //$state.go('tabsController.viewParty');
       });
   };
 

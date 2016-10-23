@@ -79,7 +79,6 @@ angular.module('eVotingWebApp')
 
       AdminService.adminRegister(adminRegisterRequest)
         .then(function (result) {
-          alert(JSON.stringify(result));
         }).catch(function (exception)
       {
         alert("Previous Exception");
@@ -102,7 +101,6 @@ angular.module('eVotingWebApp')
 
       AdminService.adminParty(adminRegisterPartyRequest)
         .then(function (result) {
-          alert(JSON.stringify(result));
         }).catch(function (exception)
       {
         alert("Previous Exception");

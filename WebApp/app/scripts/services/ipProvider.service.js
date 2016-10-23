@@ -9,7 +9,7 @@ angular.module('eVotingWebApp')
   return {
     getIP : function ()
     {
-      return "192.168.1.5";
+      return "localhost";
     }
 
   }

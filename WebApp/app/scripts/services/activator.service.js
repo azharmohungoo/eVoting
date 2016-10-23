@@ -9,8 +9,6 @@ angular.module('eVotingWebApp')
         search: function (searchRequest) {
           return $http({url: "http://"+ipProvider.getIP()+":8080/search", data: searchRequest, method: "POST"})
             .then(function (result) {
-              alert(JSON.stringify(result));
-              // alert(result.data.success);
               if (result.data.success == true) {
                 alert("Voter found as : " + result.data.name + " " + result.data.surname);
 
@@ -28,8 +26,6 @@ angular.module('eVotingWebApp')
         activate: function (activateRequest) {
           return $http({url: "http://"+ipProvider.getIP()+":8080/activate", data: activateRequest, method: "POST"})
             .then(function (result) {
-              alert(JSON.stringify(result));
-              // alert(result.data.success);
               if (result.data.success == true) {
                 alert(result.data.name + " " + result.data.surname + " activated");
 

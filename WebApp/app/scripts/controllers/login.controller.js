@@ -34,7 +34,6 @@ angular.module('eVotingWebApp')
     {
       var loginRequest = {
         "password" : Sha256.hash(vm.password) ,
-        //"password" : vm.password ,
         "idNum" : vm.idNum
       }
 
@@ -65,7 +64,6 @@ angular.module('eVotingWebApp')
     {
       var loginPRequest = {
         "password" : Sha256.hash(vm.password) ,
-        //"password" : vm.password ,
         "partyId" : vm.idNum
       }
 
@@ -75,7 +73,6 @@ angular.module('eVotingWebApp')
           $scope.partyName = result.partyName;
           $localStorage.partyName = vm.idNum;
 
-         // alert(vm.idNum);
           result.userType = "Party";
           $localStorage.data = result;
           console.log(result);
