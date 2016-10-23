@@ -47,7 +47,7 @@
 				\end{figure}
 				The sendVote process does not rely on any other use case, instead the sendVote process will be used by various other use cases.
 				\newline
-			
+			\newpage
 			\item \textbf{Process Design}
 				\begin{figure}[H]
 					\centering
@@ -58,7 +58,7 @@
 				The system will then try to make a transaction in the blockchain from the sending node to the receiving node. If the RPC credentials are incorrect, the InvalidRPCCredentials exception will be thrown. If the ToAddress does not exist in the blockchain, the InvalidToAddress exception will be thrown. If the sending node does not have atleast a balance of 1, the InvalidVotesLeft exception will be thrown. If no exceptions are thrown, and the node returns a string containing the transaction hash, it means the vote has been successfully sent.
 				\newline
 		\end{enumerate}
-	
+	\newpage
 	\item \textbf{Get Balance}
 		\begin{enumerate}
 			\item \textbf{Service Contract}
