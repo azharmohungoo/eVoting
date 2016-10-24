@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.evoting.BlockchainTest" time="1.752" tests="6" errors="0" skipped="0" failures="2">
+<testsuite name="com.evoting.BlockchainTest" time="1.775" tests="6" errors="0" skipped="0" failures="2">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib"/>
@@ -59,111 +59,111 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="testSendVoteFromVotingNode" classname="com.evoting.BlockchainTest" time="0.646">
+  <testcase name="testSendVoteFromVotingNode" classname="com.evoting.BlockchainTest" time="0.608">
     <failure message="true expected:&lt;[fals]e&gt; but was:&lt;[tru]e&gt;" type="junit.framework.ComparisonFailure"><![CDATA[junit.framework.ComparisonFailure: true expected:<[fals]e> but was:<[tru]e>
 	at junit.framework.Assert.assertEquals(Assert.java:100)
 	at junit.framework.TestCase.assertEquals(TestCase.java:261)
 	at com.evoting.BlockchainTest.testSendVoteFromVotingNode(BlockchainTest.java:104)
 ]]></failure>
-    <system-out><![CDATA[23:00:54.341 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
-23:00:54.350 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
-23:00:54.352 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.30:7419][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
-23:00:54.362 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://192.168.1.30:7419][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
-23:00:54.363 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.30:7419
-23:00:54.364 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.30:7419
-23:00:54.368 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.5:54963<->192.168.1.30:7419
-23:00:54.369 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request POST / HTTP/1.1
-23:00:54.369 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
-23:00:54.371 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> POST / HTTP/1.1
-23:00:54.372 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> authorization: Basic bXVsdGljaGFpbnJwYzpHd2ozcE54SlpvVEEzc01KYnd5TlVmZ1lmQ1VHaXl2NE15Tmc2TW53QVBabg==
-23:00:54.372 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Content-Length: 80
-23:00:54.372 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Content-Type: text/plain; charset=ISO-8859-1
-23:00:54.372 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Host: 192.168.1.30:7419
-23:00:54.372 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
-23:00:54.372 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_31)
-23:00:54.372 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
-23:00:54.372 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "POST / HTTP/1.1[\r][\n]"
-23:00:54.372 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "authorization: Basic bXVsdGljaGFpbnJwYzpHd2ozcE54SlpvVEEzc01KYnd5TlVmZ1lmQ1VHaXl2NE15Tmc2TW53QVBabg==[\r][\n]"
-23:00:54.372 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Content-Length: 80[\r][\n]"
-23:00:54.372 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Content-Type: text/plain; charset=ISO-8859-1[\r][\n]"
-23:00:54.372 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Host: 192.168.1.30:7419[\r][\n]"
-23:00:54.372 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
-23:00:54.372 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_31)[\r][\n]"
-23:00:54.372 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
-23:00:54.372 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
-23:00:54.372 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "{"method":"sendtoaddress","params":["1LEekRGT54DZK1CdR57riPzvVw6kJPMWbJRQBW",1]}"
-23:00:54.376 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 500 Internal Server Error[\r][\n]"
-23:00:54.376 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Date: Sun, 23 Oct 2016 21:00:52 +0000[\r][\n]"
-23:00:54.376 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Connection: close[\r][\n]"
-23:00:54.376 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Length: 74[\r][\n]"
-23:00:54.376 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Type: application/json[\r][\n]"
-23:00:54.376 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Server: bitcoin-json-rpc/v0.10.0.0-29a6f33[\r][\n]"
-23:00:54.376 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
-23:00:54.376 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "{"result":null,"error":{"code":-5,"message":"Invalid address"},"id":null}[\n]"
-23:00:54.379 [main] DEBUG org.apache.http.headers - http-outgoing-0 << HTTP/1.1 500 Internal Server Error
-23:00:54.379 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Date: Sun, 23 Oct 2016 21:00:52 +0000
-23:00:54.379 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Connection: close
-23:00:54.379 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Length: 74
-23:00:54.379 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Type: application/json
-23:00:54.379 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Server: bitcoin-json-rpc/v0.10.0.0-29a6f33
-23:00:54.384 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: Close connection
-23:00:54.385 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection discarded
-23:00:54.386 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {}->http://192.168.1.30:7419][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+    <system-out><![CDATA[23:57:59.399 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+23:57:59.410 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+23:57:59.412 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.30:7419][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+23:57:59.423 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://192.168.1.30:7419][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+23:57:59.425 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.30:7419
+23:57:59.427 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.30:7419
+23:57:59.431 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.5:55692<->192.168.1.30:7419
+23:57:59.432 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request POST / HTTP/1.1
+23:57:59.432 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+23:57:59.434 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> POST / HTTP/1.1
+23:57:59.434 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> authorization: Basic bXVsdGljaGFpbnJwYzpHd2ozcE54SlpvVEEzc01KYnd5TlVmZ1lmQ1VHaXl2NE15Tmc2TW53QVBabg==
+23:57:59.434 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Content-Length: 80
+23:57:59.434 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Content-Type: text/plain; charset=ISO-8859-1
+23:57:59.434 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Host: 192.168.1.30:7419
+23:57:59.434 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
+23:57:59.435 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_31)
+23:57:59.435 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+23:57:59.435 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "POST / HTTP/1.1[\r][\n]"
+23:57:59.435 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "authorization: Basic bXVsdGljaGFpbnJwYzpHd2ozcE54SlpvVEEzc01KYnd5TlVmZ1lmQ1VHaXl2NE15Tmc2TW53QVBabg==[\r][\n]"
+23:57:59.435 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Content-Length: 80[\r][\n]"
+23:57:59.435 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Content-Type: text/plain; charset=ISO-8859-1[\r][\n]"
+23:57:59.435 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Host: 192.168.1.30:7419[\r][\n]"
+23:57:59.435 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+23:57:59.435 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_31)[\r][\n]"
+23:57:59.435 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+23:57:59.436 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+23:57:59.436 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "{"method":"sendtoaddress","params":["1LEekRGT54DZK1CdR57riPzvVw6kJPMWbJRQBW",1]}"
+23:57:59.441 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 500 Internal Server Error[\r][\n]"
+23:57:59.442 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Date: Sun, 23 Oct 2016 21:57:57 +0000[\r][\n]"
+23:57:59.442 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Connection: close[\r][\n]"
+23:57:59.442 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Length: 74[\r][\n]"
+23:57:59.442 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Type: application/json[\r][\n]"
+23:57:59.442 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Server: bitcoin-json-rpc/v0.10.0.0-29a6f33[\r][\n]"
+23:57:59.442 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+23:57:59.442 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "{"result":null,"error":{"code":-5,"message":"Invalid address"},"id":null}[\n]"
+23:57:59.444 [main] DEBUG org.apache.http.headers - http-outgoing-0 << HTTP/1.1 500 Internal Server Error
+23:57:59.444 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Date: Sun, 23 Oct 2016 21:57:57 +0000
+23:57:59.444 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Connection: close
+23:57:59.444 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Length: 74
+23:57:59.444 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Type: application/json
+23:57:59.444 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Server: bitcoin-json-rpc/v0.10.0.0-29a6f33
+23:57:59.449 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: Close connection
+23:57:59.449 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection discarded
+23:57:59.449 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {}->http://192.168.1.30:7419][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
 ]]></system-out>
   </testcase>
-  <testcase name="testVotingNodeBalance" classname="com.evoting.BlockchainTest" time="0.059"/>
-  <testcase name="testInvalidIPAddress" classname="com.evoting.BlockchainTest" time="0.958"/>
-  <testcase name="testAdminBalance" classname="com.evoting.BlockchainTest" time="0.058"/>
-  <testcase name="testSendVoteFromAdmin" classname="com.evoting.BlockchainTest" time="0.031">
+  <testcase name="testVotingNodeBalance" classname="com.evoting.BlockchainTest" time="0.097"/>
+  <testcase name="testInvalidIPAddress" classname="com.evoting.BlockchainTest" time="0.92"/>
+  <testcase name="testAdminBalance" classname="com.evoting.BlockchainTest" time="0.123"/>
+  <testcase name="testSendVoteFromAdmin" classname="com.evoting.BlockchainTest" time="0.027">
     <failure message="true expected:&lt;[fals]e&gt; but was:&lt;[tru]e&gt;" type="junit.framework.ComparisonFailure"><![CDATA[junit.framework.ComparisonFailure: true expected:<[fals]e> but was:<[tru]e>
 	at junit.framework.Assert.assertEquals(Assert.java:100)
 	at junit.framework.TestCase.assertEquals(TestCase.java:261)
 	at com.evoting.BlockchainTest.testSendVoteFromAdmin(BlockchainTest.java:76)
 ]]></failure>
-    <system-out><![CDATA[23:00:55.494 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
-23:00:55.494 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
-23:00:55.494 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.20:7419][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
-23:00:55.494 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 3][route: {}->http://192.168.1.20:7419][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
-23:00:55.494 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.20:7419
-23:00:55.494 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.20:7419
-23:00:55.497 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.5:54973<->192.168.1.20:7419
-23:00:55.497 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request POST / HTTP/1.1
-23:00:55.497 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
-23:00:55.497 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> POST / HTTP/1.1
-23:00:55.497 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> authorization: Basic bXVsdGljaGFpbnJwYzpHbmI1UnNYYTc4M0s5TGJKR2p0ZlpOcG5KZzhVYkR1OGJ6YThodGQ5RE1QWA==
-23:00:55.497 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> Content-Length: 80
-23:00:55.497 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> Content-Type: text/plain; charset=ISO-8859-1
-23:00:55.497 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> Host: 192.168.1.20:7419
-23:00:55.497 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> Connection: Keep-Alive
-23:00:55.497 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_31)
-23:00:55.497 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> Accept-Encoding: gzip,deflate
-23:00:55.497 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "POST / HTTP/1.1[\r][\n]"
-23:00:55.497 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "authorization: Basic bXVsdGljaGFpbnJwYzpHbmI1UnNYYTc4M0s5TGJKR2p0ZlpOcG5KZzhVYkR1OGJ6YThodGQ5RE1QWA==[\r][\n]"
-23:00:55.497 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "Content-Length: 80[\r][\n]"
-23:00:55.497 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "Content-Type: text/plain; charset=ISO-8859-1[\r][\n]"
-23:00:55.497 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "Host: 192.168.1.20:7419[\r][\n]"
-23:00:55.498 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "Connection: Keep-Alive[\r][\n]"
-23:00:55.498 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_31)[\r][\n]"
-23:00:55.498 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "Accept-Encoding: gzip,deflate[\r][\n]"
-23:00:55.498 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "[\r][\n]"
-23:00:55.498 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "{"method":"sendtoaddress","params":["1PSBDgE6XSaifMEJ6gV8TZXwnrKitsKgv33yG4",1]}"
-23:00:55.500 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "HTTP/1.1 500 Internal Server Error[\r][\n]"
-23:00:55.501 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Date: Sun, 23 Oct 2016 21:00:51 +0000[\r][\n]"
-23:00:55.501 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Connection: close[\r][\n]"
-23:00:55.501 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Content-Length: 74[\r][\n]"
-23:00:55.501 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Content-Type: application/json[\r][\n]"
-23:00:55.501 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Server: bitcoin-json-rpc/v0.10.0.0-29a6f33[\r][\n]"
-23:00:55.501 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "[\r][\n]"
-23:00:55.501 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "{"result":null,"error":{"code":-5,"message":"Invalid address"},"id":null}[\n]"
-23:00:55.501 [main] DEBUG org.apache.http.headers - http-outgoing-3 << HTTP/1.1 500 Internal Server Error
-23:00:55.501 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Date: Sun, 23 Oct 2016 21:00:51 +0000
-23:00:55.501 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Connection: close
-23:00:55.501 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Content-Length: 74
-23:00:55.501 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Content-Type: application/json
-23:00:55.501 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Server: bitcoin-json-rpc/v0.10.0.0-29a6f33
-23:00:55.501 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-3: Close connection
-23:00:55.501 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection discarded
-23:00:55.501 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 3][route: {}->http://192.168.1.20:7419][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+    <system-out><![CDATA[23:58:00.622 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+23:58:00.623 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+23:58:00.623 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.20:7419][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+23:58:00.623 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 3][route: {}->http://192.168.1.20:7419][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+23:58:00.623 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.20:7419
+23:58:00.623 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.20:7419
+23:58:00.626 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.5:55702<->192.168.1.20:7419
+23:58:00.626 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request POST / HTTP/1.1
+23:58:00.626 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+23:58:00.626 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> POST / HTTP/1.1
+23:58:00.626 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> authorization: Basic bXVsdGljaGFpbnJwYzpHbmI1UnNYYTc4M0s5TGJKR2p0ZlpOcG5KZzhVYkR1OGJ6YThodGQ5RE1QWA==
+23:58:00.626 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> Content-Length: 80
+23:58:00.626 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> Content-Type: text/plain; charset=ISO-8859-1
+23:58:00.626 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> Host: 192.168.1.20:7419
+23:58:00.626 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> Connection: Keep-Alive
+23:58:00.626 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_31)
+23:58:00.626 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> Accept-Encoding: gzip,deflate
+23:58:00.626 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "POST / HTTP/1.1[\r][\n]"
+23:58:00.626 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "authorization: Basic bXVsdGljaGFpbnJwYzpHbmI1UnNYYTc4M0s5TGJKR2p0ZlpOcG5KZzhVYkR1OGJ6YThodGQ5RE1QWA==[\r][\n]"
+23:58:00.626 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "Content-Length: 80[\r][\n]"
+23:58:00.626 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "Content-Type: text/plain; charset=ISO-8859-1[\r][\n]"
+23:58:00.626 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "Host: 192.168.1.20:7419[\r][\n]"
+23:58:00.626 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "Connection: Keep-Alive[\r][\n]"
+23:58:00.626 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_31)[\r][\n]"
+23:58:00.626 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+23:58:00.626 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "[\r][\n]"
+23:58:00.626 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "{"method":"sendtoaddress","params":["1PSBDgE6XSaifMEJ6gV8TZXwnrKitsKgv33yG4",1]}"
+23:58:00.629 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "HTTP/1.1 500 Internal Server Error[\r][\n]"
+23:58:00.629 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Date: Sun, 23 Oct 2016 21:57:58 +0000[\r][\n]"
+23:58:00.629 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Connection: close[\r][\n]"
+23:58:00.629 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Content-Length: 74[\r][\n]"
+23:58:00.629 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Content-Type: application/json[\r][\n]"
+23:58:00.629 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Server: bitcoin-json-rpc/v0.10.0.0-29a6f33[\r][\n]"
+23:58:00.629 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "[\r][\n]"
+23:58:00.629 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "{"result":null,"error":{"code":-5,"message":"Invalid address"},"id":null}[\n]"
+23:58:00.629 [main] DEBUG org.apache.http.headers - http-outgoing-3 << HTTP/1.1 500 Internal Server Error
+23:58:00.629 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Date: Sun, 23 Oct 2016 21:57:58 +0000
+23:58:00.629 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Connection: close
+23:58:00.630 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Content-Length: 74
+23:58:00.630 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Content-Type: application/json
+23:58:00.630 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Server: bitcoin-json-rpc/v0.10.0.0-29a6f33
+23:58:00.630 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-3: Close connection
+23:58:00.630 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection discarded
+23:58:00.630 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 3][route: {}->http://192.168.1.20:7419][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
 ]]></system-out>
   </testcase>
   <testcase name="testEmptyParameters" classname="com.evoting.BlockchainTest" time="0"/>

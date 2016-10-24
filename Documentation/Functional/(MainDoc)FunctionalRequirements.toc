@@ -4,10 +4,10 @@
 \contentsline {section}{\numberline {4}Functional Requirements}{5}{section.4}
 \contentsline {subsection}{\numberline {4.1}Blockchain}{6}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Database}{11}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Admin}{14}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.3}Admin}{15}{subsection.4.3}
 \contentsline {subsection}{\numberline {4.4}Voter}{19}{subsection.4.4}
 \contentsline {subsection}{\numberline {4.5}Activator}{28}{subsection.4.5}
-\contentsline {subsection}{\numberline {4.6}Party}{32}{subsection.4.6}
-\contentsline {subsection}{\numberline {4.7}Domain Model}{34}{subsection.4.7}
-\contentsline {section}{\numberline {5}Open Issues}{36}{section.5}
-\contentsline {subsection}{\numberline {5.1}GitHub Repository}{36}{subsection.5.1}
+\contentsline {subsection}{\numberline {4.6}Party}{33}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}Domain Model}{35}{subsection.4.7}
+\contentsline {section}{\numberline {5}Open Issues}{37}{section.5}
+\contentsline {subsection}{\numberline {5.1}GitHub Repository}{37}{subsection.5.1}

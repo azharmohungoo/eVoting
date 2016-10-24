@@ -239,7 +239,7 @@ public class DatabaseServiceTest
         Set<Permission> setP = new HashSet<Permission>(0);
         setP.add(new Permission("Update"));
 
-        Person p = new Person("2793032497862", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "newActivatorName", "NewActivatorSurname", "", "7787654399", "newActivator@gmail.com", 0, false, false, false);
+        Person p = new Person("0605250402012", "5c4950c94a3461441c356afa783f76b83b38fd65f730f291403efbcc798acc1f", "University of Pretoria", "Hatfield Campus", "", "7787654399", "newActivator@gmail.com", 0, false, false, false);
         p.setPermissions(setP);
         p.setUserType(new UserType("Activator"));
 
