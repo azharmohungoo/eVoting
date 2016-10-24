@@ -1,8 +1,6 @@
 package voter;
 
-/**
- * Created by Azhar on 21/10/16.
- */
+
 public class PartyService
 {
     private String partyId;

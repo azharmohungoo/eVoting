@@ -18,10 +18,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-/**
- * Created by Gift on 21/08/16.
- */
-
 @RestController
 public class VoterController {
 
@@ -39,8 +35,6 @@ public class VoterController {
 
     @Autowired
     AddressRepository ar;
-
-
 
 
     @CrossOrigin
@@ -63,21 +57,6 @@ public class VoterController {
             System.out.println("the party name is " + theParty.getPartyName());
         }
 
-       // int allProvincialVotes = getTheProvincialBalance("Party1") + getTheProvincialBalance("Party2") + getTheProvincialBalance("Party3") + getTheProvincialBalance("Party4");
-        //int allNationalVotes =  getTheNationalBalance("Party1") + getTheNationalBalance("Party2") + getTheNationalBalance("Party3") + getTheNationalBalance("Party4");
-
-        //nationalPercentage = (getTheNationalBalance(theParty.getPartyName())/allNationalVotes) * 100;
-        //provincialPercentage  = (getTheProvincialBalance(theParty.getPartyName())/allProvincialVotes) * 100;
-
-
-//       int allProvincialVotes = party1.getProvincialVoteCount() + party2.getProvincialVoteCount() + party3.getProvincialVoteCount() + party4.getProvincialVoteCount();
-  //     int allNationalVotes = party1.getNationalVoteCount() + party2.getNationalVoteCount() + party3.getProvincialVoteCount() + party4.getNationalVoteCount();
-
-       // nationalPercentage = (theParty.getNationalVoteCount()/allNationalVotes) * 100;
-        //provincialPercentage  = (theParty.getProvincialVoteCount()/allProvincialVotes) * 100;
-
-       // nationalPercentage = 23.64;
-         //       provincialPercentage = 45.32;
 
         int provincial = theParty.getProvincialVoteCount();
         int national = theParty.getNationalVoteCount();
@@ -100,7 +79,6 @@ public class VoterController {
 
         PoliticalParty party = ppr.findByPartyName(voteRequest.getPartyName());
 
-      //  System.out.println("returned from db " + party.getPartyName());
         if(party == null)
         {
             System.out.println("party is null");
@@ -160,7 +138,6 @@ public class VoterController {
         aPerson.setIdNum(voterLogin.getIdNum());
         aPerson.setPassword(voterLogin.getPassword());
 
-       // System.out.println(aPerson.toString());
         Person loggedInAs;
         boolean successful = dbService.validateUser(aPerson);
         if(successful == true)
@@ -333,8 +310,6 @@ public class VoterController {
     public Boolean castTheVote(String partyName, String location , String voteType)
     {  PoliticalParty party = ppr.findByPartyName(partyName);
         Address votingNode = ar.findByNodeName(location);
-        //BlockchainMock blockchain = new BlockchainMock("196.248.196.124","7419", "multichainrpc","51i1XY2ELS96V7xGEA3cGh5iy8KDTxpo2ckaXZ7CBM43");
-        //JSONObject result = blockchain.sendVoteToNode("15DmYUc17VEx7zvJoAxcPu1fBAREGYVj4ScVwe",1000);
 
          Blockchain blockchain = new Blockchain(votingNode.getIpAddress(),"7419", votingNode.getRpcUsername(),votingNode.getRpcPassword());
 
@@ -425,7 +400,6 @@ public class VoterController {
         Person aPerson = new Person();
         aPerson.setIdNum(voterLogin.getIdNum());
 
-        // System.out.println(aPerson.toString());
         Person found;
         boolean successful = dbService.findVoter(aPerson);
         if(successful == true)
@@ -470,7 +444,6 @@ public class VoterController {
         Person aPerson = new Person();
         aPerson.setIdNum(voterLogin.getIdNum());
 
-        // System.out.println(aPerson.toString());
         Person found;
         boolean successful1 = dbService.findVoter(aPerson);
         boolean successful2 = dbService.activateVoter(aPerson);
@@ -510,7 +483,6 @@ public class VoterController {
     @RequestMapping(value = "/deactivate", method = RequestMethod.POST , produces = "application/JSON")
     public String deactivate(@RequestBody VoterService voterLogin)
     {
-
         System.out.println(voterLogin.getIdNum());
 
         System.out.println("Searching for user");
@@ -518,7 +490,6 @@ public class VoterController {
         Person aPerson = new Person();
         aPerson.setIdNum(voterLogin.getIdNum());
 
-        // System.out.println(aPerson.toString());
         Person found;
         boolean successful1 = dbService.findVoter(aPerson);
         boolean successful2 = dbService.deactivateVoter(aPerson);
@@ -578,8 +549,6 @@ public class VoterController {
         return true;
     }
 
-
-
     @CrossOrigin
     @RequestMapping(value = "/loginP", method = RequestMethod.POST , produces = "application/JSON")
     public String loginP(@RequestBody PartyService party)
@@ -593,7 +562,6 @@ public class VoterController {
         aVoter.setPartyId(party.getPartyId());
         aVoter.setPassword(party.getPassword());
 
-        // System.out.println(aPerson.toString());
         PoliticalParty loggedInAs;
         boolean successful = dbService.validateParty(aVoter);
         if(successful == true)
@@ -622,7 +590,4 @@ public class VoterController {
         }
 
     }
-
-
-
 }

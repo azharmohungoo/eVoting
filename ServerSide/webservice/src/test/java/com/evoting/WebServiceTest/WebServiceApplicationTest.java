@@ -1,9 +1,5 @@
 package com.evoting.WebServiceTest;
 
-/**
- * Created by Gift on 10/08/16.
- */
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

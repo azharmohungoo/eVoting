@@ -7,10 +7,6 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by Azhar on 2016/07/14.
- */
-
 @Audited
 @Entity
 @EnableTransactionManagement
@@ -217,14 +213,4 @@ public class Person {
                 ", active=" + active +
                 '}';
     }
-
-    /*public String getUserTypeString()
-    {
-        return userType.getUserType();
-    }
-
-    public void setUserTypeString(UserType userType)
-    {
-        this.userType = userType;
-    }*/
 }

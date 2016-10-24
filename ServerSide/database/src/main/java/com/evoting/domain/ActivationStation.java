@@ -4,10 +4,6 @@ import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 
-/**
- * Created by Azhar on 2016/10/06.
- */
-
 @Entity
 @Audited
 @Table(name="activation_station")

@@ -6,10 +6,6 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by Azhar on 2016/07/14.
- */
-
 @Entity
 @Audited
 @Table(name = "permission")
