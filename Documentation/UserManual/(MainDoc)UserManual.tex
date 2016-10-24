@@ -48,88 +48,92 @@
 	The beautifull part of eVoting is that it uses Blockchain technology, the same technology used in the famous Bitcoin currency. A blockchain is a distributed database that maintains a continuously-growing list of records called blocks secured from tampering and revision. A more indepth description is beyond the scope of this document.
 	
 	\subsection{System Configuration}
-	eVoting can be generaly simplified by Figure \ref{fig:overview}. When a client uses the system, they will communicate with eVoting through a RESTfull webservice, sending an receiving JSON objects. The webservice is connected to a backend, processing the requests which communicate with the database and blockchain. Since the system uses a webservice as a communication medium between the client and backend, it allows possible future expansion of eVoting for example integration of any third party company, or other mobile platforms.
+
+	\subsection{Installation}
+	The Android application can be installed by running the APK file located on our Github at the location:  ClientSide/Android APK/eVoting.apk. An Android version of 4.4 or higher is required.\newline
 					\begin{figure}[H]
 						\centering
-						\includegraphics[width=0.75\linewidth]{../Images/UserManual/SystemConfiguration1.jpg}
-						\caption{Overview of eVoting}
-						\label{fig:overview}
+						\includegraphics[width=0.3\linewidth]{../Images/UserManual/install.png}
+						\caption{Install}
 					\end{figure}
 					
-	The blockchain structure of eVoting is depicted by Figure \ref{fig:blockchainconfig}. It consist of 3 types of nodes: a Root (admin) node, Political Party Node and a Voting Station node. Each of them have different permissions. The Root node has all of the permissions, a Political Party node only has connect and receive permissions and a Voting Station node has connect, send, receive and mine permissions. It is important to keep the eVoting blockchain private from public usage, so new nodes must be approved and added by the root node explicitly.
-	\newline
+	The website does not need installation and need only the be viewed inside a web browser which supports HTML5 and Javascript.
 	
+	\section{Getting Started}
+	Getting started with the Android app:\newline\newline
+							\begin{figure}[H]
+								\centering
+								\includegraphics[width=0.3\linewidth]{../Images/UserManual/landingpage.png}
+								\caption{Landing Page}
+							\end{figure}
+	First the user needs to register by clicking on the "Or Register" button at the landing screen.\newline
+								\begin{figure}[H]
+									\centering
+									\includegraphics[width=0.3\linewidth]{../Images/UserManual/register.png}
+									\caption{Register}
+								\end{figure}
+	 The user then needs to fill all of the fields then click "Register". Note that no duplicate ID number, email address or mobile number is allowed. If the app gives a popup message stating that the registration is successful, he/she must go back to the landing screen, and log in with their credentials.								\begin{figure}[H]
+	 	\centering
+	 	\includegraphics[width=0.3\linewidth]{../Images/UserManual/registered.png}
+	 	\caption{Registered}
+	 \end{figure}
+	The user will then be taken to the home screen. More detail about the home screen can be found in section \ref{homescreen}.\newline
+	The app has a side menu which can be accessed by swiping right while logged into the system.\newline
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\linewidth]{../Images/UserManual/sidemenu.png}
+		\caption{Side Menu}
+	\end{figure}
+	
+	To log out of the system, and tap on "Account Information" in the side menu. Here all of the user's details can be found, as well as a "Log out" button.
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.3\linewidth]{../Images/UserManual/userinformation.png}
+			\caption{Logout Location}
+		\end{figure}
+	
+	\section{Using the System}
+	\label{usingthesystem}
+	The home screen is the first page after logging into the system.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.3\linewidth]{../Images/UserManual/homescreen.png}
+				\caption{Home Screen}
+				\label{homescreen}
+			\end{figure}
+			
+			At the top of the screen is a menu with 3 buttons: Election Information, Vote National and Vote Provintial. Each button will redirect the user to another screen. The user is on the Election Information screen directly after logging in. When the user clicks on Vote National, he/she will be taken to a screen of a list of all the running political parties.
+			
 						\begin{figure}[H]
-							\includegraphics[width=1.25\linewidth]{../Images/UserManual/BlockchainConfiguration1.jpg}
-							\caption{Blockchain Node Structure}
-							\label{fig:blockchainconfig}
+							\centering
+							\includegraphics[width=0.3\linewidth]{../Images/UserManual/voteprovintial.png}
+							\caption{Vote Provintial}
 						\end{figure}
-						
-	TODO may need to elaborate here more
+												\begin{figure}[H]
+													\centering
+													\includegraphics[width=0.3\linewidth]{../Images/UserManual/votenational.png}
+													\caption{Vote National}
+												\end{figure}
 	
-	\subsection{Installation}
-	TODO: Webservice, database, android app etc
+		At each of the above screens, the user can view a party's information and cast a vote for a party. The user only has 1 for a national election, and 1 vote for a provintial election.
+		\newline\newline
+		If a user hasn't voted before, and clicks on "Cast Vote" (either national or provintial) the folowing screen should appear:
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.3\linewidth]{../Images/UserManual/successvote.png}
+			\caption{Successful Vote}
+		\end{figure}
+		
+		The image at figure \ref{alreadyVoted} will be shown if a user has already voted and tries to vote again.
 	
-	\subsubsection{Blockchain}
-	To set up the eVoting Blockchain, each node will need a static IP address.\newline
-	Each node will also have a RPC username and RPC password automatically generated by multichain. If however you want to specify custom RPC usernames and RPC password, you may do so, but for the sake of eVoting, the generated RPC password is strong enough.
-	
-	Each node will require the following setup:
-	
-	Required Sofware:
-	\begin{itemize}
-		\item Linux distribution
-		\item Multichain. Available at \url{http://www.multichain.com}
-	\end{itemize}
-	
-	System requirements:
-	\begin{itemize}
-		\item Linux: 64-bit
-		\item 512 MB of RAM
-		\item 1 GB of disk space.
-	\end{itemize}
-	
-	We chose Lubuntu because it is a minimalist lightweight Linux distribution. Lubuntu is available at \url{http://lubuntu.net/}\newline
-	Installation instructions for Multichain can be found at \url{http://www.multichain.com/download-install/}\newline\newline
-	
-	\paragraph{Setting up a blockchain the Root node}
-	
-	In the Linux terminal, issue the following commands:\newline\newline
-	su [Root-Password]\newline
-	multichain-util create EVoting\newline\newline
-	You should see the text "Blockchain parameter set was successfully generated."\newline
-	The blockchain has been created but isn't running yet, we first need to configure it.\newline
-	Edit the "multichain.conf" file at the following default location:\newline
-	/root/.multichain/EVoting/multichain.conf\newline
-	Here we can specify this node's RPC username and RPC password, but for EVoting we leave it as it is. Then we need to add 2 extra lines to the file, one specifing that this is the Admin Node, the other specifying which network range is allowed to issue remote commands. The file should look something like this (the IP range might need to change in your case):\newline
-	rpcuser=multichainrpc\newline
-	rpcpassword=Gnb5RsXa783K9LbJGjtfZNpnJg8UbDu8bza8htd9DMPX\newline
-	rpcallowip=192.168.43.0/255.255.255.0\newline
-	server=1\newline
-	rpcport=7419\newline\newline
-	
-	Then we need to change the actual blockchain configuration. Edit the "params.dat" file and make sure the following values are as follows:\newline\newline\newline
-	This part is to ensure the blockchain is private.\newline
-	
-	anyone-can-connect = false\newline
-	anyone-can-send = false\newline
-	anyone-can-receive = false\newline
-	anyone-can-issue = false\newline
-	anyone-can-mine = false\newline
-	anyone-can-activate = false\newline
-	anyone-can-admin = false\newline
-	allow-p2sh-outputs = true\newline
-	allow-multisig-outputs = true\newline
-	\newline
-	The following line is to give the admin an initial value of 10000000 which will be spread between all the Voting Nodes.\newline
-	first-block-reward = 1000000\newline\newline
-	This line is to make a vote a multiple of 1 and not a decimal value:\newline
-	native-currency-multiple = 100000000 \newline\newline
-	The complete params.dat file that is used for eVoting can be found on our Github page at EVoting/Documentation/BlockchainConfigurationFiles/params.dat
-	\newline\newline
-	To start the admin node and also the blockchain, issue the command:\newline
-	multichaind EVoting\newline
-	Now that the blockchain is running, other nodes can connect to it. In the terminal of the Voting Node, issue this command:\newline
-	multichaind EVoting@192.168.1.20:4771\newline
-	Where the IP is the IP address of the root node.
+		\section{Troubleshooting}
+		The backend prevents a user from casting multiple votes. So if a user tries to vote again, the folowing message will appear:
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.3\linewidth]{../Images/UserManual/alreadyvoted.png}
+			\caption{Already Voted}
+			\label{alreadyVoted}
+		\end{figure}
 \end{document}
