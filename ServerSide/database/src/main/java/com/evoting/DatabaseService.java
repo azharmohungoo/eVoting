@@ -7,9 +7,6 @@ import com.evoting.repositories.PoliticalPartyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-/**
- * Created by Azhar on 2016/09/01.
- */
 
 @Component
 public class DatabaseService

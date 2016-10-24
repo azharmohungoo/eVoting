@@ -11,10 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import voter.VoterService;
 
-/**
- * Created by Gift on 29/08/16.
- */
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class VoterControllerTest {

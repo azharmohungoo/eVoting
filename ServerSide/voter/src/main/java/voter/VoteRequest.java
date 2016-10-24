@@ -1,8 +1,6 @@
 package voter;
 
-/**
- * Created by Gift on 08/09/16.
- */
+
 public class VoteRequest {
 
     String partyName;

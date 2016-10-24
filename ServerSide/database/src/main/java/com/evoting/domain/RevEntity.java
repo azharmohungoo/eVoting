@@ -6,9 +6,7 @@ import org.hibernate.envers.RevisionEntity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-/**
- * Created by Azhar on 2016/07/17.
- */
+
 
 @Entity
 @RevisionEntity(RevListener.class)

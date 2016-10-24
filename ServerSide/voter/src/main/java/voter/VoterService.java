@@ -1,8 +1,5 @@
 package voter;
 
-/**
- * Created by Gift on 21/08/16.
- */
 public class VoterService {
 
     private String userType;

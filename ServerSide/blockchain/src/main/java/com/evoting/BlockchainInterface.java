@@ -2,9 +2,7 @@ package com.evoting;
 
 import org.json.JSONObject;
 
-/**
- * Created by Andreas on 2016/09/04.
- */
+
 interface BlockchainInterface {
 
     public void setNodeIP(String nodeIP);

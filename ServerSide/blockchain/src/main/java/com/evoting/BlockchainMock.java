@@ -2,9 +2,6 @@ package com.evoting;
 
 import org.json.JSONObject;
 
-/**
- * Created by Andreas on 2016/09/04.
- */
 
 //This is a Mock object of the Blockchain module.
 //It will always return successfull cases of all method calls.

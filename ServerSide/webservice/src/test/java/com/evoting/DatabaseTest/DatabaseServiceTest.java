@@ -13,9 +13,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by Azhar on 2016/09/02.
- */
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
