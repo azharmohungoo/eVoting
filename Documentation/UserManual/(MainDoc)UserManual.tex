@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 \documentclass[11pt]{article}
 \addtolength{\oddsidemargin}{-1.cm}
 \addtolength{\textwidth}{2cm}
@@ -132,4 +133,317 @@
 	Now that the blockchain is running, other nodes can connect to it. In the terminal of the Voting Node, issue this command:\newline
 	multichaind EVoting@192.168.1.20:4771\newline
 	Where the IP is the IP address of the root node.
+=======
+\documentclass[11pt]{article}
+\addtolength{\oddsidemargin}{-1.cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-2cm}
+\addtolength{\textheight}{3.5cm}
+
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{float}
+\usepackage{cite}
+\usepackage{placeins}
+\usepackage{booktabs}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=magenta,
+	urlcolor=cyan,
+}
+
+% define the title
+\author{Team CodeX}
+\title{User Manual}
+
+\begin{document}
+	\setcounter{tocdepth}{6}
+	\setcounter{secnumdepth}{6}
+	\setlength{\parskip}{6pt}
+	
+	% generates the title
+	\input{CoverPage.tex}
+	
+	\renewcommand{\thesection}{\arabic{section}}
+	\newpage
+	
+	\tableofcontents
+	
+	\textsc{}\\[1cm]
+	
+	\newpage
+	\section{General Information}
+	\subsection{System Overview}
+	Electronic Voting, or eVoting for short, is a system which does exactly what the name suggest. It allows members of a demographic country to vote for a political party during an election period. It does so that each vote is completely anonymous by using Blockchain technology.\newline\newline
+	The system is usable via an online web page and an Android(4.4+) application.\newline\newline
+	There are essentially 4 types of users: An Administrator, a Political Party, an Activator and a Voter. Each having their own dedicated functionality. An administrator user can add a political party user, add an activator user, and deactivate a voter account. A political party account can only check the number of votes they currently have. An activator can only activate a user. And a voter can cast votes.\newline\newline
+	In order to make Electronic Voting safe and trustworthy, the activator user is needed. Initially when a new user is registered, they will automatically be 'deactivated', which prevents them from casting any type of vote. This is to prevent a voter from creating a bunch of fake accounts and using those fake accounts to vote multiple times. An activator first need to verify the identity of a voter by providing proof of identity (a drivers license or ID document), after which a voter is then activated and will be granted 2 votes: one vote for a national party, and one vote for a provintial party.\newline\newline
+	If a user has not registered yet, they can do so on the web site or on the Android application. Apon registration, the user need to provide: a valid ID number, a password used to log into the system, a name, a surname, the location their registered in (pre defined list of values eg. Pretoria, Johannesburg etc), a mobile number and an email address. A voter is the only user type that can register itself, an activator, political party and administrator can only be added by an existing administrator.\newline\newline
+	The beautifull part of eVoting is that it uses Blockchain technology, the same technology used in the famous Bitcoin currency. A blockchain is a distributed database that maintains a continuously-growing list of records called blocks secured from tampering and revision. A more indepth description is beyond the scope of this document.
+	\newpage
+	\subsection{System Configuration}
+
+	\subsection{Installation}
+	eVoting Android Application
+	
+	Step 1 – Go to Settings.
+	Step 2 – Go to Security.
+	Step 3 – Scroll down and check “Unknown sources” box.
+	Step 4 – Tap ‘OK” when it show the warning.
+	All Done, Now you can install 3rd party Apps through APK files on your device with Android 4.0+ OS.
+	
+	Step 5 - Go to the eVoting App in your file manager and click on it.  
+	Step 6 - Click on the AeVoting APK and APK manager will open. 
+	Step 7 - Accept all permissions. 
+	Step 8 - The eVoting icon will appear your home screen.
+	Step 9 - The application has been installed.
+					
+	The website does not need installation and need only the be viewed inside a web browser which supports HTML5 and Javascript.
+	
+	\section{Getting Started}
+	Getting started with the Android app:
+							\begin{figure}[H]
+								\centering
+								\includegraphics[width=0.3\linewidth]{../Images/UserManual/landingpage.png}
+								\caption{Landing Page}
+							\end{figure}
+	First the user needs to register by clicking on the "Or Register" button at the landing screen.\newline
+								\begin{figure}[H]
+									\centering
+									\includegraphics[width=0.3\linewidth]{../Images/UserManual/register.png}
+									\caption{Register}
+								\end{figure}
+	 The user then needs to fill all of the fields then click "Register". Note that no duplicate ID number, email address or mobile number is allowed. If the app gives a popup message stating that the registration is successful, he/she must go back to the landing screen, and log in with their credentials.								\begin{figure}[H]
+	 	\centering
+	 	\includegraphics[width=0.3\linewidth]{../Images/UserManual/registered.png}
+	 	\caption{Registered}
+	 \end{figure}
+	The user will then be taken to the home screen. More detail about the home screen can be found in section \ref{homescreen}.
+	The app has a side menu which can be accessed by swiping right while logged into the system.\newline
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\linewidth]{../Images/UserManual/sidemenu.png}
+		\caption{Side Menu}
+	\end{figure}
+	
+	To log out of the system, and tap on "Account Information" in the side menu. Here all of the user's details can be found, as well as a "Log out" button.
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.3\linewidth]{../Images/UserManual/userinformation.png}
+			\caption{Logout Location}
+		\end{figure}
+	
+	\section{Using the System}
+	
+	\textbf{Android}\newline
+	
+	\label{usingthesystem}
+	The home screen is the first page after logging into the system.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.3\linewidth]{../Images/UserManual/homescreen.png}
+				\caption{Home Screen}
+				\label{homescreen}
+			\end{figure}
+			
+			At the top of the screen is a menu with 3 buttons: Election Information, Vote National and Vote Provintial. Each button will redirect the user to another screen. The user is on the Election Information screen directly after logging in. When the user clicks on Vote National, he/she will be taken to a screen of a list of all the running political parties.
+			
+						\begin{figure}[H]
+							\centering
+							\includegraphics[width=0.3\linewidth]{../Images/UserManual/voteprovintial.png}
+							\caption{Vote Provintial}
+						\end{figure}
+												\begin{figure}[H]
+													\centering
+													\includegraphics[width=0.3\linewidth]{../Images/UserManual/votenational.png}
+													\caption{Vote National}
+												\end{figure}
+	
+		At each of the above screens, the user can view a party's information and cast a vote for a party. The user only has 1 for a national election, and 1 vote for a provintial election.
+		\newline\newline
+		If a user hasn't voted before, and clicks on "Cast Vote" (either national or provintial) the folowing screen should appear:
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.3\linewidth]{../Images/UserManual/successvote.png}
+			\caption{Successful Vote}
+		\end{figure}
+		
+		The image at figure \ref{alreadyVoted} will be shown if a user has already voted and tries to vote again. \newline
+		\newpage
+		\textbf{WebApp}
+		
+		\textbf{Activator}
+		
+		The login page has 2 input boxes for the ID and Password - respectively and a selection box for the type of user attempting to log in. The options in the selection box are user type; Voter, Activator, Admin, Party.
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\linewidth]{../Images/UserManual/activatorWeb/activatorlogin.png}
+			\caption{Activator Login}
+		\end{figure}
+		
+		The Activator selects that user type from selection box, and after a successful login, an alert pops with the name of activation station.
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\linewidth]{../Images/UserManual/activatorWeb/activatorsuccessfullogin.png}
+			\caption{Activator Successful Login}
+		\end{figure}
+		\newpage
+		They are then brought to a screen where they can enter the ID of a voter who wishes to be activated to vote.
+		The page has an input box for capturing the ID number of the voter. 
+		After the activator presses the "Find" button, the system attempts to retrieve a voter who wishes to be activated and they are alerted once this person is found.
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\linewidth]{../Images/UserManual/activatorWeb/activatorsearch.png}
+			\caption{Activator Search}
+		\end{figure}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\linewidth]{../Images/UserManual/activatorWeb/activatorfound.png}
+			\caption{Activator Found User}
+		\end{figure}
+		\newpage
+		Once the voter has been found, thier details are displayed for the Activator to confirm the details. An "Avtivate" button shows which when pressed will changed the retrieved voters state to activated. 
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\linewidth]{../Images/UserManual/activatorWeb/activatordisplay.png}
+			\caption{Activator Display}
+		\end{figure}
+	
+		The activation is confirmed by a pop with an appropriate message.  
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\linewidth]{../Images/UserManual/activatorWeb/activatoractivated.png}
+			\caption{Activator Activated}
+		\end{figure}
+		\newpage
+		\textbf{Party} \newline
+	
+		Once the Political Party logs in they are able click the "Gey Stats" button to retrieve their current National and Provincial Votes. 
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\linewidth]{../Images/UserManual/partyWeb/partygetstats.png}
+			\caption{Party  Get Stats}
+		\end{figure}
+		
+		\textbf{Voter} \newline
+		
+		After a successful Voter Login, they are greeted with their name and two buttons to either view their account information or cast votes. 
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\linewidth]{../Images/UserManual/voterWeb/votersuccesslogin.png}
+			\caption{Voter  Successful Login}
+		\end{figure}
+		\newpage
+		Once the "I want to vote!" button is clicked, you are given two options; to either vote national or vote provincial. 
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\linewidth]{../Images/UserManual/voterWeb/voterbuttons.png}
+			\caption{Voter  Interface}
+		\end{figure}
+		
+		"I want to vote!"
+		Depending on which option is chosen, a new page will load with with all the potential candidates you can vote for. With two options for both, "Cast Vote" or "View Party" details.
+		Press "Cast Vote" to vote for that party. 
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\linewidth]{../Images/UserManual/voterWeb/voterrovincialvote.png}
+			\caption{Voter  Provincial Vote}
+		\end{figure}
+		\newpage
+			A prompt telling you that your vote is being cast will pop up. 
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.7\linewidth]{../Images/UserManual/voterWeb/votercastvote.png}
+				\caption{Voter Cast Vote}
+			\end{figure}
+		
+			After which a success or failure message will appear. 
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.7\linewidth]{../Images/UserManual/voterWeb/votervotesuccess.png}
+					\caption{Voter Vote Success}
+				\end{figure}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.7\linewidth]{../Images/UserManual/voterWeb/voterfailedvote.png}
+				\caption{Voter Vote Failed}
+			\end{figure}
+			
+			"View Account Information"
+			This button allows users view their information on the system, like their activation status. 
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.7\linewidth]{../Images/UserManual/voterWeb/voterinfo.png}
+					\caption{Voter Information}
+				\end{figure}
+				\newpage
+				\textbf{Admin} \newline
+				
+				After a successful login, Admin has an option to either add a user or deadctivate a user.
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.7\linewidth]{../Images/UserManual/adminWeb/adminsuccessfullogin.png}
+					\caption{Admin Successful Login}
+				\end{figure}
+				
+				The Admin can select the type of user to add. 
+				After selecting the type of user the relevant details for each selection will appear. 
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.7\linewidth]{../Images/UserManual/adminWeb/adminselectuser.png}
+					\caption{Admin Select User Type}
+				\end{figure}
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.7\linewidth]{../Images/UserManual/adminWeb/adminadmin.png}
+					\caption{Admin Add Admin}
+				\end{figure}
+				\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.7\linewidth]{../Images/UserManual/adminWeb/adminparty.png}
+				\caption{Admin Add Party}
+				\end{figure}
+				\newpage
+				Deactivate User
+				The page has an input box for capturing the ID number of the voter.
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.7\linewidth]{../Images/UserManual/adminWeb/admindeactivateuser.png}
+					\caption{Admin Deactivate User}
+				\end{figure}
+				
+				 After the Admin presses the "Search" button, the system attempts to retrieve a voter who must to be activated and they are alerted once this person is found.
+				 \begin{figure}[H]
+				 	\centering
+				 	\includegraphics[width=0.7\linewidth]{../Images/UserManual/adminWeb/adminvoterfound.png}
+				 	\caption{Admin Alert User}
+				 \end{figure}
+				 \newpage
+				  Once the voter has been found, thier details are displayed for the Admin to confirm the details. An "Deactivate" button shows, which when pressed will changed the retrieved voters state to inactive. 
+				 \begin{figure}[H]
+				 	\centering
+				 	\includegraphics[width=0.7\linewidth]{../Images/UserManual/adminWeb/adminvoterdetails.png}
+				 	\caption{Admin Display Voter Details}
+				 \end{figure}
+				 
+				 The deactivation is confirmed by a pop with an appropriate message. 
+				 \begin{figure}[H]
+				 	\centering
+				 	\includegraphics[width=0.7\linewidth]{../Images/UserManual/adminWeb/admindeactivatedvoter.png}
+				 	\caption{Admin Deactivated Voter}
+				 \end{figure}
+	\newpage
+		\section{Troubleshooting}
+		The backend prevents a user from casting multiple votes. So if a user tries to vote again, the folowing message will appear:
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.3\linewidth]{../Images/UserManual/alreadyvoted.png}
+			\caption{Already Voted}
+			\label{alreadyVoted}
+		\end{figure}
+>>>>>>> master
 \end{document}

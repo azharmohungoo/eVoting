@@ -1,6 +1,16 @@
+<<<<<<< HEAD
 \contentsline {section}{\numberline {1}General Information}{2}{section.1}
 \contentsline {subsection}{\numberline {1.1}System Overview}{2}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}System Configuration}{2}{subsection.1.2}
 \contentsline {subsection}{\numberline {1.3}Installation}{4}{subsection.1.3}
 \contentsline {subsubsection}{\numberline {1.3.1}Blockchain}{4}{subsubsection.1.3.1}
 \contentsline {paragraph}{\numberline {1.3.1.1}Setting up a blockchain the Root node}{5}{paragraph.1.3.1.1}
+=======
+\contentsline {section}{\numberline {1}General Information}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}System Overview}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}System Configuration}{3}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Installation}{3}{subsection.1.3}
+\contentsline {section}{\numberline {2}Getting Started}{3}{section.2}
+\contentsline {section}{\numberline {3}Using the System}{6}{section.3}
+\contentsline {section}{\numberline {4}Troubleshooting}{20}{section.4}
+>>>>>>> master
