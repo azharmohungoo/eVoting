@@ -117,17 +117,32 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('accountInformationCtrl', function($scope, $localStorage, $state) {
+.controller('accountInformationCtrl', function($scope, $localStorage, $state, AccountInformationService) {
 
-    $scope.name = $localStorage.data.name;
-    $scope.surname = $localStorage.data.surname;
-    $scope.IDNum = $localStorage.data.IDNum;
-    $scope.votes =  $localStorage.data.votes;
-    $scope.votedNational = $localStorage.data.votedNational;
-    $scope.votedProvincial = $localStorage.data.votedProvincial;
-    $scope.email = $localStorage.data.email;
-    $scope.activated = $localStorage.data.activated;
-    $scope.locationRegistered = $localStorage.data.locationRegistered;
+    var getAccountRequest = {
+        "password" : $localStorage.data.password ,
+        "idNum" : $localStorage.data.IDNum
+    }
+
+    AccountInformationService.getAccount(getAccountRequest)
+        .then(function (result)
+        {
+            $localStorage.data = result;
+        });
+
+
+        $scope.name = $localStorage.data.name;
+        $scope.surname = $localStorage.data.surname;
+        $scope.IDNum = $localStorage.data.IDNum;
+        $scope.password = $localStorage.data.password;
+        $scope.votes =  $localStorage.data.votes;
+        $scope.votedNational = $localStorage.data.votedNational;
+        $scope.votedProvincial = $localStorage.data.votedProvincial;
+        $scope.email = $localStorage.data.email;
+        $scope.activated = $localStorage.data.activated;
+        $scope.locationRegistered = $localStorage.data.locationRegistered;
+
+
 
    $scope.logout = function () {
      alert("Logging Out. Thank You.");

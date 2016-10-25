@@ -173,6 +173,50 @@ public class VoterController {
     }
 
     @CrossOrigin
+    @RequestMapping(value = "/getAccount", method = RequestMethod.POST , produces = "application/JSON")
+    public String getAccount(@RequestBody VoterService voterLogin)
+    {
+        Person aPerson = new Person();
+        aPerson.setIdNum(voterLogin.getIdNum());
+        aPerson.setPassword(voterLogin.getPassword());
+
+        Person loggedInAs;
+        boolean successful = dbService.validateUser(aPerson);
+        if(successful == true)
+        {
+            loggedInAs  = pr.getPersonByIdNumAndPassword(aPerson.getIdNum(), aPerson.getPassword());
+            JsonObject result = Json.createObjectBuilder()
+                    .add("success", successful)
+                    .add("name", loggedInAs.getName())
+                    .add("surname", loggedInAs.getSurname())
+                    .add("IDNum", loggedInAs.getIdNum())
+                    .add("password", loggedInAs.getPassword())
+                    .add("votes",loggedInAs.getVotes())
+                    .add("votedNational", loggedInAs.isVotedNationalElection())
+                    .add("votedProvincial", loggedInAs.isVotedProvincialElection())
+                    .add("email", loggedInAs.getEmail())
+                    .add("cellphone", loggedInAs.getCellphone())
+                    .add("activated", loggedInAs.isActive())
+                    .add("locationRegistered", loggedInAs.getLocationRegistered())
+                    .add("userType", loggedInAs.getUserType().getUserType())
+                    .build();
+
+            return result.toString();
+        }
+        else {
+
+            JsonObject result = Json.createObjectBuilder()
+                    .add("success",successful)
+                    .add("reason" , "Invalid User")
+                    .build();
+            return result.toString();
+        }
+
+    }
+
+
+
+    @CrossOrigin
     @RequestMapping(value = "/castVote", method = RequestMethod.POST)
     public String castVote(@RequestBody VoteRequest voteRequest)
     {
@@ -277,7 +321,7 @@ public class VoterController {
 
         JsonObject result = Json.createObjectBuilder()
                 .add("success", false)
-                .add("reason" , "Unable to cast vote because something we dont know")
+                .add("reason" , "Unable to cast vote: Not Connected to Blockchain.")
                 .build();
         return result.toString();
 
